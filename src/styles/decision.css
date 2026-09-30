@@ -1,0 +1,249 @@
+/* Checkpoint 2: decision surfaces inherit the site's cool-white cobalt system. */
+.decision-page, .cdp-page { background: #fff; }
+.decision-page .container, .cdp-page .container { max-width: 1240px; padding-inline: 24px; }
+.decision-page .pb-page-header { padding: 25px 0 31px; border-color: var(--border); background: #f3f6fa; }
+.decision-page .pb-page-title { margin: 18px 0 7px; font-size: clamp(29px, 3vw, 39px); line-height: 1.15; letter-spacing: -.035em; }
+.decision-page .pb-page-desc { max-width: 680px; color: var(--text-mid); font-size: 15px; }
+.decision-page .decision-section { padding: 46px 0 76px; }
+.decision-page .pb-form-input { width: 100%; min-height: 46px; border: 1px solid #c5d0df; border-radius: 8px; background: #fff; color: var(--text-dark); font-size: 14px; }
+.decision-page .pb-form-input::placeholder { color: #65748a; }
+.decision-page .pb-form-input:focus { border-color: var(--pb-blue); box-shadow: 0 0 0 3px #2447bb1c; outline: none; }
+.decision-section-intro { max-width: 650px; color: var(--text-grey); font-size: 14px; line-height: 1.6; }
+
+/* The working checker precedes the general criteria. */
+.decision-eligibility-layout { display: grid; grid-template-columns: minmax(0, 1.8fr) minmax(250px, .8fr); gap: 64px; align-items: start; }
+.decision-eligibility-main > h2 { margin-bottom: 7px; font-size: 27px; letter-spacing: -.025em; }
+.decision-eligibility .pb-elig-checker { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px 16px; align-items: start; margin-top: 25px; padding: 24px 0 0; border: 0; border-top: 1px solid var(--border); border-radius: 0; background: none; }
+.decision-eligibility .pb-elig-field { min-width: 0; gap: 8px; }
+.decision-eligibility .pb-elig-field label { color: var(--text-dark); font-size: 12px; font-weight: 800; }
+.decision-eligibility .pb-elig-field small { color: var(--text-grey); font-size: 11px; line-height: 1.45; }
+.decision-eligibility .pb-check-eligibility { grid-column: 1 / -1; min-height: 46px; justify-self: start; padding: 0 22px; border-radius: 8px; font-size: 13px; }
+.decision-eligibility .pb-form-error { margin-top: 18px; color: #a12d31; font-size: 13px; font-weight: 700; }
+.decision-eligibility .pb-elig-result { margin-top: 22px; padding: 19px 22px; border-radius: 8px; }
+.decision-eligibility .pb-elig-result.ok { border-color: #b9dec8; background: #f0f8f3; color: #1e6241; }
+.decision-eligibility .pb-elig-result.warn { border-color: #e7d198; background: #fff9e9; color: #78570e; }
+.decision-eligibility .pb-elig-result strong { display: block; margin-bottom: 5px; font-size: 15px; }
+.decision-eligibility .pb-elig-result p { font-size: 13px; }
+.decision-eligibility .pb-elig-result a { display: inline-block; margin-top: 12px; color: var(--pb-blue); font-size: 12px; font-weight: 800; }
+.decision-eligibility-aside { padding: 25px; border-radius: 10px; background: #f4f7fb; }
+.decision-eligibility-aside h2 { margin-bottom: 13px; font-size: 17px; }
+.decision-eligibility-aside p { margin-bottom: 12px; color: var(--text-mid); font-size: 13px; line-height: 1.6; }
+.decision-eligibility-aside p:last-child { margin-bottom: 0; }
+.decision-reference { margin-top: 68px; padding-top: 40px; border-top: 1px solid var(--border); }
+.decision-reference h2 { margin-bottom: 7px; font-size: 25px; letter-spacing: -.025em; }
+.decision-reference .pb-table-wrap { margin-top: 22px; border-radius: 8px; }
+.decision-reference .pb-table { min-width: 670px; }
+.decision-reference .pb-table th, .decision-reference .pb-table td { padding: 14px 16px; font-size: 12px; line-height: 1.45; }
+.decision-reference .pb-table tbody th { color: var(--text-dark); font-weight: 800; text-align: left; border-bottom: 1px solid var(--border); }
+.decision-scroll-hint { display: none; }
+.decision-page .pb-faq-section { background: #f7f9fc; }
+.decision-page .pb-faq-heading { font-size: 25px; letter-spacing: -.025em; }
+
+/* Comparison selections are the workspace; the table is the answer. */
+.decision-compare .pb-compare-pickers { gap: 15px; margin-bottom: 18px; }
+.decision-compare .pb-compare-picker { position: relative; min-width: 0; min-height: 108px; padding: 16px; border: 1px solid var(--border); border-radius: 9px; background: #f9fbfe; }
+.decision-compare .pb-compare-picker.filled { background: #f4f7fc; }
+.decision-compare .pb-compare-picker:has(select) { flex-direction: column; align-items: stretch; justify-content: center; gap: 10px; }
+.decision-compare .pb-compare-picker label { color: var(--text-mid); font-size: 12px; font-weight: 800; }
+.decision-compare .pb-compare-picker-art { flex: none; width: 86px; height: 54px; padding: 6px 8px; border-radius: 6px; }
+.decision-compare .pb-compare-picker-art .card-art-bank { font-size: 7px; }
+.decision-compare .pb-compare-picker-art .card-art-chip { width: 14px; height: 10px; }
+.decision-compare .pb-compare-picker-art .card-art-name { display: none; }
+.decision-compare .pb-compare-picker-copy { display: grid; gap: 5px; min-width: 0; padding-right: 38px; }
+.decision-compare .pb-compare-picker-bank { color: var(--text-grey); font-size: 10px; font-weight: 700; }
+.decision-compare .pb-compare-picker-name { color: var(--text-dark); font-size: 13px; font-weight: 800; line-height: 1.4; overflow-wrap: anywhere; }
+.decision-compare .pb-compare-picker-name:hover { color: var(--pb-blue); }
+.decision-compare .pb-compare-slot-remove { position: absolute; top: 13px; right: 13px; color: var(--pb-blue); font-size: 11px; font-weight: 800; }
+.decision-compare .pb-compare-slot-remove:hover { color: var(--pb-blue-hover); text-decoration: underline; }
+.decision-compare .pb-compare-empty { padding: 54px 24px; border: 0; border-radius: 0; background: #f5f8fc; }
+.decision-compare .pb-compare-empty h2 { margin-bottom: 8px; font-size: 23px; letter-spacing: -.025em; }
+.decision-compare .pb-compare-empty p { max-width: 480px; margin: 0 auto 22px; color: var(--text-mid); font-size: 13px; line-height: 1.6; }
+.decision-compare .pb-compare-empty .pb-show-all-btn { display: inline-flex; align-items: center; min-height: 43px; padding: 0 18px; border: 1px solid var(--pb-blue); border-radius: 7px; background: #fff; color: var(--pb-blue); font-size: 12px; font-weight: 800; }
+.decision-compare .pb-compare-results { margin-top: 46px; }
+.decision-compare .pb-compare-results-heading h2 { margin-bottom: 6px; font-size: 25px; letter-spacing: -.025em; }
+.decision-compare .pb-compare-results-heading p { margin-bottom: 21px; color: var(--text-grey); font-size: 13px; }
+.decision-compare .pb-compare-scroll-hint { display: none; }
+.decision-compare .pb-table-wrap { border-radius: 8px; }
+.decision-compare .pb-compare-table { min-width: 760px; table-layout: fixed; }
+.decision-compare .pb-compare-table th, .decision-compare .pb-compare-table td { width: 29%; padding: 17px 18px; border-bottom: 1px solid var(--border); font-size: 12px; line-height: 1.55; white-space: normal; vertical-align: top; }
+.decision-compare .pb-compare-table th:first-child, .decision-compare .pb-compare-table tbody th { width: 13%; min-width: 120px; color: var(--text-dark); font-weight: 800; text-align: left; }
+.decision-compare .pb-compare-table thead th { background: #f5f7fb; font-size: 13px; }
+.decision-compare .pb-compare-benefit-list { margin: 0; padding-left: 16px; }
+.decision-compare .pb-compare-benefit-list li { margin-bottom: 7px; }
+.decision-compare .pb-compare-eligibility { color: var(--pb-blue); font-weight: 800; }
+.decision-compare .pb-compare-eligibility:hover { text-decoration: underline; text-underline-offset: 4px; }
+.decision-compare .pb-page-cta-row { justify-content: flex-end; margin-top: 21px; }
+.decision-compare .pb-compare-cancel { padding: 8px 0; border: 0; background: none; color: var(--pb-blue); font-size: 12px; font-weight: 800; }
+
+/* Card detail is an open decision sheet, not a stack of promotional tiles. */
+.cdp-page { min-height: 100dvh; padding-bottom: 0; }
+.cdp-page .cdp-breadcrumb-wrap { padding: 14px 0; border-color: var(--border-light); }
+.cdp-page .cdp-hero-section { padding: 38px 0 47px; border-color: var(--border); background: #f3f6fa; }
+.cdp-page .cdp-hero-container { grid-template-columns: minmax(300px, 380px) minmax(0, 1fr); gap: 54px; }
+.cdp-page .cdp-hero-media { align-items: flex-start; gap: 18px; }
+.cdp-page .cdp-card-showcase { width: 100%; max-width: none; padding: 0; border-radius: 12px; background: none; box-shadow: none; }
+.cdp-page .cdp-card-showcase:hover { transform: none; box-shadow: none; }
+.cdp-page .cdp-card-image { width: 100%; height: 100%; max-width: none; max-height: none; border-radius: 12px; object-fit: contain; }
+.cdp-page .cdp-card-image.card-art { padding: 24px 27px; box-shadow: 0 18px 32px rgb(14 37 70 / .18); }
+.cdp-page .cdp-card-image .card-art-bank { font-size: 19px; }
+.cdp-page .cdp-card-image .card-art-chip { width: 38px; height: 27px; border-radius: 5px; }
+.cdp-page .cdp-card-image .card-art-name { font-size: 10px; }
+.cdp-page .cdp-hero-compare { gap: 10px; padding: 0; border: 0; border-radius: 0; background: none; color: var(--text-dark); font-size: 12px; font-weight: 800; }
+.cdp-page .cdp-hero-compare:hover:not(.is-disabled), .cdp-page .cdp-hero-compare.is-active { border: 0; background: none; color: var(--pb-blue); }
+.cdp-page .cdp-hero-compare input { width: 17px; height: 17px; accent-color: var(--pb-blue); cursor: pointer; }
+.cdp-page .cdp-hero-compare.is-disabled { opacity: .52; }
+.cdp-page .cdp-badge-row { margin: 0 0 5px; }
+.cdp-page .cdp-bank-badge { padding: 0; border-radius: 0; background: none; color: var(--text-grey); font-size: 12px; font-weight: 800; letter-spacing: 0; text-transform: none; }
+.cdp-page .cdp-card-title { max-width: 680px; margin: 0 0 12px; font-size: clamp(29px, 2.8vw, 38px); line-height: 1.18; letter-spacing: -.03em; text-wrap: balance; }
+.cdp-page .cdp-tags { gap: 7px; margin-bottom: 29px; }
+.cdp-page .cdp-tag { padding: 4px 8px; border: 0; border-radius: 4px; background: #e9effb; color: #2447a0; font-size: 10px; font-weight: 800; text-transform: capitalize; }
+.cdp-page .cdp-metrics-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 34px; margin: 0 0 22px; padding-top: 21px; border-top: 1px solid #d8e0eb; }
+.cdp-page .cdp-metric-card { min-width: 0; padding: 0; border: 0; border-radius: 0; background: none; }
+.cdp-page .cdp-metric-label { margin-bottom: 5px; color: var(--text-grey); font-size: 11px; font-weight: 800; letter-spacing: 0; text-transform: none; }
+.cdp-page .cdp-metric-value { color: var(--text-dark); font-size: 21px; font-weight: 800; line-height: 1.3; }
+.cdp-page .cdp-metric-value-sm { max-width: 35ch; color: var(--text-dark); font-size: 12px; font-weight: 700; line-height: 1.5; }
+.cdp-page .cdp-metric-forex .cdp-metric-value { font-size: 15px; font-weight: 700; line-height: 1.45; }
+.cdp-page .cdp-metric-sub { color: var(--text-grey); font-size: 10px; }
+.cdp-page .cdp-welcome-box { margin-bottom: 20px; padding: 12px 15px; border: 0; border-radius: 7px; background: #e9effb; color: #263e74; font-size: 12px; line-height: 1.5; }
+.cdp-page .cdp-welcome-box strong { margin-right: 5px; }
+.cdp-page .cdp-cta-group { gap: 18px; }
+.cdp-page .cdp-btn-apply { min-height: 46px; padding: 0 20px; border-radius: 8px; box-shadow: none; font-size: 13px; font-weight: 800; }
+.cdp-page .cdp-btn-apply:hover { transform: none; }
+.cdp-page .cdp-cta-note { max-width: 240px; color: var(--text-grey); font-size: 11px; line-height: 1.45; }
+.cdp-page .cdp-nav-section { top: 72px; z-index: 90; border-color: var(--border); }
+.cdp-page .cdp-tabs-bar { gap: 24px; }
+.cdp-page .cdp-tab-btn { padding: 14px 0; border-bottom-width: 2px; color: var(--text-mid); font-size: 12px; font-weight: 800; }
+.cdp-page .cdp-main-content { padding: 50px 0 70px; }
+.cdp-page .cdp-sections-stack { gap: 64px; }
+.cdp-page .cdp-section-block { scroll-margin-top: 132px; }
+.cdp-page .cdp-section-title { margin-bottom: 19px; font-size: 25px; line-height: 1.25; letter-spacing: -.025em; }
+.cdp-page .cdp-table-sub { margin: -10px 0 19px; color: var(--text-grey); font-size: 13px; }
+.cdp-fee-scroll-hint { display: none; }
+.cdp-page .cdp-benefits-grid { gap: 26px 38px; }
+.cdp-page .cdp-feature-card { padding: 19px 4px 0 0; border: 0; border-top: 1px solid var(--border); border-radius: 0; background: none; box-shadow: none; }
+.cdp-page .cdp-feature-card h3 { margin-bottom: 10px; color: var(--text-dark); font-size: 17px; letter-spacing: -.015em; }
+.cdp-page .cdp-feat-lead { margin-bottom: 12px; color: var(--text-mid); font-size: 13px; line-height: 1.5; }
+.cdp-page .cdp-feat-list { gap: 8px; }
+.cdp-page .cdp-feat-list li { padding-left: 14px; color: var(--text-mid); font-size: 12px; line-height: 1.6; }
+.cdp-page .cdp-feat-list li::before { content: ''; top: .66em; width: 4px; height: 4px; border-radius: 50%; background: var(--pb-blue); }
+.cdp-page .cdp-table-wrap { overflow-x: auto; border-radius: 8px; box-shadow: none; }
+.cdp-page .cdp-table { min-width: 640px; }
+.cdp-page .cdp-table th, .cdp-page .cdp-table td { padding: 15px 18px; font-size: 12px; line-height: 1.5; }
+.cdp-page .cdp-verdict-card { padding: 0; border: 0; border-radius: 0; box-shadow: none; }
+.cdp-page .cdp-pros-cons-grid { gap: 38px; }
+.cdp-page .cdp-pros-box, .cdp-page .cdp-cons-box { padding: 18px 0 0; border-top: 1px solid var(--border); border-radius: 0; background: none; }
+.cdp-page .cdp-pros-box h3, .cdp-page .cdp-cons-box h3 { margin-bottom: 12px; font-size: 16px; }
+.cdp-page .cdp-pros-box li, .cdp-page .cdp-cons-box li, .cdp-page .cdp-pros-box p, .cdp-page .cdp-cons-box p { color: var(--text-mid); font-size: 12px; line-height: 1.55; }
+.cdp-page .cdp-faqs-accordion { gap: 0; }
+.cdp-page .cdp-faq-item { border: 0; border-bottom: 1px solid var(--border); border-radius: 0; cursor: default; }
+.cdp-page .cdp-faq-item:first-child { border-top: 1px solid var(--border); }
+.cdp-page .cdp-faq-question { width: 100%; padding: 18px 2px; border: 0; background: none; color: var(--text-dark); text-align: left; font-size: 13px; font-weight: 800; line-height: 1.45; }
+.cdp-page .cdp-faq-answer { margin: 0; padding: 0 24px 18px 2px; border: 0; color: var(--text-mid); font-size: 12px; line-height: 1.6; }
+.cdp-page .cdp-similar-section { padding: 47px 0 60px; border-color: var(--border); background: #f6f8fb; }
+.cdp-page .cdp-similar-header { margin-bottom: 18px; }
+.cdp-page .cdp-similar-header h2 { font-size: 24px; letter-spacing: -.025em; }
+.cdp-page .cdp-view-all { font-size: 12px; font-weight: 800; }
+.cdp-page .cdp-similar-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 26px; }
+.cdp-page .cdp-similar-card { display: grid; grid-template-columns: 144px minmax(0, 1fr); gap: 18px; padding: 22px 0; border: 0; border-top: 1px solid var(--border); border-radius: 0; background: none; }
+.cdp-page .cdp-similar-card:hover { transform: none; border-color: var(--border); box-shadow: none; }
+.cdp-page .cdp-similar-img-box { width: 144px; height: 91px; margin: 0; }
+.cdp-page .cdp-similar-img { width: 100%; height: 100%; max-width: none; max-height: none; }
+.cdp-page .cdp-similar-img.card-art { padding: 9px 11px; }
+.cdp-page .cdp-similar-img .card-art-bank { font-size: 8px; }
+.cdp-page .cdp-similar-img .card-art-chip { width: 18px; height: 13px; }
+.cdp-page .cdp-similar-img .card-art-name { font-size: 6px; }
+.cdp-page .cdp-similar-bank { color: var(--text-grey); font-size: 10px; text-transform: none; }
+.cdp-page .cdp-similar-title { min-height: 0; margin: 3px 0 9px; font-size: 14px; line-height: 1.35; }
+.cdp-page .cdp-similar-fee { margin-bottom: 8px; color: var(--text-grey); font-size: 11px; }
+.cdp-page .cdp-similar-fee strong { color: var(--text-dark); }
+.cdp-page .cdp-similar-btn { display: inline; padding: 0; border-radius: 0; background: none; color: var(--pb-blue); font-size: 11px; font-weight: 800; text-align: left; }
+.cdp-page .cdp-similar-btn:hover { background: none; color: var(--pb-blue-hover); text-decoration: underline; }
+
+/* Persistent comparison stays usable beside the mobile eligibility action. */
+.pb-compare-bar { padding: 9px 0; border-top: 1px solid var(--border); box-shadow: 0 -7px 20px rgb(18 33 61 / .09); }
+.pb-compare-bar-inner { max-width: 1240px; padding-inline: 24px; gap: 15px; }
+.pb-compare-bar-title { font-size: 12px; font-weight: 800; }
+.pb-compare-slots { min-width: 0; gap: 7px; }
+.pb-compare-slot.filled { flex: 0 1 180px; min-width: 0; height: 35px; padding: 0 8px; border: 1px solid var(--border); border-radius: 6px; background: #f5f8fc; }
+.pb-compare-slot.filled span { min-width: 0; overflow: hidden; color: var(--text-dark); font-size: 10px; font-weight: 700; text-overflow: ellipsis; white-space: nowrap; }
+.pb-compare-slot-remove { flex: none; margin-left: 7px; color: var(--text-grey); }
+.pb-compare-cancel { padding: 8px 6px; border: 0; color: var(--pb-blue); font-size: 11px; font-weight: 800; }
+.pb-compare-now { min-height: 35px; padding: 0 13px; border-radius: 7px; font-size: 11px; }
+.app:has(> .pb-compare-bar) main { padding-bottom: 64px; }
+
+@media (max-width: 1050px) {
+  .decision-eligibility-layout { grid-template-columns: 1fr; gap: 32px; }
+  .decision-eligibility-aside { max-width: 680px; }
+  .cdp-page .cdp-hero-container { grid-template-columns: 290px minmax(0, 1fr); gap: 34px; }
+  .cdp-page .cdp-hero-media { flex-direction: column; }
+  .cdp-page .cdp-similar-card { grid-template-columns: 110px minmax(0, 1fr); gap: 14px; }
+  .cdp-page .cdp-similar-img-box { width: 110px; height: 70px; }
+}
+
+@media (max-width: 800px) {
+  .decision-page .pb-page-header { padding: 20px 0 25px; }
+  .decision-page .decision-section { padding-top: 34px; }
+  .decision-compare .pb-compare-pickers { grid-template-columns: 1fr; }
+  .decision-compare .pb-compare-picker { min-height: 86px; }
+  .decision-compare .pb-compare-scroll-hint { display: block; margin: 0 0 9px; color: var(--text-grey); font-size: 11px; }
+  .decision-scroll-hint { display: block; margin: 12px 0 -10px; color: var(--text-grey); font-size: 11px; }
+  .decision-compare .pb-compare-table { min-width: 760px; }
+  .decision-compare .pb-compare-table thead th:first-child, .decision-compare .pb-compare-table tbody th { position: sticky; left: 0; z-index: 1; background: #f8fafd; }
+  .cdp-page .cdp-hero-container { grid-template-columns: 1fr; }
+  .cdp-page .cdp-hero-media { align-items: flex-start; }
+  .cdp-page .cdp-card-showcase { max-width: 320px; }
+  .cdp-page .cdp-nav-section { top: 64px; }
+  .cdp-page .cdp-benefits-grid, .cdp-page .cdp-pros-cons-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .pb-compare-bar { padding: 8px 0; }
+  .pb-compare-bar-inner { display: grid; grid-template-columns: 1fr auto; gap: 8px 12px; padding-inline: 16px; }
+  .pb-compare-bar-title { grid-column: 1; grid-row: 1; align-self: center; }
+  .pb-compare-bar-actions { grid-column: 2; grid-row: 1; align-items: center; gap: 6px; }
+  .pb-compare-slots { grid-column: 1 / -1; grid-row: 2; overflow-x: auto; scrollbar-width: none; }
+  .pb-compare-slots::-webkit-scrollbar { display: none; }
+  .pb-compare-slot.filled { flex: 0 0 auto; max-width: 170px; height: 30px; }
+  .pb-compare-now { min-height: 32px; padding-inline: 10px; }
+  .app:has(> .pb-compare-bar) main { padding-bottom: 88px; }
+  .app:has(> .pb-compare-bar) .cdp-mobile-sticky-bar { bottom: 88px; min-height: 49px; padding-block: 5px; }
+  .app:has(> .pb-compare-bar) .cdp-msb-left { display: none; }
+  .app:has(> .pb-compare-bar) .cdp-msb-apply { width: 100%; justify-content: center; }
+  .decision-page .container, .cdp-page .container { padding-inline: 20px; }
+  .decision-page .pb-page-title { font-size: 29px; }
+  .decision-page .pb-page-desc { font-size: 13px; }
+  .decision-eligibility .decision-section { padding-top: 20px; }
+  .decision-eligibility .pb-elig-checker { grid-template-columns: 1fr; gap: 12px; margin-top: 15px; padding-top: 16px; }
+  .decision-eligibility .pb-check-eligibility { width: 100%; justify-content: center; }
+  .decision-reference { margin-top: 45px; padding-top: 32px; }
+  .decision-reference h2 { font-size: 22px; }
+  .decision-compare .pb-compare-results { margin-top: 34px; }
+  .cdp-page { padding-bottom: 72px; }
+  .cdp-page .cdp-hero-section { padding: 25px 0 34px; }
+  .cdp-fee-scroll-hint { display: block; margin: -9px 0 12px; color: var(--text-grey); font-size: 11px; }
+  .cdp-page .cdp-hero-container { gap: 25px; }
+  .cdp-page .cdp-hero-media { align-items: center; flex-direction: column; gap: 13px; }
+  .cdp-page .cdp-card-showcase { width: min(100%, 280px); max-width: 280px; }
+  .cdp-page .cdp-card-image.card-art { padding: 17px 20px; }
+  .cdp-page .cdp-card-image .card-art-bank { font-size: 14px; }
+  .cdp-page .cdp-card-image .card-art-chip { width: 30px; height: 21px; }
+  .cdp-page .cdp-card-title { font-size: 26px; }
+  .cdp-page .cdp-tags { margin-bottom: 21px; }
+  .cdp-page .cdp-metrics-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 14px; }
+  .cdp-page .cdp-metric-card:nth-child(n + 3) { grid-column: 1 / -1; }
+  .cdp-page .cdp-metric-value { font-size: 18px; }
+  .cdp-page .cdp-cta-group { display: none; }
+  .cdp-page .cdp-tabs-bar { gap: 22px; }
+  .cdp-page .cdp-tab-btn { font-size: 11px; }
+  .cdp-page .cdp-main-content { padding-top: 36px; }
+  .cdp-page .cdp-section-title { font-size: 22px; }
+  .cdp-page .cdp-similar-grid { grid-template-columns: 1fr; }
+  .cdp-page .cdp-similar-header { align-items: flex-start; gap: 18px; }
+  .cdp-page .cdp-similar-header h2 { font-size: 21px; }
+  .cdp-page .cdp-similar-card { grid-template-columns: 110px minmax(0, 1fr); }
+  .cdp-page .cdp-mobile-sticky-bar { display: flex; min-height: 66px; padding: 9px 16px; border-color: var(--border); box-shadow: 0 -8px 22px rgb(18 33 61 / .08); }
+  .cdp-page .cdp-msb-left { min-width: 0; max-width: calc(100% - 135px); }
+  .cdp-page .cdp-msb-name { font-size: 11px; }
+  .cdp-page .cdp-msb-fee { font-size: 10px; }
+  .cdp-page .cdp-msb-apply { min-height: 39px; display: inline-flex; align-items: center; padding: 0 11px; border-radius: 7px; font-size: 11px; font-weight: 800; }
+}

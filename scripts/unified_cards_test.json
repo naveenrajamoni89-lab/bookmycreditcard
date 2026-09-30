@@ -1,0 +1,1908 @@
+[
+  {
+    "id": 1,
+    "name": "HDFC Infinia Credit Card",
+    "bank": "bank_2",
+    "bankName": "HDFC Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2019/10/HDFC-Infinia-Credit-Card.png",
+    "categories": [
+      "travel",
+      "premium",
+      "rewards"
+    ],
+    "joiningFee": 12500,
+    "annualFee": 12500,
+    "benefits": [
+      "3.33% value-back across all categories",
+      "Unlimited access in India and abroad",
+      "Save on your stay at ITC and Marriott Hotels"
+    ],
+    "knowMore": "https://www.paisabazaar.com/hdfc-bank/infinia-credit-card/",
+    "route": "/hdfc-bank/infinia-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/?utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=hdfc_infinia_credit_card"
+  },
+  {
+    "id": 2,
+    "name": "Axis Atlas Credit Card",
+    "bank": "bank_27",
+    "bankName": "Axis Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2023/02/Axis-Atlas-1.png",
+    "categories": [
+      "travel",
+      "lounge-access",
+      "rewards"
+    ],
+    "joiningFee": 5000,
+    "annualFee": 5000,
+    "benefits": [
+      "Up to 10% value-back on travel spends",
+      "Complimentary lounge access worldwide",
+      "1:2 redemption ratio on partner airlines & hotels"
+    ],
+    "knowMore": "https://www.paisabazaar.com/axis-bank/atlas-credit-card/",
+    "route": "/axis-bank/atlas-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/marketing/openmarket?partnerProductId=313&utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=axis_atlas_credit_card"
+  },
+  {
+    "id": 3,
+    "name": "HDFC Regalia Gold Credit Card",
+    "bank": "bank_2",
+    "bankName": "HDFC Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2023/03/HDFC-Regalia-Gold-Credit-Card.png",
+    "categories": [
+      "travel",
+      "shopping",
+      "rewards"
+    ],
+    "joiningFee": 2500,
+    "annualFee": 2500,
+    "benefits": [
+      "5X rewards on Nykaa, Myntra & more",
+      "Vouchers up to Rs. 16,000 every year",
+      "12 domestic & 6 int. visits per year"
+    ],
+    "knowMore": "https://www.paisabazaar.com/hdfc-bank/hdfc-regalia-gold-credit-card/",
+    "route": "/hdfc-bank/hdfc-regalia-gold-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/easy-apply?partnerProductId=285&utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=hdfc_regalia_gold_credit_card"
+  },
+  {
+    "id": 4,
+    "name": "YES BANK PaisaSave Credit Card (FREE for Limited Time)",
+    "bank": "bank_65",
+    "bankName": "YES BANK",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/500x500-1.png",
+    "categories": [
+      "travel",
+      "dining",
+      "cashback"
+    ],
+    "joiningFee": 0,
+    "annualFee": 0,
+    "benefits": [
+      "6% cashback across all travel spends",
+      "6% cashback on all dining spends",
+      "1% unlimited cashback on UPI transactions"
+    ],
+    "knowMore": "https://www.paisabazaar.com/yes-bank/paisabazaar-paisasave-credit-card/",
+    "route": "/yes-bank/paisabazaar-paisasave-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/easy-apply?partnerProductId=318&utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=yes_bank_paisasave_credit_card"
+  },
+  {
+    "id": 5,
+    "name": "Cashback SBI Card",
+    "bank": "bank_3",
+    "bankName": "SBI Cards",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/Cashback-SBI-Card-image.png",
+    "categories": [
+      "cashback",
+      "online-shopping"
+    ],
+    "joiningFee": 999,
+    "annualFee": 999,
+    "benefits": [
+      "5% cashback on online spends",
+      "Up to Rs. 48,000 cashback in a year",
+      "Fee waived on Rs. 2 lakh annual spends"
+    ],
+    "knowMore": "https://www.paisabazaar.com/sbi-bank/cashback-sbi-card/",
+    "route": "/sbi-bank/cashback-sbi-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/?utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=cashback_sbi_card"
+  },
+  {
+    "id": 6,
+    "name": "HSBC TravelOne Credit Card",
+    "bank": "bank_1",
+    "bankName": "HSBC Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/HSBC-TravelOne-CC.png",
+    "categories": [
+      "travel",
+      "rewards"
+    ],
+    "joiningFee": 4999,
+    "annualFee": 4999,
+    "benefits": [
+      "Up to 15% off on top travel platforms",
+      "Up to 12% back as reward points",
+      "6 domestic & 4 international visits"
+    ],
+    "knowMore": "https://www.paisabazaar.com/hsbc-bank/travelone-credit-card/",
+    "route": "/hsbc-bank/travelone-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/?utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=hsbc_travelone_credit_card"
+  },
+  {
+    "id": 7,
+    "name": "Federal Bank Scapia Credit Card",
+    "bank": "bank_32",
+    "bankName": "Federal Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/Scapia-Federal-Card-image.png",
+    "categories": [
+      "travel",
+      "lounge-access",
+      "lifetime-free"
+    ],
+    "joiningFee": 0,
+    "annualFee": 0,
+    "benefits": [
+      "Unlimited domestic airport lounge access",
+      "Up to 20% Scapia coins on card spends",
+      "No forex mark-up on international spends"
+    ],
+    "knowMore": "https://www.paisabazaar.com/federal-bank/scapia-credit-card/",
+    "route": "/federal-bank/scapia-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/easy-apply?partnerProductId=373&utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=federal_bank_scapia_credit_card"
+  },
+  {
+    "id": 8,
+    "name": "Axis Bank SELECT Credit Card",
+    "bank": "bank_27",
+    "bankName": "Axis Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2015/11/Axis-Bank-Select-Credit-Card.png",
+    "categories": [
+      "shopping",
+      "rewards"
+    ],
+    "joiningFee": 3000,
+    "annualFee": 3000,
+    "benefits": [
+      "Discount on Swiggy, BigBasket & District apps",
+      "Complimentary lounge access worldwide",
+      "2X rewards across all retail spends"
+    ],
+    "knowMore": "https://www.paisabazaar.com/axis-bank/select-credit-card/",
+    "route": "/axis-bank/select-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/marketing/openmarket?partnerProductId=262&utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=axis_bank_select_credit_card"
+  },
+  {
+    "id": 9,
+    "name": "Tata Neu Infinity HDFC Bank Credit Card",
+    "bank": "bank_2",
+    "bankName": "HDFC Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2024/12/500x500.png",
+    "categories": [
+      "shopping"
+    ],
+    "joiningFee": 1499,
+    "annualFee": 1499,
+    "benefits": [
+      "Save up to 10% on Tata Neu Spends",
+      "Up to 5% value-back on other spends",
+      "Complimentary lounge access worldwide"
+    ],
+    "knowMore": "https://www.paisabazaar.com/hdfc-bank/tata-neu-infinity-hdfc-bank-credit-card/",
+    "route": "/hdfc-bank/tata-neu-infinity-hdfc-bank-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/easy-apply?partnerProductId=283&utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=tata_neu_infinity_hdfc_bank_credit_card"
+  },
+  {
+    "id": 10,
+    "name": "IndianOil RBL Bank XTRA Credit Card",
+    "bank": "bank_66",
+    "bankName": "RBL Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2024/08/IndianOil-RBL-Bank-Credit-Cards.webp",
+    "categories": [
+      "rewards",
+      "fuel"
+    ],
+    "joiningFee": 1500,
+    "annualFee": 1500,
+    "benefits": [
+      "Up to 8.5% savings on fuel spends",
+      "Accelerated value-back at IOCL petrol pumps",
+      "Up to 15 reward points per Rs. 100 spent"
+    ],
+    "knowMore": "https://www.paisabazaar.com/rbl-bank/indianoil-rbl-xtra-credit-card/",
+    "route": "/rbl-bank/indianoil-rbl-xtra-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/?utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=indianoil_rbl_bank_xtra_credit_card"
+  },
+  {
+    "id": 11,
+    "name": "HDFC Diners Club Black Metal Edition Credit Card",
+    "bank": "bank_2",
+    "bankName": "HDFC Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2024/04/HDFC-Diners-Club-Black-Credit-Card.png",
+    "categories": [
+      "travel",
+      "premium",
+      "rewards"
+    ],
+    "joiningFee": 10000,
+    "annualFee": 10000,
+    "benefits": [
+      "3.33% value-back across all spends",
+      "Unlimited domestic and international visits",
+      "Memberships to Marriott, Amazon, & more"
+    ],
+    "knowMore": "https://www.paisabazaar.com/hdfc-bank/hdfc-diners-club-black-credit-card/",
+    "route": "/hdfc-bank/hdfc-diners-club-black-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/easy-apply?partnerProductId=297&utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=hdfc_diners_club_black_metal_edition_credit_card"
+  },
+  {
+    "id": 12,
+    "name": "Axis Magnus for Burgundy Credit Card",
+    "bank": "bank_27",
+    "bankName": "Axis Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/Axis-Magnus-Credit-Card-image.png",
+    "categories": [
+      "travel",
+      "premium",
+      "rewards"
+    ],
+    "joiningFee": 30000,
+    "annualFee": 30000,
+    "benefits": [
+      "Up to 5X rewards on Axis Travel EDGE spends",
+      "Unlimited lounge access with 4 free guest visits",
+      "Up to 14% value-back on non-travel spends"
+    ],
+    "knowMore": "https://www.paisabazaar.com/axis-bank/magnus-burgundy-credit-card/",
+    "route": "/axis-bank/magnus-burgundy-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/marketing/openmarket?partnerProductId=277&utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=axis_magnus_for_burgundy_credit_card"
+  },
+  {
+    "id": 13,
+    "name": "HDFC Millennia Credit Card",
+    "bank": "bank_2",
+    "bankName": "HDFC Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/HDFC-Millennia-Credit-Card-1.png",
+    "categories": [
+      "cashback",
+      "online-shopping"
+    ],
+    "joiningFee": 1000,
+    "annualFee": 1000,
+    "benefits": [
+      "5% cashback on popular everyday brands",
+      "1,000 bonus points on card activation",
+      "Up to 10% off on partner restaurants"
+    ],
+    "knowMore": "https://www.paisabazaar.com/hdfc-bank/millennia-credit-card/",
+    "route": "/hdfc-bank/millennia-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/easy-apply?partnerProductId=235&utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=hdfc_millennia_credit_card"
+  },
+  {
+    "id": 14,
+    "name": "Axis Bank Reserve Credit Card",
+    "bank": "bank_27",
+    "bankName": "Axis Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/card.png",
+    "categories": [
+      "travel",
+      "premium",
+      "rewards"
+    ],
+    "joiningFee": 50000,
+    "annualFee": 50000,
+    "benefits": [
+      "Low foreign currency markup fee of 1.5%",
+      "Unlimited access in India and abroad",
+      "15 EDGE rewards for every Rs. 200 spent"
+    ],
+    "knowMore": "https://www.paisabazaar.com/credit-card/axis-bank-reserve-credit-card/",
+    "route": "/credit-card/axis-bank-reserve-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/?utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=axis_bank_reserve_credit_card"
+  },
+  {
+    "id": 15,
+    "name": "American Express\\u00ae Platinum Card",
+    "bank": "bank_4",
+    "bankName": "American Express",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/platinumCarddec_converted.jpg",
+    "categories": [
+      "travel",
+      "premium",
+      "shopping"
+    ],
+    "joiningFee": 66000,
+    "annualFee": 66000,
+    "benefits": [
+      "Complimentary access to lounges worldwide",
+      "Memberships of 5+ premium hotels",
+      "Complimentary golf games & lessons"
+    ],
+    "knowMore": "https://www.paisabazaar.com/amex-bank/american-express-platinum-card/",
+    "route": "/amex-bank/american-express-platinum-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/?utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=american_express_platinum_card"
+  },
+  {
+    "id": 16,
+    "name": "IndusInd Bank Avios Visa Infinite Credit Card",
+    "bank": "bank_67",
+    "bankName": "IndusInd Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2023/09/indusind-avios.png",
+    "categories": [
+      "travel"
+    ],
+    "joiningFee": 10000,
+    "annualFee": 5000,
+    "benefits": [
+      "Benefits on Qatar & British Airways",
+      "Up to 6 reward points on every Rs. 200",
+      "Up to 8 complimentary visits every year"
+    ],
+    "knowMore": "https://www.paisabazaar.com/indusind-bank/avios-visa-infinite-credit-card/",
+    "route": "/indusind-bank/avios-visa-infinite-credit-card/",
+    "checkEligibility": "https://www.indusind.bank.in/in/en/personal/cards/credit-card/avios-visa-infinite-credit-card.html?/utm_source=organic&utm_medium=quotes_check_eligibility+Indusind_Avios_Visa_Infinite&utm_campaign=seo_page"
+  },
+  {
+    "id": 17,
+    "name": "Axis Bank Horizon Credit Card",
+    "bank": "bank_27",
+    "bankName": "Axis Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2024/06/Axis-Bank-Horizon-Credit-Card.png",
+    "categories": [
+      "travel",
+      "rewards"
+    ],
+    "joiningFee": 3000,
+    "annualFee": 3000,
+    "benefits": [
+      "5 EDGE Miles per Rs. 100 spent on travel",
+      "Up to 32 airport lounge visits per year",
+      "1:1 redemption against 15+ travel partners"
+    ],
+    "knowMore": "https://www.paisabazaar.com/axis-bank/horizon-credit-card/",
+    "route": "/axis-bank/horizon-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/?utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=axis_bank_horizon_credit_card"
+  },
+  {
+    "id": 18,
+    "name": "MakeMyTrip ICICI Bank Credit Card",
+    "bank": "bank_6",
+    "bankName": "ICICI Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/MakeMyTrip_cardimage.png",
+    "categories": [
+      "travel",
+      "rewards"
+    ],
+    "joiningFee": 999,
+    "annualFee": 999,
+    "benefits": [
+      "Up to 6% value back on travel spends",
+      "Low forex markup fee of 0.99%",
+      "MMTBLACK Gold Membership"
+    ],
+    "knowMore": "https://www.paisabazaar.com/icici-bank/makemytrip-credit-card/",
+    "route": "/icici-bank/makemytrip-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/?utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=makemytrip_icici_bank_credit_card"
+  },
+  {
+    "id": 19,
+    "name": "ICICI Emeralde Private Metal Credit Card",
+    "bank": "bank_6",
+    "bankName": "ICICI Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2023/10/ICICI-Bank-Emeralde-Private-Metal-Credit-Card.webp",
+    "categories": [
+      "travel",
+      "premium",
+      "rewards"
+    ],
+    "joiningFee": 12499,
+    "annualFee": 12499,
+    "benefits": [
+      "3% value-back across all spending categories",
+      "Unlimited domestic & international access",
+      "Complimentary Taj Epicure membership"
+    ],
+    "knowMore": "https://www.paisabazaar.com/icici-bank/emeralde-private-metal-credit-card/",
+    "route": "/icici-bank/emeralde-private-metal-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/?utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=icici_emeralde_private_metal_credit_card"
+  },
+  {
+    "id": 20,
+    "name": "Axis Bank Burgundy Private Credit Card",
+    "bank": "bank_27",
+    "bankName": "Axis Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/Axis-Bank-Burgundy-Private-Credit-Card-1.png",
+    "categories": [
+      "travel",
+      "premium",
+      "rewards"
+    ],
+    "joiningFee": 50000,
+    "annualFee": 50000,
+    "benefits": [
+      "Accor Plus, Club Marriott & Taj Hotel Membership",
+      "Unlimited access in India and abroad",
+      "15 EDGE rewards for every Rs. 200 spent"
+    ],
+    "knowMore": "https://www.paisabazaar.com/axis-bank/burgundy-private-credit-card/",
+    "route": "/axis-bank/burgundy-private-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/?utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=axis_bank_burgundy_private_credit_card"
+  },
+  {
+    "id": 21,
+    "name": "Flipkart Axis Bank Credit Card",
+    "bank": "bank_27",
+    "bankName": "Axis Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/Flipkart-Axis-Bank-Credit-Card.jpg",
+    "categories": [
+      "cashback",
+      "online-shopping"
+    ],
+    "joiningFee": 0,
+    "annualFee": 500,
+    "benefits": [
+      "7.5% cashback on Myntra",
+      "5% cashback on spends at Flipkart",
+      "5% cashback on Cleartrip "
+    ],
+    "knowMore": "https://www.paisabazaar.com/axis-bank/flipkart-axis-bank-credit-card/",
+    "route": "/axis-bank/flipkart-axis-bank-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/marketing/openmarket?partnerProductId=255&utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=flipkart_axis_bank_credit_card"
+  },
+  {
+    "id": 22,
+    "name": "Axis Bank ACE Credit Card",
+    "bank": "bank_27",
+    "bankName": "Axis Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2019/10/axis-bank-ace-credit-card.jpg",
+    "categories": [
+      "shopping",
+      "cashback",
+      "online-shopping"
+    ],
+    "joiningFee": 499,
+    "annualFee": 499,
+    "benefits": [
+      "Up to 5% savings on bill payments & recharges",
+      "Uncapped base cashback rate of 1.5%",
+      "Up to 4 free domestic lounge visits per year"
+    ],
+    "knowMore": "https://www.paisabazaar.com/axis-bank/ace-credit-card/",
+    "route": "/axis-bank/ace-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/marketing/openmarket?partnerProductId=317&utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=axis_bank_ace_credit_card"
+  },
+  {
+    "id": 23,
+    "name": "Swiggy BLCK HDFC Bank Credit Card",
+    "bank": "bank_2",
+    "bankName": "HDFC Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/facia-swiggy-blck-cc.png",
+    "categories": [
+      "dining",
+      "cashback",
+      "online-shopping"
+    ],
+    "joiningFee": 1000,
+    "annualFee": 1000,
+    "benefits": [
+      "10% cashback on spends at Swiggy",
+      "5% cashback on top online brands",
+      "Complimentary Swiggy BLCK Membership"
+    ],
+    "knowMore": "https://www.paisabazaar.com/hdfc-bank/swiggy-blck-hdfc-credit-card/",
+    "route": "/hdfc-bank/swiggy-blck-hdfc-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/?utm_source=organic&utm_medium=organic&utm_campaign=card-compare&utm_term=compare_widget"
+  },
+  {
+    "id": 24,
+    "name": "Flipkart SBI Card",
+    "bank": "bank_3",
+    "bankName": "SBI Cards",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/Flipkart-SBI-Card-Images.png",
+    "categories": [
+      "cashback",
+      "online-shopping"
+    ],
+    "joiningFee": 500,
+    "annualFee": 500,
+    "benefits": [
+      "7.5% cashback on Myntra",
+      "5% cashback on spends at Flipkart",
+      "5% cashback on Cleartrip"
+    ],
+    "knowMore": "https://www.paisabazaar.com/sbi-bank/flipkart-sbi-credit-card/",
+    "route": "/sbi-bank/flipkart-sbi-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/?utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=flipkart_sbi_card"
+  },
+  {
+    "id": 25,
+    "name": "Airtel Axis Bank Credit Card",
+    "bank": "bank_27",
+    "bankName": "Axis Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2023/07/Airtel-Axis-Bank-Credit-Card.png",
+    "categories": [
+      "cashback"
+    ],
+    "joiningFee": 500,
+    "annualFee": 500,
+    "benefits": [
+      "Up to 25% cashback on Airtel Thanks App",
+      "10% cashback on Zomato spends",
+      "Up to 10% back on utility bill payments"
+    ],
+    "knowMore": "https://www.paisabazaar.com/axis-bank/airtel-axis-bank-credit-card/",
+    "route": "/axis-bank/airtel-axis-bank-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/?utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=airtel_axis_bank_credit_card"
+  },
+  {
+    "id": 26,
+    "name": "HSBC Taj Credit Card",
+    "bank": "bank_1",
+    "bankName": "HSBC Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/HSBC-Taj-Credit-Card.png",
+    "categories": [
+      "travel",
+      "premium"
+    ],
+    "joiningFee": 110000,
+    "annualFee": 110000,
+    "benefits": [
+      "VIP privileges at select Taj Properties",
+      "Up to 5 reward points on every Rs. 100",
+      "Unlimited access in India and abroad"
+    ],
+    "knowMore": "https://www.paisabazaar.com/hsbc-bank/taj-credit-card/",
+    "route": "/hsbc-bank/taj-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/?utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=hsbc_taj_credit_card"
+  },
+  {
+    "id": 27,
+    "name": "IDFC FIRST Private Credit Card",
+    "bank": "bank_281",
+    "bankName": "IDFC FIRST Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2023/08/IDFC-FIRST-Private-Credit-Card.png",
+    "categories": [
+      "travel",
+      "premium",
+      "shopping"
+    ],
+    "joiningFee": 50000,
+    "annualFee": 50000,
+    "benefits": [
+      "Unlimited lounge access worldwide",
+      "Club ITC & AccorPlus Membership",
+      "Save on all your international spends"
+    ],
+    "knowMore": "https://www.paisabazaar.com/idfc-first-bank/idfc-first-private-credit-card/",
+    "route": "/idfc-first-bank/idfc-first-private-credit-card/",
+    "checkEligibility": "https://www.idfcfirst.bank.in/credit-card/FIRSTPrivateCreditCard?/utm_source=organic&utm_medium=quotes_check_eligibility+IDFC_FIRST_Private&utm_campaign=seo_page"
+  },
+  {
+    "id": 28,
+    "name": "Marriott Bonvoy HDFC Credit Card",
+    "bank": "bank_2",
+    "bankName": "HDFC Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2023/09/HDFC-Bank-Marriott-Bonvoy-Credit-Card.png",
+    "categories": [
+      "travel",
+      "lounge-access"
+    ],
+    "joiningFee": 3000,
+    "annualFee": 3000,
+    "benefits": [
+      "Marriott Bonvoy Silver Elite Status",
+      "Up to 8 Marriott Bonvoy Points on your spends",
+      "Up to 24 free lounge visits in a year"
+    ],
+    "knowMore": "https://www.paisabazaar.com/hdfc-bank/marriott-bonvoy-hdfc-credit-card/",
+    "route": "/hdfc-bank/marriott-bonvoy-hdfc-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/easy-apply?partnerProductId=296&utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=marriott_bonvoy_hdfc_credit_card"
+  },
+  {
+    "id": 29,
+    "name": "Standard Chartered EaseMyTrip Credit Card",
+    "bank": "bank_28",
+    "bankName": "Standard Chartered Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2023/07/Standard-Chartered-EaseMyTrip-Credit-Card.jpeg",
+    "categories": [
+      "travel"
+    ],
+    "joiningFee": 350,
+    "annualFee": 350,
+    "benefits": [
+      "Up to 20% off on flight & hotel bookings",
+      "2 domestic lounge visits every year",
+      "Up to 2.5% back as reward points"
+    ],
+    "knowMore": "https://www.paisabazaar.com/standard-chartered-bank/easemytrip-credit-card/",
+    "route": "/standard-chartered-bank/easemytrip-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/?utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=standard_chartered_easemytrip_credit_card"
+  },
+  {
+    "id": 30,
+    "name": "ixigo AU Credit Card ",
+    "bank": "bank_357",
+    "bankName": "AU Small Finance Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/Ixigo-AU-Credit-Card.png",
+    "categories": [
+      "travel",
+      "lifetime-free"
+    ],
+    "joiningFee": 0,
+    "annualFee": 0,
+    "benefits": [
+      "Zero forex mark-up charges",
+      "Up to 10% off on travel via Ixigo",
+      "Upto 5% rewards on spends"
+    ],
+    "knowMore": "https://www.paisabazaar.com/au-small-finance-bank/ixigo-au-credit-card/",
+    "route": "/au-small-finance-bank/ixigo-au-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/?utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=ixigo_au_credit_card"
+  },
+  {
+    "id": 31,
+    "name": "IndiGo IDFC First Dual FD Credit Card",
+    "bank": "bank_281",
+    "bankName": "IDFC FIRST Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/IndiGo-IDFC-Card-Images-2.png",
+    "categories": [
+      "travel",
+      "fd-backed"
+    ],
+    "joiningFee": 0,
+    "annualFee": 4999,
+    "benefits": [
+      "Up to 22% BluChips rewards ",
+      "Up to 30,000 BluChips every year",
+      "Trip cancellation cover of Rs. 25,000 p.a."
+    ],
+    "knowMore": "https://www.paisabazaar.com/idfc-first-bank/indigo-idfc-first-dual-fd-credit-card/",
+    "route": "/idfc-first-bank/indigo-idfc-first-dual-fd-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/?siteId=NzMxN2I5MDItNTM2Mi00MDQ5LTkzMjgtZmRmYTcyMmE2Yjc1&Trending=isSecuredCard&utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=IndiGo_IDFC_First_Dual_FD_Credit_Card"
+  },
+  {
+    "id": 32,
+    "name": "Kotak Solitaire Credit Card",
+    "bank": "bank_17",
+    "bankName": "Kotak Mahindra Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/Kotak-Solitaire-Card.png",
+    "categories": [
+      "travel",
+      "premium",
+      "rewards"
+    ],
+    "joiningFee": 0,
+    "annualFee": 25000,
+    "benefits": [
+      "Up to 10% rewards as Air Miles on travel spends",
+      "Unlimited access with up to 4 guest visits",
+      "Free stays and discounts on luxury hotels"
+    ],
+    "knowMore": "https://www.paisabazaar.com/kotak-mahindra-bank/kotak-solitaire-credit-card/",
+    "route": "/kotak-mahindra-bank/kotak-solitaire-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/?utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=kotak_solitaire_credit_card"
+  },
+  {
+    "id": 33,
+    "name": "Axis Magnus Credit Card",
+    "bank": "bank_27",
+    "bankName": "Axis Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/Axis-Magnus-Credit-Card-image.png",
+    "categories": [
+      "travel",
+      "premium",
+      "rewards"
+    ],
+    "joiningFee": 12500,
+    "annualFee": 12500,
+    "benefits": [
+      "Complimentary lounge access worldwide",
+      "5X rewards on travel spends",
+      "Travel or Luxe gift voucher of Rs. 12,500"
+    ],
+    "knowMore": "https://www.paisabazaar.com/axis-bank/magnus-credit-card/",
+    "route": "/axis-bank/magnus-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/marketing/openmarket?partnerProductId=277&utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=axis_magnus_credit_card"
+  },
+  {
+    "id": 34,
+    "name": "Axis Bank Primus Credit Card",
+    "bank": "bank_27",
+    "bankName": "Axis Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/Axis-Primus-Card-Page.png",
+    "categories": [
+      "travel",
+      "premium",
+      "rewards"
+    ],
+    "joiningFee": 50000,
+    "annualFee": 30000,
+    "benefits": [
+      "Unlimited access with up to 24 free guest visits",
+      "Free hotel stay, flights & airport transfers",
+      "Zero foreign exchange mark-up charges"
+    ],
+    "knowMore": "https://www.paisabazaar.com/axis-bank/primus-credit-card/",
+    "route": "/axis-bank/primus-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/?utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=axis_bank_primus_credit_card"
+  },
+  {
+    "id": 35,
+    "name": "BOBCARD Tiara",
+    "bank": "bank_5",
+    "bankName": "BOBCARD",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/BOB-Tiara-CC-Image.png",
+    "categories": [
+      "travel",
+      "rewards"
+    ],
+    "joiningFee": 2499,
+    "annualFee": 2499,
+    "benefits": [
+      "Unlimited domestic lounge access",
+      "Discount on Nykaa, Myntra, Flipkart & more",
+      "5X rewards on dining & travel spends"
+    ],
+    "knowMore": "https://www.paisabazaar.com/bank-of-baroda/tiara-credit-card/",
+    "route": "/bank-of-baroda/tiara-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/?utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=bobcard_tiara"
+  },
+  {
+    "id": 36,
+    "name": "HSBC Premier MasterCard Credit Card",
+    "bank": "bank_1",
+    "bankName": "HSBC Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2026/01/HSBC-Premier-Credit-Card.png",
+    "categories": [
+      "travel",
+      "premium",
+      "rewards"
+    ],
+    "joiningFee": 12000,
+    "annualFee": 20000,
+    "benefits": [
+      "3% reward rate across all spends",
+      "Up to 12X rewards on hotels & 6X on flights",
+      "Unlimited lounge visits worldwide"
+    ],
+    "knowMore": "https://www.paisabazaar.com/hsbc-bank/hsbc-bank-premier-credit-card/",
+    "route": "/hsbc-bank/hsbc-bank-premier-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/?utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=hsbc_premier_mastercard_credit_card"
+  },
+  {
+    "id": 37,
+    "name": "Times Black ICICI Bank Credit Card",
+    "bank": "bank_6",
+    "bankName": "ICICI Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/times-black.webp",
+    "categories": [
+      "travel",
+      "premium",
+      "shopping"
+    ],
+    "joiningFee": 20000,
+    "annualFee": 20000,
+    "benefits": [
+      "Up to 2.5% reward points on card spends",
+      "Unlimited international & domestic lounge visits",
+      "Low forex mark-up fee & exclusive travel offers"
+    ],
+    "knowMore": "https://www.paisabazaar.com/icici-bank/times-black-icici-credit-card/",
+    "route": "/icici-bank/times-black-icici-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/?utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=times_black_icici_bank_credit_card"
+  },
+  {
+    "id": 38,
+    "name": "IDFC FIRST Gaj Metal Credit Card",
+    "bank": "bank_281",
+    "bankName": "IDFC FIRST Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/idfc-gaj-card-image.png",
+    "categories": [
+      "travel",
+      "premium",
+      "rewards"
+    ],
+    "joiningFee": 12500,
+    "annualFee": 12500,
+    "benefits": [
+      "Up to 33.33% savings on travel spends",
+      "3.33% value-back on regular spends",
+      "16 free lounge visits worldwide yearly"
+    ],
+    "knowMore": "https://www.paisabazaar.com/idfc-first-bank/idfc-gaj-credit-card/",
+    "route": "/idfc-first-bank/idfc-gaj-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/?utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=idfc_first_gaj_metal_credit_card"
+  },
+  {
+    "id": 39,
+    "name": "YES BANK Marquee Credit Card",
+    "bank": "bank_65",
+    "bankName": "YES BANK",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/YES-Marquee-Credit-Card.png",
+    "categories": [
+      "travel",
+      "premium",
+      "rewards"
+    ],
+    "joiningFee": 9999,
+    "annualFee": 4999,
+    "benefits": [
+      "Unlimited access for primary & add-on user",
+      "Up to 4.5% back as reward points",
+      "Save up to Rs. 2,400 per month on BookMyShow"
+    ],
+    "knowMore": "https://www.paisabazaar.com/yes-bank/marquee-credit-card/",
+    "route": "/yes-bank/marquee-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/?utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=yes_bank_marquee_credit_card"
+  },
+  {
+    "id": 40,
+    "name": "Standard Chartered Ultimate Credit Card",
+    "bank": "bank_28",
+    "bankName": "Standard Chartered Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/Standard-Chartered-Ultimate-Credit-Card.png",
+    "categories": [
+      "travel",
+      "premium",
+      "rewards"
+    ],
+    "joiningFee": 5000,
+    "annualFee": 5000,
+    "benefits": [
+      "3.33% back as reward points on all spends",
+      "Low foreign exchange mark-up fee of 2%",
+      "Up to 12 lounge visits every year"
+    ],
+    "knowMore": "https://www.paisabazaar.com/standard-chartered-bank/ultimate-credit-card/",
+    "route": "/standard-chartered-bank/ultimate-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/?utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=standard_chartered_ultimate_credit_card"
+  },
+  {
+    "id": 41,
+    "name": "IndianOil Axis Bank Premium Credit Card",
+    "bank": "bank_27",
+    "bankName": "Axis Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2024/06/IndianOil-Axis-Bank-Premium-Credit-Card.png",
+    "categories": [
+      "rewards",
+      "fuel"
+    ],
+    "joiningFee": 1000,
+    "annualFee": 1000,
+    "benefits": [
+      "5% value-back on Indian Oil fuel spends",
+      "8 domestic airport lounge visits every year",
+      "2X rewards on grocery & supermarket spends"
+    ],
+    "knowMore": "https://www.paisabazaar.com/axis-bank/indianoil-premium-credit-card/",
+    "route": "/axis-bank/indianoil-premium-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/?utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=indianoil_axis_bank_premium_credit_card"
+  },
+  {
+    "id": 42,
+    "name": "BPCL SBI Card Octane",
+    "bank": "bank_3",
+    "bankName": "SBI Cards",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2015/11/BPCL-SBI-Octane-Credit-Card.png",
+    "categories": [
+      "fuel"
+    ],
+    "joiningFee": 1499,
+    "annualFee": 1499,
+    "benefits": [
+      "Up to 7.25% value back on fuel spends",
+      "10X rewards on day-to-day spends",
+      "Complimentary domestic lounge access"
+    ],
+    "knowMore": "https://www.paisabazaar.com/sbi-bank/sbi-bpcl-credit-card-octane/",
+    "route": "/sbi-bank/sbi-bpcl-credit-card-octane/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/easy-apply?partnerProductId=423&utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=bpcl_sbi_card_octane"
+  },
+  {
+    "id": 43,
+    "name": "ICICI HPCL Super Saver Credit Card",
+    "bank": "bank_6",
+    "bankName": "ICICI Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2021/12/ICICI-Bank-HPCL-Super-Saver-Credit-Card.png",
+    "categories": [
+      "fuel"
+    ],
+    "joiningFee": 500,
+    "annualFee": 500,
+    "benefits": [
+      "5% cashback on HPCL fuel spends",
+      "4 domestic lounge visits every year",
+      "25% off on BookMyShow & INOX"
+    ],
+    "knowMore": "https://www.paisabazaar.com/icici-bank/hpcl-super-saver-credit-card/",
+    "route": "/icici-bank/hpcl-super-saver-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/?utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=icici_hpcl_super_saver_credit_card"
+  },
+  {
+    "id": 44,
+    "name": "IDFC FIRST Power+ Credit Card",
+    "bank": "bank_281",
+    "bankName": "IDFC FIRST Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2023/04/hpcl-power-plus.jpg",
+    "categories": [
+      "rewards",
+      "fuel"
+    ],
+    "joiningFee": 499,
+    "annualFee": 499,
+    "benefits": [
+      "Low joining and annual fee of Rs. 499",
+      "6.5% savings on fuel spends as reward points",
+      "Up to 26.67% bonus reward points on travel"
+    ],
+    "knowMore": "https://www.paisabazaar.com/idfc-first-bank/idfc-first-hpcl-power-plus-credit-card/",
+    "route": "/idfc-first-bank/idfc-first-hpcl-power-plus-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/marketing/openmarket?partnerProductId=303&utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=idfc_first_power+_credit_card"
+  },
+  {
+    "id": 45,
+    "name": "IndiGo Kotak XL Credit Card",
+    "bank": "bank_17",
+    "bankName": "Kotak Mahindra Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/IndiGo-Kotak-XL-Credit-Card.png",
+    "categories": [
+      "travel"
+    ],
+    "joiningFee": 3000,
+    "annualFee": 3000,
+    "benefits": [
+      "Up to 21 BluChips per Rs. 100 on IndiGo spends",
+      "BluChip vouchers worth up to Rs. 16,000 every year",
+      "Up to 8 domestic lounge visits per year"
+    ],
+    "knowMore": "https://www.paisabazaar.com/kotak-mahindra-bank/indigo-kotak-xl-credit-card/",
+    "route": "/kotak-mahindra-bank/indigo-kotak-xl-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/?utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=indigo_kotak_xl_credit_card"
+  },
+  {
+    "id": 46,
+    "name": "SBI Card PRIME",
+    "bank": "bank_3",
+    "bankName": "SBI Cards",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2019/07/SBI-Card-Prime-1.png",
+    "categories": [
+      "travel",
+      "shopping",
+      "rewards"
+    ],
+    "joiningFee": 2999,
+    "annualFee": 2999,
+    "benefits": [
+      "5X rewards on dining, movies & grocery",
+      "Pizza Hut vouchers worth up to Rs. 4,000 in a year",
+      "8 domestic & 4 international visits yearly"
+    ],
+    "knowMore": "https://www.paisabazaar.com/sbi-bank/sbi-prime-credit-card/",
+    "route": "/sbi-bank/sbi-prime-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/marketing/openmarket?partnerProductId=205&utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=sbi_card_prime"
+  },
+  {
+    "id": 47,
+    "name": "SBI Card ELITE",
+    "bank": "bank_3",
+    "bankName": "SBI Cards",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2021/12/SBI-Elite-Credit-Card-new-1.png",
+    "categories": [
+      "lounge-access",
+      "movies",
+      "rewards"
+    ],
+    "joiningFee": 4999,
+    "annualFee": 4999,
+    "benefits": [
+      "Movie tickets worth Rs. 6,000 every year",
+      "Up to 50,000 bonus reward points annually",
+      "Vouchers worth Rs. 5,000 on card activation"
+    ],
+    "knowMore": "https://www.paisabazaar.com/sbi-bank/sbi-elite-credit-card/",
+    "route": "/sbi-bank/sbi-elite-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/marketing/openmarket?partnerProductId=179&utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=sbi_card_elite"
+  },
+  {
+    "id": 48,
+    "name": "BOBCARD Scapia Credit Card",
+    "bank": "bank_5",
+    "bankName": "BOBCARD",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/BOBCARD-Scapia-Cover.png",
+    "categories": [
+      "travel",
+      "lounge-access",
+      "lifetime-free"
+    ],
+    "joiningFee": 0,
+    "annualFee": 0,
+    "benefits": [
+      "Up to 20% rewards on travel spends",
+      "Zero forex markup on international spends",
+      "Unlimited domestic airport lounge access"
+    ],
+    "knowMore": "https://www.paisabazaar.com/bobcard/bobcard-scapia-credit-card/",
+    "route": "/bobcard/bobcard-scapia-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/?utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=BOBCARD_Scapia"
+  },
+  {
+    "id": 49,
+    "name": "PNB LUXURA Visa Credit Card",
+    "bank": "bank_43",
+    "bankName": "Punjab National Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2025/12/PNB-Luxura-Credit-Card.png",
+    "categories": [
+      "travel",
+      "lounge-access",
+      "rewards"
+    ],
+    "joiningFee": 4999,
+    "annualFee": 1999,
+    "benefits": [
+      "Zero foreign exchange markup fee",
+      "Unlimited free airport lounge visits ",
+      "4 reward points per Rs. 100 spent"
+    ],
+    "knowMore": "https://www.paisabazaar.com/punjab-national-bank/pnb-luxura-visa-credit-card/",
+    "route": "/punjab-national-bank/pnb-luxura-visa-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/?utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=pnb_luxura_visa_credit_card"
+  },
+  {
+    "id": 50,
+    "name": "IDFC FIRST WOW! Black Credit Card",
+    "bank": "bank_281",
+    "bankName": "IDFC FIRST Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/download.png",
+    "categories": [
+      "travel",
+      "fd-backed",
+      "rewards"
+    ],
+    "joiningFee": 750,
+    "annualFee": 750,
+    "benefits": [
+      "Up to 16.7% bonus rewards on travel ",
+      "Zero foreign currency markup fee   ",
+      "25% discount on movie tickets"
+    ],
+    "knowMore": "https://www.paisabazaar.com/idfc-bank/idfc-first-wow-black-credit-card/",
+    "route": "/idfc-bank/idfc-first-wow-black-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/easy-apply?partnerProductId=403&utm_source=organic+&utm_medium=card_compare_check_eligibility&utm_campaign=card_comparer&utm_term=idfc_first_wow!_black_credit_card"
+  },
+  {
+    "id": 51,
+    "name": "SBM Bank Paisabazaar Paisa+ Credit Card",
+    "bank": "bank_419",
+    "bankName": "SBM Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/SBM-Paisabazaar-Paisa-Credit-Card-1.png",
+    "categories": [
+      "fd-backed",
+      "cashback",
+      "online-shopping"
+    ],
+    "joiningFee": 0,
+    "annualFee": 499,
+    "benefits": [
+      "1.5% cashback on online transactions",
+      "100% guaranteed credit card approval",
+      "Build your credit score with FD-backed card"
+    ],
+    "knowMore": "https://www.paisabazaar.com/sbm-bank/paisabazaar-paisa-plus-credit-card/",
+    "route": "/sbm-bank/paisabazaar-paisa-plus-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/easy-apply?partnerProductId=382&utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=SBM_Bank_Paisabazaar_Paisa+_Credit_Card"
+  },
+  {
+    "id": 52,
+    "name": "IDFC FIRST Hello Cashback Credit Card",
+    "bank": "bank_281",
+    "bankName": "IDFC FIRST Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2026/01/IDFC-FIRST-Hello-Cashback-Credit-Card.png",
+    "categories": [
+      "cashback"
+    ],
+    "joiningFee": 1000,
+    "annualFee": 1000,
+    "benefits": [
+      "Up to 5% cashback on online spends",
+      "Up to 6% back on travel via IDFC FIRST app",
+      "Annual fee waived on Rs. 2 lakh annual spends"
+    ],
+    "knowMore": "https://www.paisabazaar.com/idfc-first-bank/hello-cashback-credit-card/",
+    "route": "/idfc-first-bank/hello-cashback-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/?Card+Type=Rupay&utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=secured_card&utm_term=IDFC_FIRST_Hello_Cashback_Credit_Card"
+  },
+  {
+    "id": 53,
+    "name": "Axis Neo Credit Card",
+    "bank": "bank_27",
+    "bankName": "Axis Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/Axis-Bank-Neo-Credit-Card.png",
+    "categories": [
+      "rewards",
+      "online-shopping"
+    ],
+    "joiningFee": 0,
+    "annualFee": 0,
+    "benefits": [
+      "Discount offers on top shopping platforms",
+      "Rs. 120 off on Zomato, 10% off on Blinkit",
+      "Up to Rs. 100 off on BookMyShow per month"
+    ],
+    "knowMore": "https://www.paisabazaar.com/axis-bank/axis-bank-neo-credit-cards/",
+    "route": "/axis-bank/axis-bank-neo-credit-cards/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/?utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=axis_neo_credit_card"
+  },
+  {
+    "id": 54,
+    "name": "IndusInd Bank Legend Credit Card",
+    "bank": "bank_67",
+    "bankName": "IndusInd Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2021/12/IndusInd-Bank-Legend-Credit-Card.png",
+    "categories": [
+      "travel",
+      "lifetime-free",
+      "rewards"
+    ],
+    "joiningFee": 0,
+    "annualFee": 0,
+    "benefits": [
+      "Up to 2 reward points for every Rs. 100 spent",
+      " Low forex markup fee of 1.8%",
+      "Buy one get one offer via BookMyShow"
+    ],
+    "knowMore": "https://www.paisabazaar.com/indusind-bank/indusind-bank-legend-credit-card/",
+    "route": "/indusind-bank/indusind-bank-legend-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/?utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=indusind_bank_legend_credit_card"
+  },
+  {
+    "id": 55,
+    "name": "IDFC FIRST Wealth Credit Card",
+    "bank": "bank_281",
+    "bankName": "IDFC FIRST Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/IDFC-FIRST-Wealth-Credit-Card-2.png",
+    "categories": [
+      "travel",
+      "lifetime-free",
+      "rewards"
+    ],
+    "joiningFee": 0,
+    "annualFee": 0,
+    "benefits": [
+      "10X rewards on Dining & Travel",
+      "5% cashback on first EMI transaction",
+      "Up to 4 airport lounge visits per quarter"
+    ],
+    "knowMore": "https://www.paisabazaar.com/idfc-first-bank/idfc-first-wealth-credit-card/",
+    "route": "/idfc-first-bank/idfc-first-wealth-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/easy-apply?partnerProductId=301&utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=idfc_first_wealth_credit_card"
+  },
+  {
+    "id": 56,
+    "name": "BOBCARD Etihad Guest Premium",
+    "bank": "bank_5",
+    "bankName": "BOBCARD",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/BOBCARD-Etihad-Guest-Premium-Credit-Card.webp",
+    "categories": [
+      "travel",
+      "rewards"
+    ],
+    "joiningFee": 5000,
+    "annualFee": 5000,
+    "benefits": [
+      "6% back on travel via Etihad Airways",
+      "Up to 20 free lounge visits per year",
+      "Zero forex mark-up on international spends"
+    ],
+    "knowMore": "https://www.paisabazaar.com/bobcard/bobcard-etihad-guest-premium-credit-card/",
+    "route": "/bobcard/bobcard-etihad-guest-premium-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/?utm_source=organic&utm_mediumcard_compare_check_eligibility&utm_campaign=card-compare&utm_term=bobcard_etihad_guest_premium"
+  },
+  {
+    "id": 57,
+    "name": "IDFC FIRST Mayura Credit Card",
+    "bank": "bank_281",
+    "bankName": "IDFC FIRST Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/IDFC-FIRST-Mayura-Image.png",
+    "categories": [
+      "travel",
+      "lounge-access",
+      "rewards"
+    ],
+    "joiningFee": 5999,
+    "annualFee": 5999,
+    "benefits": [
+      "Up to 10X rewards on every spend",
+      "Zero foreign exchange markup fee ",
+      "16 international lounge visits per year"
+    ],
+    "knowMore": "https://www.paisabazaar.com/idfc-first-bank/mayura-credit-card/",
+    "route": "/idfc-first-bank/mayura-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/easy-apply?partnerProductId=326&utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-comparer&utm_term=idfc_first_mayura_credit_card"
+  },
+  {
+    "id": 58,
+    "name": "IDFC FIRST Ashva Credit Card",
+    "bank": "bank_281",
+    "bankName": "IDFC FIRST Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2024/08/IDFC-FIRST-Ashva-Credit-Card.png",
+    "categories": [
+      "travel",
+      "lounge-access",
+      "movies",
+      "rewards"
+    ],
+    "joiningFee": 2999,
+    "annualFee": 2999,
+    "benefits": [
+      "Up to 10X rewards on every spend",
+      "Low foreign exchange markup fee of 1%",
+      "Up to 16 domestic lounge visits per year"
+    ],
+    "knowMore": "https://www.paisabazaar.com/idfc-first-bank/ashva-credit-card/",
+    "route": "/idfc-first-bank/ashva-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/?utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=idfc_first_ashva_credit_card"
+  },
+  {
+    "id": 59,
+    "name": "IndiGo Axis Bank Premium Credit Card",
+    "bank": "bank_27",
+    "bankName": "Axis Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/Axis-Visa-cover.png",
+    "categories": [
+      "travel"
+    ],
+    "joiningFee": 5000,
+    "annualFee": 5000,
+    "benefits": [
+      "7% savings on IndiGo travel spends",
+      "Up to 20,000 bonus IndiGo BluChips per year",
+      "Up to 10 free lounge visits per year globally"
+    ],
+    "knowMore": "https://www.paisabazaar.com/axis-bank/indigo-axis-bank-premium-credit-card/",
+    "route": "/axis-bank/indigo-axis-bank-premium-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/?utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=indigo-axis-bank-premium-credit-card"
+  },
+  {
+    "id": 60,
+    "name": "AU Zenith+ Credit Card",
+    "bank": "bank_357",
+    "bankName": "AU Small Finance Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2025/04/AU-Zenith-Card-image.png",
+    "categories": [
+      "travel",
+      "movies",
+      "rewards"
+    ],
+    "joiningFee": 4999,
+    "annualFee": 4999,
+    "benefits": [
+      "Up to 32 free airport lounge visits per year",
+      "Low forex mark-up fee of just 0.99%",
+      "Up to 16 free movie tickets in a year"
+    ],
+    "knowMore": "https://www.paisabazaar.com/au-small-finance-bank/zenith-plus-credit-card/",
+    "route": "/au-small-finance-bank/zenith-plus-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/?utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=au_zenith+_credit_card"
+  },
+  {
+    "id": 61,
+    "name": "HSBC Live+ Credit Card",
+    "bank": "bank_1",
+    "bankName": "HSBC Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/HSBC.png",
+    "categories": [
+      "dining",
+      "cashback"
+    ],
+    "joiningFee": 999,
+    "annualFee": 999,
+    "benefits": [
+      "Up to 10% Cashback on dining, grocery & more",
+      "Up to 15% off on dining at partner restaurants",
+      "4 domestic lounge visits every year"
+    ],
+    "knowMore": "https://www.paisabazaar.com/hsbc-bank/live-plus-credit-card/",
+    "route": "/hsbc-bank/live-plus-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/?utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=hsbc_live+_credit_card"
+  },
+  {
+    "id": 62,
+    "name": "Axis Bank Rewards Credit Card",
+    "bank": "bank_27",
+    "bankName": "Axis Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2024/04/Axis-Bank-Rewards-Credit-Card.png",
+    "categories": [
+      "rewards"
+    ],
+    "joiningFee": 1000,
+    "annualFee": 1000,
+    "benefits": [
+      "Up to 20 EDGE Reward points on card spends",
+      "Up to 8 domestic lounge visits per year",
+      "Rs. 150 off on Swiggy, twice per month"
+    ],
+    "knowMore": "https://www.paisabazaar.com/axis-bank/rewards-credit-card/",
+    "route": "/axis-bank/rewards-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/?utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=axis_bank_rewards_credit_card"
+  },
+  {
+    "id": 63,
+    "name": "Axis Bank Cashback Credit Card",
+    "bank": "bank_27",
+    "bankName": "Axis Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/Axis-Bank-Cashback-Credit-Card.png",
+    "categories": [
+      "cashback",
+      "online-shopping"
+    ],
+    "joiningFee": 1000,
+    "annualFee": 1000,
+    "benefits": [
+      "Annual fee of Rs. 1,000",
+      "Up to 7% value-back",
+      "25% off on EazyDiner"
+    ],
+    "knowMore": "https://www.paisabazaar.com/axis-bank/axis-bank-cashback-credit-card/",
+    "route": "/axis-bank/axis-bank-cashback-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/?utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=axis_bank_cashback_credit_card"
+  },
+  {
+    "id": 64,
+    "name": "Axis My Zone Credit Card",
+    "bank": "bank_27",
+    "bankName": "Axis Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2018/07/Axis-my-zone.jpg",
+    "categories": [
+      "online-shopping"
+    ],
+    "joiningFee": 500,
+    "annualFee": 500,
+    "benefits": [
+      "Offers on Swiggy, Ajio, District & SonyLiv",
+      "Up to 4 free domestic lounge visits per year",
+      "1,000 EDGE rewards on Rs. 1.5 lakh spends p.a."
+    ],
+    "knowMore": "https://www.paisabazaar.com/axis-bank/axis-bank-my-zone-credit-cards/",
+    "route": "/axis-bank/axis-bank-my-zone-credit-cards/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/marketing/openmarket?partnerProductId=137&utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-comparer&utm_term=axis_my_zone_credit_card"
+  },
+  {
+    "id": 65,
+    "name": "IRCTC SBI Card Premier",
+    "bank": "bank_3",
+    "bankName": "SBI Cards",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2018/07/card-face-irctc.png",
+    "categories": [
+      "travel",
+      "rewards"
+    ],
+    "joiningFee": 1499,
+    "annualFee": 1499,
+    "benefits": [
+      "Up to 10% value back on IRCTC",
+      "8 railway lounge visits annually",
+      "3X rewards on dining & utility"
+    ],
+    "knowMore": "https://www.paisabazaar.com/sbi-bank/irctc-sbi-card-premier/",
+    "route": "/sbi-bank/irctc-sbi-card-premier/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/?utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=irctc_sbi_card_premier"
+  },
+  {
+    "id": 66,
+    "name": "RBL Bank Paisabazaar Duet Credit Card",
+    "bank": "bank_66",
+    "bankName": "RBL Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2025/11/RBL-Duet-Credit-Card.png",
+    "categories": [
+      "cashback"
+    ],
+    "joiningFee": 0,
+    "annualFee": 0,
+    "benefits": [
+      "1% cashback on all eligible purchases",
+      "Borrow a portion of your limit as Xpress Cash",
+      "Lifetime free card with no annual fee"
+    ],
+    "knowMore": "https://www.paisabazaar.com/paisabazaar-duet/",
+    "route": "/paisabazaar-duet/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/easy-apply?partnerProductId=39&utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=rbl_bank_paisabazaar_duet_credit_card"
+  },
+  {
+    "id": 67,
+    "name": "HSBC RuPay Cashback Credit Card",
+    "bank": "bank_1",
+    "bankName": "HSBC Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/HSBC-RuPay-Cashback-Credit-Card.png",
+    "categories": [
+      "shopping",
+      "cashback"
+    ],
+    "joiningFee": 499,
+    "annualFee": 499,
+    "benefits": [
+      "Up to 10% cashback on card spends",
+      "Up to 10 free lounge visits per year globally",
+      "Discount offers on popular online platforms"
+    ],
+    "knowMore": "https://www.paisabazaar.com/hsbc-bank/rupay-cashback-credit-card/",
+    "route": "/hsbc-bank/rupay-cashback-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/easy-apply?partnerProductId=384&utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card_compare&utm_term=hsbc_rupay_cashback_credit_card"
+  },
+  {
+    "id": 68,
+    "name": "IndusInd Bank Tiger Credit Card ",
+    "bank": "bank_67",
+    "bankName": "IndusInd Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/IndusInd-Bank-Tiger-Credit-Card.png",
+    "categories": [
+      "travel",
+      "rewards"
+    ],
+    "joiningFee": 0,
+    "annualFee": 0,
+    "benefits": [
+      "Low forex markup fee of 1.5%",
+      "Up to 6X rewards on every spend",
+      "Free movie tickets every year"
+    ],
+    "knowMore": "https://www.paisabazaar.com/indusind-bank/tiger-credit-card/",
+    "route": "/indusind-bank/tiger-credit-card/",
+    "checkEligibility": "https://www.paisabazaar.com/cards/?utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=indusind_bank_tiger_credit_card"
+  },
+  {
+    "id": 69,
+    "name": "ICICI Coral Credit Card",
+    "bank": "bank_6",
+    "bankName": "ICICI Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2025/04/ICICI-Bank-Coral-Credit-Card.png",
+    "categories": [
+      "rewards"
+    ],
+    "joiningFee": 500,
+    "annualFee": 500,
+    "benefits": [
+      "Exciting rewards and cashback across daily spends",
+      "Accepted worldwide with contactless tap and pay"
+    ],
+    "knowMore": "https://www.paisabazaar.com/icici-bank/coral-credit-card/",
+    "route": "/icici-bank/coral-credit-card/",
+    "checkEligibility": "/credit-card-eligibility"
+  },
+  {
+    "id": 70,
+    "name": "IDFC FIRST EARN Credit Card",
+    "bank": "bank_281",
+    "bankName": "IDFC FIRST Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/Frame-2085667129.png",
+    "categories": [
+      "rewards"
+    ],
+    "joiningFee": 500,
+    "annualFee": 500,
+    "benefits": [
+      "Exciting rewards and cashback across daily spends",
+      "Accepted worldwide with contactless tap and pay"
+    ],
+    "knowMore": "https://www.paisabazaar.com/idfc-first-bank/idfc-first-earn-credit-card/",
+    "route": "/idfc-first-bank/idfc-first-earn-credit-card/",
+    "checkEligibility": "/credit-card-eligibility"
+  },
+  {
+    "id": 71,
+    "name": "SBI SimplyCLICK Credit Card",
+    "bank": "bank_3",
+    "bankName": "SBI Cards",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/SBI-Card-SimplyCLICK.png",
+    "categories": [
+      "rewards"
+    ],
+    "joiningFee": 500,
+    "annualFee": 500,
+    "benefits": [
+      "Exciting rewards and cashback across daily spends",
+      "Accepted worldwide with contactless tap and pay"
+    ],
+    "knowMore": "https://www.paisabazaar.com/sbi-bank/simplyclick-credit-card/",
+    "route": "/sbi-bank/simplyclick-credit-card/",
+    "checkEligibility": "/credit-card-eligibility"
+  },
+  {
+    "id": 72,
+    "name": "HDFC MoneyBack+ Credit Card",
+    "bank": "bank_2",
+    "bankName": "HDFC Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/HDFC-Moneyback-Credit-Card.png",
+    "categories": [
+      "rewards"
+    ],
+    "joiningFee": 500,
+    "annualFee": 500,
+    "benefits": [
+      "Exciting rewards and cashback across daily spends",
+      "Accepted worldwide with contactless tap and pay"
+    ],
+    "knowMore": "https://www.paisabazaar.com/hdfc-bank/hdfc-bank-moneyback-plus-credit-card/",
+    "route": "/hdfc-bank/hdfc-bank-moneyback-plus-credit-card/",
+    "checkEligibility": "/credit-card-eligibility"
+  },
+  {
+    "id": 73,
+    "name": "Tata Neu Plus HDFC Credit Card",
+    "bank": "bank_2",
+    "bankName": "HDFC Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/tata-neu-image.png",
+    "categories": [
+      "rewards"
+    ],
+    "joiningFee": 500,
+    "annualFee": 500,
+    "benefits": [
+      "Exciting rewards and cashback across daily spends",
+      "Accepted worldwide with contactless tap and pay"
+    ],
+    "knowMore": "https://www.paisabazaar.com/hdfc-bank/tata-neu-hdfc-bank-credit-cards/",
+    "route": "/hdfc-bank/tata-neu-hdfc-bank-credit-cards/",
+    "checkEligibility": "/credit-card-eligibility"
+  },
+  {
+    "id": 74,
+    "name": "IDFC FIRST Digital RuPay Credit Card",
+    "bank": "bank_281",
+    "bankName": "IDFC FIRST Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2025/07/IDFC-FIRST-RuPay-Digital-Credit-Cardai.png",
+    "categories": [
+      "rewards"
+    ],
+    "joiningFee": 500,
+    "annualFee": 500,
+    "benefits": [
+      "Exciting rewards and cashback across daily spends",
+      "Accepted worldwide with contactless tap and pay"
+    ],
+    "knowMore": "https://www.paisabazaar.com/idfc-first-bank/idfc-rupay-credit-card/",
+    "route": "/idfc-first-bank/idfc-rupay-credit-card/",
+    "checkEligibility": "/credit-card-eligibility"
+  },
+  {
+    "id": 75,
+    "name": "IRCTC HDFC Bank Credit Card",
+    "bank": "bank_2",
+    "bankName": "HDFC Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2023/03/IRCTC-HDFC-Bank-Credit-Card-Image.png",
+    "categories": [
+      "rewards"
+    ],
+    "joiningFee": 500,
+    "annualFee": 500,
+    "benefits": [
+      "Exciting rewards and cashback across daily spends",
+      "Accepted worldwide with contactless tap and pay"
+    ],
+    "knowMore": "https://www.paisabazaar.com/hdfc-bank/irctc-hdfc-bank-credit-card/",
+    "route": "/hdfc-bank/irctc-hdfc-bank-credit-card/",
+    "checkEligibility": "/credit-card-eligibility"
+  },
+  {
+    "id": 76,
+    "name": "HDFC Bank UPI RuPay Credit Card",
+    "bank": "bank_2",
+    "bankName": "HDFC Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/UPI-RuPay-Card-Fascia.png",
+    "categories": [
+      "rewards"
+    ],
+    "joiningFee": 500,
+    "annualFee": 500,
+    "benefits": [
+      "Exciting rewards and cashback across daily spends",
+      "Accepted worldwide with contactless tap and pay"
+    ],
+    "knowMore": "https://www.paisabazaar.com/hdfc-bank/hdfc-bank-upi-rupay-credit-card/",
+    "route": "/hdfc-bank/hdfc-bank-upi-rupay-credit-card/",
+    "checkEligibility": "/credit-card-eligibility"
+  },
+  {
+    "id": 77,
+    "name": "HDFC Bank PIXEL Play Credit Card",
+    "bank": "bank_2",
+    "bankName": "HDFC Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/HDFC-Pixel-Play-Credit-Card.png",
+    "categories": [
+      "rewards"
+    ],
+    "joiningFee": 500,
+    "annualFee": 500,
+    "benefits": [
+      "Exciting rewards and cashback across daily spends",
+      "Accepted worldwide with contactless tap and pay"
+    ],
+    "knowMore": "https://www.paisabazaar.com/hdfc-bank/pixel-credit-cards/",
+    "route": "/hdfc-bank/pixel-credit-cards/",
+    "checkEligibility": "/credit-card-eligibility"
+  },
+  {
+    "id": 78,
+    "name": "HDFC Bank PIXEL Go Credit Card",
+    "bank": "bank_2",
+    "bankName": "HDFC Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/HDFC-Pixel-Go-Credit-Card.png",
+    "categories": [
+      "rewards"
+    ],
+    "joiningFee": 500,
+    "annualFee": 500,
+    "benefits": [
+      "Exciting rewards and cashback across daily spends",
+      "Accepted worldwide with contactless tap and pay"
+    ],
+    "knowMore": "https://www.paisabazaar.com/hdfc-bank/pixel-go-credit-card/",
+    "route": "/hdfc-bank/pixel-go-credit-card/",
+    "checkEligibility": "/credit-card-eligibility"
+  },
+  {
+    "id": 79,
+    "name": "SBI Card Miles Prime",
+    "bank": "bank_3",
+    "bankName": "SBI Cards",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/SBI-Card-MILES-PRIME-1.png",
+    "categories": [
+      "rewards"
+    ],
+    "joiningFee": 500,
+    "annualFee": 500,
+    "benefits": [
+      "Exciting rewards and cashback across daily spends",
+      "Accepted worldwide with contactless tap and pay"
+    ],
+    "knowMore": "https://www.paisabazaar.com/sbi-bank/sbi-miles-prime-credit-card/",
+    "route": "/sbi-bank/sbi-miles-prime-credit-card/",
+    "checkEligibility": "/credit-card-eligibility"
+  },
+  {
+    "id": 80,
+    "name": "Fibe Axis Bank Credit Card",
+    "bank": "bank_27",
+    "bankName": "Axis Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2024/01/Fibe-Axis-Bank-Credit-Card.png",
+    "categories": [
+      "rewards"
+    ],
+    "joiningFee": 0,
+    "annualFee": 500,
+    "benefits": [
+      "Exciting rewards and cashback across daily spends",
+      "Accepted worldwide with contactless tap and pay"
+    ],
+    "knowMore": "https://www.paisabazaar.com/axis-bank/fibe-axis-bank-credit-card/",
+    "route": "/axis-bank/fibe-axis-bank-credit-card/",
+    "checkEligibility": "/credit-card-eligibility"
+  },
+  {
+    "id": 81,
+    "name": "IDFC FIRST Millennia Credit Card",
+    "bank": "bank_281",
+    "bankName": "IDFC FIRST Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/Idfc-First-Bank.png",
+    "categories": [
+      "rewards"
+    ],
+    "joiningFee": 0,
+    "annualFee": 500,
+    "benefits": [
+      "Exciting rewards and cashback across daily spends",
+      "Accepted worldwide with contactless tap and pay"
+    ],
+    "knowMore": "https://www.paisabazaar.com/idfc-first-bank/idfc-first-millennia-credit-card/",
+    "route": "/idfc-first-bank/idfc-first-millennia-credit-card/",
+    "checkEligibility": "/credit-card-eligibility"
+  },
+  {
+    "id": 82,
+    "name": "MakeMyTrip ICICI Bank Signature Credit Card",
+    "bank": "bank_6",
+    "bankName": "ICICI Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2021/12/MakeMyTrip-ICICI-Bank-Signature-Credit-Card.png",
+    "categories": [
+      "rewards"
+    ],
+    "joiningFee": 500,
+    "annualFee": 500,
+    "benefits": [
+      "Exciting rewards and cashback across daily spends",
+      "Accepted worldwide with contactless tap and pay"
+    ],
+    "knowMore": "https://www.paisabazaar.com/icici-bank/makemytrip-icici-bank-signature-credit-card/",
+    "route": "/icici-bank/makemytrip-icici-bank-signature-credit-card/",
+    "checkEligibility": "/credit-card-eligibility"
+  },
+  {
+    "id": 83,
+    "name": "EazyDiner IndusInd Bank Signature Credit Card",
+    "bank": "bank_67",
+    "bankName": "IndusInd Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2022/01/EazyDiner-IndusInd-Bank-Credit-Card.png",
+    "categories": [
+      "rewards"
+    ],
+    "joiningFee": 500,
+    "annualFee": 500,
+    "benefits": [
+      "Exciting rewards and cashback across daily spends",
+      "Accepted worldwide with contactless tap and pay"
+    ],
+    "knowMore": "https://www.paisabazaar.com/indusind-bank/eazy-diner-indusind-bank-credit-card/",
+    "route": "/indusind-bank/eazy-diner-indusind-bank-credit-card/",
+    "checkEligibility": "/credit-card-eligibility"
+  },
+  {
+    "id": 84,
+    "name": "EazyDiner IndusInd Bank Platinum Credit Card",
+    "bank": "bank_67",
+    "bankName": "IndusInd Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/EazyDiner-Platinum.png",
+    "categories": [
+      "rewards"
+    ],
+    "joiningFee": 0,
+    "annualFee": 500,
+    "benefits": [
+      "Exciting rewards and cashback across daily spends",
+      "Accepted worldwide with contactless tap and pay"
+    ],
+    "knowMore": "https://www.paisabazaar.com/indusind-bank/eazy-diner-indusind-platinum-credit-card/",
+    "route": "/indusind-bank/eazy-diner-indusind-platinum-credit-card/",
+    "checkEligibility": "/credit-card-eligibility"
+  },
+  {
+    "id": 85,
+    "name": "Swiggy HDFC Bank Credit Card",
+    "bank": "bank_2",
+    "bankName": "HDFC Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2023/07/Swiggy-HDFC-Bank-Credit-Card.png",
+    "categories": [
+      "rewards"
+    ],
+    "joiningFee": 500,
+    "annualFee": 500,
+    "benefits": [
+      "Exciting rewards and cashback across daily spends",
+      "Accepted worldwide with contactless tap and pay"
+    ],
+    "knowMore": "https://www.paisabazaar.com/hdfc-bank/swiggy-credit-card/",
+    "route": "/hdfc-bank/swiggy-credit-card/",
+    "checkEligibility": "/credit-card-eligibility"
+  },
+  {
+    "id": 86,
+    "name": "BPCL SBI Card",
+    "bank": "bank_3",
+    "bankName": "SBI Cards",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/BPCL-SBI-Card-Face-01.png",
+    "categories": [
+      "rewards"
+    ],
+    "joiningFee": 500,
+    "annualFee": 500,
+    "benefits": [
+      "Exciting rewards and cashback across daily spends",
+      "Accepted worldwide with contactless tap and pay"
+    ],
+    "knowMore": "https://www.paisabazaar.com/sbi-bank/sbi-bpcl-credit-card/",
+    "route": "/sbi-bank/sbi-bpcl-credit-card/",
+    "checkEligibility": "/credit-card-eligibility"
+  },
+  {
+    "id": 87,
+    "name": "HPCL IDFC FIRST Power Credit Card",
+    "bank": "bank_281",
+    "bankName": "IDFC FIRST Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2023/07/IDFC-FIRST-HPCL-Power-Credit-Card.png",
+    "categories": [
+      "rewards"
+    ],
+    "joiningFee": 500,
+    "annualFee": 500,
+    "benefits": [
+      "Exciting rewards and cashback across daily spends",
+      "Accepted worldwide with contactless tap and pay"
+    ],
+    "knowMore": "https://www.paisabazaar.com/idfc-first-bank/idfc-first-hpcl-power-credit-card/",
+    "route": "/idfc-first-bank/idfc-first-hpcl-power-credit-card/",
+    "checkEligibility": "/credit-card-eligibility"
+  },
+  {
+    "id": 88,
+    "name": "PVR INOX Kotak Credit Card",
+    "bank": "bank_17",
+    "bankName": "Kotak Mahindra Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2023/12/PVR-INOX-Kotak-Credit-Card.png",
+    "categories": [
+      "rewards"
+    ],
+    "joiningFee": 0,
+    "annualFee": 500,
+    "benefits": [
+      "Exciting rewards and cashback across daily spends",
+      "Accepted worldwide with contactless tap and pay"
+    ],
+    "knowMore": "https://www.paisabazaar.com/kotak-mahindra-bank/pvr-inox-kotak-credit-card/",
+    "route": "/kotak-mahindra-bank/pvr-inox-kotak-credit-card/",
+    "checkEligibility": "/credit-card-eligibility"
+  },
+  {
+    "id": 89,
+    "name": "RBL Bank Play Credit Card",
+    "bank": "bank_66",
+    "bankName": "RBL Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/image1.png",
+    "categories": [
+      "rewards"
+    ],
+    "joiningFee": 0,
+    "annualFee": 500,
+    "benefits": [
+      "Exciting rewards and cashback across daily spends",
+      "Accepted worldwide with contactless tap and pay"
+    ],
+    "knowMore": "https://www.paisabazaar.com/rbl-bank/bookmyshow-play-credit-card/",
+    "route": "/rbl-bank/bookmyshow-play-credit-card/",
+    "checkEligibility": "/credit-card-eligibility"
+  },
+  {
+    "id": 90,
+    "name": "YES Private Credit Card",
+    "bank": "bank_65",
+    "bankName": "YES BANK",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/YES-Private-Credit-Card.png",
+    "categories": [
+      "rewards"
+    ],
+    "joiningFee": 500,
+    "annualFee": 500,
+    "benefits": [
+      "Exciting rewards and cashback across daily spends",
+      "Accepted worldwide with contactless tap and pay"
+    ],
+    "knowMore": "https://www.paisabazaar.com/yes-bank/private-credit-card/",
+    "route": "/yes-bank/private-credit-card/",
+    "checkEligibility": "/credit-card-eligibility"
+  },
+  {
+    "id": 91,
+    "name": "HSBC Visa Platinum Credit Card",
+    "bank": "bank_1",
+    "bankName": "HSBC Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2025/12/Frame-2085667027.png",
+    "categories": [
+      "rewards"
+    ],
+    "joiningFee": 500,
+    "annualFee": 500,
+    "benefits": [
+      "Exciting rewards and cashback across daily spends",
+      "Accepted worldwide with contactless tap and pay"
+    ],
+    "knowMore": "https://www.paisabazaar.com/hsbc-bank/hsbc-platinum-credit-cards/",
+    "route": "/hsbc-bank/hsbc-platinum-credit-cards/",
+    "checkEligibility": "/credit-card-eligibility"
+  },
+  {
+    "id": 92,
+    "name": "CRED IndusInd Bank RuPay Credit Card",
+    "bank": "bank_67",
+    "bankName": "IndusInd Bank",
+    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/CRED-IndusInd-Bank-RuPay-Credit-Card.webp",
+    "categories": [
+      "rewards"
+    ],
+    "joiningFee": 500,
+    "annualFee": 500,
+    "benefits": [
+      "Exciting rewards and cashback across daily spends",
+      "Accepted worldwide with contactless tap and pay"
+    ],
+    "knowMore": "https://www.paisabazaar.com/indusind-bank/cred-indusind-rupay-credit-card/",
+    "route": "/indusind-bank/cred-indusind-rupay-credit-card/",
+    "checkEligibility": "/credit-card-eligibility"
+  }
+]

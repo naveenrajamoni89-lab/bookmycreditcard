@@ -1,0 +1,94 @@
+.card-not-found {
+  min-height: calc(100svh - 90px);
+  padding: 62px 24px 48px;
+  background: #fff;
+  text-align: center;
+}
+
+.card-not-found-label {
+  margin-bottom: 16px;
+  color: var(--pb-blue);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .16em;
+}
+
+.card-not-found-intro h1 {
+  margin: 0 0 14px;
+  color: var(--text-dark);
+  font-size: clamp(28px, 3.3vw, 44px);
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -.045em;
+}
+
+.card-not-found-intro > p:last-child {
+  color: var(--text-grey);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.card-not-found-mosaic {
+  display: flex;
+  gap: 4%;
+  width: min(100%, 850px);
+  margin: 54px auto 46px;
+}
+
+.card-not-found-digit {
+  display: grid;
+  grid-template: repeat(7, 1fr) / repeat(5, 1fr);
+  gap: 5px;
+  flex: 1;
+  min-width: 0;
+  aspect-ratio: 1.1;
+}
+
+.card-not-found-digit img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: rotate(var(--tilt));
+  filter: drop-shadow(0 2px 2px #17213418);
+  transition: transform .2s ease;
+}
+
+.card-not-found-digit img:hover { transform: rotate(0deg) scale(1.2); }
+
+.card-not-found-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.card-not-found-explore {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  min-height: 48px;
+  padding: 0 24px;
+  border-radius: 999px;
+  background: var(--pb-blue);
+  color: #fff;
+}
+
+.card-not-found-explore:hover { background: var(--pb-blue-hover); }
+.card-not-found-home { padding: 14px 0; color: var(--text-mid); }
+.card-not-found-home:hover { color: var(--pb-blue); }
+.card-not-found-actions a:focus-visible { outline: 3px solid var(--pb-blue); outline-offset: 5px; }
+.card-not-found-note { margin-top: 24px; color: var(--text-grey); font-size: 11px; }
+
+@media (max-width: 600px) {
+  .card-not-found { min-height: calc(100svh - 76px); padding: 54px 20px 40px; }
+  .card-not-found-mosaic { margin: 48px auto; gap: 3%; }
+  .card-not-found-digit { gap: 2px; }
+  .card-not-found-actions { flex-direction: column; gap: 8px; }
+  .card-not-found-note { margin-top: 18px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-not-found-digit img { transition: none; }
+}

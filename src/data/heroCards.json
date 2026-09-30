@@ -1,0 +1,8 @@
+[
+  { "file": "hero-kotak.png", "name": "Kotak IndiGo", "route": "/kotak-mahindra-bank/indigo-kotak-xl-credit-card", "zoom": 1.66 },
+  { "file": "hero-axis.jpg", "name": "Axis Bank IndianOil", "route": "/axis-bank/indianoil-premium-credit-card", "zoom": 1, "landscape": true },
+  { "file": "hero-sbi.jpg", "name": "SBI Card Miles Prime", "route": "/sbi-bank/sbi-miles-prime-credit-card", "zoom": 1.66 },
+  { "file": "hero-icici.jpg", "name": "ICICI Bank Emeralde Private", "route": "/icici-bank/emeralde-private-metal-credit-card", "zoom": 1, "landscape": true },
+  { "file": "hero-idfc.jpg", "name": "IDFC FIRST EARN", "route": "/idfc-first-bank/idfc-first-earn-credit-card", "zoom": 1.57 },
+  { "file": "hero-makemytrip.jpg", "name": "MakeMyTrip ICICI Bank", "route": "/icici-bank/makemytrip-credit-card", "zoom": 1.73 }
+]
