@@ -291,33 +291,106 @@ export default function Home() {
       {/* 2. HERO + EXISTING ANIMATION */}
       <LandingHero />
 
-      {/* 3. INTRODUCTION */}
+      {/* 3. INTRODUCTION & TRUST ARCHITECTURE */}
       <section className="bmcc-home-intro" aria-labelledby="intro-heading" data-reveal>
         <div className="bmcc-container">
-          <div className="bmcc-intro-grid">
-            <div className="bmcc-intro-header">
-              <span className="bmcc-section-label">TRANSPARENT CARD DISCOVERY</span>
-              <h2 id="intro-heading" className="bmcc-section-title">
-                Compare Credit Cards &amp; Find the Right Card for You
-              </h2>
+          <div className="bmcc-intro-hero">
+            <div className="bmcc-intro-badge">
+              <span className="bmcc-badge-dot" aria-hidden="true" />
+              <span>Transparent Card Discovery</span>
             </div>
-            <div className="bmcc-intro-body">
-              <p className="bmcc-intro-lead">
-                BookMyCreditCard brings clarity to choosing your next card. We help you explore and compare options across leading Indian banks without bias, hidden catches, or confusing fine print.
+            <h2 id="intro-heading" className="bmcc-intro-title">
+              Compare Credit Cards &amp; Find the Right Card for You
+            </h2>
+            <p className="bmcc-intro-lead">
+              BookMyCreditCard brings clarity to choosing your next card. We help you explore and compare options across leading Indian banks without bias, hidden catches, or confusing fine print.
+            </p>
+          </div>
+
+          <div className="bmcc-bento-grid">
+            {/* Tile 1: 96+ Cards Catalogued */}
+            <div className="bmcc-bento-card">
+              <div className="bmcc-bento-top">
+                <span className="bmcc-bento-num">96<small>+</small></span>
+                <span className="bmcc-bento-pill">Verified Directory</span>
+              </div>
+              <h3 className="bmcc-bento-title">Curated Across 10 Categories</h3>
+              <p className="bmcc-bento-text">
+                Explore cards categorized by how you spend—from high-yield cashback and airport lounge access to fuel savings, air miles, and zero annual fee cards.
               </p>
-              <p className="bmcc-intro-text">
-                Whether you want accelerated cashback on online shopping, complimentary airport lounge access, air miles for your next getaway, or a reliable lifetime-free card for daily expenses, compare joining fees, annual renewal charges, and real reward rates side by side. Check basic eligibility in seconds before you apply, and make confident choices that earn a place in your wallet.
+              <div className="bmcc-bento-tags">
+                <Link to="/cashback-credit-cards" className="bmcc-bento-tag">Cashback</Link>
+                <Link to="/travel-credit-cards" className="bmcc-bento-tag">Travel &amp; Miles</Link>
+                <Link to="/credit-cards-lounge-access" className="bmcc-bento-tag">Airport Lounge</Link>
+                <Link to="/rupay-credit-cards" className="bmcc-bento-tag">RuPay UPI</Link>
+                <Link to="/lifetime-free-credit-cards" className="bmcc-bento-tag">Lifetime Free</Link>
+              </div>
+            </div>
+
+            {/* Tile 2: 17 Banks & Issuers */}
+            <div className="bmcc-bento-card">
+              <div className="bmcc-bento-top">
+                <span className="bmcc-bento-num">17</span>
+                <span className="bmcc-bento-pill">Top Indian Issuers</span>
+              </div>
+              <h3 className="bmcc-bento-title">All Major Banks Side-by-Side</h3>
+              <p className="bmcc-bento-text">
+                Directly compare official charges, welcome bonuses, and milestone waivers across HDFC, SBI Card, ICICI, Axis, Kotak, IDFC FIRST, IndusInd, HSBC, Amex, and more.
               </p>
-              <div className="bmcc-intro-stats">
-                <div className="bmcc-stat-pill">
-                  <strong>96+</strong> <span>Cards Catalogued</span>
+              <div className="bmcc-bento-banks">
+                <span className="bmcc-bank-chip">HDFC</span>
+                <span className="bmcc-bank-chip">SBI Card</span>
+                <span className="bmcc-bank-chip">ICICI</span>
+                <span className="bmcc-bank-chip">Axis</span>
+                <span className="bmcc-bank-chip">Kotak</span>
+                <span className="bmcc-bank-chip">IDFC FIRST</span>
+                <span className="bmcc-bank-chip">Amex</span>
+                <span className="bmcc-bank-chip">+10 More</span>
+              </div>
+            </div>
+
+            {/* Tile 3: No CIBIL Impact */}
+            <div className="bmcc-bento-card bmcc-bento-highlight">
+              <div className="bmcc-bento-top">
+                <div className="bmcc-shield-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    <path d="m9 12 2 2 4-4" />
+                  </svg>
                 </div>
-                <div className="bmcc-stat-pill">
-                  <strong>17</strong> <span>Banks &amp; Issuers</span>
-                </div>
-                <div className="bmcc-stat-pill">
-                  <strong>No CIBIL Impact</strong> <span>for Eligibility Check</span>
-                </div>
+                <span className="bmcc-bento-pill pill-soft">100% Soft Inquiry</span>
+              </div>
+              <h3 className="bmcc-bento-title">No CIBIL Impact Eligibility Check</h3>
+              <p className="bmcc-bento-text">
+                Check basic eligibility in 60 seconds based on your age, income, and profession. Evaluating your options leaves your credit score untouched.
+              </p>
+              <Link to="/credit-card-eligibility" className="bmcc-bento-cta">
+                Check Basic Eligibility <span aria-hidden="true">→</span>
+              </Link>
+            </div>
+          </div>
+
+          {/* Editorial Trust Principles */}
+          <div className="bmcc-intro-trust">
+            <div className="bmcc-trust-col">
+              <span className="bmcc-trust-icon" aria-hidden="true">✦</span>
+              <div>
+                <strong>Side-by-Side Fee Clarity</strong>
+                <p>Joining fees, renewal charges, and spend-waiver milestones clearly laid out.</p>
+              </div>
+            </div>
+            <div className="bmcc-trust-col">
+              <span className="bmcc-trust-icon" aria-hidden="true">⚖</span>
+              <div>
+                <strong>Unbiased Comparison</strong>
+                <p>Objective feature breakdowns compiled directly from official bank disclosures.</p>
+              </div>
+            </div>
+            <div className="bmcc-trust-col">
+              <span className="bmcc-trust-icon" aria-hidden="true">🔒</span>
+              <div>
+                <strong>Safe &amp; Spam-Free</strong>
+                <p>Zero cold calls. Explore freely and apply directly through verified bank channels.</p>
               </div>
             </div>
           </div>
