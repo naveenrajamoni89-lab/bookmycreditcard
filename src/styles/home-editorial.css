@@ -200,7 +200,7 @@
 .bmcc-home {
   background: var(--paper, #fffefa);
   color: var(--ink, #10110f);
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .bmcc-container {
