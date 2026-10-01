@@ -51,6 +51,10 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
-          server-dir: ${{ secrets.FTP_REMOTE_DIR || 'public_html/' }}
+          # This FTP account is already rooted in the site's public_html folder.
+          server-dir: ${{ secrets.FTP_REMOTE_DIR || './' }}
           protocol: ftps
           port: 21
+
+      - name: Verify live production assets
+        run: node scripts/check-deployment.mjs https://bookmycreditcard.in
