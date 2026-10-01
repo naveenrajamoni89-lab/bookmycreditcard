@@ -61,12 +61,57 @@
 .bmcc-explore .pb-card-item { border-color: #dddfd6; }
 .bmcc-explore .pb-check-eligibility { border-radius: 30px; background: #10110f; border-color: #10110f; }
 .bmcc-explore .pb-show-more { border-radius: 30px; color: #10110f; border-color: #10110f; }
-.bmcc-final-call { position: relative; margin: 0 0 0; padding: 75px max(5.5vw, calc((100vw - 1200px) / 2)) 85px; overflow: hidden; background: #141611; color: #fffefa; }
-.bmcc-final-call .bmcc-section-label { color: #b6bbac; }
-.bmcc-final-call h2 { position: relative; z-index: 1; margin: 25px 0 32px; color: #fffefa; font-size: clamp(45px, 6vw, 87px); line-height: 1.06; letter-spacing: -.06em; font-weight: 500; }
-.bmcc-final-call > a { display: inline-flex; align-items: center; gap: 50px; padding: 14px 25px; border-radius: 50px; background: var(--peach); color: #111; font-size: 14px; }
-.bmcc-final-call > a span { font-size: 25px; }
-.bmcc-final-spark { position: absolute; right: 12%; top: 40px; color: var(--peach); font-size: 300px; line-height: 1; }
+/* Upright, evenly spaced cards glide across a black product stage. */
+.bmcc-final-call { --carousel-travel: max(100cqw + 600px, 1400px); position: relative; isolation: isolate; container-type: inline-size; height: calc(100svh - 100px); scroll-margin-top: 80px; margin: 12px; border-radius: 32px; padding: min(7svh, 64px) 5.5%; overflow: hidden; background: #000; color: #fff; }
+.bmcc-final-copy { position: relative; z-index: 2; width: fit-content; pointer-events: none; }
+.bmcc-final-copy > a { pointer-events: auto; }
+.bmcc-final-copy::before { content: ''; position: absolute; z-index: -1; inset: -6svh -9vw -5svh -6vw; background: radial-gradient(ellipse at 30% 25%, #000e 10%, #0009 40%, #0000 72%); pointer-events: none; }
+.bmcc-final-call h2 { margin: 0 0 min(3svh, 28px); color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: clamp(32px, min(7vw, 11svh), 104px); line-height: 1.02; letter-spacing: -.04em; font-weight: 800; }
+.bmcc-final-copy > a { display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 12px 28px; border-radius: 28px; background: #fff; color: #000; font-size: 15px; font-weight: 700; transition: background .2s; }
+.bmcc-final-copy > a:hover { background: #dedede; }
+.bmcc-card-carousel { position: absolute; inset: 0; }
+.bmcc-carousel-card { position: absolute; top: 59%; left: -300px; width: min(18vw, 29svh, 250px); aspect-ratio: 300 / 475; transform: translate(calc(var(--carousel-travel) * var(--index) / 4), -50%); }
+.bmcc-carousel-face { position: absolute; inset: 0; overflow: hidden; border-radius: 5.5% / 3.5%; background: #171717; box-shadow: 0 24px 36px #0008; transition: transform .22s ease-out, translate .45s cubic-bezier(.16, 1, .3, 1), filter .45s; -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+.bmcc-card-carousel:has(.bmcc-carousel-face:active) *, .bmcc-card-carousel:has(.bmcc-carousel-face:active) ::after { animation-play-state: paused; }
+.bmcc-carousel-face:active { transition-duration: .1s; translate: 0 -8px; filter: brightness(1.15); }
+.bmcc-carousel-card:has(:focus-visible) { animation: none !important; transform: translate(calc(50cqw + 300px - 50%), -50%); z-index: 3; }
+.bmcc-carousel-face:focus-visible { translate: 0 -12px; }
+@media (hover: hover) {
+  .bmcc-carousel-card:hover .bmcc-carousel-face { filter: brightness(1.12); }
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .bmcc-carousel-card:hover .bmcc-carousel-face { transform: perspective(900px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)); }
+}
+.bmcc-carousel-face::after { content: ''; position: absolute; inset: -50% -100%; background: linear-gradient(110deg, transparent 38%, #fff0 43%, #fff3 49%, #fff5 50%, #fff1 53%, transparent 60%); transform: translateX(-70%); pointer-events: none; }
+.bmcc-carousel-face img { position: absolute; left: 50%; top: 50%; display: block; width: calc(100% * var(--art-zoom)); max-width: none; height: auto; transform: translate(-50%, -50%); }
+.bmcc-carousel-pause { position: absolute; z-index: 3; bottom: 28px; right: 5.5%; display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 50%; background: #242426; color: #eee; cursor: pointer; transition: background .2s; }
+.bmcc-carousel-pause:hover { background: #3b3b3d; }
+.bmcc-final-call :focus-visible { outline: 3px solid #fff; outline-offset: 5px; }
+@keyframes bmcc-card-travel {
+  from { transform: translate(var(--carousel-travel), -50%); }
+  to { transform: translate(0, -50%); }
+}
+@keyframes bmcc-stage-enter {
+  from { transform: translateY(80px) scale(.92); }
+  to { transform: translateY(0) scale(1); }
+}
+@keyframes bmcc-card-focus {
+  0%, 100% { scale: .88; }
+  50% { scale: 1.08; }
+}
+@keyframes bmcc-card-shine {
+  0%, 25% { transform: translateX(-70%); }
+  65%, 100% { transform: translateX(70%); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .bmcc-final-call { animation: bmcc-stage-enter linear both; animation-timeline: view(); animation-range: entry 0% entry 100%; transform-origin: center top; }
+  }
+  .bmcc-carousel-card { animation: bmcc-card-travel 36s linear infinite; animation-delay: calc(var(--index) * -9s); }
+  .bmcc-carousel-face { animation: bmcc-card-focus 36s ease-in-out infinite; animation-delay: calc(var(--index) * -9s); }
+  .bmcc-carousel-face::after { animation: bmcc-card-shine 9s ease-in-out infinite; animation-delay: calc(var(--index) * -1.5s); }
+  .bmcc-final-call.is-paused .bmcc-card-carousel *, .bmcc-final-call.is-paused .bmcc-carousel-face::after { animation-play-state: paused; }
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .bmcc-title-line { animation: bmcc-arrive .9s cubic-bezier(.16,1,.3,1) both; }
@@ -80,7 +125,7 @@
   .bmcc-floating-card-3 a { animation-delay: -4s; }
   .bmcc-floating-card:hover a { animation-play-state: paused; }
   .bmcc-scroll-seal svg { animation: bmcc-spin 24s linear infinite; }
-  .bmcc-marquee-track { animation: bmcc-ticker 28s linear infinite; }
+  .bmcc-marquee-track { animation: bmcc-ticker 36s linear infinite; }
   .bmcc-motion-ready [data-reveal] { opacity: 0; transform: translateY(32px); transition: opacity .8s var(--reveal-delay, 0ms), transform .8s cubic-bezier(.16,1,.3,1) var(--reveal-delay, 0ms); }
   .bmcc-motion-ready [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
   .bmcc-hero.is-paused *, .bmcc-hero:focus-within .bmcc-marquee-track { animation-play-state: paused; }
@@ -135,8 +180,11 @@
   .bmcc-finder-intro { grid-template-columns: 1fr; gap: 20px; }
   .bmcc-home .landing-finder { margin: 0; }
   .bmcc-explore .pb-listing { padding-top: 24px; }
-  .bmcc-final-call { padding: 50px 25px 60px; }
-  .bmcc-final-call h2 { font-size: 53px; }
-  .bmcc-final-spark { right: -30px; top: 140px; font-size: 180px; opacity: .25; }
+  .bmcc-final-call { --carousel-travel: max(100cqw + 600px, 1040px); margin: 12px; height: min(640px, calc(160vw + 16px), calc(100svh - 104px)); padding: min(4svh, 32px) 24px; border-radius: 24px; }
+  .bmcc-final-call h2 { margin-bottom: 20px; font-size: clamp(30px, min(10.4vw, 8svh), 56px); }
+  .bmcc-final-copy > a { min-height: 44px; padding: 10px 22px; font-size: 14px; }
+  .bmcc-carousel-card { top: 64%; width: min(48vw, 29svh, 200px); }
+  .bmcc-carousel-pause { right: 18px; bottom: 16px; }
 }
+@media (prefers-reduced-motion: reduce) { .bmcc-carousel-pause { display: none; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .bmcc-editorial *, .bmcc-editorial *::before, .bmcc-editorial *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } .bmcc-hero-bottom button { display: none; } }

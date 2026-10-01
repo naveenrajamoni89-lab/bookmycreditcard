@@ -12,6 +12,11 @@ dist
 dist-ssr
 *.local
 .playwright-cli/
+.impeccable/
+.agents/
+output/
+**/output/
+credit-card-app/
 
 # Environment variables (keep .env.example in git)
 .env
