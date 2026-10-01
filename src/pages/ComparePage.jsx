@@ -8,7 +8,6 @@ import { useCompare } from '../context/CompareContext';
 import { useAuth } from '../context/AuthContext';
 import { logActivity } from '../services/activityService';
 import CardArtwork from '../components/CardArtwork';
-import './ComparePage.css';
 
 const formatFee = (fee) => {
   if (fee === 0 || fee === '0' || fee === 'Free' || fee === 'Nil') return '₹0';

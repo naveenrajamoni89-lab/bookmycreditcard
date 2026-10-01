@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { SITE_NAME } from '../data/branding';
-import './NotFound.css';
 
 const digits = [
   ['00010', '00110', '01010', '10010', '11111', '00010', '00010'],
