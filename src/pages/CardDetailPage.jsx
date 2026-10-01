@@ -206,9 +206,16 @@ export default function CardDetailPage() {
 
             {/* CTAs */}
             <div className="cdp-cta-group">
+              <button
+                type="button"
+                className="cdp-btn-apply-primary"
+                aria-label={`Apply now for ${card.name}`}
+              >
+                Apply now
+              </button>
               <Link
                 to="/credit-card-eligibility"
-                className="cdp-btn-apply"
+                className="cdp-btn-secondary"
                 onClick={() => logActivity(user, 'eligibility_click', { card: card.name, bank: card.bankName })}
               >
                 Check eligibility
@@ -398,13 +405,22 @@ export default function CardDetailPage() {
             <div className="cdp-msb-fee">Annual fee: {formatFeeText(card.annualFee)}</div>
           </div>
         </div>
-        <Link
-          to="/credit-card-eligibility"
-          className="cdp-msb-apply"
-          onClick={() => logActivity(user, 'eligibility_click', { card: card.name, bank: card.bankName })}
-        >
-          Check eligibility
-        </Link>
+        <div className="cdp-msb-actions">
+          <Link
+            to="/credit-card-eligibility"
+            className="cdp-msb-eligibility"
+            onClick={() => logActivity(user, 'eligibility_click', { card: card.name, bank: card.bankName })}
+          >
+            Check eligibility
+          </Link>
+          <button
+            type="button"
+            className="cdp-msb-apply"
+            aria-label={`Apply now for ${card.name}`}
+          >
+            Apply now
+          </button>
+        </div>
       </div>
     </div>
   );

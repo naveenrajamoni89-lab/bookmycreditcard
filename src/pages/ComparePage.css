@@ -164,3 +164,13 @@
   .compare-slot:hover .compare-empty-art, .compare-slot:focus-within .compare-empty-art, .compare-slot:hover .compare-slot-art img, .compare-intro-link:hover svg { transform: none; }
 }
 
+.compare-slot-actions { margin-top: 12px; width: 100%; }
+.compare-slot-apply { display: inline-flex; align-items: center; justify-content: center; gap: 6px; width: 100%; min-height: 36px; padding: 0 14px; background: #10110f; color: #fff; border-radius: 6px; font-size: 11.5px; font-weight: 700; text-decoration: none; transition: background 0.15s ease, transform 0.15s ease; box-sizing: border-box; }
+.compare-slot-apply:hover { background: #2c3029; color: #fff; transform: translateY(-1px); }
+.compare-slot-apply:active { transform: translateY(0); }
+.pb-compare-action-cell { display: flex; flex-direction: column; gap: 8px; align-items: stretch; }
+.pb-compare-apply-btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 36px; padding: 0 14px; background: #10110f; color: #fff; border-radius: 6px; font-size: 12px; font-weight: 700; text-decoration: none; transition: background 0.15s ease, transform 0.15s ease; }
+.pb-compare-apply-btn:hover { background: #2c3029; color: #fff; transform: translateY(-1px); }
+.pb-compare-apply-btn:active { transform: translateY(0); }
+
+

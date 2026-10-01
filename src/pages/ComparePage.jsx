@@ -184,6 +184,15 @@ export default function ComparePage() {
                         <Link to={card.detailRoute || card.route} className="pb-compare-picker-name">{card.name}</Link>
                       </div>
                       <p className="compare-slot-fee">Annual fee <strong>{formatFee(card.annualFee)}</strong></p>
+                      <div className="compare-slot-actions">
+                        <button
+                          type="button"
+                          className="compare-slot-apply"
+                          aria-label={`Apply now for ${card.name}`}
+                        >
+                          Apply now
+                        </button>
+                      </div>
                     </div>
                   ) : (
                     <div key={`empty-${i}`} className="compare-slot">
@@ -244,7 +253,22 @@ export default function ComparePage() {
                       </tr>
                       <tr>
                         <th scope="row">Next step</th>
-                        {selectedCards.map(card => <td key={card.id}><Link to="/credit-card-eligibility" className="pb-compare-eligibility">Check basic eligibility</Link></td>)}
+                        {selectedCards.map(card => (
+                          <td key={card.id}>
+                            <div className="pb-compare-action-cell">
+                              <button
+                                type="button"
+                                className="pb-compare-apply-btn"
+                                aria-label={`Apply now for ${card.name}`}
+                              >
+                                Apply now
+                              </button>
+                              <Link to="/credit-card-eligibility" className="pb-compare-eligibility">
+                                Check basic eligibility
+                              </Link>
+                            </div>
+                          </td>
+                        ))}
                       </tr>
                     </tbody>
                   </table>

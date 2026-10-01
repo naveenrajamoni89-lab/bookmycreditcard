@@ -62,6 +62,13 @@ export default function CreditCardItem({ card }) {
           <div className="pb-card-actions">
             <Link to={detailUrl} className="pb-read-more" onClick={viewCard}>View details <span aria-hidden="true">↗</span></Link>
             <Link to="/credit-card-eligibility" className="pb-check-eligibility" onClick={() => logActivity(user, 'eligibility_click', { card: card.name, bank: card.bankName })}>Check eligibility</Link>
+            <button
+              type="button"
+              className="pb-apply-btn"
+              aria-label={`Apply now for ${card.name}`}
+            >
+              Apply now
+            </button>
           </div>
         </div>
       </div>

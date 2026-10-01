@@ -1,7 +1,7 @@
 // Central place for site identity and contact details.
 export const SITE_NAME = 'Book My Credit Card';
 export const SITE_SHORT = 'BMCC';
-export const LOGO_URL = '/images/bookmycreditcard-logo.png';
+export const LOGO_URL = '/images/cards/bookmycreditcard_logo.png';
 export const BANNER_URL = '/images/bmcc-banner.png';
 export const TAGLINE = 'Smart Choices. Better Tomorrow.';
 

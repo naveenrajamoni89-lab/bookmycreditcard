@@ -163,8 +163,10 @@ body { background: #fff; font-variant-numeric: tabular-nums; }
 .pb-card-fees dd { margin: 0; color: var(--text-dark); font-size: 14px; font-weight: 800; }
 .pb-card-actions { display: flex; align-items: center; gap: 17px; margin: 0; }
 .pb-read-more { border: 0; color: var(--pb-blue); font-size: 12px; font-weight: 800; white-space: nowrap; }
-.pb-read-more:hover { text-decoration: underline; text-underline-offset: 4px; }
 .pb-check-eligibility { min-height: 40px; padding: 0 15px; border-radius: 7px; font-size: 11px; white-space: nowrap; }
+.pb-apply-btn { display: inline-flex; align-items: center; justify-content: center; gap: 5px; min-height: 40px; padding: 0 16px; border-radius: 7px; background: var(--pb-blue); color: #fff; font-size: 11px; font-weight: 800; letter-spacing: 0.01em; text-decoration: none; white-space: nowrap; transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease; box-shadow: 0 2px 8px rgba(0, 82, 204, 0.2); }
+.pb-apply-btn:hover { background: var(--pb-blue-hover); color: #fff; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0, 82, 204, 0.3); }
+.pb-apply-btn:active { transform: translateY(0); }
 .pb-listing-empty { padding: 44px 22px; border-top: 1px solid var(--border); }
 .pb-listing-empty h3 { margin: 0 0 8px; font-size: 18px; }
 .pb-listing-empty p { margin: 0 0 18px; color: var(--text-grey); font-size: 13px; }
