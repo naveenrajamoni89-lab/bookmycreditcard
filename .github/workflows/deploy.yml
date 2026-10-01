@@ -13,17 +13,18 @@ concurrency:
 jobs:
   build-and-deploy:
     name: Build & Deploy to Hostinger
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
+    runs-on: ubuntu-24.04
+    # The initial FTPS sync uploads 565 files and exceeds 15 minutes.
+    timeout-minutes: 30
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
-      - name: Setup Node.js (20 LTS)
-        uses: actions/setup-node@v4
+      - name: Setup Node.js (24 LTS)
+        uses: actions/setup-node@v6
         with:
-          node-version: 20
+          node-version: 24
           cache: 'npm'
 
       - name: Install dependencies
@@ -44,7 +45,7 @@ jobs:
           echo "Build output verified successfully."
 
       - name: Deploy to Hostinger via FTPS
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
