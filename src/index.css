@@ -34,19 +34,48 @@
 html { 
   font-size: 16px; 
   scroll-behavior: smooth;
-  scrollbar-width: none !important;
-  -ms-overflow-style: none !important;
   -webkit-overflow-scrolling: touch;
 }
 
-/* Completely remove visible scrollbar across all engines */
-html::-webkit-scrollbar,
-body::-webkit-scrollbar,
-*::-webkit-scrollbar {
-  display: none !important;
-  width: 0 !important;
-  height: 0 !important;
-  background: transparent !important;
+/* ============================================
+   GLOBAL SLEEK CUSTOM SCROLLER
+   Modern, subtle, floating rounded pill scroller
+   ============================================ */
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(100, 116, 139, 0.4) transparent;
+}
+
+/* Chrome, Edge, Safari, Opera */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 116, 139, 0.38);
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  transition: background-color 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(16, 17, 15, 0.65);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background-color: rgba(16, 17, 15, 0.85);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
 }
 
 body {
@@ -56,8 +85,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: clip;
-  scrollbar-width: none !important;
-  -ms-overflow-style: none !important;
 }
 
 #root { min-height: 100vh; }
