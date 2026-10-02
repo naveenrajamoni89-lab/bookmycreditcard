@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import LandingHero from '../components/landing/LandingHero';
 import CardFinder from '../components/landing/CardFinder';
+import CardMarqueeShowcase from '../components/landing/CardMarqueeShowcase';
 import PopularCardCarousel from '../components/PopularCardCarousel';
 import CategoryIllustration from '../components/CategoryIllustration';
 import { WhyIllustration, HowIllustration } from '../components/ServiceIllustrations';
@@ -643,6 +644,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* 3B. ANIMATED CARDS MARQUEE SHOWCASE */}
+      <CardMarqueeShowcase />
 
       {/* 4. CARD FINDER */}
       <section className="bmcc-finder-section" aria-labelledby="finder-heading" data-reveal>
