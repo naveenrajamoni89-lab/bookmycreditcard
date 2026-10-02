@@ -53,7 +53,8 @@ jobs:
           local-dir: ./dist/
           # This FTP account is already rooted in the site's public_html folder.
           server-dir: ${{ secrets.FTP_REMOTE_DIR || './' }}
-          state-name: .ftp-deploy-sync-state-v2.json
+          state-name: .ftp-deploy-sync-state-v3.json
+          danger-allow-clean: false
           log-level: verbose
           protocol: ftps
           port: 21
