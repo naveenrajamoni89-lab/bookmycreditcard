@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 
 /**
  * 3D Isometric Illustrative Service Graphics for:
@@ -88,16 +88,6 @@ export function WhyIllustration({ type = 'compare', className = '' }) {
             <circle cx="40" cy="27" r="4" fill="#FFFFFF" />
             <circle cx="40" cy="27" r="2" fill="#059669" />
           </g>
-
-          {/* Lifestyle Preference Badges Floating */}
-          <g filter="url(#wi-needs-sh)">
-            <rect x="52" y="24" width="16" height="12" rx="4" fill="#0284C7" />
-            <text x="60" y="33" textAnchor="middle" fontSize="7" fontWeight="900" fill="#FFFFFF" fontFamily="sans-serif">[Air]</text>
-          </g>
-          <g filter="url(#wi-needs-sh)">
-            <rect x="14" y="32" width="16" height="12" rx="4" fill="#D97706" />
-            <text x="22" y="41" textAnchor="middle" fontSize="8" fontWeight="900" fill="#FFFFFF" fontFamily="sans-serif">[Air]</text>
-          </g>
         </svg>
       );
 
@@ -145,8 +135,8 @@ export function WhyIllustration({ type = 'compare', className = '' }) {
             <circle cx="48" cy="38" r="13" fill="url(#wi-glass-lens)" stroke="#0E7490" strokeWidth="2.5" />
             {/* Lens Specular Reflection */}
             <path d="M40 33 C42 29 48 28 53 30" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round" />
-            {/* Lens Zero-Fee Stamp */}
-            <text x="48" y="42" textAnchor="middle" fontSize="11" fontWeight="900" fill="#FFFFFF" fontFamily="sans-serif">[Air]</text>
+            {/* Lens Focus Reticle */}
+            <circle cx="48" cy="38" r="4" fill="none" stroke="#FFFFFF" strokeWidth="1.2" opacity="0.8" />
             {/* Handle */}
             <line x1="57" y1="47" x2="68" y2="60" stroke="#1E293B" strokeWidth="4.5" strokeLinecap="round" />
             <line x1="57" y1="47" x2="68" y2="60" stroke="#94A3B8" strokeWidth="2" strokeLinecap="round" />
@@ -198,9 +188,6 @@ export function WhyIllustration({ type = 'compare', className = '' }) {
             {/* Clock Hand pointing to speed */}
             <line x1="54" y1="46" x2="57" y2="41" stroke="#2447bb" strokeWidth="2" strokeLinecap="round" />
             <circle cx="54" cy="46" r="2" fill="#10110F" />
-            {/* 60s pill badge */}
-            <rect x="47" y="58" width="14" height="7" rx="3.5" fill="#10110F" />
-            <text x="54" y="63.5" textAnchor="middle" fontSize="5.5" fontWeight="900" fill="#4ADE80" fontFamily="sans-serif">[Air]</text>
           </g>
         </svg>
       );
@@ -242,13 +229,6 @@ export function WhyIllustration({ type = 'compare', className = '' }) {
             <path d="M16 54 L64 54 L62 60 L18 60 Z" fill="#312E81" />
             <rect x="14" y="60" width="52" height="4" rx="1" fill="#1E1B4B" />
           </g>
-
-          {/* 17 Banks Floating Verified Emblem */}
-          <g filter="url(#wi-banks-sh)">
-            <rect x="46" y="38" width="22" height="14" rx="7" fill="#10110F" />
-            <circle cx="52" cy="45" r="2.5" fill="#FDE047" />
-            <text x="60" y="48" textAnchor="middle" fontSize="7" fontWeight="900" fill="#FFFFFF" fontFamily="sans-serif">[Air]</text>
-          </g>
         </svg>
       );
   }
@@ -258,7 +238,8 @@ export function WhyIllustration({ type = 'compare', className = '' }) {
  * 3D Isometric Illustrative Graphics for How BookMyCreditCard Works (4-Step Flow)
  */
 export function HowIllustration({ step = '01', className = '' }) {
-  switch (step) {
+  const normStep = String(step).padStart(2, '0');
+  switch (normStep) {
     case '01': // Explore
       return (
         <svg className={className} viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -349,9 +330,9 @@ export function HowIllustration({ step = '01', className = '' }) {
             <rect x="46" y="42" width="12" height="3" rx="1.5" fill="#DDD6FE" />
             <circle cx="58" cy="50" r="2.5" fill="#FFFFFF" />
             
-            {/* Comparison 'VS' Badge in center */}
-            <rect x="34" y="46" width="16" height="12" rx="6" fill="#10110F" />
-            <text x="42" y="55" textAnchor="middle" fontSize="7" fontWeight="900" fill="#4ADE80" fontFamily="sans-serif">[Air]</text>
+            {/* Comparison Fulcrum Center Badge */}
+            <circle cx="42" cy="48" r="6" fill="#10110F" />
+            <circle cx="42" cy="48" r="3" fill="#F59E0B" />
           </g>
 
           {/* Delta Arrows */}
