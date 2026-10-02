@@ -3,49 +3,37 @@ import { Link } from 'react-router-dom';
 import { SITE_NAME, LOGO_URL, CONTACT, POWERED_BY } from '../data/branding';
 import '../styles/footer.css';
 
-// Curated credit card category links
+// Essential credit card category links
 const cardCategories = [
-  { label: 'Cashback Credit Cards', to: '/cashback-credit-cards' },
-  { label: 'Travel & Air Miles Cards', to: '/travel-credit-cards' },
+  { label: 'Cashback Cards', to: '/cashback-credit-cards' },
+  { label: 'Travel & Air Miles', to: '/travel-credit-cards' },
   { label: 'Lifetime Free Cards', to: '/lifetime-free-credit-cards' },
-  { label: 'Airport Lounge Cards', to: '/credit-cards-lounge-access' },
-  { label: 'Rewards & Shopping Cards', to: '/rewards-credit-cards' },
-  { label: 'Fuel Surcharge Waiver Cards', to: '/fuel-credit-cards' },
-  { label: 'RuPay UPI Credit Cards', to: '/rupay-credit-cards' },
+  { label: 'Airport Lounge Access', to: '/lounge-access-credit-cards' },
+  { label: 'RuPay UPI Cards', to: '/rupay-credit-cards' },
 ];
 
-// High-value tools and credit guides
+// Learn Hub - All 5 newly built editorial financial literacy pages
+const learnLinks = [
+  { label: 'Credit Card Basics', to: '/credit-card-basics' },
+  { label: 'CIBIL Score Guide', to: '/cibil-score-for-credit-card' },
+  { label: 'Bank Interest Rates & APR', to: '/credit-card-interest-rates' },
+  { label: '25 Best Cards for 2026', to: '/best-credit-cards' },
+  { label: 'Playbooks & Guides', to: '/credit-card-guides' },
+];
+
+// High-value tools and comparison services
 const toolLinks = [
   { label: 'Card Eligibility Checker', to: '/credit-card-eligibility' },
-  { label: 'Compare Credit Cards', to: '/compare-credit-cards' },
-  { label: 'Best Credit Cards 2026', to: '/best-credit-cards' },
-  { label: 'Card Interest Rates & APR', to: '/credit-card-interest-rates' },
-  { label: 'CIBIL Score Impact Guide', to: '/cibil-score-for-credit-card' },
-  { label: 'Credit Card FAQs', to: '/#faqs' },
+  { label: 'Compare Cards', to: '/compare-credit-cards' },
+  { label: 'Explore All Cards', to: '/explore' },
+  { label: 'Contact & Support', to: '/contact-us' },
 ];
 
-// Top partner banking institutions
-const partnerBanks = [
-  { name: 'HDFC Bank', bankId: 'hdfc' },
-  { name: 'ICICI Bank', bankId: 'icici' },
-  { name: 'SBI Card', bankId: 'sbi' },
-  { name: 'Axis Bank', bankId: 'axis' },
-  { name: 'Kotak Mahindra', bankId: 'kotak' },
-  { name: 'IDFC FIRST Bank', bankId: 'idfc' },
-  { name: 'IndusInd Bank', bankId: 'indusind' },
-  { name: 'American Express', bankId: 'amex' },
-  { name: 'AU Small Finance', bankId: 'aubank' },
-];
-
-// Compact legal navigation links
+// Clean, essential legal links
 const legalNavLinks = [
-  { label: 'About Us', to: '/about-us' },
-  { label: 'Contact Us', to: '/contact-us' },
   { label: 'Privacy Policy', to: '/privacy-policy' },
   { label: 'Terms of Use', to: '/terms-and-conditions' },
-  { label: 'Disclaimer', to: '/disclaimer' },
-  { label: 'Grievance Redressal', to: '/grievance-redressal' },
-  { label: 'Sitemap', to: '/sitemap' },
+  { label: 'Contact Us', to: '/contact-us' },
 ];
 
 export default function Footer() {
@@ -54,7 +42,7 @@ export default function Footer() {
   return (
     <footer className="bmcc-footer" aria-label="Site Footer">
       <div className="bmcc-footer-container">
-        {/* Main 4-Column Grid */}
+        {/* Main 4-Column Balanced Grid */}
         <div className="bmcc-footer-grid">
           {/* Column 1: Brand & Contact Info */}
           <div className="bmcc-footer-col-brand">
@@ -70,76 +58,27 @@ export default function Footer() {
             </Link>
 
             <p className="bmcc-footer-brand-desc">
-              India&apos;s dedicated credit card comparison marketplace. Compare features, rewards, and eligibility across leading banks to find the right card.
+              India&apos;s dedicated credit card comparison and discovery marketplace. Compare features, rewards, and eligibility across leading banks.
             </p>
 
-            <div className="bmcc-footer-contact-list">
-              {/* Address */}
-              <div className="bmcc-footer-contact-item">
-                <svg
-                  className="bmcc-footer-contact-icon"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-                <address className="bmcc-footer-address-text">
-                  Flat No 203, 2nd Floor, Viswa Central, Above Canara Bank, Land Mark: Adjacent lane to VIP Luggage Showroom, Ameerpet, Hyderabad - 500016
-                </address>
-              </div>
-
-              {/* Email */}
-              <div className="bmcc-footer-contact-item">
-                <svg
-                  className="bmcc-footer-contact-icon"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
+            <div className="bmcc-footer-contact-info">
+              <a href="mailto:care@bookmycreditcard.com" className="bmcc-footer-contact-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                   <polyline points="22,6 12,13 2,6" />
                 </svg>
-                <div>
-                  <a href="mailto:care@bookmycreditcard.com" className="bmcc-footer-contact-link">
-                    care@bookmycreditcard.com
-                  </a>
-                </div>
-              </div>
+                care@bookmycreditcard.com
+              </a>
 
-              {/* Phone */}
-              <div className="bmcc-footer-contact-item">
-                <svg
-                  className="bmcc-footer-contact-icon"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
+              <a href={CONTACT.phoneHref} className="bmcc-footer-contact-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                 </svg>
-                <div>
-                  <a href={CONTACT.phoneHref} className="bmcc-footer-phone-val">
-                    +91 9966698892
-                  </a>
-                  <span className="bmcc-footer-contact-timing"> (Mon–Sat, 9:30 AM–6:30 PM)</span>
-                </div>
-              </div>
+                +91 9966698892
+              </a>
             </div>
 
-            {/* Social Icons */}
+            {/* Social Channels */}
             <div className="bmcc-footer-socials" aria-label="Social media channels">
               <a
                 href="https://linkedin.com"
@@ -203,7 +142,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 2: Card Categories */}
+          {/* Column 2: Popular Categories */}
           <div className="bmcc-footer-col">
             <h3 className="bmcc-footer-heading">Card Categories</h3>
             <ul className="bmcc-footer-links">
@@ -215,9 +154,21 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Tools & Resources */}
+          {/* Column 3: Learn Hub - New Pages */}
           <div className="bmcc-footer-col">
-            <h3 className="bmcc-footer-heading">Tools &amp; Resources</h3>
+            <h3 className="bmcc-footer-heading">Learn &amp; Guides</h3>
+            <ul className="bmcc-footer-links">
+              {learnLinks.map((item) => (
+                <li key={item.label}>
+                  <Link to={item.to}>{item.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 4: Tools & Services */}
+          <div className="bmcc-footer-col">
+            <h3 className="bmcc-footer-heading">Tools &amp; Services</h3>
             <ul className="bmcc-footer-links">
               {toolLinks.map((item) => (
                 <li key={item.label}>
@@ -226,54 +177,11 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-
-          {/* Column 4: Partner Banks */}
-          <div className="bmcc-footer-col-partners">
-            <h3 className="bmcc-footer-heading">Partner Banks</h3>
-            <p className="bmcc-footer-partner-desc">
-              Compare credit cards issued across India&apos;s leading RBI-regulated institutions:
-            </p>
-            <div className="bmcc-footer-partner-badges">
-              {partnerBanks.map((bank) => (
-                <Link
-                  key={bank.bankId}
-                  to={`/explore?bank=${bank.bankId}`}
-                  className="bmcc-footer-bank-pill"
-                  title={`View ${bank.name} credit cards`}
-                >
-                  {bank.name}
-                </Link>
-              ))}
-            </div>
-            <Link to="/explore" className="bmcc-footer-explore-more">
-              Explore all 200+ cards →
-            </Link>
-          </div>
         </div>
 
-        {/* Compact Security Advisory Strip */}
-        <div className="bmcc-footer-security-strip">
-          <svg
-            className="bmcc-footer-security-icon"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            aria-hidden="true"
-          >
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-          </svg>
-          <p className="bmcc-footer-security-text">
-            <strong>Security Notice:</strong> BookMyCreditCard will NEVER ask for upfront processing fees, cash deposits, or OTPs for credit card approvals. Report any suspicious contact to{' '}
-            <a href="mailto:care@bookmycreditcard.com">care@bookmycreditcard.com</a>.
-          </p>
-        </div>
-
-        {/* Crisp Regulatory Disclaimer */}
+        {/* Short & Clean Regulatory Disclaimer */}
         <p className="bmcc-footer-disclaimer">
-          <strong>Disclaimer:</strong> BookMyCreditCard is an independent credit card comparison and discovery portal, not a bank or card issuer. We do not extend credit directly. Card approval, credit limits, interest rates, and fee waivers are determined exclusively by respective issuing banks based on their underwriting policies.
+          <strong>Disclaimer:</strong> BookMyCreditCard is an independent credit card comparison portal and not a bank or card issuer. Card approvals, credit limits, and interest rates are determined exclusively by respective issuing banks.
         </p>
 
         {/* Bottom Bar: Copyright, Legal Links, Powered By */}
