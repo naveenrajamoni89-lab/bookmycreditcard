@@ -25,24 +25,23 @@
 .cmq-badge {
   display: inline-block;
   font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  font-weight: 800;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #2563eb;
-  background: #eff6ff;
-  border: 1px solid #dbeafe;
-  padding: 4px 12px;
-  border-radius: 999px;
-  margin-bottom: 6px;
+  color: #2447bb;
+  background: none;
+  border: none;
+  padding: 0;
+  margin-bottom: 8px;
 }
 
 .cmq-heading {
-  font-size: clamp(20px, 2.2vw, 28px);
+  font-size: clamp(22px, 2.5vw, 32px);
   font-weight: 800;
-  letter-spacing: -0.025em;
-  color: #0f172a;
+  letter-spacing: -0.03em;
+  color: #10110f;
   margin: 0;
-  line-height: 1.25;
+  line-height: 1.2;
 }
 
 .cmq-row {
