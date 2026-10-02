@@ -118,17 +118,6 @@ try {
       title: `${card.name} - Features, Benefits, Fees & Eligibility | Book My Credit Card`,
       description: desc.length > 160 ? desc.slice(0, 157) + '...' : desc,
     });
-
-    // Also support /credit-card/<cardSlug> if available
-    const parts = normalizedRoute.split('/').filter(Boolean);
-    if (parts.length >= 2) {
-      const cardSlug = parts[1];
-      cardRoutes.push({
-        path: `/credit-card/${cardSlug}`,
-        title: `${card.name} - Features, Benefits, Fees & Eligibility | Book My Credit Card`,
-        description: desc.length > 160 ? desc.slice(0, 157) + '...' : desc,
-      });
-    }
   }
 } catch (e) {
   console.warn('[generate-dist-routes] Warning: Could not parse card details:', e.message);
