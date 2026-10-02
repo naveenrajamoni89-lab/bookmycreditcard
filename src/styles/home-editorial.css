@@ -78,9 +78,9 @@
 .bmcc-explore .pb-card-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
 .bmcc-explore .pb-check-eligibility { border-radius: 30px; background: #ffffff; color: #10110f; border: 1.5px solid #10110f; transition: all 0.15s ease; }
 .bmcc-explore .pb-check-eligibility:hover { background: #f0f2eb; color: #10110f; }
-.bmcc-explore .pb-apply-btn { display: inline-flex; align-items: center; justify-content: center; gap: 5px; min-height: 40px; padding: 0 18px; border-radius: 30px; background: #10110f; color: #ffffff; border: 1.5px solid #10110f; font-size: 11.5px; font-weight: 700; text-decoration: none; white-space: nowrap; transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 2px 6px rgba(16, 17, 15, 0.16); }
-.bmcc-explore .pb-apply-btn:hover { background: #2c3029; border-color: #2c3029; color: #ffffff; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(16, 17, 15, 0.25); }
-.bmcc-explore .pb-apply-btn:active { transform: translateY(0); }
+.bmcc-explore .pb-apply-btn, .cdp-page .pb-apply-btn { display: inline-flex; align-items: center; justify-content: center; gap: 5px; min-height: 40px; padding: 0 18px; border-radius: 30px; background: #10110f; color: #ffffff; border: 1.5px solid #10110f; font-size: 11.5px; font-weight: 700; text-decoration: none; white-space: nowrap; transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 2px 6px rgba(16, 17, 15, 0.16); }
+.bmcc-explore .pb-apply-btn:hover, .cdp-page .pb-apply-btn:hover { background: #2c3029; border-color: #2c3029; color: #ffffff; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(16, 17, 15, 0.25); }
+.bmcc-explore .pb-apply-btn:active, .cdp-page .pb-apply-btn:active { transform: translateY(0); }
 .bmcc-explore .pb-show-more { border-radius: 30px; color: #10110f; border-color: #10110f; }
 /* Upright, evenly spaced cards glide across a black product stage. */
 .bmcc-final-call { --carousel-travel: max(100cqw + 600px, 1400px); position: relative; isolation: isolate; container-type: inline-size; height: calc(100svh - 100px); scroll-margin-top: 80px; margin: 12px; border-radius: 32px; padding: min(7svh, 64px) 5.5%; overflow: hidden; background: #000; color: #fff; }
@@ -2354,33 +2354,33 @@
 }
 
 /* 11. EXPLORE BY BANK (Matching Reference Image) */
+/* 11. EXPLORE BY BANK (Clean, Impressive & Crisp UI) */
 .bmcc-banks-section {
-  padding: clamp(64px, 8vw, 96px) 0;
+  padding: clamp(56px, 6vw, 80px) 0;
   background: #ffffff;
-  border-bottom: 1px solid #ebede4;
 }
 
 .bmcc-banks-wrapper {
-  background: #f8fafd;
-  border: 1px solid #e1e7f0;
-  border-radius: 24px;
-  padding: clamp(36px, 5vw, 52px) clamp(20px, 4vw, 40px);
-  box-shadow: 0 4px 20px -2px rgba(16, 24, 40, 0.04);
+  background: #f4f8ff;
+  border: 1px solid #d9e6f7;
+  border-radius: 12px;
+  padding: clamp(38px, 4.5vw, 54px) clamp(20px, 3.5vw, 44px);
+  box-shadow: 0 2px 10px -2px rgba(36, 71, 187, 0.03);
 }
 
-.bmcc-banks-wrapper .bmcc-section-head {
-  margin-bottom: 32px;
+.bmcc-banks-title {
+  text-align: center;
+  font-size: clamp(22px, 2.5vw, 28px);
+  font-weight: 500;
+  color: #1e293b;
+  letter-spacing: -0.015em;
+  margin: 0 0 32px 0;
+  line-height: 1.3;
 }
 
-.bmcc-banks-wrapper .bmcc-section-title {
-  font-size: clamp(24px, 3.2vw, 32px);
+.bmcc-banks-title strong {
   font-weight: 800;
   color: #0f172a;
-  letter-spacing: -0.02em;
-}
-
-.bmcc-banks-wrapper .bmcc-title-highlight {
-  color: #2447bb;
 }
 
 .bmcc-banks-grid {
@@ -2389,29 +2389,39 @@
   justify-content: center;
   align-items: center;
   gap: 12px 14px;
-  max-width: 1040px;
+  max-width: 1080px;
   margin: 0 auto;
 }
 
 .bmcc-bank-card {
   display: inline-flex;
   align-items: center;
-  padding: 8px 18px;
+  gap: 10px;
+  padding: 9px 18px;
   background: #ffffff;
-  border: 1px solid #dbeafe;
-  border-radius: 12px;
+  border: 1px solid #d6e4f8;
+  border-radius: 8px;
   text-decoration: none;
-  color: #0f172a;
-  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.03);
-  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s ease, border-color 0.22s ease;
+  color: #1e293b;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.03);
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.18s ease, border-color 0.18s ease;
   user-select: none;
 }
 
 .bmcc-bank-card:hover {
   background: #ffffff;
-  border-color: #2447bb;
+  border-color: #0056d6;
   transform: translateY(-2px);
-  box-shadow: 0 8px 18px rgba(36, 71, 187, 0.12);
+  box-shadow: 0 6px 16px rgba(0, 86, 214, 0.10);
+}
+
+.bmcc-bank-logo {
+  width: 20px;
+  height: 20px;
+  max-height: 20px;
+  object-fit: contain;
+  flex-shrink: 0;
+  display: block;
 }
 
 .bmcc-bank-name {
@@ -2420,11 +2430,11 @@
   letter-spacing: -0.01em;
   color: #1e293b;
   white-space: nowrap;
-  transition: color 0.2s ease;
+  transition: color 0.18s ease;
 }
 
 .bmcc-bank-card:hover .bmcc-bank-name {
-  color: #2447bb;
+  color: #0056d6;
 }
 
 /* 12. FAQ SECTION (Executive Fintech Accordion & Discovery Card) */

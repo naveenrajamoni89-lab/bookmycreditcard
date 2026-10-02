@@ -4,9 +4,9 @@ import { creditCards } from '../data/cards';
 import CardListingSection from '../components/CardListingSection';
 import '../styles/home-editorial.css';
 
-const carouselCards = [26, 4, 35, 39].map((id, index) => ({
+const carouselCards = [26, 5, 35, 39].map((id, index) => ({
   ...creditCards.find(card => card.id === id),
-  zoom: [1.62, 1.75, 1.7, 1.68][index],
+  zoom: [1.62, 1.72, 1.7, 1.68][index],
 }));
 
 function tiltCard(event) {

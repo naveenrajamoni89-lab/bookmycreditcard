@@ -208,7 +208,7 @@ export default function CardDetailPage() {
             <div className="cdp-cta-group">
               <button
                 type="button"
-                className="cdp-btn-apply-primary"
+                className="pb-apply-btn cdp-btn-apply-primary"
                 aria-label={`Apply now for ${card.name}`}
               >
                 Apply now
@@ -415,7 +415,7 @@ export default function CardDetailPage() {
           </Link>
           <button
             type="button"
-            className="cdp-msb-apply"
+            className="pb-apply-btn cdp-msb-apply"
             aria-label={`Apply now for ${card.name}`}
           >
             Apply now

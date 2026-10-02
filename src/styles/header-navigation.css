@@ -1,83 +1,14 @@
 /* ==========================================================================
    Header Navigation & Multi-Level Dropdown Styling for BookMyCreditCard
-   Clean, Accessible, Non-Slop Design System
+   Navigation dropdowns
    ========================================================================== */
 
-/* Main Header Container */
-.pb-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: #ffffff;
-  border-bottom: 1px solid var(--border, #e2e8f0);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-}
-
-.pb-header-main {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: flex;
-  align-items: center;
-  height: 68px;
-  gap: 16px;
-}
-
-.pb-logo {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-  text-decoration: none;
-}
-
-.pb-logo img {
-  height: 44px;
-  width: auto;
-  display: block;
-  object-fit: contain;
-}
-
-/* Navigation Container */
-.pb-nav {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  margin-left: 8px;
-  flex: 1;
-}
-
-/* Nav Item Base */
-.pb-nav-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #334155;
-  padding: 8px 12px;
-  border-radius: 8px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  white-space: nowrap;
-  text-decoration: none;
-  transition: all 0.15s ease-in-out;
-  height: 40px;
-  box-sizing: border-box;
-}
-
-.pb-nav-item:hover,
-.pb-nav-item:focus-visible {
-  color: #2447bb;
-  background-color: rgba(36, 71, 187, 0.06);
-  outline: none;
-}
-
-.pb-nav-item.active {
-  color: #2447bb;
-  font-weight: 600;
-  background-color: rgba(36, 71, 187, 0.08);
-}
+/* Reuse the navbar styling from before the dropdown update. */
+.pb-header .pb-logo img { width: 250px; height: 68px; }
+@media (max-width: 1100px) { .pb-header .pb-logo img { width: 205px; } }
+@media (max-width: 800px) { .pb-header .pb-logo img { width: 190px; height: 60px; } }
+@media (max-width: 600px) { .pb-header .pb-logo img { width: 170px; } }
+.pb-nav { overflow: visible; }
 
 /* Dropdown Wrapper */
 .pb-nav-dropdown-wrap {
@@ -89,9 +20,11 @@
   cursor: pointer;
 }
 
-.pb-dropdown-trigger[aria-expanded="true"] {
+.pb-header .pb-dropdown-trigger:hover,
+.pb-header .pb-dropdown-trigger[aria-expanded="true"] {
   color: #2447bb;
-  background-color: rgba(36, 71, 187, 0.08);
+  background: transparent;
+  box-shadow: none;
 }
 
 .pb-dropdown-trigger[aria-expanded="true"] .pb-dropdown-chevron {
@@ -109,12 +42,12 @@
 /* Desktop Dropdown Menus */
 .pb-dropdown-menu {
   position: absolute;
-  top: calc(100% + 6px);
+  top: 100%;
   left: 0;
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12), 0 2px 6px rgba(15, 23, 42, 0.04);
+  border-radius: 0;
+  box-shadow: none;
   padding: 8px;
   z-index: 1050;
   animation: pb-dropdown-enter 0.18s cubic-bezier(0.16, 1, 0.3, 1);
@@ -123,11 +56,11 @@
 @keyframes pb-dropdown-enter {
   from {
     opacity: 0;
-    transform: translateY(-4px) scale(0.98);
+    transform: translateY(-4px);
   }
   to {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
   }
 }
 
@@ -145,24 +78,25 @@
   font-weight: 500;
   color: #1e293b;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 0;
   transition: all 0.15s ease;
 }
 
 .pb-dropdown-link:hover,
 .pb-dropdown-link:focus-visible {
-  background-color: #f1f5f9;
+  background-color: transparent;
   color: #2447bb;
   outline: none;
 }
 
 .pb-dropdown-link-badge {
   font-size: 11px;
-  font-weight: 700;
-  padding: 2px 6px;
-  border-radius: 4px;
-  background: #e0e7ff;
-  color: #2447bb;
+  font-weight: 400;
+  padding: 0;
+  margin-left: 20px;
+  border-radius: 0;
+  background: transparent;
+  color: #64748b;
 }
 
 /* Explore Dropdown & Flyout Structure */
@@ -175,16 +109,15 @@
   display: flex;
   flex-direction: column;
   padding: 10px 14px;
-  background: #f8fafc;
-  border-radius: 8px;
+  background: transparent;
+  border-radius: 0;
   text-decoration: none;
   margin-bottom: 6px;
-  border: 1px solid #f1f5f9;
+  border: none;
 }
 
-.pb-dropdown-highlight:hover {
-  background: #f0f4ff;
-  border-color: #dbeafe;
+.pb-dropdown-highlight:hover .pb-dropdown-title {
+  color: #2447bb;
 }
 
 .pb-dropdown-title {
@@ -221,7 +154,7 @@
   color: #1e293b;
   background: none;
   border: none;
-  border-radius: 8px;
+  border-radius: 0;
   cursor: pointer;
   text-align: left;
   transition: all 0.15s ease;
@@ -229,7 +162,7 @@
 
 .pb-submenu-trigger:hover,
 .pb-submenu-trigger[data-active="true"] {
-  background-color: #f1f5f9;
+  background-color: transparent;
   color: #2447bb;
 }
 
@@ -252,8 +185,8 @@
   left: calc(100% + 8px);
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.14), 0 2px 6px rgba(15, 23, 42, 0.04);
+  border-radius: 0;
+  box-shadow: none;
   padding: 12px;
   z-index: 1100;
   animation: pb-dropdown-enter 0.18s cubic-bezier(0.16, 1, 0.3, 1);
@@ -288,12 +221,12 @@
   font-weight: 500;
   color: #334155;
   text-decoration: none;
-  border-radius: 6px;
+  border-radius: 0;
   transition: all 0.15s ease;
 }
 
 .pb-category-link:hover {
-  background-color: #f8fafc;
+  background-color: transparent;
   color: #2447bb;
 }
 
@@ -329,12 +262,12 @@
   font-weight: 500;
   color: #334155;
   text-decoration: none;
-  border-radius: 6px;
+  border-radius: 0;
   transition: all 0.15s ease;
 }
 
 .pb-bank-link:hover {
-  background-color: #f8fafc;
+  background-color: transparent;
   color: #2447bb;
 }
 
@@ -353,27 +286,28 @@
   color: #2447bb;
   background: none;
   border: none;
-  border-radius: 6px;
+  border-radius: 0;
   cursor: pointer;
   transition: all 0.15s ease;
 }
 
 .pb-other-banks-trigger:hover,
 .pb-other-banks-trigger[data-active="true"] {
-  background-color: #f0f4ff;
+  background-color: transparent;
+  color: #2447bb;
 }
 
 .pb-other-banks-flyout {
   position: absolute;
   top: -8px;
-  left: calc(100% + 8px);
+  left: 100%;
   width: 260px;
   max-height: 380px;
   overflow-y: auto;
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.14);
+  border-radius: 0;
+  box-shadow: none;
   padding: 8px;
   z-index: 1200;
 }
@@ -385,46 +319,6 @@
   bottom: 0;
   left: -14px;
   width: 14px;
-}
-
-/* Right Actions */
-.pb-header-right-actions {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-left: auto;
-  flex-shrink: 0;
-}
-
-.pb-header-signin {
-  font-size: 13.5px;
-  font-weight: 600;
-  color: #334155;
-  text-decoration: none;
-  padding: 8px 14px;
-  border-radius: 8px;
-  transition: all 0.15s ease;
-}
-
-.pb-header-signin:hover {
-  color: #0f172a;
-  background: #f1f5f9;
-}
-
-.pb-header-signup {
-  font-size: 13.5px;
-  font-weight: 600;
-  color: #ffffff;
-  background: #2447bb;
-  text-decoration: none;
-  padding: 8px 16px;
-  border-radius: 8px;
-  transition: all 0.15s ease;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-}
-
-.pb-header-signup:hover {
-  background: #1b399a;
 }
 
 /* User Avatar Menu */
@@ -542,6 +436,7 @@
   .pb-nav {
     display: none;
     position: fixed;
+    margin-left: 0;
     top: 68px;
     left: 0;
     right: 0;
@@ -582,8 +477,8 @@
     position: static;
     box-shadow: none;
     border: 1px solid #f1f5f9;
-    background: #f8fafc;
-    border-radius: 10px;
+    background: #fff;
+    border-radius: 0;
     margin-top: 4px;
     padding: 8px;
     animation: none;
@@ -591,6 +486,7 @@
 
   .pb-flyout-panel {
     position: static;
+    left: auto;
     box-shadow: none;
     border: none;
     background: transparent;
@@ -613,10 +509,32 @@
 
   .pb-other-banks-flyout {
     position: static;
+    left: auto;
     width: 100%;
     box-shadow: none;
     border: none;
     background: transparent;
     padding-left: 12px;
   }
+}
+
+@media (min-width: 1025px) {
+  .pb-dropdown-menu::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -8px;
+    height: 8px;
+  }
+}
+@media (max-width: 800px) {
+  .pb-nav { top: 64px; }
+}
+.pb-header :is(button, a):focus-visible {
+  outline: 2px solid var(--pb-blue);
+  outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .pb-dropdown-menu, .pb-flyout-panel { animation: none; }
 }

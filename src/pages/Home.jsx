@@ -7,6 +7,7 @@ import PopularCardCarousel from '../components/PopularCardCarousel';
 import CategoryIllustration from '../components/CategoryIllustration';
 import { WhyIllustration, HowIllustration } from '../components/ServiceIllustrations';
 import BankLogo from '../components/BankLogo';
+import SavingsCalculator from '../components/SavingsCalculator';
 import { useData } from '../context/DataContext';
 import { banks as fallbackBanks } from '../data/cards';
 import '../styles/home-editorial.css';
@@ -251,7 +252,7 @@ const ELIG_DATA = {
         oddsPercent: 92,
         category: 'Cashback & Free',
         sampleCards: [
-          { id: 4, name: 'YES PaisaSave', badge: 'Lifetime Free' },
+          { id: 4, name: 'YES BYOC', badge: 'Lifetime Free' },
           { id: 5, name: 'Cashback SBI', badge: '5% Online' },
           { id: 8, name: 'Airtel Axis', badge: 'Bill Cashback' },
         ],
@@ -298,7 +299,7 @@ const ELIG_DATA = {
         oddsPercent: 89,
         category: 'Business & Zero Forex',
         sampleCards: [
-          { id: 4, name: 'YES PaisaSave', badge: 'Lifetime Free' },
+          { id: 4, name: 'YES BYOC', badge: 'Lifetime Free' },
           { id: 7, name: 'Scapia Federal', badge: '0% Forex Markup' },
           { id: 8, name: 'Airtel Axis', badge: 'Utility Spends' },
         ],
@@ -438,24 +439,24 @@ const COMPARE_MATCHUPS = [
     icon: '',
     card1: {
       id: 4,
-      name: 'YES PaisaSave',
+      name: 'YES BYOC',
       bankName: 'YES BANK',
       badge: 'Lifetime Free',
-      rating: 4.9,
-      reviews: '1.5k',
+      rating: 4.8,
+      reviews: '1.4k',
       joiningFee: '₹0 (Free)',
-      waiver: 'Lifetime free · Zero minimum spends',
-      welcome: '₹500 Welcome Voucher',
-      welcomeSub: 'Instant activation voucher on 1st UPI spend within 30 days',
-      reward: '6% Travel & Dining',
+      waiver: 'Lifetime free · Customizable plans',
+      welcome: 'Welcome Bonus Points',
+      welcomeSub: 'Activation bonus on 1st retail spend within 30 days',
+      reward: 'Up to 10% Cashback',
       rewardSub: '1% unlimited cashback on UPI scan & pay',
       lounge: 'Domestic on Spends',
       loungeSub: '₹10K quarterly retail spend criteria',
       forex: '2.75% + GST',
-      bestFor: 'Everyday UPI & QR Spends',
+      bestFor: 'Custom Spends & UPI',
       bestForSub: 'Zero maintenance fees with seamless UPI payments',
       winnerKeys: ['joiningFee', 'bestFor'],
-      route: '/yes-bank/paisabazaar-paisasave-credit-card',
+      route: '/yes-bank/byoc-credit-card',
     },
     card2: {
       id: 6,
@@ -478,7 +479,7 @@ const COMPARE_MATCHUPS = [
       winnerKeys: ['welcome', 'forex', 'lounge', 'reward'],
       route: '/hsbc-bank/travelone-credit-card',
     },
-    verdict: 'YES PaisaSave is 100% lifetime free with UPI rewards, whereas HSBC TravelOne provides elite international flyer perks with instant 20+ airline mile transfers.',
+    verdict: 'YES BYOC is customizable lifetime free with UPI rewards, whereas HSBC TravelOne provides elite international flyer perks with instant 20+ airline mile transfers.',
   },
 ];
 
@@ -533,10 +534,79 @@ export default function Home() {
     return matched.length >= 6 ? matched : cards.slice(0, 9);
   }, [cards]);
 
-  // Banks list
+  // Bank Logo Map for leading issuers
+  const BANK_LOGO_MAP = {
+    bank_1: '/images/banks/hsbc-bank.svg',
+    bank_2: '/images/banks/hdfc-bank.svg',
+    bank_3: '/images/banks/sbi-cards.svg',
+    bank_4: '/images/banks/american-express.svg',
+    bank_6: '/images/banks/icici-bank.svg',
+    bank_17: '/images/banks/kotak-mahindra-bank.svg',
+    bank_27: '/images/banks/axis-bank.svg',
+    bank_28: '/images/banks/standard-chartered-bank.svg',
+    bank_65: '/images/banks/yes-bank.svg',
+    bank_66: '/images/banks/rbl-bank.svg',
+    bank_67: '/images/banks/indusind-bank.svg',
+    bank_281: '/images/banks/idfc-first-bank.svg',
+    bank_357: '/images/banks/au-small-finance-bank.svg',
+    bank_32: '/images/banks/federal-bank.svg',
+    bank_5: '/images/banks/bobcard.svg',
+    bank_43: '/images/banks/punjab-national-bank.png',
+    bank_419: '/images/banks/sbm-bank.svg',
+  };
+
+  const BANK_ORDER = [
+    'bank_1',   // HSBC Bank
+    'bank_2',   // HDFC Bank
+    'bank_3',   // SBI Cards
+    'bank_4',   // American Express
+    'bank_6',   // ICICI Bank
+    'bank_17',  // Kotak Mahindra Bank
+    'bank_27',  // Axis Bank
+    'bank_28',  // Standard Chartered Bank
+    'bank_65',  // YES BANK
+    'bank_66',  // RBL Bank
+    'bank_67',  // IndusInd Bank
+    'bank_281', // IDFC FIRST Bank
+    'bank_357', // AU Small Finance Bank
+    'bank_32',  // Federal Bank
+    'bank_5',   // BOBCARD
+    'bank_43',  // Punjab National Bank
+    'bank_419', // SBM Bank
+  ];
+
+  const getBankLogo = (bank) => {
+    if (BANK_LOGO_MAP[bank.id]) return BANK_LOGO_MAP[bank.id];
+    const name = (bank.name || '').toLowerCase();
+    if (name.includes('hsbc')) return '/images/banks/hsbc-bank.svg';
+    if (name.includes('hdfc')) return '/images/banks/hdfc-bank.svg';
+    if (name.includes('sbi')) return '/images/banks/sbi-cards.svg';
+    if (name.includes('american') || name.includes('amex')) return '/images/banks/american-express.svg';
+    if (name.includes('icici')) return '/images/banks/icici-bank.svg';
+    if (name.includes('kotak')) return '/images/banks/kotak-mahindra-bank.svg';
+    if (name.includes('axis')) return '/images/banks/axis-bank.svg';
+    if (name.includes('standard')) return '/images/banks/standard-chartered-bank.svg';
+    if (name.includes('yes')) return '/images/banks/yes-bank.svg';
+    if (name.includes('rbl')) return '/images/banks/rbl-bank.svg';
+    if (name.includes('indusind')) return '/images/banks/indusind-bank.svg';
+    if (name.includes('idfc')) return '/images/banks/idfc-first-bank.svg';
+    if (name.includes('au small') || name.includes('au bank')) return '/images/banks/au-small-finance-bank.svg';
+    if (name.includes('federal')) return '/images/banks/federal-bank.svg';
+    if (name.includes('bob') || name.includes('baroda')) return '/images/banks/bobcard.svg';
+    if (name.includes('punjab') || name.includes('pnb')) return '/images/banks/punjab-national-bank.png';
+    if (name.includes('sbm')) return '/images/banks/sbm-bank.svg';
+    return bank.logo || '/images/banks/axis-bank.svg';
+  };
+
+  // Banks list - strictly the 17 banks we actually have, sorted to match reference
   const bankList = useMemo(() => {
     const source = allBanks?.length ? allBanks : fallbackBanks;
-    return (source || []).slice(0, 17);
+    const sorted = [...(source || [])].sort((a, b) => {
+      const idxA = BANK_ORDER.indexOf(a.id);
+      const idxB = BANK_ORDER.indexOf(b.id);
+      return (idxA !== -1 ? idxA : 999) - (idxB !== -1 ? idxB : 999);
+    });
+    return sorted.slice(0, 17);
   }, [allBanks]);
 
   // FAQ structured data schema
@@ -1076,6 +1146,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 8B. CREDIT CARD SAVINGS CALCULATOR */}
+      <SavingsCalculator />
+
       {/* 9. CHECK ELIGIBILITY (INTERACTIVE PRE-QUALIFICATION) */}
       <section className="bmcc-eligibility-section" aria-labelledby="elig-promo-heading" data-reveal>
         <div className="bmcc-container">
@@ -1287,15 +1360,9 @@ export default function Home() {
       <section className="bmcc-banks-section" aria-labelledby="banks-heading" data-reveal>
         <div className="bmcc-container">
           <div className="bmcc-banks-wrapper">
-            <div className="bmcc-section-head center">
-              <span className="bmcc-section-label">TOP CARD ISSUERS</span>
-              <h2 id="banks-heading" className="bmcc-section-title">
-                Explore <span className="bmcc-title-highlight">Cards from Leading Issuers</span>
-              </h2>
-              <p className="bmcc-section-sub">
-                Browse verified credit card offerings from 17 leading Indian banks and issuers.
-              </p>
-            </div>
+            <h2 id="banks-heading" className="bmcc-banks-title">
+              Explore <strong>Cards from Leading Issuers</strong>
+            </h2>
             <div className="bmcc-banks-grid">
               {bankList.map(b => (
                 <Link
@@ -1304,6 +1371,14 @@ export default function Home() {
                   className="bmcc-bank-card"
                   title={`View ${b.name} credit cards`}
                 >
+                  <img
+                    src={getBankLogo(b)}
+                    alt=""
+                    className="bmcc-bank-logo"
+                    onError={(e) => {
+                      e.currentTarget.style.display = 'none';
+                    }}
+                  />
                   <span className="bmcc-bank-name">{b.name}</span>
                 </Link>
               ))}

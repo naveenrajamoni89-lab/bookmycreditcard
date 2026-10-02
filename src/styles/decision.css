@@ -107,8 +107,8 @@
 .cdp-page .cdp-welcome-box { margin-bottom: 20px; padding: 12px 15px; border: 0; border-radius: 7px; background: #e9effb; color: #263e74; font-size: 12px; line-height: 1.5; }
 .cdp-page .cdp-welcome-box strong { margin-right: 5px; }
 .cdp-page .cdp-cta-group { gap: 18px; }
-.cdp-page .cdp-btn-apply { min-height: 46px; padding: 0 20px; border-radius: 8px; box-shadow: none; font-size: 13px; font-weight: 800; }
-.cdp-page .cdp-btn-apply:hover { transform: none; }
+.cdp-page .cdp-btn-apply, .cdp-page .cdp-btn-apply-primary { min-height: 46px; padding: 0 20px; border-radius: 30px; box-shadow: 0 2px 6px rgba(16, 17, 15, 0.16); font-size: 13px; font-weight: 800; }
+.cdp-page .cdp-btn-apply:hover, .cdp-page .cdp-btn-apply-primary:hover { transform: translateY(-1px); }
 .cdp-page .cdp-cta-note { max-width: 240px; color: var(--text-grey); font-size: 11px; line-height: 1.45; }
 .cdp-page .cdp-nav-section { top: 72px; z-index: 90; border-color: var(--border); }
 .cdp-page .cdp-tabs-bar { gap: 24px; }
@@ -245,5 +245,5 @@
   .cdp-page .cdp-msb-left { min-width: 0; max-width: calc(100% - 135px); }
   .cdp-page .cdp-msb-name { font-size: 11px; }
   .cdp-page .cdp-msb-fee { font-size: 10px; }
-  .cdp-page .cdp-msb-apply { min-height: 39px; display: inline-flex; align-items: center; padding: 0 11px; border-radius: 7px; font-size: 11px; font-weight: 800; }
+  .cdp-page .cdp-msb-apply { min-height: 39px; display: inline-flex; align-items: center; padding: 0 16px; border-radius: 30px; font-size: 11px; font-weight: 800; }
 }

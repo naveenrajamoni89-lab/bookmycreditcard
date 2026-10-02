@@ -291,11 +291,11 @@ export const creditCards = [
   },
   {
     "id": 4,
-    "name": "YES BANK PaisaSave Credit Card (FREE for Limited Time)",
+    "name": "YES BANK BYOC Credit Card",
     "bank": "bank_65",
     "bankName": "YES BANK",
     "bankLogo": "https://www.paisabazaar.com/blog-assets/bank-logos/yes-bank.svg",
-    "image": "https://www.paisabazaar.com/wp-content/uploads/2017/10/500x500-1.png",
+    "image": "/images/cards/4.webp",
     "categories": [
       "lifetime-free",
       "travel",
@@ -304,26 +304,26 @@ export const creditCards = [
     ],
     "joiningFee": 0,
     "annualFee": 0,
-    "feeWaiver": "Lifetime Free Card — No minimum spend required",
+    "feeWaiver": "Customizable plans with Lifetime Free options",
     "benefits": [
       {
         "icon": G,
-        "text": "6% cashback across all travel spends"
+        "text": "Up to 10% cashback across chosen categories"
       },
       {
         "icon": R,
-        "text": "6% cashback on all dining spends"
+        "text": "Customizable rewards, card designs & billing cycles"
       },
       {
         "icon": R,
         "text": "1% unlimited cashback on UPI transactions"
       }
     ],
-    "route": "/yes-bank/paisabazaar-paisasave-credit-card/",
-    "detailRoute": "/yes-bank/paisabazaar-paisasave-credit-card",
-    "knowMore": "https://www.paisabazaar.com/yes-bank/paisabazaar-paisasave-credit-card/",
-    "checkEligibility": "https://www.paisabazaar.com/cards/easy-apply?partnerProductId=318&utm_source=organic&utm_medium=card_compare_check_eligibility&utm_campaign=card-compare&utm_term=yes_bank_paisasave_credit_card",
-    "rating": 4.9,
+    "route": "/yes-bank/byoc-credit-card/",
+    "detailRoute": "/yes-bank/byoc-credit-card",
+    "knowMore": "https://www.yesbank.in/personal-banking/cards/credit-cards/byoc-credit-card",
+    "checkEligibility": "/credit-card-eligibility",
+    "rating": 4.8,
     "ratingCount": 1532
   },
   {

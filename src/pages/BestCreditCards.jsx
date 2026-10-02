@@ -12,7 +12,7 @@ const CATEGORY_CHAMPIONS = [
   { category: 'Best for Flat Cashback', card: 'Cashback SBI Card', perk: '5% flat cashback on all online retail platforms (up to ₹5,000/mo)', link: '/sbi-bank/cashback-sbi-card' },
   { category: 'Best for Luxury & Air Miles', card: 'HDFC Infinia Metal', perk: '3.33% to 33.3% return; unlimited lounge visits worldwide with guests', link: '/hdfc-bank/infinia-credit-card' },
   { category: 'Best for Airline Mile Transfers', card: 'Axis Atlas Credit Card', perk: '1:2 transfer ratio across 18 airline and hotel partners; tiered miles', link: '/axis-bank/atlas-credit-card' },
-  { category: 'Best for UPI Scan & Pay', card: 'YES BANK PaisaSave (RuPay)', perk: '1% unlimited cashback on UPI QR transactions; 6% on travel and dining', link: '/yes-bank/paisabazaar-paisasave-credit-card' },
+  { category: 'Best for UPI Scan & Pay', card: 'YES BANK BYOC (RuPay)', perk: '1% unlimited cashback on UPI QR transactions; up to 10% on chosen categories', link: '/yes-bank/byoc-credit-card' },
   { category: 'Best Lifetime Free Card', card: 'Federal Bank Scapia', perk: 'Zero forex markup fee; unlimited domestic lounge access on ₹5k spend', link: '/federal-bank/scapia-credit-card' },
   { category: 'Best for Fuel Savings', card: 'IndianOil RBL XTRA', perk: 'Up to 8.5% valueback on fuel fill-ups at IndianOil retail outlets', link: '/rbl-bank/indianoil-rbl-xtra-credit-card' },
   { category: 'Best for Everyday Utilities', card: 'Airtel Axis Bank Card', perk: '25% on Airtel bills, 10% on gas/electricity/broadband, Swiggy & Zomato', link: '/axis-bank/airtel-axis-bank-credit-card' },

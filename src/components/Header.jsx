@@ -59,6 +59,25 @@ export default function Header() {
   const [learnOpen, setLearnOpen] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
 
+  const closeTimers = useRef({});
+  const hoverMenu = (name, setOpen, close = () => setOpen(false)) => ({
+    onMouseEnter: () => {
+      clearTimeout(closeTimers.current[name]);
+      if (window.innerWidth > 1024) setOpen(true);
+    },
+    onMouseLeave: () => {
+      if (window.innerWidth > 1024) {
+        clearTimeout(closeTimers.current[name]);
+        closeTimers.current[name] = setTimeout(close, 350);
+      }
+    },
+  });
+
+  useEffect(() => {
+    const timers = closeTimers.current;
+    return () => Object.values(timers).forEach(clearTimeout);
+  }, []);
+
   const exploreRef = useRef(null);
   const learnRef = useRef(null);
   const userMenuRef = useRef(null);
@@ -157,15 +176,7 @@ export default function Header() {
           <div
             className="pb-nav-dropdown-wrap"
             ref={exploreRef}
-            onMouseEnter={() => window.innerWidth > 1024 && setExploreOpen(true)}
-            onMouseLeave={() => {
-              if (window.innerWidth > 1024) {
-                setExploreOpen(false);
-                setCategorySubmenuOpen(false);
-                setBankSubmenuOpen(false);
-                setOtherBanksOpen(false);
-              }
-            }}
+            {...hoverMenu('explore', setExploreOpen, () => { setExploreOpen(false); setCategorySubmenuOpen(false); setBankSubmenuOpen(false); setOtherBanksOpen(false); })}
           >
             <button
               type="button"
@@ -193,8 +204,7 @@ export default function Header() {
                 {/* By Category Submenu */}
                 <div
                   className="pb-submenu-item-wrap"
-                  onMouseEnter={() => window.innerWidth > 1024 && setCategorySubmenuOpen(true)}
-                  onMouseLeave={() => window.innerWidth > 1024 && setCategorySubmenuOpen(false)}
+                  {...hoverMenu('category', setCategorySubmenuOpen)}
                 >
                   <button
                     type="button"
@@ -226,13 +236,7 @@ export default function Header() {
                 {/* By Bank Submenu */}
                 <div
                   className="pb-submenu-item-wrap"
-                  onMouseEnter={() => window.innerWidth > 1024 && setBankSubmenuOpen(true)}
-                  onMouseLeave={() => {
-                    if (window.innerWidth > 1024) {
-                      setBankSubmenuOpen(false);
-                      setOtherBanksOpen(false);
-                    }
-                  }}
+                  {...hoverMenu('bank', setBankSubmenuOpen, () => { setBankSubmenuOpen(false); setOtherBanksOpen(false); })}
                 >
                   <button
                     type="button"
@@ -260,8 +264,7 @@ export default function Header() {
                         {/* Other Banks */}
                         <div
                           className="pb-other-banks-item-wrap"
-                          onMouseEnter={() => window.innerWidth > 1024 && setOtherBanksOpen(true)}
-                          onMouseLeave={() => window.innerWidth > 1024 && setOtherBanksOpen(false)}
+                          {...hoverMenu('otherBanks', setOtherBanksOpen)}
                         >
                           <button
                             type="button"
@@ -306,8 +309,7 @@ export default function Header() {
           <div
             className="pb-nav-dropdown-wrap"
             ref={learnRef}
-            onMouseEnter={() => window.innerWidth > 1024 && setLearnOpen(true)}
-            onMouseLeave={() => window.innerWidth > 1024 && setLearnOpen(false)}
+            {...hoverMenu('learn', setLearnOpen)}
           >
             <button
               type="button"

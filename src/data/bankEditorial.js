@@ -623,17 +623,17 @@ export const bankEditorialData = {
     badge: 'Competitive Value & RuPay UPI',
     accent: 'cyan',
     heroDesc:
-      'YES BANK offers competitive credit card propositions highlighted by zero annual fee cards and high accelerated rewards on everyday subscription services, dining, and online shopping. The YES BANK PaisaSave and Reserv series deliver some of the best statement value-back ratios in India, while their RuPay credit cards enable smooth scan-and-pay transactions at merchant counters.',
+      'YES BANK offers competitive credit card propositions highlighted by zero annual fee cards and high accelerated rewards on everyday subscription services, dining, and online shopping. The YES BANK BYOC and Reserv series deliver some of the best statement value-back ratios in India, while their RuPay credit cards enable smooth scan-and-pay transactions at merchant counters.',
     stats: [
       { label: 'Active Cards', value: '2 Million+' },
-      { label: 'Top Cashback Card', value: 'YES PaisaSave (6%)' },
+      { label: 'Top Cashback Card', value: 'YES BYOC (Up to 10%)' },
       { label: 'Super-Premium', value: 'YES Marquee Metal' },
       { label: 'UPI Variant', value: 'YES RuPay Virtual' },
     ],
     highlights: [
       {
-        title: 'Up to 6% Cashback on Top Categories',
-        desc: 'Cards like YES PaisaSave offer 6% accelerated cashback on dining and travel bookings, and 1% unlimited cashback on other purchases.',
+        title: 'Up to 10% Customizable Cashback',
+        desc: 'Cards like YES BYOC offer up to 10% customizable cashback across your choice of merchant categories and 1% unlimited cashback on UPI purchases.',
       },
       {
         title: 'YES Marquee Metal Luxury',
@@ -650,11 +650,11 @@ export const bankEditorialData = {
     ],
     topCards: [
       {
-        name: 'YES BANK PaisaSave Credit Card',
+        name: 'YES BANK BYOC Credit Card',
         joiningFee: '₹0 (Promo)',
         annualFee: '₹0',
-        perk: '6% cashback on travel and dining, 1% unlimited cashback on all other online & UPI transactions',
-        waiver: 'Lifetime Free Promo',
+        perk: 'Up to 10% customizable cashback on dining, travel & shopping, 1% unlimited on UPI transactions',
+        waiver: 'Lifetime Free Options',
         rating: 4.8,
       },
       {

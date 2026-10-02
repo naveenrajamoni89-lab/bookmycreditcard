@@ -18,6 +18,9 @@ output/
 **/output/
 credit-card-app/
 
+Paisabazaar-Credit-Cards/
+.reasonix/
+
 # Environment variables (keep .env.example in git)
 .env
 
