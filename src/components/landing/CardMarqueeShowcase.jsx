@@ -8,6 +8,15 @@ const SHOWCASE_CARDS = [
     bankName: 'HDFC Bank',
     route: '/hdfc-bank/infinia-credit-card/',
     image: '/images/cards/1.webp',
+    isVertical: false,
+  },
+  {
+    id: 9,
+    name: 'Tata Neu Infinity HDFC Bank Card',
+    bankName: 'HDFC Bank',
+    route: '/hdfc-bank/tata-neu-infinity-hdfc-bank-credit-card/',
+    image: '/images/cards/9-vert.png',
+    isVertical: true,
   },
   {
     id: 2,
@@ -15,6 +24,15 @@ const SHOWCASE_CARDS = [
     bankName: 'Axis Bank',
     route: '/axis-bank/atlas-credit-card/',
     image: '/images/cards/2.webp',
+    isVertical: false,
+  },
+  {
+    id: 5,
+    name: 'Cashback SBI Card',
+    bankName: 'SBI Cards',
+    route: '/sbi-bank/cashback-sbi-card/',
+    image: '/images/cards/5-vert.png',
+    isVertical: true,
   },
   {
     id: 3,
@@ -22,6 +40,15 @@ const SHOWCASE_CARDS = [
     bankName: 'HDFC Bank',
     route: '/hdfc-bank/hdfc-regalia-gold-credit-card/',
     image: '/images/cards/3.webp',
+    isVertical: false,
+  },
+  {
+    id: 10,
+    name: 'IndianOil RBL Bank XTRA Credit Card',
+    bankName: 'RBL Bank',
+    route: '/rbl-bank/indianoil-rbl-xtra-credit-card/',
+    image: '/images/cards/10-vert.png',
+    isVertical: true,
   },
   {
     id: 11,
@@ -29,6 +56,15 @@ const SHOWCASE_CARDS = [
     bankName: 'HDFC Bank',
     route: '/hdfc-bank/hdfc-diners-club-black-credit-card/',
     image: '/images/cards/11.webp',
+    isVertical: false,
+  },
+  {
+    id: 12,
+    name: 'Axis Magnus Burgundy Credit Card',
+    bankName: 'Axis Bank',
+    route: '/axis-bank/magnus-burgundy-credit-card/',
+    image: '/images/cards/12-vert.png',
+    isVertical: true,
   },
   {
     id: 13,
@@ -36,6 +72,7 @@ const SHOWCASE_CARDS = [
     bankName: 'HDFC Bank',
     route: '/hdfc-bank/millennia-credit-card/',
     image: '/images/cards/13.webp',
+    isVertical: false,
   },
   {
     id: 15,
@@ -43,6 +80,7 @@ const SHOWCASE_CARDS = [
     bankName: 'American Express',
     route: '/amex-bank/american-express-platinum-card/',
     image: '/images/cards/15.webp',
+    isVertical: false,
   },
   {
     id: 21,
@@ -50,6 +88,7 @@ const SHOWCASE_CARDS = [
     bankName: 'Axis Bank',
     route: '/axis-bank/flipkart-axis-bank-credit-card/',
     image: '/images/cards/21.webp',
+    isVertical: false,
   },
   {
     id: 22,
@@ -57,6 +96,7 @@ const SHOWCASE_CARDS = [
     bankName: 'Axis Bank',
     route: '/axis-bank/ace-credit-card/',
     image: '/images/cards/22.webp',
+    isVertical: false,
   },
   {
     id: 23,
@@ -64,6 +104,7 @@ const SHOWCASE_CARDS = [
     bankName: 'HDFC Bank',
     route: '/hdfc-bank/swiggy-blck-hdfc-credit-card/',
     image: '/images/cards/23.webp',
+    isVertical: false,
   },
   {
     id: 25,
@@ -71,6 +112,7 @@ const SHOWCASE_CARDS = [
     bankName: 'Axis Bank',
     route: '/axis-bank/airtel-axis-bank-credit-card/',
     image: '/images/cards/25.webp',
+    isVertical: false,
   },
   {
     id: 27,
@@ -78,6 +120,7 @@ const SHOWCASE_CARDS = [
     bankName: 'IDFC FIRST Bank',
     route: '/idfc-first-bank/idfc-first-private-credit-card/',
     image: '/images/cards/27.webp',
+    isVertical: false,
   },
   {
     id: 8,
@@ -85,20 +128,26 @@ const SHOWCASE_CARDS = [
     bankName: 'Axis Bank',
     route: '/axis-bank/select-credit-card/',
     image: '/images/cards/8.webp',
+    isVertical: false,
   },
 ];
 
 export default function CardMarqueeShowcase() {
   return (
     <section className="cmq-section" aria-label="Featured Credit Cards Marquee Showcase">
+      <div className="cmq-header">
+        <span className="cmq-badge">FEATURED COLLECTION</span>
+        <h2 className="cmq-heading">Popular Credit Cards in India</h2>
+      </div>
+
       <div className="cmq-row">
         <div className="cmq-track" id="card-marquee-track">
           {[0, 1].map((setIndex) => (
             <div className="cmq-set" key={`set-${setIndex}`} aria-hidden={setIndex === 1}>
               {SHOWCASE_CARDS.map((card, idx) => {
                 const globalIndex = setIndex * SHOWCASE_CARDS.length + idx;
-                const bobDelay = (-(idx * 1.3)).toFixed(1) + 's';
-                const inDelay = (globalIndex * 0.08).toFixed(2) + 's';
+                const bobDelay = (-(idx * 1.2)).toFixed(1) + 's';
+                const inDelay = (globalIndex * 0.06).toFixed(2) + 's';
 
                 return (
                   <Link
@@ -113,14 +162,14 @@ export default function CardMarqueeShowcase() {
                     tabIndex={setIndex === 1 ? -1 : 0}
                   >
                     <div className="cmq-card-inner">
-                      <img
-                        src={card.image}
-                        alt={`${card.name} by ${card.bankName}`}
-                        width="355"
-                        height="224"
-                        loading="lazy"
-                        draggable="false"
-                      />
+                      <div className={`cmq-card-frame ${card.isVertical ? 'cmq-is-vertical' : 'cmq-is-landscape'}`}>
+                        <img
+                          src={card.image}
+                          alt={`${card.name} by ${card.bankName}`}
+                          loading="lazy"
+                          draggable="false"
+                        />
+                      </div>
                     </div>
                   </Link>
                 );

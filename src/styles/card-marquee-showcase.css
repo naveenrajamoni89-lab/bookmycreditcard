@@ -1,8 +1,8 @@
-/* Card Marquee Showcase Animation - Vertical Cards Orientation */
+/* Card Marquee Showcase Animation - Clean Vertical Cards Orientation */
 :root {
-  --cmq-height: clamp(240px, 30vw, 310px);
+  --cmq-height: clamp(230px, 28vw, 290px);
   --cmq-width: calc(var(--cmq-height) / 1.586);
-  --cmq-gap: clamp(28px, 3.6vw, 56px);
+  --cmq-gap: clamp(24px, 3.2vw, 44px);
 }
 
 .cmq-section {
@@ -10,17 +10,47 @@
   width: 100%;
   background: linear-gradient(180deg, #ffffff 0%, #f8fafc 50%, #ffffff 100%);
   overflow: hidden;
-  padding: 36px 0 52px;
+  padding: 24px 0 32px;
   border-top: 1px solid rgba(226, 232, 240, 0.7);
   border-bottom: 1px solid rgba(226, 232, 240, 0.7);
+}
+
+.cmq-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 8px;
+  padding: 0 20px;
+}
+
+.cmq-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #2563eb;
+  background: #eff6ff;
+  border: 1px solid #dbeafe;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 6px;
+}
+
+.cmq-heading {
+  font-size: clamp(20px, 2.2vw, 28px);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: #0f172a;
+  margin: 0;
+  line-height: 1.25;
 }
 
 .cmq-row {
   width: 100%;
   overflow: hidden;
-  padding: 24px 0 32px;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+  padding: 32px 0 40px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
 }
 
 .cmq-track {
@@ -73,32 +103,52 @@
   position: relative;
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
-}
-
-.cmq-card img {
-  position: absolute;
-  width: var(--cmq-height);
-  height: var(--cmq-width);
-  max-width: none;
-  border-radius: 13px;
-  transform: rotate(90deg);
-  transform-origin: center center;
-  filter: drop-shadow(0 20px 24px rgba(15, 23, 42, 0.16)) drop-shadow(0 3px 6px rgba(15, 23, 42, 0.08));
-  transition: filter 0.5s ease;
-  user-select: none;
-  -webkit-user-drag: none;
+  border-radius: 14px;
+  box-shadow: 0 14px 28px -4px rgba(15, 23, 42, 0.16), 0 4px 10px -2px rgba(15, 23, 42, 0.08);
+  transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.4s ease;
 }
 
 .cmq-card:hover .cmq-card-inner {
-  transform: translateY(-14px) scale(1.06);
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 24px 38px -6px rgba(15, 23, 42, 0.24), 0 6px 14px -2px rgba(15, 23, 42, 0.12);
 }
 
-.cmq-card:hover img {
-  filter: drop-shadow(0 32px 38px rgba(15, 23, 42, 0.24)) drop-shadow(0 6px 12px rgba(15, 23, 42, 0.14));
+.cmq-card-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #0f172a;
+}
+
+/* Landscape card artwork centered and rotated 90deg to vertical without overflowing */
+.cmq-is-landscape img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--cmq-height);
+  height: var(--cmq-width);
+  max-width: none;
+  transform: translate(-50%, -50%) rotate(90deg);
+  object-fit: cover;
+  user-select: none;
+  -webkit-user-drag: none;
+  display: block;
+}
+
+/* Naturally vertical cards fill the frame edge-to-edge with no rotation */
+.cmq-is-vertical img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  user-select: none;
+  -webkit-user-drag: none;
+  display: block;
 }
 
 @keyframes cmq-bob {
@@ -106,7 +156,7 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
   }
 }
 
@@ -123,10 +173,16 @@
 
 @media (max-width: 640px) {
   .cmq-section {
-    padding: 20px 0 28px;
+    padding: 18px 0 24px;
+  }
+  .cmq-header {
+    margin-bottom: 4px;
+  }
+  .cmq-heading {
+    font-size: 20px;
   }
   .cmq-row {
-    padding: 12px 0 18px;
+    padding: 20px 0 28px;
     -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
     mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
   }
