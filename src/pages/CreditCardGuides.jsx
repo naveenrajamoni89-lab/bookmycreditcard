@@ -11,7 +11,7 @@ export default function CreditCardGuides() {
 
   return (
     <div className="learn-page bmcc-guides-page">
-      {/* Hero Quick Trust Strip */}
+      {/* Hero Header */}
       <section className="learn-hero">
         <div className="bmcc-container">
           <div className="learn-hero-inner">
@@ -23,31 +23,16 @@ export default function CreditCardGuides() {
               <span className="learn-breadcrumb-current">Credit Card Guides</span>
             </div>
 
-            <span className="learn-badge">
-              <span className="learn-badge-dot" />
-              PRACTICAL APPLICATION PLAYBOOKS
-            </span>
+            <span className="learn-badge">PRACTICAL PLAYBOOKS</span>
             <h1 className="learn-title">Actionable Credit Card Guides & How-Tos</h1>
             <p className="learn-lead">
               Clear, step-by-step procedures to help you navigate limit increases, dispute fraudulent charges, maximize reward redemptions, and protect your credit score.
             </p>
             <div className="learn-trust-strip">
-              <span className="learn-trust-pill">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                Step-by-Step Checklists
-              </span>
-              <span className="learn-trust-pill">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                Under 5 Min Reads
-              </span>
-              <span className="learn-trust-pill">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                RBI Banking Ombudsman Aligned
-              </span>
-              <span className="learn-trust-pill">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                Zero Fluff Guidance
-              </span>
+              <span className="learn-trust-pill">Step-by-Step Checklists</span>
+              <span className="learn-trust-pill">Under 5 Min Reads</span>
+              <span className="learn-trust-pill">RBI Banking Ombudsman Aligned</span>
+              <span className="learn-trust-pill">Zero Fluff Guidance</span>
             </div>
           </div>
         </div>
@@ -56,32 +41,19 @@ export default function CreditCardGuides() {
       {/* Main Interactive Playbook Reader */}
       <section className="learn-section">
         <div className="bmcc-container">
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'minmax(280px, 340px) minmax(0, 1fr)',
-            gap: '32px',
-            alignItems: 'start',
-          }}>
+          <div className="learn-reader-layout">
             {/* Guide Navigation Sidebar */}
-            <aside style={{
-              background: '#ffffff',
-              border: '1px solid #e2e8f0',
-              borderRadius: '16px',
-              padding: '16px',
-              boxShadow: '0 2px 8px rgba(15, 23, 42, 0.03)',
-              position: 'sticky',
-              top: '90px',
-            }}>
-              <div style={{ padding: '8px 12px 14px', borderBottom: '1px solid #f1f5f9', marginBottom: '8px' }}>
-                <span style={{ fontSize: '11px', fontWeight: '800', letterSpacing: '0.08em', color: '#2447bb', textTransform: 'uppercase', display: 'block', marginBottom: '2px' }}>
+            <aside className="learn-reader-nav">
+              <div style={{ padding: '8px 12px 10px', borderBottom: '1px solid #f1f5f9', marginBottom: '6px' }}>
+                <span style={{ fontSize: '11px', fontWeight: '700', letterSpacing: '0.08em', color: '#2447bb', textTransform: 'uppercase', display: 'block', marginBottom: '2px' }}>
                   PLAYBOOK DIRECTORY
                 </span>
-                <span style={{ fontSize: '12px', color: '#64748b' }}>
+                <span style={{ fontSize: '12px', color: '#656a5e' }}>
                   {guidesHubContent.guides.length} Actionable Walkthroughs
                 </span>
               </div>
 
-              <nav style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+              <nav style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
                 {guidesHubContent.guides.map((guide, idx) => {
                   const isActive = guide.id === activeGuide;
                   return (
@@ -89,29 +61,13 @@ export default function CreditCardGuides() {
                       key={guide.id}
                       type="button"
                       onClick={() => setActiveGuide(guide.id)}
-                      style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'flex-start',
-                        gap: '4px',
-                        padding: '12px 14px',
-                        borderRadius: '10px',
-                        border: 'none',
-                        background: isActive ? '#eff6ff' : 'transparent',
-                        color: isActive ? '#2447bb' : '#1e293b',
-                        textAlign: 'left',
-                        cursor: 'pointer',
-                        transition: 'all 0.15s ease',
-                      }}
+                      className={`learn-reader-link ${isActive ? 'active' : ''}`}
                     >
-                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
-                        <span style={{ fontSize: '10.5px', fontWeight: '800', letterSpacing: '0.04em', textTransform: 'uppercase', color: isActive ? '#2447bb' : '#94a3b8' }}>
-                          0{idx + 1} · {guide.category}
-                        </span>
-                        <span style={{ fontSize: '11px', color: '#94a3b8' }}>{guide.time}</span>
-                      </div>
-                      <span style={{ fontSize: '13.5px', fontWeight: isActive ? '700' : '600', lineHeight: '1.35', color: isActive ? '#2447bb' : '#0f172a' }}>
-                        {guide.title}
+                      <span className="learn-reader-link-title">
+                        {idx + 1}. {guide.title}
+                      </span>
+                      <span className="learn-reader-link-time">
+                        {guide.category} · {guide.time}
                       </span>
                     </button>
                   );
@@ -120,102 +76,56 @@ export default function CreditCardGuides() {
             </aside>
 
             {/* Active Guide Article */}
-            <article style={{
-              background: '#ffffff',
-              border: '1px solid #e2e8f0',
-              borderRadius: '20px',
-              padding: 'clamp(28px, 4vw, 44px)',
-              boxShadow: '0 4px 16px rgba(15, 23, 42, 0.04)',
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '14px' }}>
-                <span className="pb-learn-item-pill pill-blue">
-                  {current.category}
-                </span>
-                <span style={{ color: '#64748b', fontSize: '13px' }}>
-                  Reading time: {current.time}
-                </span>
+            <article className="learn-reader-content">
+              <div className="learn-reader-header">
+                <span className="learn-reader-kicker">{current.category} · {current.time}</span>
+                <h2 className="learn-reader-title">{current.title}</h2>
+                <p className="learn-reader-desc">{current.summary}</p>
               </div>
 
-              <h2 style={{ fontSize: 'clamp(24px, 3vw, 34px)', fontWeight: '800', letterSpacing: '-0.03em', color: '#10110f', margin: '0 0 16px', lineHeight: '1.2' }}>
-                {current.title}
-              </h2>
-
-              <p style={{ fontSize: '16px', lineHeight: '1.65', color: '#475569', margin: '0 0 28px', paddingBottom: '20px', borderBottom: '1px solid #f1f5f9' }}>
-                {current.summary}
-              </p>
-
-              <h3 style={{ fontSize: '18px', fontWeight: '800', letterSpacing: '-0.02em', color: '#0f172a', margin: '0 0 18px' }}>
+              <h3 style={{ fontSize: '17px', fontWeight: '600', color: '#10110f', margin: '0 0 16px' }}>
                 Step-by-Step Procedure
               </h3>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+              <div className="learn-reader-steps">
                 {current.steps.map((step, idx) => (
-                  <div
-                    key={idx}
-                    style={{
-                      display: 'flex',
-                      gap: '16px',
-                      alignItems: 'flex-start',
-                      background: '#f8fafc',
-                      border: '1px solid #edf2f7',
-                      borderRadius: '12px',
-                      padding: '18px 20px',
-                      transition: 'all 0.15s ease',
-                    }}
-                  >
-                    <span style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      minWidth: '28px',
-                      height: '28px',
-                      borderRadius: '8px',
-                      background: '#2447bb',
-                      color: '#ffffff',
-                      fontSize: '12px',
-                      fontWeight: '800',
-                      flexShrink: 0,
-                    }}>
-                      {idx + 1}
-                    </span>
-                    <p style={{ margin: 0, fontSize: '14.5px', lineHeight: '1.6', color: '#334155' }}>
-                      {step}
-                    </p>
+                  <div key={idx} className="learn-reader-step-row">
+                    <span className="learn-step-index">0{idx + 1}.</span>
+                    <p className="learn-step-detail">{step}</p>
                   </div>
                 ))}
               </div>
 
-              <div style={{ marginTop: '36px', paddingTop: '24px', borderTop: '1px solid #f1f5f9', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '14px' }}>
+              <div className="learn-pro-tip-box">
+                <strong>Editorial Pro-Tip:</strong> Always request and record a service request or complaint reference number when dealing with bank customer support for audit compliance.
+              </div>
+
+              <div style={{ marginTop: '28px', paddingTop: '20px', borderTop: '1px solid #f1f5f9', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '14px' }}>
                 <Link
                   to="/credit-card-eligibility"
                   style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '6px',
                     color: '#2447bb',
-                    fontWeight: '700',
-                    fontSize: '14px',
+                    fontWeight: '600',
+                    fontSize: '13.5px',
                     textDecoration: 'none',
                   }}
                 >
-                  Check Your Approval Odds Free
-                  <span aria-hidden="true">→</span>
+                  Check Your Card Eligibility Free →
                 </Link>
 
                 <Link
-                  to="/compare-credit-cards"
+                  to="/explore"
                   style={{
-                    background: '#2447bb',
+                    background: '#10110f',
                     color: '#ffffff',
-                    padding: '10px 22px',
-                    borderRadius: '999px',
-                    fontSize: '13.5px',
-                    fontWeight: '700',
+                    padding: '10px 20px',
+                    borderRadius: '6px',
+                    fontSize: '13px',
+                    fontWeight: '600',
                     textDecoration: 'none',
-                    boxShadow: '0 2px 8px rgba(36, 71, 187, 0.25)',
                   }}
                 >
-                  Compare Top Cards Now
+                  Explore All Credit Cards
                 </Link>
               </div>
             </article>
@@ -224,7 +134,7 @@ export default function CreditCardGuides() {
       </section>
 
       {/* Section 2: Crisis Assistance / Emergency Playbooks */}
-      <section className="learn-section" style={{ background: '#f8fafc' }}>
+      <section className="learn-section bg-subtle">
         <div className="bmcc-container">
           <div className="learn-section-head">
             <span className="learn-section-kicker">CRISIS ASSISTANCE</span>
@@ -234,42 +144,36 @@ export default function CreditCardGuides() {
             </p>
           </div>
 
-          <div className="learn-bento-grid">
-            <div className="learn-card" style={{ borderColor: '#fecaca', background: '#ffffff' }}>
-              <div className="learn-card-icon-box learn-icon-rose">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-              </div>
-              <h3 className="learn-card-title">Card Lost or Stolen?</h3>
-              <p className="learn-card-body">
-                Immediately freeze the card via your bank mobile app in under 15 seconds. Then report to customer care and obtain a police complaint reference for zero liability protection.
+          <div className="learn-card-grid">
+            <div className="learn-clean-card">
+              <span className="learn-card-tag" style={{ color: '#dc2626' }}>Urgent Action</span>
+              <h3 className="learn-clean-card-title">Card Lost or Stolen?</h3>
+              <p className="learn-clean-card-body">
+                Immediately block the card via your bank mobile app in under 15 seconds. Then report to customer care and obtain a police complaint reference for zero liability protection.
               </p>
-              <div className="learn-card-footer" style={{ color: '#e11d48' }}>
+              <div className="learn-clean-card-footer">
                 <span>RBI 3-Day Zero Liability Window</span>
               </div>
             </div>
 
-            <div className="learn-card" style={{ borderColor: '#fed7aa', background: '#ffffff' }}>
-              <div className="learn-card-icon-box learn-icon-amber">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-              </div>
-              <h3 className="learn-card-title">Unauthorized Transaction Dispute</h3>
-              <p className="learn-card-body">
+            <div className="learn-clean-card">
+              <span className="learn-card-tag" style={{ color: '#d97706' }}>Dispute Protocol</span>
+              <h3 className="learn-clean-card-title">Unauthorized Transaction Dispute</h3>
+              <p className="learn-clean-card-body">
                 Notify your bank within 72 hours of receiving the unauthorized SMS alert. Under RBI mandates, reporting within 3 business days grants you full zero-liability indemnity.
               </p>
-              <div className="learn-card-footer" style={{ color: '#d97706' }}>
+              <div className="learn-clean-card-footer">
                 <span>Immediate Chargeback Initiation</span>
               </div>
             </div>
 
-            <div className="learn-card" style={{ borderColor: '#bbf7d0', background: '#ffffff' }}>
-              <div className="learn-card-icon-box learn-icon-green">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              </div>
-              <h3 className="learn-card-title">Safe Card Cancellation</h3>
-              <p className="learn-card-body">
+            <div className="learn-clean-card">
+              <span className="learn-card-tag" style={{ color: '#059669' }}>Account Closure</span>
+              <h3 className="learn-clean-card-title">Safe Card Cancellation</h3>
+              <p className="learn-clean-card-body">
                 Ensure zero outstanding balance, redeem all accumulated reward points first, and request an official No Objection Certificate (NOC) and account closure confirmation letter.
               </p>
-              <div className="learn-card-footer" style={{ color: '#059669' }}>
+              <div className="learn-clean-card-footer">
                 <span>Zero Score Impact Protocol</span>
               </div>
             </div>

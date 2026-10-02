@@ -1,24 +1,29 @@
 /* ==========================================================================
-   Learn Hub & Financial Literacy Editorial Design System
-   Matches Home Page High-Trust Editorial Aesthetics (Bento, Typography, Tables)
+   Learn Hub & Financial Literacy Design System
+   Clean, Editorial, High-Trust Financial Interface
+   Zero gradients, zero colored icon squares, brand-consistent palette
    ========================================================================== */
 
-/* 1. SECTION LABELS & HERO ARCHITECTURE */
+/* 1. PAGE & LAYOUT FOUNDATIONS */
 .learn-page {
   background: #ffffff;
-  color: #1e293b;
+  color: #10110f;
   min-height: 100vh;
+}
+
+.learn-page a {
+  -webkit-tap-highlight-color: transparent;
 }
 
 .learn-hero {
   position: relative;
-  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
-  border-bottom: 1px solid #e2e8f0;
-  padding: clamp(48px, 6vw, 76px) 0 clamp(36px, 5vw, 56px);
+  background: #ffffff;
+  border-bottom: 1px solid #e8eae6;
+  padding: clamp(48px, 6vw, 72px) 0 clamp(36px, 5vw, 56px);
 }
 
 .learn-hero-inner {
-  max-width: 880px;
+  max-width: 860px;
   margin: 0 auto;
   text-align: center;
 }
@@ -28,13 +33,13 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  font-size: 12.5px;
-  color: #64748b;
-  margin-bottom: 16px;
+  font-size: 13px;
+  color: #656a5e;
+  margin-bottom: 20px;
 }
 
 .learn-breadcrumb a {
-  color: #64748b;
+  color: #656a5e;
   text-decoration: none;
   transition: color 0.15s ease;
 }
@@ -44,53 +49,44 @@
 }
 
 .learn-breadcrumb-sep {
-  color: #cbd5e1;
+  color: #c7cbc3;
   font-size: 11px;
 }
 
 .learn-breadcrumb-current {
-  color: #0f172a;
+  color: #10110f;
   font-weight: 600;
 }
 
 .learn-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+  display: inline-block;
   font-size: 11px;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #2447bb;
   margin-bottom: 12px;
 }
 
-.learn-badge-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #2447bb;
-}
-
 .learn-title {
-  font-size: clamp(32px, 4vw, 50px);
-  font-weight: 800;
-  letter-spacing: -0.035em;
-  line-height: 1.15;
+  font-size: clamp(32px, 4.2vw, 52px);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.12;
   color: #10110f;
   margin: 0 0 16px;
   text-wrap: balance;
 }
 
 .learn-lead {
-  font-size: clamp(15px, 1.25vw, 17px);
+  font-size: clamp(15px, 1.2vw, 17px);
   line-height: 1.65;
-  color: #475569;
+  color: #53584f;
   max-width: 68ch;
   margin: 0 auto 28px;
 }
 
-/* Trust Pill Strip */
+/* Clean Trust Strip */
 .learn-trust-strip {
   display: flex;
   flex-wrap: wrap;
@@ -104,31 +100,23 @@
   align-items: center;
   gap: 6px;
   padding: 6px 14px;
-  background: #ffffff;
+  background: #f8fafc;
   border: 1px solid #e2e8f0;
   border-radius: 999px;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 500;
   color: #334155;
-  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
 }
 
-.learn-trust-pill svg {
-  color: #2447bb;
-}
-
-/* 2. SECTION CONTAINERS & HEADERS */
+/* 2. SECTION STRUCTURE */
 .learn-section {
-  padding: clamp(52px, 6vw, 84px) 0;
-  border-bottom: 1px solid #f1f5f9;
-}
-
-.learn-section:nth-of-type(even) {
-  background: #f8fafc;
-}
-
-.learn-section:nth-of-type(odd) {
+  padding: clamp(56px, 6vw, 88px) 0;
+  border-bottom: 1px solid #e8eae6;
   background: #ffffff;
+}
+
+.learn-section.bg-subtle {
+  background: #fafaf9;
 }
 
 .learn-section-head {
@@ -137,10 +125,16 @@
   text-align: center;
 }
 
+.learn-section-head.text-left {
+  text-align: left;
+  margin: 0 0 36px;
+  max-width: 820px;
+}
+
 .learn-section-kicker {
-  display: inline-block;
+  display: block;
   font-size: 11px;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #2447bb;
@@ -148,9 +142,9 @@
 }
 
 .learn-section-title {
-  font-size: clamp(26px, 3vw, 36px);
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  font-size: clamp(26px, 3.2vw, 38px);
+  font-weight: 600;
+  letter-spacing: -0.035em;
   color: #10110f;
   margin: 0 0 12px;
   line-height: 1.2;
@@ -159,174 +153,194 @@
 .learn-section-desc {
   font-size: 15px;
   line-height: 1.6;
-  color: #64748b;
+  color: #53584f;
   margin: 0;
 }
 
-/* 3. BENTO CARD ARCHITECTURE */
-.learn-bento-grid {
+/* 3. CLEAN CARD & BENTO ARCHITECTURE (NO ICONS / NO SQUARES) */
+.learn-card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 20px;
 }
 
-.learn-card {
+.learn-card-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.learn-clean-card {
   position: relative;
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 16px;
-  padding: clamp(20px, 2.5vw, 28px);
-  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  border-radius: 8px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
+  transition: border-color 0.15s ease;
 }
 
-.learn-card:hover {
-  transform: translateY(-3px);
-  border-color: #cbd5e1;
-  box-shadow: 0 12px 24px -4px rgba(15, 23, 42, 0.06), 0 4px 8px -2px rgba(15, 23, 42, 0.03);
+.learn-clean-card:hover {
+  border-color: #94a3b8;
 }
 
-.learn-card-icon-box {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 16px;
-  flex-shrink: 0;
+.learn-card-tag {
+  display: inline-block;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #2447bb;
+  margin-bottom: 8px;
 }
 
-.learn-icon-blue { background: #eff6ff; color: #2447bb; }
-.learn-icon-green { background: #ecfdf5; color: #059669; }
-.learn-icon-amber { background: #fff7ed; color: #d97706; }
-.learn-icon-purple { background: #f5f3ff; color: #7c3aed; }
-.learn-icon-rose { background: #fff1f2; color: #e11d48; }
-
-.learn-card-title {
-  font-size: 18px;
-  font-weight: 700;
+.learn-clean-card-title {
+  font-size: 17px;
+  font-weight: 600;
   letter-spacing: -0.02em;
-  color: #0f172a;
+  color: #10110f;
   margin: 0 0 8px;
 }
 
-.learn-card-body {
+.learn-clean-card-body {
   font-size: 14px;
   line-height: 1.6;
-  color: #475569;
+  color: #53584f;
   margin: 0;
   flex-grow: 1;
 }
 
-.learn-card-footer {
-  margin-top: 16px;
+.learn-clean-card-footer {
+  margin-top: 18px;
   padding-top: 14px;
   border-top: 1px solid #f1f5f9;
-  font-size: 12.5px;
-  font-weight: 600;
+  font-size: 13px;
+  color: #64748b;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* Step Flow Cards */
-.learn-flow-grid {
+/* 4. PROCESS STEP ROWS (CLEAN EDITORIAL TIMELINE) */
+.learn-steps-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 16px;
-  position: relative;
 }
 
-.learn-step-card {
+.learn-step-item {
   position: relative;
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 14px;
-  padding: 24px;
-  transition: all 0.2s ease;
-}
-
-.learn-step-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
   border-radius: 8px;
-  background: #eff6ff;
-  color: #2447bb;
-  font-size: 12px;
-  font-weight: 800;
-  margin-bottom: 14px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
 }
 
-.learn-step-title {
-  font-size: 16px;
+.learn-step-num {
+  font-size: 13px;
   font-weight: 700;
-  color: #0f172a;
-  margin: 0 0 6px;
+  letter-spacing: 0.05em;
+  color: #2447bb;
+  margin-bottom: 12px;
 }
 
-.learn-step-desc {
+.learn-step-header {
+  font-size: 16px;
+  font-weight: 600;
+  color: #10110f;
+  margin: 0 0 8px;
+  letter-spacing: -0.015em;
+}
+
+.learn-step-text {
   font-size: 13.5px;
   line-height: 1.55;
-  color: #64748b;
+  color: #53584f;
   margin: 0;
 }
 
-/* Timeline Visualizer */
+.learn-step-meta {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid #f1f5f9;
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* 5. INTEREST-FREE WINDOW VISUALIZER (CLEAN FLAT BARS) */
 .learn-timeline-card {
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 16px;
+  border-radius: 8px;
   padding: clamp(24px, 3.5vw, 40px);
-  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
 }
 
 .learn-timeline-track {
   position: relative;
-  margin: 32px 0 24px;
-  padding: 0 10px;
+  margin: 28px 0 20px;
 }
 
 .learn-timeline-bar {
-  height: 12px;
+  height: 8px;
   background: #f1f5f9;
-  border-radius: 999px;
-  position: relative;
-  overflow: hidden;
+  border-radius: 4px;
   display: flex;
+  overflow: hidden;
 }
 
 .learn-bar-segment-active {
-  background: linear-gradient(90deg, #2447bb, #3b82f6);
+  background: #2447bb;
   height: 100%;
 }
 
 .learn-bar-segment-grace {
-  background: linear-gradient(90deg, #3b82f6, #10b981);
+  background: #0f172a;
   height: 100%;
 }
 
 .learn-timeline-labels {
   display: flex;
   justify-content: space-between;
-  margin-top: 12px;
-  font-size: 12px;
-  font-weight: 700;
-  color: #475569;
+  margin-top: 14px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #334155;
 }
 
-/* 4. TABLES & METRIC COMPARISONS */
+.learn-timeline-legend {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid #f1f5f9;
+  font-size: 13px;
+  color: #53584f;
+}
+
+.learn-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.learn-legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}
+
+.learn-legend-dot.dot-primary { background: #2447bb; }
+.learn-legend-dot.dot-grace { background: #0f172a; }
+
+/* 6. COMPARISON TABLES (FINANCIAL SCHEDULE) */
 .learn-table-card {
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 16px;
+  border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
 }
 
 .learn-table-wrap {
@@ -343,20 +357,20 @@
 }
 
 .learn-table th {
-  background: #f8fafc;
-  padding: 16px 20px;
+  background: #fafaf9;
+  padding: 14px 18px;
   font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
+  font-weight: 600;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: #475569;
+  color: #53584f;
   border-bottom: 1px solid #e2e8f0;
   white-space: nowrap;
 }
 
 .learn-table td {
-  padding: 16px 20px;
-  color: #1e293b;
+  padding: 14px 18px;
+  color: #10110f;
   border-bottom: 1px solid #f1f5f9;
   vertical-align: middle;
 }
@@ -366,111 +380,153 @@
 }
 
 .learn-table tr:hover td {
-  background: #fcfdfe;
+  background: #f8fafc;
 }
 
-.learn-bank-cell {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-weight: 700;
-  color: #0f172a;
-}
-
-.learn-bank-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  background: #eff6ff;
+.learn-table a {
   color: #2447bb;
-  font-size: 11px;
-  font-weight: 800;
-  flex-shrink: 0;
+  font-weight: 500;
+  text-decoration: none;
 }
 
-.learn-rate-badge {
-  display: inline-block;
-  font-weight: 700;
-  color: #0f172a;
-  background: #f1f5f9;
-  padding: 4px 10px;
-  border-radius: 6px;
-  font-size: 13px;
+.learn-table a:hover {
+  text-decoration: underline;
 }
 
-/* 5. CIBIL SCORE GAUGE & METERS */
-.learn-cibil-spectrum {
+.learn-rate-value {
+  font-weight: 600;
+  color: #10110f;
+}
+
+/* 7. CIBIL SCORE METRICS & PROGRESS BARS */
+.learn-score-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 16px;
 }
 
 .learn-score-card {
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 14px;
+  border-radius: 8px;
   padding: 20px;
-  transition: all 0.2s ease;
-  position: relative;
-  overflow: hidden;
+  border-top: 3px solid #cbd5e1;
 }
 
-.learn-score-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-}
-
-.learn-score-card[data-band="excellent"]::before { background: #10b981; }
-.learn-score-card[data-band="good"]::before { background: #0ea5e9; }
-.learn-score-card[data-band="fair"]::before { background: #f59e0b; }
-.learn-score-card[data-band="repair"]::before { background: #ef4444; }
+.learn-score-card.tier-excellent { border-top-color: #059669; }
+.learn-score-card.tier-good { border-top-color: #2447bb; }
+.learn-score-card.tier-fair { border-top-color: #d97706; }
+.learn-score-card.tier-repair { border-top-color: #dc2626; }
 
 .learn-score-header {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .learn-score-range {
   font-size: 20px;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  color: #0f172a;
-}
-
-.learn-score-pill {
-  font-size: 11px;
   font-weight: 700;
-  padding: 3px 10px;
-  border-radius: 999px;
+  color: #10110f;
+  letter-spacing: -0.02em;
 }
 
-.learn-score-pill.pill-excellent { background: #ecfdf5; color: #047857; }
-.learn-score-pill.pill-good { background: #f0f9ff; color: #0369a1; }
-.learn-score-pill.pill-fair { background: #fffbeb; color: #b45309; }
-.learn-score-pill.pill-repair { background: #fef2f2; color: #b91c1c; }
+.learn-score-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #53584f;
+}
 
-/* 6. INTERACTIVE SIMULATOR (CALCULATOR) */
+.learn-score-status {
+  font-size: 13px;
+  font-weight: 500;
+  color: #2447bb;
+  margin: 0 0 8px;
+}
+
+.learn-score-desc {
+  font-size: 13px;
+  line-height: 1.55;
+  color: #53584f;
+  margin: 0;
+}
+
+/* Factors Weight List */
+.learn-factor-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.learn-factor-row {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.learn-factor-info {
+  flex: 1;
+}
+
+.learn-factor-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #10110f;
+  margin: 0 0 4px;
+}
+
+.learn-factor-desc {
+  font-size: 13.5px;
+  color: #53584f;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.learn-factor-bar-wrap {
+  width: 140px;
+  flex-shrink: 0;
+}
+
+.learn-factor-bar-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 600;
+  color: #10110f;
+  margin-bottom: 6px;
+}
+
+.learn-factor-bar-track {
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.learn-factor-bar-fill {
+  height: 100%;
+  background: #2447bb;
+  border-radius: 3px;
+}
+
+/* 8. CLEAN SIMULATOR (SOLID CONTAINER, NO GRADIENTS) */
 .learn-sim-card {
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 16px;
+  border-radius: 8px;
   padding: clamp(24px, 3.5vw, 36px);
-  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
 }
 
 .learn-sim-grid {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 32px;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 36px;
   align-items: center;
 }
 
@@ -487,13 +543,13 @@
 
 .learn-slider-label {
   font-size: 13.5px;
-  font-weight: 700;
-  color: #334155;
+  font-weight: 600;
+  color: #10110f;
 }
 
 .learn-slider-val {
-  font-size: 17px;
-  font-weight: 800;
+  font-size: 18px;
+  font-weight: 700;
   color: #2447bb;
 }
 
@@ -508,15 +564,14 @@
 }
 
 .learn-sim-result-box {
-  background: linear-gradient(145deg, #0f172a 0%, #1e293b 100%);
-  border-radius: 14px;
+  background: #10110f;
+  border-radius: 8px;
   padding: 24px;
   color: #ffffff;
-  box-shadow: 0 12px 28px -6px rgba(15, 23, 42, 0.25);
 }
 
 .learn-result-stat {
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 
 .learn-result-stat:last-child {
@@ -524,104 +579,288 @@
 }
 
 .learn-result-label {
-  font-size: 12px;
+  font-size: 11.5px;
   font-weight: 600;
   color: #94a3b8;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   margin-bottom: 4px;
 }
 
 .learn-result-num {
   font-size: 26px;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.02em;
   color: #ffffff;
 }
 
-.learn-result-num.danger {
-  color: #f87171;
+.learn-result-num.highlight {
+  color: #60a5fa;
 }
 
-.learn-result-num.success {
-  color: #34d399;
+/* 9. PLAYBOOK READER (GUIDES 2-COLUMN STRUCTURE) */
+.learn-reader-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 28px;
+  align-items: start;
 }
 
-/* 7. ACCORDION (FAQS) */
-.learn-faq-list {
-  max-width: 800px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.learn-faq-item {
+.learn-reader-nav {
+  position: sticky;
+  top: 90px;
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  overflow: hidden;
-  transition: border-color 0.2s;
-}
-
-.learn-faq-item[data-open="true"] {
-  border-color: #93c5fd;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.04);
-}
-
-.learn-faq-btn {
-  width: 100%;
-  padding: 18px 20px;
+  border-radius: 8px;
+  padding: 8px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  background: none;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.learn-reader-link {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 14px;
+  border-radius: 6px;
+  background: transparent;
   border: none;
   text-align: left;
-  font-size: 15.5px;
-  font-weight: 700;
-  color: #0f172a;
   cursor: pointer;
+  transition: all 0.15s ease;
+  width: 100%;
 }
 
-.learn-faq-btn:hover {
+.learn-reader-link:hover {
+  background: #f8fafc;
+}
+
+.learn-reader-link.active {
+  background: #f1f5f9;
+  border-left: 3px solid #2447bb;
+  border-radius: 0 6px 6px 0;
+}
+
+.learn-reader-link-title {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #10110f;
+  margin-bottom: 2px;
+}
+
+.learn-reader-link.active .learn-reader-link-title {
   color: #2447bb;
 }
 
-.learn-faq-chevron {
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
-  transition: transform 0.2s ease;
+.learn-reader-link-time {
+  font-size: 11.5px;
   color: #64748b;
 }
 
-.learn-faq-item[data-open="true"] .learn-faq-chevron {
-  transform: rotate(180deg);
+.learn-reader-content {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: clamp(24px, 3.5vw, 36px);
+}
+
+.learn-reader-header {
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e8eae6;
+}
+
+.learn-reader-kicker {
+  font-size: 12px;
+  font-weight: 700;
   color: #2447bb;
+  margin-bottom: 6px;
 }
 
-.learn-faq-body {
-  padding: 0 20px 20px;
+.learn-reader-title {
+  font-size: clamp(24px, 2.5vw, 32px);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: #10110f;
+  margin: 0 0 10px;
+}
+
+.learn-reader-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #53584f;
+  margin: 0;
+}
+
+.learn-reader-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.learn-reader-step-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.learn-step-index {
+  font-size: 13px;
+  font-weight: 700;
+  color: #2447bb;
+  padding-top: 2px;
+  min-width: 24px;
+}
+
+.learn-step-detail {
   font-size: 14.5px;
-  line-height: 1.65;
-  color: #475569;
+  line-height: 1.6;
+  color: #334155;
+  margin: 0;
 }
 
-/* 8. RESPONSIVE BREAKPOINTS */
+.learn-pro-tip-box {
+  margin-top: 28px;
+  padding: 16px 20px;
+  background: #f8fafc;
+  border-left: 3px solid #2447bb;
+  border-radius: 0 6px 6px 0;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #334155;
+}
+
+.learn-pro-tip-box strong {
+  color: #10110f;
+}
+
+/* 10. CATEGORY CHAMPIONS GRID (BEST CREDIT CARDS) */
+.learn-champions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.learn-champion-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.15s ease;
+}
+
+.learn-champion-card:hover {
+  border-color: #94a3b8;
+}
+
+.learn-champion-category {
+  font-size: 12px;
+  font-weight: 700;
+  color: #2447bb;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+
+.learn-champion-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #10110f;
+  margin: 0 0 10px;
+  letter-spacing: -0.02em;
+}
+
+.learn-champion-perk {
+  font-size: 14px;
+  line-height: 1.55;
+  color: #53584f;
+  margin: 0 0 18px;
+  flex-grow: 1;
+}
+
+.learn-champion-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.learn-champion-rating {
+  font-size: 13px;
+  font-weight: 600;
+  color: #10110f;
+}
+
+.learn-champion-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: #2447bb;
+  text-decoration: none;
+}
+
+.learn-champion-link:hover {
+  text-decoration: underline;
+}
+
+/* 11. RESPONSIVE BREAKPOINTS */
+@media (max-width: 1024px) {
+  .learn-steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .learn-score-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .learn-card-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .learn-reader-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .learn-reader-nav {
+    position: static;
+  }
+}
+
 @media (max-width: 768px) {
   .learn-sim-grid {
     grid-template-columns: 1fr;
     gap: 24px;
   }
 
-  .learn-trust-strip {
-    gap: 8px;
+  .learn-steps-grid {
+    grid-template-columns: 1fr;
   }
 
-  .learn-trust-pill {
+  .learn-score-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .learn-card-grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .learn-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .learn-factor-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .learn-factor-bar-wrap {
+    width: 100%;
+  }
+
+  .learn-timeline-labels {
     font-size: 11px;
-    padding: 5px 12px;
   }
 }
