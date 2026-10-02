@@ -64,39 +64,168 @@
   }
 }
 
-/* Learn Dropdown */
+/* Premium Learn Mega Dropdown */
 .pb-learn-dropdown {
-  min-width: 250px;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: auto;
+  min-width: 420px;
+  max-width: 440px;
+  padding: 12px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 20px 45px -12px rgba(15, 23, 42, 0.14), 0 0 0 1px rgba(15, 23, 42, 0.04);
 }
 
-.pb-dropdown-link {
+.pb-learn-menu-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 14px;
-  font-size: 13.5px;
-  font-weight: 500;
-  color: #1e293b;
-  text-decoration: none;
-  border-radius: 0;
-  transition: all 0.15s ease;
+  padding: 4px 10px 10px;
+  border-bottom: 1px solid #f1f5f9;
+  margin-bottom: 6px;
 }
 
-.pb-dropdown-link:hover,
-.pb-dropdown-link:focus-visible {
-  background-color: transparent;
+.pb-learn-menu-kicker {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: #2447bb;
-  outline: none;
 }
 
-.pb-dropdown-link-badge {
+.pb-learn-menu-count {
   font-size: 11px;
-  font-weight: 400;
-  padding: 0;
-  margin-left: 20px;
-  border-radius: 0;
+  font-weight: 600;
+  color: #94a3b8;
+}
+
+.pb-learn-items {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.pb-learn-card-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.18s ease;
   background: transparent;
+}
+
+.pb-learn-card-link:hover {
+  background: #f8fafc;
+  transform: translateX(2px);
+}
+
+.pb-learn-icon-box {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.18s ease;
+}
+
+.pb-learn-card-link:hover .pb-learn-icon-box {
+  transform: scale(1.06);
+}
+
+.pb-icon-blue { background: #eff6ff; color: #2447bb; }
+.pb-icon-green { background: #ecfdf5; color: #059669; }
+.pb-icon-amber { background: #fff7ed; color: #d97706; }
+.pb-icon-purple { background: #f5f3ff; color: #7c3aed; }
+.pb-icon-indigo { background: #e0e7ff; color: #4338ca; }
+
+.pb-learn-text-block {
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.pb-learn-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+
+.pb-learn-item-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #0f172a;
+  transition: color 0.15s ease;
+}
+
+.pb-learn-card-link:hover .pb-learn-item-title {
+  color: #2447bb;
+}
+
+.pb-learn-item-desc {
+  font-size: 11.5px;
+  line-height: 1.4;
   color: #64748b;
+  display: block;
+}
+
+.pb-learn-item-pill {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 2px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.pb-learn-item-pill.pill-blue { background: #eff6ff; color: #1d4ed8; }
+.pb-learn-item-pill.pill-green { background: #ecfdf5; color: #047857; }
+.pb-learn-item-pill.pill-amber { background: #fffbeb; color: #b45309; }
+.pb-learn-item-pill.pill-purple { background: #f5f3ff; color: #6d28d9; }
+.pb-learn-item-pill.pill-indigo { background: #e0e7ff; color: #3730a3; }
+
+.pb-learn-arrow {
+  color: #94a3b8;
+  font-size: 14px;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: all 0.18s ease;
+}
+
+.pb-learn-card-link:hover .pb-learn-arrow {
+  opacity: 1;
+  transform: translateX(0);
+  color: #2447bb;
+}
+
+.pb-learn-menu-footer {
+  margin-top: 8px;
+  padding: 10px 12px;
+  border-top: 1px solid #f1f5f9;
+  background: #f8fafc;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11.5px;
+  color: #64748b;
+}
+
+.pb-learn-footer-cta {
+  font-weight: 700;
+  color: #2447bb;
+  text-decoration: none;
+}
+
+.pb-learn-footer-cta:hover {
+  text-decoration: underline;
 }
 
 /* Explore Dropdown & Flyout Structure */

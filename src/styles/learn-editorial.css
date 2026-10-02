@@ -1,0 +1,627 @@
+/* ==========================================================================
+   Learn Hub & Financial Literacy Editorial Design System
+   Matches Home Page High-Trust Editorial Aesthetics (Bento, Typography, Tables)
+   ========================================================================== */
+
+/* 1. SECTION LABELS & HERO ARCHITECTURE */
+.learn-page {
+  background: #ffffff;
+  color: #1e293b;
+  min-height: 100vh;
+}
+
+.learn-hero {
+  position: relative;
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  border-bottom: 1px solid #e2e8f0;
+  padding: clamp(48px, 6vw, 76px) 0 clamp(36px, 5vw, 56px);
+}
+
+.learn-hero-inner {
+  max-width: 880px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.learn-breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: #64748b;
+  margin-bottom: 16px;
+}
+
+.learn-breadcrumb a {
+  color: #64748b;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.learn-breadcrumb a:hover {
+  color: #2447bb;
+}
+
+.learn-breadcrumb-sep {
+  color: #cbd5e1;
+  font-size: 11px;
+}
+
+.learn-breadcrumb-current {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.learn-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #2447bb;
+  margin-bottom: 12px;
+}
+
+.learn-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #2447bb;
+}
+
+.learn-title {
+  font-size: clamp(32px, 4vw, 50px);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+  color: #10110f;
+  margin: 0 0 16px;
+  text-wrap: balance;
+}
+
+.learn-lead {
+  font-size: clamp(15px, 1.25vw, 17px);
+  line-height: 1.65;
+  color: #475569;
+  max-width: 68ch;
+  margin: 0 auto 28px;
+}
+
+/* Trust Pill Strip */
+.learn-trust-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px 14px;
+}
+
+.learn-trust-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #334155;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+
+.learn-trust-pill svg {
+  color: #2447bb;
+}
+
+/* 2. SECTION CONTAINERS & HEADERS */
+.learn-section {
+  padding: clamp(52px, 6vw, 84px) 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.learn-section:nth-of-type(even) {
+  background: #f8fafc;
+}
+
+.learn-section:nth-of-type(odd) {
+  background: #ffffff;
+}
+
+.learn-section-head {
+  max-width: 760px;
+  margin: 0 auto clamp(32px, 4vw, 48px);
+  text-align: center;
+}
+
+.learn-section-kicker {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #2447bb;
+  margin-bottom: 8px;
+}
+
+.learn-section-title {
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #10110f;
+  margin: 0 0 12px;
+  line-height: 1.2;
+}
+
+.learn-section-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #64748b;
+  margin: 0;
+}
+
+/* 3. BENTO CARD ARCHITECTURE */
+.learn-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.learn-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: clamp(20px, 2.5vw, 28px);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.learn-card:hover {
+  transform: translateY(-3px);
+  border-color: #cbd5e1;
+  box-shadow: 0 12px 24px -4px rgba(15, 23, 42, 0.06), 0 4px 8px -2px rgba(15, 23, 42, 0.03);
+}
+
+.learn-card-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  flex-shrink: 0;
+}
+
+.learn-icon-blue { background: #eff6ff; color: #2447bb; }
+.learn-icon-green { background: #ecfdf5; color: #059669; }
+.learn-icon-amber { background: #fff7ed; color: #d97706; }
+.learn-icon-purple { background: #f5f3ff; color: #7c3aed; }
+.learn-icon-rose { background: #fff1f2; color: #e11d48; }
+
+.learn-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+  margin: 0 0 8px;
+}
+
+.learn-card-body {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #475569;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.learn-card-footer {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid #f1f5f9;
+  font-size: 12.5px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Step Flow Cards */
+.learn-flow-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  position: relative;
+}
+
+.learn-step-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 24px;
+  transition: all 0.2s ease;
+}
+
+.learn-step-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: #eff6ff;
+  color: #2447bb;
+  font-size: 12px;
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+
+.learn-step-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 6px;
+}
+
+.learn-step-desc {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Timeline Visualizer */
+.learn-timeline-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: clamp(24px, 3.5vw, 40px);
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+}
+
+.learn-timeline-track {
+  position: relative;
+  margin: 32px 0 24px;
+  padding: 0 10px;
+}
+
+.learn-timeline-bar {
+  height: 12px;
+  background: #f1f5f9;
+  border-radius: 999px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+}
+
+.learn-bar-segment-active {
+  background: linear-gradient(90deg, #2447bb, #3b82f6);
+  height: 100%;
+}
+
+.learn-bar-segment-grace {
+  background: linear-gradient(90deg, #3b82f6, #10b981);
+  height: 100%;
+}
+
+.learn-timeline-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #475569;
+}
+
+/* 4. TABLES & METRIC COMPARISONS */
+.learn-table-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+}
+
+.learn-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.learn-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 14px;
+}
+
+.learn-table th {
+  background: #f8fafc;
+  padding: 16px 20px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #475569;
+  border-bottom: 1px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+.learn-table td {
+  padding: 16px 20px;
+  color: #1e293b;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+}
+
+.learn-table tr:last-child td {
+  border-bottom: none;
+}
+
+.learn-table tr:hover td {
+  background: #fcfdfe;
+}
+
+.learn-bank-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.learn-bank-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #eff6ff;
+  color: #2447bb;
+  font-size: 11px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.learn-rate-badge {
+  display: inline-block;
+  font-weight: 700;
+  color: #0f172a;
+  background: #f1f5f9;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+/* 5. CIBIL SCORE GAUGE & METERS */
+.learn-cibil-spectrum {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.learn-score-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 20px;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.learn-score-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+}
+
+.learn-score-card[data-band="excellent"]::before { background: #10b981; }
+.learn-score-card[data-band="good"]::before { background: #0ea5e9; }
+.learn-score-card[data-band="fair"]::before { background: #f59e0b; }
+.learn-score-card[data-band="repair"]::before { background: #ef4444; }
+
+.learn-score-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.learn-score-range {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+}
+
+.learn-score-pill {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.learn-score-pill.pill-excellent { background: #ecfdf5; color: #047857; }
+.learn-score-pill.pill-good { background: #f0f9ff; color: #0369a1; }
+.learn-score-pill.pill-fair { background: #fffbeb; color: #b45309; }
+.learn-score-pill.pill-repair { background: #fef2f2; color: #b91c1c; }
+
+/* 6. INTERACTIVE SIMULATOR (CALCULATOR) */
+.learn-sim-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: clamp(24px, 3.5vw, 36px);
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+}
+
+.learn-sim-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.learn-slider-group {
+  margin-bottom: 24px;
+}
+
+.learn-slider-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.learn-slider-label {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #334155;
+}
+
+.learn-slider-val {
+  font-size: 17px;
+  font-weight: 800;
+  color: #2447bb;
+}
+
+.learn-range-input {
+  width: 100%;
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 999px;
+  outline: none;
+  accent-color: #2447bb;
+  cursor: pointer;
+}
+
+.learn-sim-result-box {
+  background: linear-gradient(145deg, #0f172a 0%, #1e293b 100%);
+  border-radius: 14px;
+  padding: 24px;
+  color: #ffffff;
+  box-shadow: 0 12px 28px -6px rgba(15, 23, 42, 0.25);
+}
+
+.learn-result-stat {
+  margin-bottom: 16px;
+}
+
+.learn-result-stat:last-child {
+  margin-bottom: 0;
+}
+
+.learn-result-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 4px;
+}
+
+.learn-result-num {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+
+.learn-result-num.danger {
+  color: #f87171;
+}
+
+.learn-result-num.success {
+  color: #34d399;
+}
+
+/* 7. ACCORDION (FAQS) */
+.learn-faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.learn-faq-item {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.learn-faq-item[data-open="true"] {
+  border-color: #93c5fd;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.04);
+}
+
+.learn-faq-btn {
+  width: 100%;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 15.5px;
+  font-weight: 700;
+  color: #0f172a;
+  cursor: pointer;
+}
+
+.learn-faq-btn:hover {
+  color: #2447bb;
+}
+
+.learn-faq-chevron {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+  color: #64748b;
+}
+
+.learn-faq-item[data-open="true"] .learn-faq-chevron {
+  transform: rotate(180deg);
+  color: #2447bb;
+}
+
+.learn-faq-body {
+  padding: 0 20px 20px;
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: #475569;
+}
+
+/* 8. RESPONSIVE BREAKPOINTS */
+@media (max-width: 768px) {
+  .learn-sim-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .learn-trust-strip {
+    gap: 8px;
+  }
+
+  .learn-trust-pill {
+    font-size: 11px;
+    padding: 5px 12px;
+  }
+}

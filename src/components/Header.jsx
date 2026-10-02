@@ -43,11 +43,46 @@ const OTHER_BANKS = [
 ];
 
 const LEARN_MENU = [
-  { label: 'Credit Card Basics', to: '/credit-card-basics', badge: 'Beginner' },
-  { label: 'CIBIL Score', to: '/cibil-score-for-credit-card', badge: 'Credit Health' },
-  { label: 'Credit Card Interest Rates', to: '/credit-card-interest-rates', badge: 'Rates' },
-  { label: 'Best Credit Cards', to: '/best-credit-cards', badge: 'Rankings' },
-  { label: 'Credit Card Guides', to: '/credit-card-guides', badge: 'How-Tos' },
+  {
+    label: 'Credit Card Basics',
+    desc: 'Billing cycles, 50-day grace period & key terms',
+    to: '/credit-card-basics',
+    badge: 'Beginner',
+    badgeColor: 'blue',
+    icon: 'book',
+  },
+  {
+    label: 'CIBIL Score',
+    desc: 'Score brackets, factors & card approval odds',
+    to: '/cibil-score-for-credit-card',
+    badge: 'Credit Health',
+    badgeColor: 'green',
+    icon: 'shield',
+  },
+  {
+    label: 'Credit Card Interest Rates',
+    desc: 'Bank APR schedule, cash fees & repayment math',
+    to: '/credit-card-interest-rates',
+    badge: 'Rates & APR',
+    badgeColor: 'amber',
+    icon: 'percent',
+  },
+  {
+    label: 'Best Credit Cards',
+    desc: 'Top 25 cards ranked across rewards & lounge perks',
+    to: '/best-credit-cards',
+    badge: '2026 Rankings',
+    badgeColor: 'purple',
+    icon: 'trophy',
+  },
+  {
+    label: 'Credit Card Guides',
+    desc: 'Actionable playbooks for limits, disputes & rewards',
+    to: '/credit-card-guides',
+    badge: 'How-Tos',
+    badgeColor: 'indigo',
+    icon: 'compass',
+  },
 ];
 
 export default function Header() {
@@ -326,12 +361,53 @@ export default function Header() {
 
             {learnOpen && (
               <div className="pb-dropdown-menu pb-learn-dropdown" role="menu">
-                {LEARN_MENU.map(item => (
-                  <Link key={item.to} to={item.to} className="pb-dropdown-link" role="menuitem">
-                    <span>{item.label}</span>
-                    <span className="pb-dropdown-link-badge">{item.badge}</span>
+                <div className="pb-learn-menu-header">
+                  <span className="pb-learn-menu-kicker">KNOWLEDGE & EDUCATION</span>
+                  <span className="pb-learn-menu-count">5 Core Hubs</span>
+                </div>
+                <div className="pb-learn-items">
+                  {LEARN_MENU.map(item => (
+                    <Link
+                      key={item.to}
+                      to={item.to}
+                      className="pb-learn-card-link"
+                      role="menuitem"
+                      onClick={() => setLearnOpen(false)}
+                    >
+                      <div className={`pb-learn-icon-box pb-icon-${item.badgeColor}`}>
+                        {item.icon === 'book' && (
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                        )}
+                        {item.icon === 'shield' && (
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                        )}
+                        {item.icon === 'percent' && (
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
+                        )}
+                        {item.icon === 'trophy' && (
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.45 1-1 1H8c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1h8c.55 0 1-.45 1-1v-1c0-.55-.45-1-1-1h-1c-.55 0-1-.45-1-1v-2.34"/><path d="M6 4h12v7a6 6 0 0 1-12 0V4z"/></svg>
+                        )}
+                        {item.icon === 'compass' && (
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+                        )}
+                      </div>
+                      <div className="pb-learn-text-block">
+                        <div className="pb-learn-title-row">
+                          <span className="pb-learn-item-title">{item.label}</span>
+                          <span className={`pb-learn-item-pill pill-${item.badgeColor}`}>{item.badge}</span>
+                        </div>
+                        <span className="pb-learn-item-desc">{item.desc}</span>
+                      </div>
+                      <span className="pb-learn-arrow">→</span>
+                    </Link>
+                  ))}
+                </div>
+                <div className="pb-learn-menu-footer">
+                  <span>Need personalized recommendations?</span>
+                  <Link to="/credit-card-eligibility" className="pb-learn-footer-cta" onClick={() => setLearnOpen(false)}>
+                    Check Eligibility →
                   </Link>
-                ))}
+                </div>
               </div>
             )}
           </div>
