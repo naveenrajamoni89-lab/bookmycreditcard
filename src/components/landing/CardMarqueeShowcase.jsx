@@ -4,7 +4,7 @@ import '../../styles/card-marquee-showcase.css';
 const SHOWCASE_CARDS = [
   {
     id: 1,
-    name: 'HDFC Infinia Credit Card',
+    name: 'HDFC Infinia Metal Edition',
     bankName: 'HDFC Bank',
     route: '/hdfc-bank/infinia-credit-card/',
     image: '/images/cards/1.webp',
@@ -24,48 +24,6 @@ const SHOWCASE_CARDS = [
     image: '/images/cards/3.webp',
   },
   {
-    id: 5,
-    name: 'Cashback SBI Card',
-    bankName: 'SBI Cards',
-    route: '/sbi-bank/cashback-sbi-card/',
-    image: '/images/cards/5.webp',
-  },
-  {
-    id: 6,
-    name: 'HSBC TravelOne Credit Card',
-    bankName: 'HSBC Bank',
-    route: '/hsbc-bank/travelone-credit-card/',
-    image: '/images/cards/6.webp',
-  },
-  {
-    id: 7,
-    name: 'Federal Bank Scapia Credit Card',
-    bankName: 'Federal Bank',
-    route: '/federal-bank/scapia-credit-card/',
-    image: '/images/cards/7.webp',
-  },
-  {
-    id: 8,
-    name: 'Axis Bank SELECT Credit Card',
-    bankName: 'Axis Bank',
-    route: '/axis-bank/select-credit-card/',
-    image: '/images/cards/8.webp',
-  },
-  {
-    id: 9,
-    name: 'Tata Neu Infinity HDFC Bank Card',
-    bankName: 'HDFC Bank',
-    route: '/hdfc-bank/tata-neu-infinity-hdfc-bank-credit-card/',
-    image: '/images/cards/9.webp',
-  },
-  {
-    id: 10,
-    name: 'IndianOil RBL Bank XTRA Credit Card',
-    bankName: 'RBL Bank',
-    route: '/rbl-bank/indianoil-rbl-xtra-credit-card/',
-    image: '/images/cards/10.webp',
-  },
-  {
     id: 11,
     name: 'HDFC Diners Club Black Metal Edition',
     bankName: 'HDFC Bank',
@@ -73,18 +31,60 @@ const SHOWCASE_CARDS = [
     image: '/images/cards/11.webp',
   },
   {
-    id: 12,
-    name: 'Axis Magnus for Burgundy Credit Card',
-    bankName: 'Axis Bank',
-    route: '/axis-bank/magnus-burgundy-credit-card/',
-    image: '/images/cards/12.webp',
-  },
-  {
     id: 13,
     name: 'HDFC Millennia Credit Card',
     bankName: 'HDFC Bank',
     route: '/hdfc-bank/millennia-credit-card/',
     image: '/images/cards/13.webp',
+  },
+  {
+    id: 15,
+    name: 'American Express Platinum Card',
+    bankName: 'American Express',
+    route: '/amex-bank/american-express-platinum-card/',
+    image: '/images/cards/15.webp',
+  },
+  {
+    id: 21,
+    name: 'Flipkart Axis Bank Credit Card',
+    bankName: 'Axis Bank',
+    route: '/axis-bank/flipkart-axis-bank-credit-card/',
+    image: '/images/cards/21.webp',
+  },
+  {
+    id: 22,
+    name: 'Axis Bank ACE Credit Card',
+    bankName: 'Axis Bank',
+    route: '/axis-bank/ace-credit-card/',
+    image: '/images/cards/22.webp',
+  },
+  {
+    id: 23,
+    name: 'Swiggy HDFC Bank Credit Card',
+    bankName: 'HDFC Bank',
+    route: '/hdfc-bank/swiggy-blck-hdfc-credit-card/',
+    image: '/images/cards/23.webp',
+  },
+  {
+    id: 25,
+    name: 'Airtel Axis Bank Credit Card',
+    bankName: 'Axis Bank',
+    route: '/axis-bank/airtel-axis-bank-credit-card/',
+    image: '/images/cards/25.webp',
+  },
+  {
+    id: 27,
+    name: 'IDFC FIRST Private Credit Card',
+    bankName: 'IDFC FIRST Bank',
+    route: '/idfc-first-bank/idfc-first-private-credit-card/',
+    image: '/images/cards/27.webp',
+  },
+  {
+    id: 8,
+    name: 'Axis Bank SELECT Credit Card',
+    bankName: 'Axis Bank',
+    route: '/axis-bank/select-credit-card/',
+    image: '/images/cards/8.webp',
   },
 ];
 
@@ -112,14 +112,16 @@ export default function CardMarqueeShowcase() {
                     }}
                     tabIndex={setIndex === 1 ? -1 : 0}
                   >
-                    <img
-                      src={card.image}
-                      alt={`${card.name} by ${card.bankName}`}
-                      width="355"
-                      height="224"
-                      loading="lazy"
-                      draggable="false"
-                    />
+                    <div className="cmq-card-inner">
+                      <img
+                        src={card.image}
+                        alt={`${card.name} by ${card.bankName}`}
+                        width="355"
+                        height="224"
+                        loading="lazy"
+                        draggable="false"
+                      />
+                    </div>
                   </Link>
                 );
               })}
