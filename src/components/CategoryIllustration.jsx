@@ -275,6 +275,7 @@ export default function CategoryIllustration({ categoryKey, className = '' }) {
         </svg>
       );
 
+    case 'lounge-access-credit-cards':
     case 'credit-cards-lounge-access':
       return (
         <svg className={className} viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -488,6 +489,165 @@ export default function CategoryIllustration({ categoryKey, className = '' }) {
           {/* Twinkles */}
           <circle cx="64" cy="22" r="2" fill="#FB7185" />
           <circle cx="18" cy="54" r="1.5" fill="#FECDD3" />
+        </svg>
+      );
+
+    case 'shopping-credit-cards':
+      return (
+        <svg className={className} viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="sh-bag" x1="22" y1="26" x2="54" y2="66" gradientUnits="userSpaceOnUse">
+              <stop stopColor="#F43F5E" />
+              <stop offset="0.6" stopColor="#E11D48" />
+              <stop offset="1" stopColor="#BE123C" />
+            </linearGradient>
+            <linearGradient id="sh-box" x1="42" y1="36" x2="66" y2="60" gradientUnits="userSpaceOnUse">
+              <stop stopColor="#FDE047" />
+              <stop offset="0.6" stopColor="#F59E0B" />
+              <stop offset="1" stopColor="#D97706" />
+            </linearGradient>
+            <radialGradient id="sh-glow" cx="40" cy="40" r="36" gradientUnits="userSpaceOnUse">
+              <stop stopColor="#F43F5E" stopOpacity="0.25" />
+              <stop offset="1" stopColor="#F43F5E" stopOpacity="0" />
+            </radialGradient>
+            <filter id="sh-shadow" x="12" y="14" width="58" height="56" filterUnits="userSpaceOnUse">
+              <feDropShadow dx="0" dy="6" stdDeviation="4.5" floodColor="#881337" floodOpacity="0.32" />
+            </filter>
+          </defs>
+          <circle cx="40" cy="40" r="34" fill="url(#sh-glow)" />
+
+          {/* 3D Shopping Bag */}
+          <g filter="url(#sh-shadow)">
+            {/* Bag Handle */}
+            <path d="M26 26 C26 18 38 18 38 26" stroke="#FDA4AF" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+            {/* Bag Main Body */}
+            <path d="M20 28 L44 26 L48 60 L18 62 Z" fill="url(#sh-bag)" />
+            {/* Bag Fold Side Profile */}
+            <path d="M44 26 L52 30 L55 58 L48 60 Z" fill="#9F1239" />
+            {/* Bag Brand Tag Accent */}
+            <circle cx="32" cy="42" r="7" fill="#FFFFFF" opacity="0.9" />
+            <text x="32" y="46" textAnchor="middle" fontSize="10" fontWeight="900" fill="#E11D48" fontFamily="sans-serif">%</text>
+          </g>
+
+          {/* 3D Gift Box with Ribbon (Foreground) */}
+          <g filter="url(#sh-shadow)">
+            <rect x="42" y="44" width="22" height="18" rx="3" fill="url(#sh-box)" />
+            <rect x="40" y="41" width="26" height="5" rx="1.5" fill="#FDE047" />
+            {/* Ribbon Tie */}
+            <line x1="53" y1="41" x2="53" y2="62" stroke="#BE123C" strokeWidth="2.5" />
+            {/* Bow */}
+            <path d="M49 39 C46 35 52 35 53 39 C54 35 60 35 57 39 Z" fill="#BE123C" />
+          </g>
+
+          {/* Sparkles */}
+          <path d="M16 22 L17.5 25.5 L21 27 L17.5 28.5 L16 32 L14.5 28.5 L11 27 L14.5 25.5 Z" fill="#FDE047" />
+          <circle cx="64" cy="24" r="2.5" fill="#FDA4AF" />
+        </svg>
+      );
+
+    case 'dining-credit-cards':
+      return (
+        <svg className={className} viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="dn-dome" x1="22" y1="24" x2="58" y2="52" gradientUnits="userSpaceOnUse">
+              <stop stopColor="#FDBA74" />
+              <stop offset="0.5" stopColor="#F97316" />
+              <stop offset="1" stopColor="#C2410C" />
+            </linearGradient>
+            <linearGradient id="dn-platter" x1="16" y1="48" x2="64" y2="58" gradientUnits="userSpaceOnUse">
+              <stop stopColor="#FED7AA" />
+              <stop offset="0.6" stopColor="#FDBA74" />
+              <stop offset="1" stopColor="#EA580C" />
+            </linearGradient>
+            <radialGradient id="dn-glow" cx="40" cy="40" r="36" gradientUnits="userSpaceOnUse">
+              <stop stopColor="#F97316" stopOpacity="0.25" />
+              <stop offset="1" stopColor="#F97316" stopOpacity="0" />
+            </radialGradient>
+            <filter id="dn-shadow" x="12" y="16" width="56" height="52" filterUnits="userSpaceOnUse">
+              <feDropShadow dx="0" dy="6" stdDeviation="4.5" floodColor="#7C2D12" floodOpacity="0.32" />
+            </filter>
+          </defs>
+          <circle cx="40" cy="40" r="34" fill="url(#dn-glow)" />
+
+          {/* 3D Cloche Service Dome */}
+          <g filter="url(#dn-shadow)">
+            {/* Cloche Dome Knob */}
+            <circle cx="40" cy="22" r="3.5" fill="#FED7AA" />
+            <circle cx="40" cy="22" r="1.5" fill="#EA580C" />
+            {/* Dome Cover */}
+            <path d="M22 46 C22 30 30 25 40 25 C50 25 58 30 58 46 Z" fill="url(#dn-dome)" />
+            {/* Specular Highlight on Dome */}
+            <path d="M26 44 C27 34 32 30 38 29 C34 31 30 36 29 44 Z" fill="#FFFFFF" opacity="0.4" />
+            {/* Platter Rim Base */}
+            <ellipse cx="40" cy="48" rx="24" ry="5.5" fill="url(#dn-platter)" />
+            <ellipse cx="40" cy="49" rx="22" ry="4" fill="#9A3412" opacity="0.4" />
+          </g>
+
+          {/* Crossed Cutlery / Fork & Knife */}
+          <g filter="url(#dn-shadow)">
+            {/* Fork */}
+            <path d="M25 48 L17 64 M17 64 L21 62" stroke="#FED7AA" strokeWidth="1.8" strokeLinecap="round" />
+            <path d="M23 48 L27 48 M25 46 L25 50" stroke="#FDE047" strokeWidth="1.5" strokeLinecap="round" />
+            {/* Knife */}
+            <path d="M55 48 L63 64" stroke="#FED7AA" strokeWidth="2" strokeLinecap="round" />
+          </g>
+
+          {/* Gourmet Aroma Steam & Stars */}
+          <path d="M35 18 C33 14 37 12 35 9" stroke="#FDBA74" strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.7" />
+          <path d="M42 16 C40 13 44 11 42 8" stroke="#FED7AA" strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.8" />
+          <circle cx="62" cy="22" r="2" fill="#FDE047" />
+          <circle cx="18" cy="28" r="2" fill="#FED7AA" />
+        </svg>
+      );
+
+    case 'fd-backed-credit-cards':
+      return (
+        <svg className={className} viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="fd-cert" x1="20" y1="20" x2="56" y2="58" gradientUnits="userSpaceOnUse">
+              <stop stopColor="#10B981" />
+              <stop offset="0.6" stopColor="#059669" />
+              <stop offset="1" stopColor="#047857" />
+            </linearGradient>
+            <linearGradient id="fd-chart" x1="28" y1="46" x2="56" y2="24" gradientUnits="userSpaceOnUse">
+              <stop stopColor="#FDE047" />
+              <stop offset="1" stopColor="#34D399" />
+            </linearGradient>
+            <radialGradient id="fd-glow" cx="40" cy="40" r="36" gradientUnits="userSpaceOnUse">
+              <stop stopColor="#10B981" stopOpacity="0.25" />
+              <stop offset="1" stopColor="#10B981" stopOpacity="0" />
+            </radialGradient>
+            <filter id="fd-shadow" x="12" y="16" width="56" height="54" filterUnits="userSpaceOnUse">
+              <feDropShadow dx="0" dy="6" stdDeviation="4.5" floodColor="#064E3B" floodOpacity="0.32" />
+            </filter>
+          </defs>
+          <circle cx="40" cy="40" r="34" fill="url(#fd-glow)" />
+
+          {/* 3D Fixed Deposit Passbook / Security Ledger */}
+          <g filter="url(#fd-shadow)">
+            {/* Certificate Base */}
+            <rect x="20" y="24" width="40" height="34" rx="5" fill="url(#fd-cert)" />
+            {/* Header Stripe */}
+            <rect x="20" y="24" width="40" height="8" rx="3" fill="#047857" />
+            <circle cx="26" cy="28" r="2" fill="#FDE047" />
+            <line x1="32" y1="28" x2="52" y2="28" stroke="#A7F3D0" strokeWidth="1.5" strokeLinecap="round" />
+            
+            {/* Interest Growth Trendline Arrow */}
+            <path d="M26 48 L34 44 L42 46 L52 36" stroke="url(#fd-chart)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M47 36 L52 36 L52 41" stroke="#FDE047" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          </g>
+
+          {/* 3D Gold Coin Stack in Foreground */}
+          <g filter="url(#fd-shadow)">
+            <ellipse cx="50" cy="55" rx="10" ry="4" fill="#A16207" />
+            <ellipse cx="50" cy="52" rx="10" ry="4" fill="#EAB308" />
+            <ellipse cx="50" cy="52" rx="7" ry="2.5" fill="none" stroke="#FEF08A" strokeWidth="0.8" />
+            <text x="50" y="54" textAnchor="middle" fontSize="6" fontWeight="900" fill="#713F12" fontFamily="sans-serif">₹</text>
+          </g>
+
+          {/* Sparkles */}
+          <path d="M16 38 L17.5 41.5 L21 43 L17.5 44.5 L16 48 L14.5 44.5 L11 43 L14.5 41.5 Z" fill="#FDE047" />
+          <circle cx="62" cy="22" r="2" fill="#34D399" />
         </svg>
       );
 

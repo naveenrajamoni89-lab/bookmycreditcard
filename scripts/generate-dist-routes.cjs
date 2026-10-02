@@ -57,6 +57,16 @@ const coreRoutes = [
     description: 'Manage your profile, view recent card browsing history, compare list, eligibility checks and application updates in your personal dashboard.',
   },
   {
+    path: '/credit-card-basics',
+    title: 'Credit Card Basics: A Complete Beginner’s Guide | Book My Credit Card',
+    description: 'Learn how credit cards work, understanding billing cycles, the 20 to 50 day grace period, APR interest rates, and golden rules of smart credit card usage.',
+  },
+  {
+    path: '/credit-card-guides',
+    title: 'Credit Card Guides & Practical How-Tos | Book My Credit Card',
+    description: 'Step-by-step actionable guides to activate cards, pay bills, avoid hidden charges, convert EMIs, and maximize reward points.',
+  },
+  {
     path: '/admin',
     title: 'Admin Dashboard | Book My Credit Card',
     description: 'Administrative portal for user profile management, lead management, and platform activity metrics.',

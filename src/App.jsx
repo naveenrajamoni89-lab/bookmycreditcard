@@ -20,6 +20,8 @@ const CibilScore = lazy(() => import('./pages/CibilScore'));
 const Eligibility = lazy(() => import('./pages/Eligibility'));
 const ComparePage = lazy(() => import('./pages/ComparePage'));
 const CategoryPage = lazy(() => import('./pages/CategoryPage'));
+const CreditCardBasics = lazy(() => import('./pages/CreditCardBasics'));
+const CreditCardGuides = lazy(() => import('./pages/CreditCardGuides'));
 const SignIn = lazy(() => import('./pages/SignIn'));
 const MyAccount = lazy(() => import('./pages/MyAccount'));
 const AdminDashboard = lazy(() => import('./pages/AdminDashboard'));
@@ -42,10 +44,14 @@ function App() {
                   <Route path="/" element={<Home />} />
                   <Route path="/explore" element={<Explore />} />
 
-                  {/* Overview */}
-                  <Route path="/best-credit-cards" element={<BestCreditCards />} />
-                  <Route path="/credit-card-interest-rates" element={<InterestRates />} />
+                  {/* Learn Hub Routes */}
+                  <Route path="/credit-card-basics" element={<CreditCardBasics />} />
                   <Route path="/cibil-score-for-credit-card" element={<CibilScore />} />
+                  <Route path="/credit-card-interest-rates" element={<InterestRates />} />
+                  <Route path="/best-credit-cards" element={<BestCreditCards />} />
+                  <Route path="/credit-card-guides" element={<CreditCardGuides />} />
+
+                  {/* Core Services */}
                   <Route path="/credit-card-eligibility" element={<Eligibility />} />
                   <Route path="/compare-credit-cards" element={<ComparePage />} />
 
@@ -58,7 +64,7 @@ function App() {
                   <Route path="/my-account" element={<MyAccount />} />
                   <Route path="/admin" element={<AdminDashboard />} />
 
-                  {/* By Category + legal pages + single-slug cards (dispatcher) */}
+                  {/* By Category & Bank hubs + legal pages (dispatcher) */}
                   <Route path="/:slug" element={<CategoryPage />} />
 
                   <Route path="*" element={<NotFound />} />
