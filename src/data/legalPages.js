@@ -707,4 +707,272 @@ export const legalPages = [
       },
     ],
   },
+  {
+    slug: 'about-us',
+    title: 'About BookMyCreditCard',
+    updated: 'January 2026',
+    sections: [
+      {
+        heading: 'Who We Are',
+        body: [
+          'BookMyCreditCard (BMCC) is India\u2019s premier credit card comparison and advisory marketplace. We empower Indian consumers to make informed, financially rewarding credit decisions through transparent data, proprietary comparison tools, and unbiased editorial analysis.',
+          'With hundreds of credit card variants across 40+ leading public, private, and foreign banks in India, selecting the ideal card can be overwhelming. BMCC cuts through marketing hype to deliver personalized recommendations based on your real spending habits.',
+        ],
+      },
+      {
+        heading: 'Our Mission & Vision',
+        body: [
+          'Our mission is to bring financial clarity and smart credit empowerment to every Indian household. We envision a future where every consumer maximizes their savings, rewards, and credit health responsibly without hidden pitfalls.',
+        ],
+      },
+      {
+        heading: 'What We Stand For',
+        list: [
+          '100% Unbiased & Transparent Comparisons: We never favor any bank over your financial interest.',
+          'Zero Cost to Users: Our advisory and comparison platform is completely free for all consumers.',
+          'Data Privacy & Security: We never sell your personal data or spam you with unwanted calls.',
+          'Comprehensive Bureau Integration: Soft eligibility estimates that safeguard your credit score.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'contact-us',
+    title: 'Contact Customer Support & Offices',
+    updated: 'January 2026',
+    sections: [
+      {
+        heading: 'Get in Touch',
+        body: [
+          'Our dedicated customer support team and credit advisory experts are here to assist you with card applications, eligibility queries, reward calculations, and general platform inquiries.',
+        ],
+      },
+      {
+        heading: 'Registered Office',
+        body: [
+          'Flat No 203, 2nd Floor, Viswa Central, Above Canara Bank, Land Mark: Adjacent lane to VIP Luggage Showroom, Ameerpet, Hyderabad - 500016, Telangana, India.',
+        ],
+      },
+      {
+        heading: 'Contact Channels',
+        list: [
+          'Customer Support Line: +91 9966698892 (Mon-Sat, 9:30 AM to 6:30 PM IST)',
+          'Primary Support Email: care@bookmycreditcard.com',
+          'HR & Careers: hr@bookmycreditcard.com',
+          'Partnership & Business Inquiries: info@bookmycreditcard.com',
+        ],
+      },
+      {
+        heading: 'Response Time',
+        body: [
+          'We endeavor to respond to all email inquiries within 24 to 48 business hours. For urgent assistance regarding active applications, please reach out via our telephone support line during working hours.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'fraud-alert',
+    title: 'Fraud Alert & Security Advisory',
+    updated: 'January 2026',
+    sections: [
+      {
+        heading: 'Important Security Advisory',
+        body: [
+          'BookMyCreditCard NEVER charges any upfront processing fees, documentation charges, approval fees, or courier charges for credit card applications or approvals. All credit cards on our platform are processed directly through RBI-regulated partner banks free of charge to consumers.',
+          'If you receive any call, SMS, WhatsApp message, or email claiming to be from BookMyCreditCard demanding money for card approval, credit limit increase, or pre-approved offers, it is a FRAUDULENT ATTEMPT.',
+        ],
+      },
+      {
+        heading: 'How to Protect Yourself',
+        list: [
+          'Never transfer money to any individual bank account or UPI ID claiming to represent BookMyCreditCard or any partner bank.',
+          'Never share your OTP, credit card CVV, PIN, or net banking passwords with anyone under any circumstances.',
+          'Verify official communications: All legitimate emails from us will strictly originate from @bookmycreditcard.com.',
+        ],
+      },
+      {
+        heading: 'Report Suspicious Activity',
+        body: [
+          'If you suspect any fraudulent contact or have been approached for upfront payments, please report it immediately with transaction screenshots and phone numbers to care@bookmycreditcard.com or call our helpline at +91 9966698892.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'how-we-use-your-data',
+    title: 'How We Use Your Data',
+    updated: 'January 2026',
+    sections: [
+      {
+        heading: 'Transparency in Data Usage',
+        body: [
+          'At BookMyCreditCard, we believe that your trust is our most valuable asset. We handle all personal and financial data in strict compliance with the Digital Personal Data Protection Act (DPDPA), 2023 and RBI guidelines.',
+        ],
+      },
+      {
+        heading: 'Core Data Usage Principles',
+        list: [
+          'Consent-First Architecture: We only collect information that you explicitly provide and authorize.',
+          'Card Matching & Eligibility: Your income and credit parameters are used solely to calculate card eligibility and match you with suitable financial products.',
+          'Bank Application Handover: Data is transmitted securely via 256-bit SSL encryption only to the specific bank you choose to apply with.',
+          'No Data Selling: We have never sold, rented, or monetized user personal data to third-party telemarketers.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'cookies-policy',
+    title: 'Cookies & Tracking Technologies Policy',
+    updated: 'January 2026',
+    sections: [
+      {
+        heading: 'What Are Cookies?',
+        body: [
+          'Cookies are small text files stored on your device that help us provide a seamless browsing experience, remember your filter preferences, and analyze platform traffic patterns.',
+        ],
+      },
+      {
+        heading: 'How We Use Cookies',
+        list: [
+          'Essential Cookies: Necessary for platform navigation, session authentication, and core functionality.',
+          'Performance & Analytics Cookies: Help us understand which card comparisons and guides are most helpful to our users.',
+          'Preference Cookies: Remember your card filters, shortlisted cards, and comparison trays.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'refund-policy',
+    title: 'Refund & Cancellation Policy',
+    updated: 'January 2026',
+    sections: [
+      {
+        heading: 'Complimentary Platform Services',
+        body: [
+          'BookMyCreditCard is a free digital comparison platform. We do not charge consumers any fee for browsing, comparing cards, or submitting credit card applications. Therefore, no refunds apply to standard platform usage.',
+          'Any card joining or annual renewal fees are levied directly by the respective issuing bank in your monthly card statement as per their published schedule of charges.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'partner-banks',
+    title: 'Our Partner Banking Network',
+    updated: 'January 2026',
+    sections: [
+      {
+        heading: 'Regulated Institutional Network',
+        body: [
+          'We partner with over 40+ leading Reserve Bank of India (RBI) regulated commercial banks, small finance banks, and non-banking financial companies (NBFCs) across India.',
+          'Our partners include HDFC Bank, ICICI Bank, SBI Cards & Payment Services, Axis Bank, Kotak Mahindra Bank, IDFC FIRST Bank, IndusInd Bank, American Express India, AU Small Finance Bank, RBL Bank, Standard Chartered, Yes Bank, and Federal Bank.',
+        ],
+      },
+      {
+        heading: 'Independence & Governance',
+        body: [
+          'All card underwriting criteria, credit limit approvals, APR rates, and issuance terms remain at the sole discretion of the issuing bank. BookMyCreditCard does not influence credit decisions.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'testimonials',
+    title: 'Customer Testimonials & Success Stories',
+    updated: 'January 2026',
+    sections: [
+      {
+        heading: 'Trusted by Cardholders Nationwide',
+        body: [
+          'Thousands of smart spenders, salaried professionals, and business owners use BookMyCreditCard every month to optimize their rewards and find the right credit companion.',
+        ],
+      },
+      {
+        heading: 'Featured User Reviews',
+        list: [
+          'Priya Sharma (Bengaluru): "Found the ideal cashback card for grocery & online shopping. The comparison table saved me hours of research!"',
+          'Vikram Malhotra (Mumbai): "Got approved for the Axis Atlas travel card within 48 hours. Clear benefits breakdown without misleading jargon."',
+          'Ananya Roy (Delhi): "The lifetime-free filter helped me pick my very first card with zero annual charges. Highly recommended for beginners!"',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'mission-vision-values',
+    title: 'Mission, Vision & Core Values',
+    updated: 'January 2026',
+    sections: [
+      {
+        heading: 'Our Vision',
+        body: [
+          'To be India\u2019s most trusted and empowering financial marketplace, enabling every individual to unlock maximum financial value and financial freedom.',
+        ],
+      },
+      {
+        heading: 'Our Core Values',
+        list: [
+          'Customer Empathy: Designing tools that put the consumer\u2019s financial wellness first.',
+          'Radical Transparency: Complete clarity on interest rates, annual charges, and reward structures.',
+          'Security & Integrity: Uncompromising adherence to ethical financial practices and data security standards.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'blogs',
+    title: 'Credit Card Insights & Financial Blogs',
+    updated: 'January 2026',
+    sections: [
+      {
+        heading: 'Editorial Insights & Guides',
+        body: [
+          'Welcome to the BookMyCreditCard knowledge hub. Here we regularly publish expert analysis, credit score optimization strategies, airline miles hacks, and deep dives into new card launches in India.',
+        ],
+      },
+      {
+        heading: 'Popular Reading Categories',
+        list: [
+          'Credit Score Strategies: How to maintain 750+ CIBIL score.',
+          'Reward Maximization: Converting credit card points into free international flights.',
+          'Fee Waivers: How to achieve annual spend milestones for zero card fees.',
+          'RuPay UPI Credit Cards: Step-by-step guide to linking RuPay credit cards to Google Pay & PhonePe.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'terms-and-conditions',
+    title: 'Terms and Conditions',
+    updated: 'January 2026',
+    sections: [
+      {
+        heading: 'Terms of Service',
+        body: [
+          'These terms and conditions govern your use of the BookMyCreditCard website and services. By accessing or using our marketplace, you agree to comply with and be bound by these terms.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'sitemap',
+    title: 'Site Navigation & Sitemap',
+    updated: 'January 2026',
+    sections: [
+      {
+        heading: 'Directory of Pages',
+        list: [
+          'Home (/): Main discovery and comparison homepage.',
+          'Explore Credit Cards (/explore): Full interactive card catalog with filters.',
+          'Best Credit Cards (/best-credit-cards): Top recommended cards of 2026.',
+          'Credit Card Eligibility (/credit-card-eligibility): Instant eligibility simulation tool.',
+          'Compare Cards (/compare-credit-cards): Side-by-side card comparator.',
+          'Interest Rates Guide (/credit-card-interest-rates): APR analysis across banks.',
+          'CIBIL Score Guide (/cibil-score-for-credit-card): Credit rating improvement guide.',
+          'Cashback Cards (/cashback-credit-cards): Highest cashback options in India.',
+          'Travel Cards (/travel-credit-cards): Air miles and lounge access cards.',
+          'Lifetime Free Cards (/lifetime-free-credit-cards): Zero annual fee options.',
+        ],
+      },
+    ],
+  },
 ];
+

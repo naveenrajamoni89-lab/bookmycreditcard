@@ -1,0 +1,455 @@
+/* ==========================================================================
+   BOOKMYCREDITCARD - REFINED EDITORIAL FOOTER
+   Clean, compact, high-contrast light footer (#F8FAFC) that creates an
+   immediate, elegant visual distinction against the dark CTA section above.
+   ========================================================================== */
+
+.bmcc-footer {
+  background-color: #f8fafc;
+  color: #475569;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+  border-top: 1px solid #e2e8f0;
+  position: relative;
+  z-index: 10;
+  padding: 44px 0 24px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.bmcc-footer-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 3vw, 32px);
+}
+
+/* --------------------------------------------------------------------------
+   Top Grid: 4 Proportional Columns
+   -------------------------------------------------------------------------- */
+.bmcc-footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.25fr;
+  gap: clamp(24px, 3vw, 44px);
+  margin-bottom: 28px;
+}
+
+/* Column 1: Brand & Contact Info */
+.bmcc-footer-col-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.bmcc-footer-logo-link {
+  display: inline-block;
+  width: fit-content;
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+}
+
+.bmcc-footer-logo-link:hover {
+  opacity: 0.88;
+}
+
+.bmcc-footer-logo-img {
+  height: 34px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.bmcc-footer-brand-desc {
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.55;
+  margin: 0;
+  max-width: 360px;
+}
+
+/* Contact List */
+.bmcc-footer-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 2px;
+}
+
+.bmcc-footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.bmcc-footer-contact-icon {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  color: #2447bb;
+  margin-top: 3px;
+}
+
+.bmcc-footer-address-text {
+  font-style: normal;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: #475569;
+  max-width: 360px;
+}
+
+.bmcc-footer-contact-link {
+  color: #0f172a;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  transition: color 0.15s ease;
+}
+
+.bmcc-footer-contact-link:hover {
+  color: #2447bb;
+  text-decoration: underline;
+}
+
+.bmcc-footer-phone-val {
+  color: #2447bb;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.bmcc-footer-phone-val:hover {
+  text-decoration: underline;
+}
+
+.bmcc-footer-contact-timing {
+  font-size: 11.5px;
+  color: #64748b;
+}
+
+/* Social Buttons */
+.bmcc-footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.bmcc-footer-social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: #64748b;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.bmcc-footer-social-btn:hover {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+  color: #2447bb;
+  transform: translateY(-1px);
+}
+
+.bmcc-footer-social-btn svg {
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
+}
+
+/* --------------------------------------------------------------------------
+   Columns 2 & 3: Category & Resource Links
+   -------------------------------------------------------------------------- */
+.bmcc-footer-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.bmcc-footer-heading {
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #0f172a;
+  margin: 0 0 14px 0;
+  text-transform: capitalize;
+}
+
+.bmcc-footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bmcc-footer-links li a {
+  color: #64748b;
+  text-decoration: none;
+  font-size: 12.5px;
+  font-weight: 450;
+  transition: all 0.15s ease;
+  display: inline-block;
+}
+
+.bmcc-footer-links li a:hover {
+  color: #2447bb;
+  transform: translateX(2px);
+}
+
+/* --------------------------------------------------------------------------
+   Column 4: Partner Banks
+   -------------------------------------------------------------------------- */
+.bmcc-footer-col-partners {
+  display: flex;
+  flex-direction: column;
+}
+
+.bmcc-footer-partner-desc {
+  font-size: 12.5px;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0 0 12px 0;
+}
+
+.bmcc-footer-partner-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.bmcc-footer-bank-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 11.5px;
+  font-weight: 500;
+  color: #334155;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.bmcc-footer-bank-pill:hover {
+  background: #eff6ff;
+  border-color: #93c5fd;
+  color: #2447bb;
+  transform: translateY(-1px);
+}
+
+.bmcc-footer-explore-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #2447bb;
+  text-decoration: none;
+  transition: gap 0.15s ease;
+}
+
+.bmcc-footer-explore-more:hover {
+  text-decoration: underline;
+  gap: 6px;
+}
+
+/* --------------------------------------------------------------------------
+   Compact Security Advisory Strip
+   -------------------------------------------------------------------------- */
+.bmcc-footer-security-strip {
+  background: #fffbeb;
+  border: 1px solid #fef3c7;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bmcc-footer-security-icon {
+  flex-shrink: 0;
+  width: 17px;
+  height: 17px;
+  color: #d97706;
+}
+
+.bmcc-footer-security-text {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #78350f;
+  margin: 0;
+}
+
+.bmcc-footer-security-text strong {
+  font-weight: 700;
+  color: #92400e;
+}
+
+.bmcc-footer-security-text a {
+  color: #2447bb;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   Crisp Regulatory Disclaimer
+   -------------------------------------------------------------------------- */
+.bmcc-footer-disclaimer {
+  font-size: 11.5px;
+  line-height: 1.6;
+  color: #94a3b8;
+  margin: 0 0 20px 0;
+}
+
+.bmcc-footer-disclaimer strong {
+  color: #64748b;
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   Bottom Utility Bar
+   -------------------------------------------------------------------------- */
+.bmcc-footer-bottom-bar {
+  border-top: 1px solid #e2e8f0;
+  padding-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px 24px;
+  font-size: 12px;
+}
+
+.bmcc-footer-copyright {
+  color: #64748b;
+  white-space: nowrap;
+}
+
+.bmcc-footer-legal-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 14px;
+}
+
+.bmcc-footer-legal-nav a {
+  color: #64748b;
+  text-decoration: none;
+  transition: color 0.15s ease;
+  white-space: nowrap;
+}
+
+.bmcc-footer-legal-nav a:hover {
+  color: #2447bb;
+  text-decoration: underline;
+}
+
+.bmcc-footer-powered-by {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #64748b;
+  white-space: nowrap;
+}
+
+.bmcc-footer-powered-by a {
+  color: #2447bb;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.bmcc-footer-powered-by a:hover {
+  text-decoration: underline;
+}
+
+.bmcc-footer-powered-by svg {
+  width: 11px;
+  height: 11px;
+}
+
+/* --------------------------------------------------------------------------
+   Floating WhatsApp Button
+   -------------------------------------------------------------------------- */
+.bmcc-whatsapp-fab {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4), 0 2px 6px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+}
+
+.bmcc-whatsapp-fab:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.55), 0 4px 10px rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+}
+
+.bmcc-whatsapp-fab svg {
+  width: 28px;
+  height: 28px;
+  fill: currentColor;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Media Queries
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .bmcc-footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .bmcc-footer {
+    padding: 36px 0 20px;
+  }
+
+  .bmcc-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .bmcc-footer-bottom-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .bmcc-footer-security-strip {
+    align-items: flex-start;
+  }
+
+  .bmcc-whatsapp-fab {
+    bottom: 18px;
+    right: 18px;
+    width: 46px;
+    height: 46px;
+  }
+
+  .bmcc-whatsapp-fab svg {
+    width: 24px;
+    height: 24px;
+  }
+}

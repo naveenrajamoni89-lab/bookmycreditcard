@@ -54,9 +54,9 @@
 }
 
 .fintech-btn-primary {
-  background: #245ce3;
+  background: #2447bb;
   color: #fff;
-  border: 1px solid #4679ec;
+  border: 1px solid #2447bb;
 }
 
 .fintech-btn-secondary {
@@ -182,7 +182,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.search-res-fee { flex-shrink: 0; color: #245ce3; font-size: 12px; font-weight: 600; }
+.search-res-fee { flex-shrink: 0; color: #2447bb; font-size: 12px; font-weight: 600; }
 .search-res-benefit {
   overflow: hidden;
   margin: 0 0 3px;
@@ -192,7 +192,7 @@
   white-space: nowrap;
 }
 .search-res-bank { color: #64748b; font-size: 11px; }
-.search-result-arrow { display: flex; align-items: center; gap: 4px; color: #245ce3; font-size: 12px; }
+.search-result-arrow { display: flex; align-items: center; gap: 4px; color: #2447bb; font-size: 12px; }
 .search-no-results { padding: 32px 20px; text-align: center; color: #475569; }
 
 @media (max-width: 640px) {

@@ -1,7 +1,7 @@
 /* Checkpoint 2: decision surfaces inherit the site's cool-white cobalt system. */
 .decision-page, .cdp-page { background: #fff; }
 .decision-page .container, .cdp-page .container { max-width: 1240px; padding-inline: 24px; }
-.decision-page .pb-page-header { padding: 25px 0 31px; border-color: var(--border); background: #f3f6fa; }
+.decision-page .pb-page-header { padding: 25px 0 31px; border-color: var(--border); background: #ffffff; }
 .decision-page .pb-page-title { margin: 18px 0 7px; font-size: clamp(29px, 3vw, 39px); line-height: 1.15; letter-spacing: -.035em; }
 .decision-page .pb-page-desc { max-width: 680px; color: var(--text-mid); font-size: 15px; }
 .decision-page .decision-section { padding: 46px 0 76px; }
@@ -25,7 +25,7 @@
 .decision-eligibility .pb-elig-result strong { display: block; margin-bottom: 5px; font-size: 15px; }
 .decision-eligibility .pb-elig-result p { font-size: 13px; }
 .decision-eligibility .pb-elig-result a { display: inline-block; margin-top: 12px; color: var(--pb-blue); font-size: 12px; font-weight: 800; }
-.decision-eligibility-aside { padding: 25px; border-radius: 10px; background: #f4f7fb; }
+.decision-eligibility-aside { padding: 25px; border-radius: 12px; background: #f8fafd; border: 1px solid #e1e7f0; box-shadow: 0 2px 8px rgba(16, 24, 40, 0.04); }
 .decision-eligibility-aside h2 { margin-bottom: 13px; font-size: 17px; }
 .decision-eligibility-aside p { margin-bottom: 12px; color: var(--text-mid); font-size: 13px; line-height: 1.6; }
 .decision-eligibility-aside p:last-child { margin-bottom: 0; }
@@ -36,13 +36,13 @@
 .decision-reference .pb-table th, .decision-reference .pb-table td { padding: 14px 16px; font-size: 12px; line-height: 1.45; }
 .decision-reference .pb-table tbody th { color: var(--text-dark); font-weight: 800; text-align: left; border-bottom: 1px solid var(--border); }
 .decision-scroll-hint { display: none; }
-.decision-page .pb-faq-section { background: #f7f9fc; }
+.decision-page .pb-faq-section { background: #ffffff; }
 .decision-page .pb-faq-heading { font-size: 25px; letter-spacing: -.025em; }
 
 /* Comparison selections are the workspace; the table is the answer. */
 .decision-compare .pb-compare-pickers { gap: 15px; margin-bottom: 18px; }
-.decision-compare .pb-compare-picker { position: relative; min-width: 0; min-height: 108px; padding: 16px; border: 1px solid var(--border); border-radius: 9px; background: #f9fbfe; }
-.decision-compare .pb-compare-picker.filled { background: #f4f7fc; }
+.decision-compare .pb-compare-picker { position: relative; min-width: 0; min-height: 108px; padding: 16px; border: 1px solid #e1e7f0; border-radius: 10px; background: #f8fafd; box-shadow: 0 2px 6px rgba(16, 24, 40, 0.03); }
+.decision-compare .pb-compare-picker.filled { background: #ffffff; }
 .decision-compare .pb-compare-picker:has(select) { flex-direction: column; align-items: stretch; justify-content: center; gap: 10px; }
 .decision-compare .pb-compare-picker label { color: var(--text-mid); font-size: 12px; font-weight: 800; }
 .decision-compare .pb-compare-picker-art { flex: none; width: 86px; height: 54px; padding: 6px 8px; border-radius: 6px; }
@@ -55,7 +55,7 @@
 .decision-compare .pb-compare-picker-name:hover { color: var(--pb-blue); }
 .decision-compare .pb-compare-slot-remove { position: absolute; top: 13px; right: 13px; color: var(--pb-blue); font-size: 11px; font-weight: 800; }
 .decision-compare .pb-compare-slot-remove:hover { color: var(--pb-blue-hover); text-decoration: underline; }
-.decision-compare .pb-compare-empty { padding: 54px 24px; border: 0; border-radius: 0; background: #f5f8fc; }
+.decision-compare .pb-compare-empty { padding: 54px 24px; border: 0; border-radius: 0; background: #ffffff; }
 .decision-compare .pb-compare-empty h2 { margin-bottom: 8px; font-size: 23px; letter-spacing: -.025em; }
 .decision-compare .pb-compare-empty p { max-width: 480px; margin: 0 auto 22px; color: var(--text-mid); font-size: 13px; line-height: 1.6; }
 .decision-compare .pb-compare-empty .pb-show-all-btn { display: inline-flex; align-items: center; min-height: 43px; padding: 0 18px; border: 1px solid var(--pb-blue); border-radius: 7px; background: #fff; color: var(--pb-blue); font-size: 12px; font-weight: 800; }
@@ -67,7 +67,7 @@
 .decision-compare .pb-compare-table { min-width: 760px; table-layout: fixed; }
 .decision-compare .pb-compare-table th, .decision-compare .pb-compare-table td { width: 29%; padding: 17px 18px; border-bottom: 1px solid var(--border); font-size: 12px; line-height: 1.55; white-space: normal; vertical-align: top; }
 .decision-compare .pb-compare-table th:first-child, .decision-compare .pb-compare-table tbody th { width: 13%; min-width: 120px; color: var(--text-dark); font-weight: 800; text-align: left; }
-.decision-compare .pb-compare-table thead th { background: #f5f7fb; font-size: 13px; }
+.decision-compare .pb-compare-table thead th { background: #ffffff; font-size: 13px; }
 .decision-compare .pb-compare-benefit-list { margin: 0; padding-left: 16px; }
 .decision-compare .pb-compare-benefit-list li { margin-bottom: 7px; }
 .decision-compare .pb-compare-eligibility { color: var(--pb-blue); font-weight: 800; }
@@ -78,7 +78,7 @@
 /* Card detail is an open decision sheet, not a stack of promotional tiles. */
 .cdp-page { min-height: 100dvh; padding-bottom: 0; }
 .cdp-page .cdp-breadcrumb-wrap { padding: 14px 0; border-color: var(--border-light); }
-.cdp-page .cdp-hero-section { padding: 38px 0 47px; border-color: var(--border); background: #f3f6fa; }
+.cdp-page .cdp-hero-section { padding: 38px 0 47px; border-color: var(--border); background: #ffffff; }
 .cdp-page .cdp-hero-container { grid-template-columns: minmax(300px, 380px) minmax(0, 1fr); gap: 54px; }
 .cdp-page .cdp-hero-media { align-items: flex-start; gap: 18px; }
 .cdp-page .cdp-card-showcase { width: 100%; max-width: none; padding: 0; border-radius: 12px; background: none; box-shadow: none; }
@@ -139,7 +139,7 @@
 .cdp-page .cdp-faq-item:first-child { border-top: 1px solid var(--border); }
 .cdp-page .cdp-faq-question { width: 100%; padding: 18px 2px; border: 0; background: none; color: var(--text-dark); text-align: left; font-size: 13px; font-weight: 800; line-height: 1.45; }
 .cdp-page .cdp-faq-answer { margin: 0; padding: 0 24px 18px 2px; border: 0; color: var(--text-mid); font-size: 12px; line-height: 1.6; }
-.cdp-page .cdp-similar-section { padding: 47px 0 60px; border-color: var(--border); background: #f6f8fb; }
+.cdp-page .cdp-similar-section { padding: 47px 0 60px; border-color: var(--border); background: #ffffff; }
 .cdp-page .cdp-similar-header { margin-bottom: 18px; }
 .cdp-page .cdp-similar-header h2 { font-size: 24px; letter-spacing: -.025em; }
 .cdp-page .cdp-view-all { font-size: 12px; font-weight: 800; }
@@ -164,7 +164,7 @@
 .pb-compare-bar-inner { max-width: 1240px; padding-inline: 24px; gap: 15px; }
 .pb-compare-bar-title { font-size: 12px; font-weight: 800; }
 .pb-compare-slots { min-width: 0; gap: 7px; }
-.pb-compare-slot.filled { flex: 0 1 180px; min-width: 0; height: 35px; padding: 0 8px; border: 1px solid var(--border); border-radius: 6px; background: #f5f8fc; }
+.pb-compare-slot.filled { flex: 0 1 180px; min-width: 0; height: 35px; padding: 0 8px; border: 1px solid var(--border); border-radius: 6px; background: #ffffff; }
 .pb-compare-slot.filled span { min-width: 0; overflow: hidden; color: var(--text-dark); font-size: 10px; font-weight: 700; text-overflow: ellipsis; white-space: nowrap; }
 .pb-compare-slot-remove { flex: none; margin-left: 7px; color: var(--text-grey); }
 .pb-compare-cancel { padding: 8px 6px; border: 0; color: var(--pb-blue); font-size: 11px; font-weight: 800; }
@@ -188,7 +188,7 @@
   .decision-compare .pb-compare-scroll-hint { display: block; margin: 0 0 9px; color: var(--text-grey); font-size: 11px; }
   .decision-scroll-hint { display: block; margin: 12px 0 -10px; color: var(--text-grey); font-size: 11px; }
   .decision-compare .pb-compare-table { min-width: 760px; }
-  .decision-compare .pb-compare-table thead th:first-child, .decision-compare .pb-compare-table tbody th { position: sticky; left: 0; z-index: 1; background: #f8fafd; }
+  .decision-compare .pb-compare-table thead th:first-child, .decision-compare .pb-compare-table tbody th { position: sticky; left: 0; z-index: 1; background: #ffffff; }
   .cdp-page .cdp-hero-container { grid-template-columns: 1fr; }
   .cdp-page .cdp-hero-media { align-items: flex-start; }
   .cdp-page .cdp-card-showcase { max-width: 320px; }

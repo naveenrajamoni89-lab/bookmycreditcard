@@ -104,8 +104,8 @@ body { background: #fff; font-variant-numeric: tabular-nums; }
 .landing-finder-fields select, .landing-finder-fields input { min-width: 0; width: 100%; min-height: 43px; padding: 8px 12px; border: 1px solid #cbd5e3; border-radius: 8px; background: #fff; color: var(--text-dark); font-size: 13px; }
 .landing-finder-note { margin: 14px 0 15px; color: var(--text-grey); font-size: 12px; }
 .landing-finder-results { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 15px; }
-.landing-finder-match { display: flex; align-items: center; gap: 12px; min-width: 0; padding: 14px; border: 1px solid var(--border); border-radius: 10px; background: #fbfcfe; }
-.landing-finder-match:hover { border-color: #a9b9ea; background: #f6f8ff; }
+.landing-finder-match { display: flex; align-items: center; gap: 12px; min-width: 0; padding: 14px; border: 1px solid #e1e7f0; border-radius: 10px; background: #f8fafd; box-shadow: 0 2px 6px rgba(16, 24, 40, 0.03); }
+.landing-finder-match:hover { border-color: var(--pb-blue); background: #eff3fc; }
 .landing-finder-match .finder-card-art { flex: none; width: 82px; height: 53px; }
 .landing-finder-match > span:nth-child(2) { display: grid; min-width: 0; gap: 5px; }
 .landing-finder-match strong { color: var(--text-dark); font-size: 12px; line-height: 1.35; }

@@ -2,7 +2,10 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import LandingHero from '../components/landing/LandingHero';
 import CardFinder from '../components/landing/CardFinder';
-import CreditCardItem from '../components/CreditCardItem';
+import PopularCardCarousel from '../components/PopularCardCarousel';
+import CategoryIllustration from '../components/CategoryIllustration';
+import { WhyIllustration, HowIllustration } from '../components/ServiceIllustrations';
+import BankLogo from '../components/BankLogo';
 import { useData } from '../context/DataContext';
 import { banks as fallbackBanks } from '../data/cards';
 import '../styles/home-editorial.css';
@@ -12,87 +15,122 @@ const CATEGORIES = [
     title: 'Cashback Credit Cards',
     slug: 'cashback-credit-cards',
     desc: 'Up to 5% flat or accelerated cashback on groceries, dining, online shopping, and utility bills.',
-    icon: '₹',
+    badge: 'Up to 5% Valueback',
+    accent: 'emerald',
+    count: '24+ Cards',
   },
   {
     title: 'Travel Credit Cards',
     slug: 'travel-credit-cards',
     desc: 'Air miles, complimentary flights, hotel loyalty memberships, and worldwide travel perks.',
-    icon: '✈',
+    badge: 'Air Miles & Flights',
+    accent: 'sky',
+    count: '18+ Cards',
   },
   {
     title: 'Rewards Credit Cards',
     slug: 'rewards-credit-cards',
     desc: 'Accelerated reward points across retail and dining with flexible merchandise redemptions.',
-    icon: '✦',
+    badge: 'Accelerated Points',
+    accent: 'purple',
+    count: '28+ Cards',
   },
   {
     title: 'Lifetime Free Credit Cards',
     slug: 'lifetime-free-credit-cards',
     desc: 'Zero annual renewal fee and zero joining charges with no minimum spend conditions.',
-    icon: '★',
+    badge: 'Zero Annual Fee',
+    accent: 'amber',
+    count: '16+ Cards',
   },
   {
     title: 'Fuel Credit Cards',
     slug: 'fuel-credit-cards',
     desc: 'Fuel surcharge waivers and high value-back on petrol and diesel at major Indian fuel outlets.',
-    icon: '⛽',
+    badge: '1% Fuel Surcharge Waiver',
+    accent: 'orange',
+    count: '12+ Cards',
   },
   {
     title: 'Lounge Access Credit Cards',
     slug: 'credit-cards-lounge-access',
     desc: 'Complimentary domestic airport lounge visits and international Priority Pass access.',
-    icon: '🛋',
+    badge: 'Domestic & Intl Lounges',
+    accent: 'indigo',
+    count: '22+ Cards',
   },
   {
     title: 'RuPay Credit Cards',
     slug: 'rupay-credit-cards',
     desc: 'Link directly to your preferred UPI apps for seamless QR scan-and-pay transactions.',
-    icon: '⚡',
+    badge: 'UPI Enabled Scan & Pay',
+    accent: 'cyan',
+    count: '14+ Cards',
   },
   {
     title: 'International Credit Cards',
     slug: 'international-credit-cards',
     desc: 'Global merchant acceptance, 24/7 concierge assistance, and multi-currency protection.',
-    icon: '🌐',
+    badge: 'Worldwide Acceptance',
+    accent: 'blue',
+    count: '15+ Cards',
   },
   {
     title: 'Zero Forex Markup Credit Cards',
     slug: 'zero-forex-markup-credit-cards',
     desc: 'Save 3.5% to 5% on foreign currency spends with zero or ultra-low foreign exchange markups.',
-    icon: '⇄',
+    badge: '0% Forex Surcharge',
+    accent: 'rose',
+    count: '8+ Cards',
   },
   {
     title: 'Secured Credit Cards',
     slug: 'secured-credit-cards',
     desc: 'Fixed-deposit (FD) backed cards designed to establish or rebuild your credit score safely.',
-    icon: '🔒',
+    badge: 'FD-Backed Approval',
+    accent: 'teal',
+    count: '10+ Cards',
   },
 ];
 
 const WHY_BMCC = [
   {
     num: '01',
+    type: 'compare',
+    badge: 'Dual Comparator',
+    accent: 'blue',
     title: 'Compare cards side by side',
     desc: 'Line up annual fees, joining perks, lounge access allowances, and reward structures across cards in one place.',
   },
   {
     num: '02',
+    type: 'needs',
+    badge: 'Precision Filter',
+    accent: 'emerald',
     title: 'Find cards based on your needs',
     desc: 'Filter by spend category, preferred card network, or annual fee thresholds to match your everyday spending.',
   },
   {
     num: '03',
+    type: 'fees',
+    badge: '100% Fee Clarity',
+    accent: 'amber',
     title: 'Understand fees and benefits',
     desc: 'Review transparent fee schedules, lounge quotas, forex markups, and fee waiver milestones before applying.',
   },
   {
     num: '04',
+    type: 'eligibility',
+    badge: 'Zero CIBIL Impact',
+    accent: 'teal',
     title: 'Check basic eligibility',
     desc: 'Check basic eligibility factors in under 60 seconds without a hard credit inquiry.',
   },
   {
     num: '05',
+    type: 'banks',
+    badge: '17+ Top Issuers',
+    accent: 'indigo',
     title: 'Explore cards from multiple banks',
     desc: 'Browse verified credit card offerings from 17 banks and issuers across India.',
   },
@@ -101,6 +139,8 @@ const WHY_BMCC = [
 const HOW_BMCC_WORKS = [
   {
     step: '01',
+    tag: 'STEP 01',
+    accent: 'sky',
     name: 'Explore',
     desc: 'Browse credit cards from multiple banks and categories.',
     to: '/explore',
@@ -108,6 +148,8 @@ const HOW_BMCC_WORKS = [
   },
   {
     step: '02',
+    tag: 'STEP 02',
+    accent: 'indigo',
     name: 'Compare',
     desc: 'Compare fees, rewards, benefits and other important features side by side.',
     to: '/compare-credit-cards',
@@ -115,6 +157,8 @@ const HOW_BMCC_WORKS = [
   },
   {
     step: '03',
+    tag: 'STEP 03',
+    accent: 'emerald',
     name: 'Check Eligibility',
     desc: 'Check basic eligibility using factors such as age, income and employment type.',
     to: '/credit-card-eligibility',
@@ -122,6 +166,8 @@ const HOW_BMCC_WORKS = [
   },
   {
     step: '04',
+    tag: 'STEP 04',
+    accent: 'blue',
     name: 'Apply',
     desc: 'Review the card details and continue to the relevant application option.',
     to: '/explore',
@@ -129,93 +175,299 @@ const HOW_BMCC_WORKS = [
   },
 ];
 
-const CREDIT_BASICS = [
-  {
-    title: 'What Is a Credit Card?',
-    desc: 'A credit card is a revolving credit line provided by a bank that lets you make purchases up to an approved limit with an interest-free grace period of 20 to 50 days.',
-  },
-  {
-    title: 'Credit Card Rewards',
-    desc: 'Cardholders earn reward points, cashback, or air miles on purchases. These points can be redeemed for flight bookings, hotel stays, vouchers, or direct statement credit.',
-  },
-  {
-    title: 'Annual Fees & Waivers',
-    desc: 'Cards charge joining and annual renewal fees. Most issuers waive annual renewal fees if your annual cumulative spending crosses a specified milestone threshold.',
-  },
-  {
-    title: 'CIBIL Score',
-    desc: "Your credit score reflects aspects of your credit history and repayment behaviour. A higher score can generally support eligibility for a wider range of credit products, but approval decisions depend on the issuer's criteria.",
-    to: '/cibil-score-for-credit-card',
-    linkText: 'Learn more about CIBIL →',
-  },
-  {
-    title: 'Credit Card Interest',
-    desc: "Finance charges may apply when eligible balances are carried beyond the applicable payment terms. Paying the total statement balance by the due date can help avoid finance charges on eligible retail transactions, subject to the card's terms.",
-    to: '/credit-card-interest-rates',
-    linkText: 'Learn more about interest rates →',
-  },
-];
-
-const GUIDES = [
-  {
-    title: 'CIBIL Score and Credit Cards',
-    tag: 'Credit Health',
-    desc: 'Understand how payment history, credit utilization, and credit age affect your card approval chances and loan interest rates.',
-    to: '/cibil-score-for-credit-card',
-  },
-  {
-    title: 'Credit Card Interest Rates & Charges',
-    tag: 'Finance & APR',
-    desc: 'Compare indicative interest rates, APR, late payment fees, and learn how to use the 20–50 day grace period without paying finance charges.',
-    to: '/credit-card-interest-rates',
-  },
-  {
-    title: 'Popular Credit Cards in India (2026)',
-    tag: 'Featured',
-    desc: 'Explore popular credit cards across cashback, travel, rewards, dining, and lifetime-free categories.',
-    to: '/best-credit-cards',
-  },
-];
-
 const FAQS = [
   {
+    num: '01',
     q: 'What is a credit card?',
     a: "A credit card is a payment instrument issued by a bank or financial institution that enables cardholders to access a pre-approved credit limit for purchases, utility payments, and travel. Paying the full statement balance by the due date generally helps avoid finance charges on eligible retail transactions, subject to the card's terms.",
   },
   {
+    num: '02',
     q: 'How do I choose the right credit card?',
     a: "Identify your primary spending areas (such as groceries, fuel, dining, online shopping, or travel) and look for cards whose reward structures align with those habits. Also review joining fees, annual renewal charges, and any spend thresholds required for annual fee waivers, subject to the issuer's terms.",
   },
   {
+    num: '03',
     q: 'Can I compare multiple credit cards?',
     a: 'Yes. BookMyCreditCard provides a side-by-side comparison tool allowing you to select up to three cards at a time. You can compare joining fees, annual renewal charges, reward structures, lounge access quotas, and other key features in one structured view.',
   },
   {
+    num: '04',
     q: 'What is a good credit score for a credit card?',
     a: "A CIBIL score is one of the factors issuers may consider when evaluating a credit card application. A higher score can generally support eligibility for a wider range of cards, but approval, credit limits and pricing depend on the issuer's criteria.",
   },
   {
+    num: '05',
     q: 'Does checking eligibility affect my CIBIL score?',
     a: "BookMyCreditCard's basic eligibility check is a preliminary estimate based on information such as age, income and employment type. It does not guarantee approval and does not itself involve a hard credit inquiry.",
   },
   {
+    num: '06',
     q: 'What should I check before applying for a credit card?',
     a: "Before applying, review the card's eligibility guidelines (such as minimum age and income), joining and annual renewal fees, milestone spend conditions for fee waivers, forex markup rates on international spends, reward validity, and applicable finance charges, as outlined in the issuer's Most Important Terms and Conditions (MITC).",
   },
   {
+    num: '07',
     q: 'How do credit card annual fees work?',
     a: "An annual fee is charged by the issuing bank for maintaining your credit card account and its associated benefits. Many issuers offer fee waiver provisions if your annual spending reaches a specified milestone in the preceding card year, subject to the issuer's conditions. Lifetime-free cards generally do not charge annual renewal fees, subject to the card's product terms.",
+  },
+];
+
+const ELIG_DATA = {
+  salaried: {
+    fieldLabel: 'Net Monthly In-Hand Salary',
+    tiers: [
+      {
+        id: 'sal-1',
+        range: '₹25k – ₹50k',
+        label: '₹25,000 – ₹50,000 / mo',
+        cardsCount: '18+ Cards',
+        odds: '92% High Match',
+        oddsPercent: 92,
+        category: 'Cashback & Free',
+        sampleCards: [
+          { id: 4, name: 'YES PaisaSave', badge: 'Lifetime Free' },
+          { id: 5, name: 'Cashback SBI', badge: '5% Online' },
+          { id: 8, name: 'Airtel Axis', badge: 'Bill Cashback' },
+        ],
+      },
+      {
+        id: 'sal-2',
+        range: '₹50k – ₹1L',
+        label: '₹50,000 – ₹1,00,000 / mo',
+        cardsCount: '34+ Cards',
+        odds: '96% High Match',
+        oddsPercent: 96,
+        category: 'Travel & Rewards',
+        sampleCards: [
+          { id: 3, name: 'HDFC Regalia Gold', badge: 'Travel Lounge' },
+          { id: 2, name: 'Axis Atlas', badge: 'Air Miles' },
+          { id: 5, name: 'Cashback SBI', badge: '5% Cashback' },
+        ],
+      },
+      {
+        id: 'sal-3',
+        range: '₹1L+',
+        label: '₹1,00,000+ / mo',
+        cardsCount: '52+ Cards',
+        odds: '98% Top Match',
+        oddsPercent: 98,
+        category: 'Super Premium Metal',
+        sampleCards: [
+          { id: 1, name: 'HDFC Infinia Metal', badge: 'Super Premium' },
+          { id: 2, name: 'Axis Atlas', badge: 'Air Miles' },
+          { id: 6, name: 'HSBC TravelOne', badge: 'Global Miles' },
+        ],
+      },
+    ],
+  },
+  'self-employed': {
+    fieldLabel: 'Annual Business Income / Filed ITR',
+    tiers: [
+      {
+        id: 'se-1',
+        range: '₹6L – ₹12L ITR',
+        label: '₹6,00,000 – ₹12,00,000 ITR',
+        cardsCount: '16+ Cards',
+        odds: '89% High Match',
+        oddsPercent: 89,
+        category: 'Business & Zero Forex',
+        sampleCards: [
+          { id: 4, name: 'YES PaisaSave', badge: 'Lifetime Free' },
+          { id: 7, name: 'Scapia Federal', badge: '0% Forex Markup' },
+          { id: 8, name: 'Airtel Axis', badge: 'Utility Spends' },
+        ],
+      },
+      {
+        id: 'se-2',
+        range: '₹12L – ₹25L ITR',
+        label: '₹12,00,000 – ₹25,00,000 ITR',
+        cardsCount: '31+ Cards',
+        odds: '95% High Match',
+        oddsPercent: 95,
+        category: 'Commercial & Miles',
+        sampleCards: [
+          { id: 3, name: 'HDFC Regalia Gold', badge: 'Airport Lounge' },
+          { id: 2, name: 'Axis Atlas', badge: 'Tiered Miles' },
+          { id: 7, name: 'Scapia Federal', badge: 'Zero Forex' },
+        ],
+      },
+      {
+        id: 'se-3',
+        range: '₹25L+ ITR',
+        label: '₹25,00,000+ ITR',
+        cardsCount: '48+ Cards',
+        odds: '99% Instant Match',
+        oddsPercent: 99,
+        category: 'Elite Metal & Executive',
+        sampleCards: [
+          { id: 1, name: 'HDFC Infinia Metal', badge: 'Highest Limit' },
+          { id: 2, name: 'Axis Atlas', badge: 'Executive Miles' },
+          { id: 3, name: 'HDFC Regalia Gold', badge: 'Concierge' },
+        ],
+      },
+    ],
+  },
+};
+
+const COMPARE_MATCHUPS = [
+  {
+    id: 'luxury-travel',
+    tag: 'Luxury & Travel',
+    icon: '✈️',
+    card1: {
+      id: 1,
+      name: 'HDFC Infinia Metal',
+      bankName: 'HDFC Bank',
+      badge: 'Super Premium',
+      rating: 4.9,
+      reviews: '3.8k',
+      joiningFee: '₹12,500',
+      waiver: 'Waived on ₹10L annual spend',
+      welcome: '10,000 Reward Points',
+      welcomeSub: 'Worth ₹10,000 on flights/hotels upon fee payment',
+      reward: '3.33% – 33.3%',
+      rewardSub: '1:1 ratio on SmartBuy flights & hotels',
+      lounge: 'Unlimited Worldwide',
+      loungeSub: 'Priority Pass + unlimited complimentary guests',
+      forex: '2.0% + GST',
+      bestFor: 'High Spenders (>₹12L/yr)',
+      bestForSub: 'Executive luxury travel & SmartBuy multiplier',
+      winnerKeys: ['welcome', 'lounge', 'forex', 'bestFor'],
+      route: '/hdfc-bank/infinia-credit-card',
+    },
+    card2: {
+      id: 2,
+      name: 'Axis Atlas Card',
+      bankName: 'Axis Bank',
+      badge: 'Miles Specialist',
+      rating: 4.8,
+      reviews: '2.6k',
+      joiningFee: '₹5,000',
+      waiver: 'Waived on ₹15L annual spend',
+      welcome: '5,000 EDGE Miles',
+      welcomeSub: 'Convertible 1:2 to 10,000 airline miles on 1st swipe in 30 days',
+      reward: 'Tiered EDGE Miles',
+      rewardSub: '1:2 transfer ratio across 18 partner airlines',
+      lounge: '18 Dom + 12 Intl',
+      loungeSub: 'Tier-based milestone renewal visits',
+      forex: '3.5% + GST',
+      bestFor: 'Frequent Airline Flyers',
+      bestForSub: 'Direct miles flexibility across 18 partner airlines',
+      winnerKeys: ['reward', 'joiningFee'],
+      route: '/axis-bank/atlas-credit-card',
+    },
+    verdict: 'Infinia leads in worldwide lounge access and low 2.0% forex markup, while Atlas offers 60% lower annual fee and direct 1:2 airline mile transfer flexibility.',
+  },
+  {
+    id: 'cashback-lifestyle',
+    tag: 'Cashback & Shopping',
+    icon: '🛍️',
+    card1: {
+      id: 5,
+      name: 'Cashback SBI Card',
+      bankName: 'SBI Cards',
+      badge: 'Flat Online Cashback',
+      rating: 4.8,
+      reviews: '5.1k',
+      joiningFee: '₹999',
+      waiver: 'Waived on ₹2L annual spend',
+      welcome: '₹0 Promo Joining',
+      welcomeSub: 'Instant online activation with zero complex milestones',
+      reward: '5% Direct Cashback',
+      rewardSub: 'Auto-credited to monthly statement balance',
+      lounge: 'No Lounge Access',
+      loungeSub: 'Not included in standard benefits',
+      forex: '3.5% + GST',
+      bestFor: 'Everyday Online Spends',
+      bestForSub: 'Amazon, Flipkart, Swiggy, Zomato & monthly utilities',
+      winnerKeys: ['reward', 'joiningFee', 'bestFor'],
+      route: '/sbi-bank/cashback-sbi-card',
+    },
+    card2: {
+      id: 3,
+      name: 'HDFC Regalia Gold',
+      bankName: 'HDFC Bank',
+      badge: 'Lifestyle & Travel',
+      rating: 4.8,
+      reviews: '4.6k',
+      joiningFee: '₹2,500',
+      waiver: 'Waived on ₹4L annual spend',
+      welcome: '₹2,500 Brand Vouchers',
+      welcomeSub: 'Club Marriott / Marks & Spencer / Myntra voucher on fee payment',
+      reward: '5X on Retail Brands',
+      rewardSub: 'Nykaa, Myntra & M&S shopping vouchers',
+      lounge: '12 Dom + 6 Intl',
+      loungeSub: 'Priority Pass membership included',
+      forex: '2.0% + GST',
+      bestFor: 'Premium Lifestyle & Dining',
+      bestForSub: 'Airport lounge access, dining & brand milestone perks',
+      winnerKeys: ['welcome', 'lounge', 'forex'],
+      route: '/hdfc-bank/hdfc-regalia-gold-credit-card',
+    },
+    verdict: 'Cashback SBI delivers unmatched flat 5% direct cashback on all online spends, while Regalia Gold excels in luxury brand vouchers, lounge access, and lower forex.',
+  },
+  {
+    id: 'zero-fee-value',
+    tag: 'Zero Fee vs Low Forex',
+    icon: '💎',
+    card1: {
+      id: 4,
+      name: 'YES PaisaSave',
+      bankName: 'YES BANK',
+      badge: 'Lifetime Free',
+      rating: 4.9,
+      reviews: '1.5k',
+      joiningFee: '₹0 (Free)',
+      waiver: 'Lifetime free · Zero minimum spends',
+      welcome: '₹500 Welcome Voucher',
+      welcomeSub: 'Instant activation voucher on 1st UPI spend within 30 days',
+      reward: '6% Travel & Dining',
+      rewardSub: '1% unlimited cashback on UPI scan & pay',
+      lounge: 'Domestic on Spends',
+      loungeSub: '₹10K quarterly retail spend criteria',
+      forex: '2.75% + GST',
+      bestFor: 'Everyday UPI & QR Spends',
+      bestForSub: 'Zero maintenance fees with seamless UPI payments',
+      winnerKeys: ['joiningFee', 'bestFor'],
+      route: '/yes-bank/paisabazaar-paisasave-credit-card',
+    },
+    card2: {
+      id: 6,
+      name: 'HSBC TravelOne',
+      bankName: 'HSBC Bank',
+      badge: 'Global Rewards',
+      rating: 4.7,
+      reviews: '1.7k',
+      joiningFee: '₹4,999',
+      waiver: 'Waived on ₹10L annual spend',
+      welcome: '3,000 Bonus Miles',
+      welcomeSub: 'On ₹30,000 spend within 60 days of card issuance',
+      reward: 'Instant Miles Transfer',
+      rewardSub: 'Direct transfer to 20+ partner airlines',
+      lounge: '6 Dom + 4 Intl',
+      loungeSub: 'Complimentary airport lounge access',
+      forex: '0.99% promo rate',
+      bestFor: 'Global Travelers & Forex',
+      bestForSub: 'Ultra-low foreign currency markup & international lounges',
+      winnerKeys: ['welcome', 'forex', 'lounge', 'reward'],
+      route: '/hsbc-bank/travelone-credit-card',
+    },
+    verdict: 'YES PaisaSave is 100% lifetime free with UPI rewards, whereas HSBC TravelOne provides elite international flyer perks with instant 20+ airline mile transfers.',
   },
 ];
 
 export default function Home() {
   const pageRef = useRef(null);
   const { cards, banks: allBanks, loading } = useData();
-  const [openFaq, setOpenFaq] = useState(null);
+  const [openFaq, setOpenFaq] = useState(0);
+  const [compareIndex, setCompareIndex] = useState(0);
+  const [eligEmp, setEligEmp] = useState('salaried');
+  const [eligIncomeTier, setEligIncomeTier] = useState(1);
 
   // Set SEO metadata
   useEffect(() => {
-    document.title = 'BookMyCreditCard – Compare & Find the Right Credit Card';
+    document.title = 'BookMyCreditCard - Compare & Find the Right Credit Card';
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
       metaDesc.setAttribute(
@@ -248,12 +500,12 @@ export default function Home() {
     };
   }, []);
 
-  // Popular curated cards (6 cards)
+  // Popular curated cards (9 cards across 3 carousel slides)
   const popularCards = useMemo(() => {
     if (!cards?.length) return [];
-    const popularCardIds = [1, 2, 3, 5, 9, 28]; // Infinia, Atlas, Regalia Gold, Cashback SBI, Tata Neu Infinity, Airtel Axis
+    const popularCardIds = [1, 2, 3, 5, 9, 28, 12, 17, 21]; // Infinia, Atlas, Regalia Gold, Cashback SBI, Tata Neu Infinity, Airtel Axis, ICICI Sapphiro, Axis Horizon, Flipkart Axis
     const matched = popularCardIds.map(id => cards.find(c => c.id === id)).filter(Boolean);
-    return matched.length >= 4 ? matched : cards.slice(0, 6);
+    return matched.length >= 6 ? matched : cards.slice(0, 9);
   }, [cards]);
 
   // Banks list
@@ -295,10 +547,6 @@ export default function Home() {
       <section className="bmcc-home-intro" aria-labelledby="intro-heading" data-reveal>
         <div className="bmcc-container">
           <div className="bmcc-intro-hero">
-            <div className="bmcc-intro-badge">
-              <span className="bmcc-badge-dot" aria-hidden="true" />
-              <span>Transparent Card Discovery</span>
-            </div>
             <h2 id="intro-heading" className="bmcc-intro-title">
               Compare Credit Cards &amp; Find the Right Card for You
             </h2>
@@ -316,7 +564,7 @@ export default function Home() {
               </div>
               <h3 className="bmcc-bento-title">Curated Across 10 Categories</h3>
               <p className="bmcc-bento-text">
-                Explore cards categorized by how you spend—from high-yield cashback and airport lounge access to fuel savings, air miles, and zero annual fee cards.
+                Explore cards categorized by how you spend — from high-yield cashback and airport lounge access to fuel savings, air miles, and zero annual fee cards.
               </p>
               <div className="bmcc-bento-tags">
                 <Link to="/cashback-credit-cards" className="bmcc-bento-tag">Cashback</Link>
@@ -365,33 +613,8 @@ export default function Home() {
                 Check basic eligibility in 60 seconds based on your age, income, and profession. Evaluating your options leaves your credit score untouched.
               </p>
               <Link to="/credit-card-eligibility" className="bmcc-bento-cta">
-                Check Basic Eligibility <span aria-hidden="true">→</span>
+                Check Basic Eligibility
               </Link>
-            </div>
-          </div>
-
-          {/* Editorial Trust Principles */}
-          <div className="bmcc-intro-trust">
-            <div className="bmcc-trust-col">
-              <span className="bmcc-trust-icon" aria-hidden="true">✦</span>
-              <div>
-                <strong>Side-by-Side Fee Clarity</strong>
-                <p>Joining fees, renewal charges, and spend-waiver milestones clearly laid out.</p>
-              </div>
-            </div>
-            <div className="bmcc-trust-col">
-              <span className="bmcc-trust-icon" aria-hidden="true">⚖</span>
-              <div>
-                <strong>Unbiased Comparison</strong>
-                <p>Objective feature breakdowns compiled directly from official bank disclosures.</p>
-              </div>
-            </div>
-            <div className="bmcc-trust-col">
-              <span className="bmcc-trust-icon" aria-hidden="true">🔒</span>
-              <div>
-                <strong>Safe &amp; Spam-Free</strong>
-                <p>Zero cold calls. Explore freely and apply directly through verified bank channels.</p>
-              </div>
             </div>
           </div>
         </div>
@@ -421,15 +644,25 @@ export default function Home() {
           </div>
           <div className="bmcc-categories-grid">
             {CATEGORIES.map(category => (
-              <Link key={category.slug} to={`/${category.slug}`} className="bmcc-cat-card">
-                <div>
-                  <div className="bmcc-cat-card-top">
-                    <span className="bmcc-cat-icon" aria-hidden="true">{category.icon}</span>
-                    <span className="bmcc-cat-arrow" aria-hidden="true">↗</span>
-                  </div>
-                  <h3 className="bmcc-cat-title">{category.title}</h3>
+              <Link
+                key={category.slug}
+                to={`/${category.slug}`}
+                className={`bmcc-cat-card bmcc-cat-${category.accent}`}
+              >
+                <div className="bmcc-cat-visual">
+                  <CategoryIllustration categoryKey={category.slug} className="bmcc-cat-graphic" />
+                  <span className="bmcc-cat-badge">{category.badge}</span>
                 </div>
-                <p className="bmcc-cat-desc">{category.desc}</p>
+                <div className="bmcc-cat-content">
+                  <div className="bmcc-cat-header">
+                    <h3 className="bmcc-cat-title">{category.title}</h3>
+                  </div>
+                  <p className="bmcc-cat-desc">{category.desc}</p>
+                  <div className="bmcc-cat-footer">
+                    <span className="bmcc-cat-count">{category.count}</span>
+                    <span className="bmcc-cat-action">Explore cards</span>
+                  </div>
+                </div>
               </Link>
             ))}
           </div>
@@ -448,21 +681,19 @@ export default function Home() {
               </p>
             </div>
             <Link to="/explore" className="bmcc-text-cta">
-              Explore All Credit Cards <span aria-hidden="true">→</span>
+              Explore All Credit Cards
             </Link>
           </div>
 
-          <div className="pb-card-list">
-            {loading ? (
-              <p>Loading popular credit cards...</p>
-            ) : (
-              popularCards.map(card => <CreditCardItem key={card.id} card={card} />)
-            )}
-          </div>
+          {loading ? (
+            <p className="bmcc-loading-text">Loading popular credit cards...</p>
+          ) : (
+            <PopularCardCarousel cards={popularCards} />
+          )}
 
           <div className="bmcc-section-footer-cta">
             <Link to="/explore" className="bmcc-btn-primary">
-              Explore All 96 Credit Cards <span aria-hidden="true">→</span>
+              Explore All 96 Credit Cards
             </Link>
           </div>
         </div>
@@ -480,8 +711,14 @@ export default function Home() {
           </div>
           <div className="bmcc-why-grid">
             {WHY_BMCC.map(item => (
-              <div key={item.num} className="bmcc-why-card">
-                <div className="bmcc-why-num">{item.num}</div>
+              <div key={item.num} className={`bmcc-why-card bmcc-why-${item.accent}`}>
+                <div className="bmcc-why-visual">
+                  <WhyIllustration type={item.type} className="bmcc-why-graphic" />
+                </div>
+                <div className="bmcc-why-meta">
+                  <span className="bmcc-why-pill">{item.badge}</span>
+                  <span className="bmcc-why-num">{item.num}</span>
+                </div>
                 <h3>{item.title}</h3>
                 <p>{item.desc}</p>
               </div>
@@ -500,197 +737,521 @@ export default function Home() {
               Finding a credit card doesn't have to be complicated. Compare your options, understand the key details, and choose the cards that fit your needs.
             </p>
           </div>
-          <div className="bmcc-how-grid">
-            {HOW_BMCC_WORKS.map(item => (
-              <div key={item.step} className="bmcc-how-card">
-                <div className="bmcc-how-step-badge">
-                  <span className="bmcc-how-num">{item.step}</span>
+
+          <div className="bmcc-how-flow-container">
+            {/* Animated Flow Track running across steps */}
+            <div className="bmcc-flow-track" aria-hidden="true">
+              <div className="bmcc-flow-line-pulse"></div>
+            </div>
+
+            <div className="bmcc-how-grid">
+              {HOW_BMCC_WORKS.map((item, idx) => (
+                <div key={item.step} className={`bmcc-how-card bmcc-how-${item.accent}`}>
+                  <div className="bmcc-how-card-head">
+                    <span className="bmcc-how-step-tag">
+                      {item.tag}
+                    </span>
+                    <span className="bmcc-how-step-connector" aria-hidden="true">{idx < 3 ? "→" : "✓"}</span>
+                  </div>
+                  <div className="bmcc-how-visual">
+                    <HowIllustration step={item.step} className="bmcc-how-graphic" />
+                  </div>
+                  <h3>{item.name}</h3>
+                  <p>{item.desc}</p>
+                  <Link to={item.to} className="bmcc-how-link">
+                    <span>{item.linkText}</span>
+                  </Link>
                 </div>
-                <h3>{item.name}</h3>
-                <p>{item.desc}</p>
-                <Link to={item.to} className="bmcc-how-link">
-                  {item.linkText} <span aria-hidden="true">→</span>
-                </Link>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* 8. COMPARE CREDIT CARDS */}
+            {/* 8. COMPARE CREDIT CARDS (COMPACT MATRIX) */}
       <section className="bmcc-compare-section" aria-labelledby="compare-promo-heading" data-reveal>
         <div className="bmcc-container">
-          <div className="bmcc-feature-banner">
-            <div className="bmcc-feature-copy">
-              <span className="bmcc-section-label">SIDE-BY-SIDE EVALUATION</span>
-              <h2 id="compare-promo-heading" className="bmcc-section-title">
-                Compare Credit Cards Side by Side
-              </h2>
-              <p className="bmcc-section-sub">
-                Compare annual fees, joining fees, rewards, benefits and other important features before choosing a card.
-              </p>
-              <p className="desc">
-                Picking between two similar cards? Select up to 3 cards and line up their fee waiver milestones, airport lounge access limits, reward redemption rules, and welcome gifts side by side.
-              </p>
-              <div className="bmcc-feature-actions">
-                <Link to="/compare-credit-cards" className="bmcc-btn-primary">
-                  Compare Credit Cards <span aria-hidden="true">→</span>
-                </Link>
-              </div>
+          {/* Centered Header */}
+          <div className="bmcc-compare-header">
+            <span className="bmcc-section-label">SIDE-BY-SIDE EVALUATION</span>
+
+            <h2 id="compare-promo-heading" className="bmcc-compare-title">
+              Compare Credit Cards Side by Side
+            </h2>
+
+            <p className="bmcc-compare-sub">
+              Cut through marketing clutter. Line up fees, welcome perks, reward math, airport lounges, and forex markups head-to-head before applying.
+            </p>
+
+            {/* Matchup Selector Tabs */}
+            <div className="bmcc-cmp-tabs" role="tablist" aria-label="Curated comparison matchups">
+              {COMPARE_MATCHUPS.map((match, idx) => (
+                <button
+                  key={match.id}
+                  type="button"
+                  role="tab"
+                  aria-selected={compareIndex === idx}
+                  className={`bmcc-cmp-tab ${compareIndex === idx ? 'is-active' : ''}`}
+                  onClick={() => setCompareIndex(idx)}
+                >
+                  <span className="bmcc-cmp-tab-icon" aria-hidden="true">{match.icon}</span>
+                  <span className="bmcc-cmp-tab-label">{match.tag}</span>
+                </button>
+              ))}
             </div>
 
-            <div className="bmcc-compare-mockup" aria-hidden="true">
-              <div className="bmcc-mock-head">
-                <span>Side-by-side comparison preview</span>
-                <small>3 cards max</small>
-              </div>
-              <div className="bmcc-mock-row">
-                <div className="bmcc-mock-label">Card</div>
-                <div className="bmcc-mock-card-head">
-                  <span>HDFC Bank</span>
-                  <strong>Infinia Metal</strong>
-                </div>
-                <div className="bmcc-mock-card-head">
-                  <span>Axis Bank</span>
-                  <strong>Atlas Card</strong>
-                </div>
-              </div>
-              <div className="bmcc-mock-row">
-                <div className="bmcc-mock-label">Joining fee</div>
-                <div className="bmcc-mock-val">₹12,500</div>
-                <div className="bmcc-mock-val">₹5,000</div>
-              </div>
-              <div className="bmcc-mock-row">
-                <div className="bmcc-mock-label">Annual fee</div>
-                <div className="bmcc-mock-val">₹12,500</div>
-                <div className="bmcc-mock-val">₹5,000</div>
-              </div>
-              <div className="bmcc-mock-row">
-                <div className="bmcc-mock-label">Lounge access</div>
-                <div className="bmcc-mock-val">Unlimited worldwide</div>
-                <div className="bmcc-mock-val">Domestic &amp; Intl</div>
-              </div>
-              <div className="bmcc-mock-row">
-                <div className="bmcc-mock-label">Key feature</div>
-                <div className="bmcc-mock-val">3.33% base value-back</div>
-                <div className="bmcc-mock-val">Tiered EDGE Miles</div>
-              </div>
+            {/* Sub-Header Audit Indicators */}
+            <div className="bmcc-cmp-audit-strip" aria-label="Comparison trust highlights">
+              <span className="bmcc-cmp-audit-item">✓ 100% Impartial Fee Audit</span>
+              <span className="bmcc-cmp-audit-item">✓ Verified 2026 Reward Math</span>
+              <span className="bmcc-cmp-audit-item">✓ Real Lounge Quotas</span>
             </div>
           </div>
+
+          {/* Balanced Comparison Card */}
+          {(() => {
+            const activeMatchup = COMPARE_MATCHUPS[compareIndex];
+            return (
+              <div className="bmcc-cmp-compact-card">
+                {/* 3-Column Comparison Grid Table */}
+                <div className="bmcc-cmp-grid-table">
+                  {/* Table Header: Card Profiles */}
+                  <div className="bmcc-grid-row bmcc-grid-head">
+                    <div className="bmcc-grid-col bmcc-col-label">
+                      <span className="bmcc-grid-head-title">Parameters</span>
+                      <span className="bmcc-grid-head-sub">6 Key Factors Compared</span>
+                    </div>
+
+                    {/* Card 1 Head */}
+                    <div className="bmcc-grid-col bmcc-col-card">
+                      <div className="bmcc-head-card-box">
+                        <div className="bmcc-head-thumb">
+                          <img
+                            src={`/images/cards/${activeMatchup.card1.id}.webp`}
+                            alt={activeMatchup.card1.name}
+                            loading="lazy"
+                            draggable="false"
+                          />
+                          <span className="bmcc-head-tag">{activeMatchup.card1.badge}</span>
+                        </div>
+                        <div className="bmcc-head-info">
+                          <span className="bmcc-head-bank">{activeMatchup.card1.bankName}</span>
+                          <Link to={activeMatchup.card1.route} className="bmcc-head-title-link">
+                            <strong>{activeMatchup.card1.name}</strong>
+                          </Link>
+                          <div className="bmcc-head-rating">
+                            <span className="bmcc-head-star" aria-hidden="true">&#9733;</span>
+                            <span>{activeMatchup.card1.rating}</span>
+                            <small>({activeMatchup.card1.reviews})</small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Card 2 Head */}
+                    <div className="bmcc-grid-col bmcc-col-card">
+                      <div className="bmcc-head-card-box">
+                        <div className="bmcc-head-thumb">
+                          <img
+                            src={`/images/cards/${activeMatchup.card2.id}.webp`}
+                            alt={activeMatchup.card2.name}
+                            loading="lazy"
+                            draggable="false"
+                          />
+                          <span className="bmcc-head-tag">{activeMatchup.card2.badge}</span>
+                        </div>
+                        <div className="bmcc-head-info">
+                          <span className="bmcc-head-bank">{activeMatchup.card2.bankName}</span>
+                          <Link to={activeMatchup.card2.route} className="bmcc-head-title-link">
+                            <strong>{activeMatchup.card2.name}</strong>
+                          </Link>
+                          <div className="bmcc-head-rating">
+                            <span className="bmcc-head-star" aria-hidden="true">&#9733;</span>
+                            <span>{activeMatchup.card2.rating}</span>
+                            <small>({activeMatchup.card2.reviews})</small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Row 1: Joining & Annual Fee */}
+                  <div className="bmcc-grid-row">
+                    <div className="bmcc-grid-col bmcc-col-label">
+                      <span className="bmcc-row-title">Annual &amp; Joining Fee</span>
+                      <span className="bmcc-row-sub">Milestone spend waiver</span>
+                    </div>
+                    <div className={`bmcc-grid-col bmcc-col-val ${activeMatchup.card1.winnerKeys.includes('joiningFee') ? 'is-winner' : ''}`}>
+                      <div className="bmcc-val-main">
+                        <strong>{activeMatchup.card1.joiningFee}</strong>
+                        {activeMatchup.card1.winnerKeys.includes('joiningFee') && (
+                          <span className="bmcc-lead-badge">Lower Fee</span>
+                        )}
+                      </div>
+                      <span className="bmcc-val-sub">{activeMatchup.card1.waiver}</span>
+                    </div>
+                    <div className={`bmcc-grid-col bmcc-col-val ${activeMatchup.card2.winnerKeys.includes('joiningFee') ? 'is-winner' : ''}`}>
+                      <div className="bmcc-val-main">
+                        <strong>{activeMatchup.card2.joiningFee}</strong>
+                        {activeMatchup.card2.winnerKeys.includes('joiningFee') && (
+                          <span className="bmcc-lead-badge">Lower Fee</span>
+                        )}
+                      </div>
+                      <span className="bmcc-val-sub">{activeMatchup.card2.waiver}</span>
+                    </div>
+                  </div>
+
+                  {/* Row 2: Welcome / Sign-up Offer */}
+                  <div className="bmcc-grid-row">
+                    <div className="bmcc-grid-col bmcc-col-label">
+                      <span className="bmcc-row-title">Welcome Bonus</span>
+                      <span className="bmcc-row-sub">Activation rewards</span>
+                    </div>
+                    <div className={`bmcc-grid-col bmcc-col-val ${activeMatchup.card1.winnerKeys.includes('welcome') ? 'is-winner' : ''}`}>
+                      <div className="bmcc-val-main">
+                        <strong>{activeMatchup.card1.welcome}</strong>
+                        {activeMatchup.card1.winnerKeys.includes('welcome') && (
+                          <span className="bmcc-lead-badge">Higher Bonus</span>
+                        )}
+                      </div>
+                      <span className="bmcc-val-sub">{activeMatchup.card1.welcomeSub}</span>
+                    </div>
+                    <div className={`bmcc-grid-col bmcc-col-val ${activeMatchup.card2.winnerKeys.includes('welcome') ? 'is-winner' : ''}`}>
+                      <div className="bmcc-val-main">
+                        <strong>{activeMatchup.card2.welcome}</strong>
+                        {activeMatchup.card2.winnerKeys.includes('welcome') && (
+                          <span className="bmcc-lead-badge">Higher Bonus</span>
+                        )}
+                      </div>
+                      <span className="bmcc-val-sub">{activeMatchup.card2.welcomeSub}</span>
+                    </div>
+                  </div>
+
+                  {/* Row 3: Reward Rate */}
+                  <div className="bmcc-grid-row">
+                    <div className="bmcc-grid-col bmcc-col-label">
+                      <span className="bmcc-row-title">Reward Rate &amp; Returns</span>
+                      <span className="bmcc-row-sub">Effective value-back</span>
+                    </div>
+                    <div className={`bmcc-grid-col bmcc-col-val ${activeMatchup.card1.winnerKeys.includes('reward') ? 'is-winner' : ''}`}>
+                      <div className="bmcc-val-main">
+                        <strong>{activeMatchup.card1.reward}</strong>
+                        {activeMatchup.card1.winnerKeys.includes('reward') && (
+                          <span className="bmcc-lead-badge">Higher Returns</span>
+                        )}
+                      </div>
+                      <span className="bmcc-val-sub">{activeMatchup.card1.rewardSub}</span>
+                    </div>
+                    <div className={`bmcc-grid-col bmcc-col-val ${activeMatchup.card2.winnerKeys.includes('reward') ? 'is-winner' : ''}`}>
+                      <div className="bmcc-val-main">
+                        <strong>{activeMatchup.card2.reward}</strong>
+                        {activeMatchup.card2.winnerKeys.includes('reward') && (
+                          <span className="bmcc-lead-badge">Higher Returns</span>
+                        )}
+                      </div>
+                      <span className="bmcc-val-sub">{activeMatchup.card2.rewardSub}</span>
+                    </div>
+                  </div>
+
+                  {/* Row 4: Airport Lounge Access */}
+                  <div className="bmcc-grid-row">
+                    <div className="bmcc-grid-col bmcc-col-label">
+                      <span className="bmcc-row-title">Airport Lounge Access</span>
+                      <span className="bmcc-row-sub">Domestic &amp; international</span>
+                    </div>
+                    <div className={`bmcc-grid-col bmcc-col-val ${activeMatchup.card1.winnerKeys.includes('lounge') ? 'is-winner' : ''}`}>
+                      <div className="bmcc-val-main">
+                        <strong>{activeMatchup.card1.lounge}</strong>
+                        {activeMatchup.card1.winnerKeys.includes('lounge') && (
+                          <span className="bmcc-lead-badge">Superior Lounge</span>
+                        )}
+                      </div>
+                      <span className="bmcc-val-sub">{activeMatchup.card1.loungeSub}</span>
+                    </div>
+                    <div className={`bmcc-grid-col bmcc-col-val ${activeMatchup.card2.winnerKeys.includes('lounge') ? 'is-winner' : ''}`}>
+                      <div className="bmcc-val-main">
+                        <strong>{activeMatchup.card2.lounge}</strong>
+                        {activeMatchup.card2.winnerKeys.includes('lounge') && (
+                          <span className="bmcc-lead-badge">Superior Lounge</span>
+                        )}
+                      </div>
+                      <span className="bmcc-val-sub">{activeMatchup.card2.loungeSub}</span>
+                    </div>
+                  </div>
+
+                  {/* Row 5: Forex Markup */}
+                  <div className="bmcc-grid-row">
+                    <div className="bmcc-grid-col bmcc-col-label">
+                      <span className="bmcc-row-title">Forex Currency Markup</span>
+                      <span className="bmcc-row-sub">Overseas transaction fee</span>
+                    </div>
+                    <div className={`bmcc-grid-col bmcc-col-val ${activeMatchup.card1.winnerKeys.includes('forex') ? 'is-winner' : ''}`}>
+                      <div className="bmcc-val-main">
+                        <strong>{activeMatchup.card1.forex}</strong>
+                        {activeMatchup.card1.winnerKeys.includes('forex') && (
+                          <span className="bmcc-lead-badge">Lowest Forex</span>
+                        )}
+                      </div>
+                      <span className="bmcc-val-sub">Overseas spend markup</span>
+                    </div>
+                    <div className={`bmcc-grid-col bmcc-col-val ${activeMatchup.card2.winnerKeys.includes('forex') ? 'is-winner' : ''}`}>
+                      <div className="bmcc-val-main">
+                        <strong>{activeMatchup.card2.forex}</strong>
+                        {activeMatchup.card2.winnerKeys.includes('forex') && (
+                          <span className="bmcc-lead-badge">Lowest Forex</span>
+                        )}
+                      </div>
+                      <span className="bmcc-val-sub">Overseas spend markup</span>
+                    </div>
+                  </div>
+
+                  {/* Row 6: Best Suited Profile */}
+                  <div className="bmcc-grid-row">
+                    <div className="bmcc-grid-col bmcc-col-label">
+                      <span className="bmcc-row-title">Best Suited For</span>
+                      <span className="bmcc-row-sub">Ideal user profile</span>
+                    </div>
+                    <div className={`bmcc-grid-col bmcc-col-val ${activeMatchup.card1.winnerKeys.includes('bestFor') ? 'is-winner' : ''}`}>
+                      <div className="bmcc-val-main">
+                        <strong>{activeMatchup.card1.bestFor}</strong>
+                      </div>
+                      <span className="bmcc-val-sub">{activeMatchup.card1.bestForSub}</span>
+                    </div>
+                    <div className={`bmcc-grid-col bmcc-col-val ${activeMatchup.card2.winnerKeys.includes('bestFor') ? 'is-winner' : ''}`}>
+                      <div className="bmcc-val-main">
+                        <strong>{activeMatchup.card2.bestFor}</strong>
+                      </div>
+                      <span className="bmcc-val-sub">{activeMatchup.card2.bestForSub}</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Compact Bottom Bar (Verdict + CTA) */}
+                <div className="bmcc-cmp-compact-foot">
+                  <div className="bmcc-compact-verdict">
+                    <span className="bmcc-verdict-icon" aria-hidden="true">💡</span>
+                    <p><strong>Verdict:</strong> {activeMatchup.verdict}</p>
+                  </div>
+                  <Link
+                    to={`/compare-credit-cards?c1=${activeMatchup.card1.id}&c2=${activeMatchup.card2.id}`}
+                    className="bmcc-btn-primary bmcc-cmp-compact-btn"
+                  >
+                    <span>Full 14-Parameter Breakdown</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <line x1="5" y1="12" x2="19" y2="12" />
+                      <polyline points="12 5 19 12 12 19" />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+            );
+          })()}
         </div>
       </section>
 
-      {/* 9. CHECK ELIGIBILITY */}
+      {/* 9. CHECK ELIGIBILITY (INTERACTIVE PRE-QUALIFICATION) */}
       <section className="bmcc-eligibility-section" aria-labelledby="elig-promo-heading" data-reveal>
         <div className="bmcc-container">
           <div className="bmcc-eligibility-banner">
-            <div className="bmcc-feature-copy">
+            {/* Left Column: Editorial & Value Props */}
+            <div className="bmcc-elig-copy">
               <span className="bmcc-section-label">INSTANT PRE-QUALIFICATION</span>
-              <h2 id="elig-promo-heading" className="bmcc-section-title">
-                Check Your Credit Card Eligibility
+
+              <h2 id="elig-promo-heading" className="bmcc-elig-title">
+                Check Your Credit Card Eligibility in 60 Seconds
               </h2>
-              <p className="bmcc-section-sub">
-                Check basic eligibility based on factors such as age, income and employment type.
+
+              <p className="bmcc-elig-sub">
+                Find out which cards match your income, age, and employment profile before applying — with zero impact on your CIBIL score.
               </p>
-              <p className="desc">
-                Know where you stand in under 60 seconds. Our calculator checks standard banking thresholds for salaried and self-employed professionals so you only explore cards you qualify for.
-              </p>
-              <div className="bmcc-eligibility-note">
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2">
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M12 16v-4M12 8h.01" />
-                </svg>
-                <span>
-                  Checking basic eligibility on BookMyCreditCard does not involve a hard credit inquiry. An eligibility estimate does not guarantee approval and is separate from the issuer's application process.
-                </span>
+
+              {/* 3 Structured Benefit Points */}
+              <div className="bmcc-elig-perks">
+                <div className="bmcc-elig-perk-item">
+                  <div className="bmcc-elig-perk-icon" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    </svg>
+                  </div>
+                  <div className="bmcc-elig-perk-text">
+                    <strong>Zero Hard CIBIL Inquiry</strong>
+                    <span>Check your approval odds freely without dropping a single point on your credit score.</span>
+                  </div>
+                </div>
+
+                <div className="bmcc-elig-perk-item">
+                  <div className="bmcc-elig-perk-icon" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                    </svg>
+                  </div>
+                  <div className="bmcc-elig-perk-text">
+                    <strong>Multi-Bank Compatibility Check</strong>
+                    <span>Instantly checks standard banking thresholds across 17+ leading Indian card issuers.</span>
+                  </div>
+                </div>
+
+                <div className="bmcc-elig-perk-item">
+                  <div className="bmcc-elig-perk-icon" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="12" r="10" />
+                      <path d="m9 12 2 2 4-4" />
+                    </svg>
+                  </div>
+                  <div className="bmcc-elig-perk-text">
+                    <strong>Pre-Filtered Approval Odds</strong>
+                    <span>Only explore cards you actually qualify for, drastically minimizing application rejection risk.</span>
+                  </div>
+                </div>
               </div>
-              <div className="bmcc-feature-actions">
-                <Link to="/credit-card-eligibility" className="bmcc-btn-primary">
-                  Check Eligibility <span aria-hidden="true">→</span>
+
+              {/* Action Cluster & Trust Notes */}
+              <div className="bmcc-elig-actions">
+                <Link to="/credit-card-eligibility" className="bmcc-btn-primary bmcc-elig-primary-btn">
+                  <span>Check Detailed Eligibility Free</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                  </svg>
                 </Link>
+
+                <div className="bmcc-elig-trust-strip">
+                  <span className="bmcc-trust-pill">🛡️ No Credit Impact</span>
+                  <span className="bmcc-trust-pill">⚡ 60-Sec Calculator</span>
+                  <span className="bmcc-trust-pill">🔒 100% Free &amp; Secure</span>
+                </div>
               </div>
             </div>
 
-            <div className="bmcc-elig-mockup" aria-hidden="true">
-              <div className="bmcc-mock-head">
-                <span>Eligibility estimator</span>
-                <small>60 sec test</small>
-              </div>
-              <div className="bmcc-elig-mock-row">
-                <span>Minimum age</span>
-                <strong>21 Years</strong>
-              </div>
-              <div className="bmcc-elig-mock-row">
-                <span>Employment</span>
-                <strong>Salaried or Self-Employed</strong>
-              </div>
-              <div className="bmcc-elig-mock-row">
-                <span>Minimum monthly income</span>
-                <strong>₹25,000 / month</strong>
-              </div>
-              <div className="bmcc-elig-mock-row">
-                <span>CIBIL inquiry</span>
-                <strong>No hard credit check</strong>
-              </div>
-              <div className="bmcc-elig-mock-status">
-                <span>✓ Basic criteria estimate available instantly</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+            {/* Right Column: Interactive Quick Pre-Qualification Preview Card */}
+            {(() => {
+              const activeEmpGroup = ELIG_DATA[eligEmp] || ELIG_DATA.salaried;
+              const currentTier = activeEmpGroup.tiers[eligIncomeTier] || activeEmpGroup.tiers[0];
 
-      {/* 10. CREDIT CARD GUIDES */}
-      <section className="bmcc-guides-section" aria-labelledby="guides-heading" data-reveal>
-        <div className="bmcc-container">
-          <div className="bmcc-section-head">
-            <span className="bmcc-section-label">KNOWLEDGE &amp; INSIGHTS</span>
-            <h2 id="guides-heading" className="bmcc-section-title">Learn About Credit Cards</h2>
-            <p className="bmcc-section-sub">
-              Practical guides to help you build credit health, avoid unnecessary charges, and choose the right product.
-            </p>
-          </div>
-          <div className="bmcc-guides-grid">
-            {GUIDES.map(guide => (
-              <Link key={guide.to} to={guide.to} className="bmcc-guide-card">
-                <div>
-                  <span className="bmcc-guide-tag">{guide.tag}</span>
-                  <h3>{guide.title}</h3>
-                  <p>{guide.desc}</p>
-                </div>
-                <span className="bmcc-guide-link">
-                  Read guide <span aria-hidden="true">→</span>
-                </span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+              return (
+                <div className="bmcc-elig-simulator-card" aria-label="Interactive Credit Card Eligibility Simulator">
+                  {/* Card Header */}
+                  <div className="bmcc-sim-header">
+                    <div className="bmcc-sim-header-title">
+                      <strong>Eligibility Quick Estimator</strong>
+                    </div>
+                    <span className="bmcc-sim-badge">Interactive Preview</span>
+                  </div>
 
-      {/* CREDIT CARD BASICS */}
-      <section className="bmcc-basics-section" aria-labelledby="basics-heading" data-reveal>
-        <div className="bmcc-container">
-          <div className="bmcc-section-head">
-            <span className="bmcc-section-label">CARD FUNDAMENTALS</span>
-            <h2 id="basics-heading" className="bmcc-section-title">Credit Card Basics</h2>
-            <p className="bmcc-section-sub">
-              Understand the important parts of a credit card before you apply.
-            </p>
-          </div>
-          <div className="bmcc-basics-grid">
-            {CREDIT_BASICS.map((item, idx) => (
-              <div key={idx} className="bmcc-basics-card">
-                <div>
-                  <h3>{item.title}</h3>
-                  <p>{item.desc}</p>
+                  {/* Interactive Employment Selector */}
+                  <div className="bmcc-sim-field">
+                    <label className="bmcc-sim-label">1. Select Employment Type</label>
+                    <div className="bmcc-sim-toggle" role="radiogroup" aria-label="Employment Type">
+                      <button
+                        type="button"
+                        role="radio"
+                        aria-checked={eligEmp === 'salaried'}
+                        className={`bmcc-sim-toggle-btn ${eligEmp === 'salaried' ? 'is-active' : ''}`}
+                        onClick={() => {
+                          setEligEmp('salaried');
+                        }}
+                      >
+                        <span aria-hidden="true">💼</span> Salaried Professional
+                      </button>
+                      <button
+                        type="button"
+                        role="radio"
+                        aria-checked={eligEmp === 'self-employed'}
+                        className={`bmcc-sim-toggle-btn ${eligEmp === 'self-employed' ? 'is-active' : ''}`}
+                        onClick={() => {
+                          setEligEmp('self-employed');
+                        }}
+                      >
+                        <span aria-hidden="true">🏢</span> Self-Employed / Business
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Interactive Income Tiers */}
+                  <div className="bmcc-sim-field">
+                    <label className="bmcc-sim-label">2. {activeEmpGroup.fieldLabel}</label>
+                    <div className="bmcc-sim-tiers" role="radiogroup" aria-label={activeEmpGroup.fieldLabel}>
+                      {activeEmpGroup.tiers.map((tier, idx) => (
+                        <button
+                          key={tier.range}
+                          type="button"
+                          role="radio"
+                          aria-checked={eligIncomeTier === idx}
+                          className={`bmcc-sim-tier-btn ${eligIncomeTier === idx ? 'is-active' : ''}`}
+                          onClick={() => setEligIncomeTier(idx)}
+                        >
+                          <span className="bmcc-sim-tier-range">{tier.range}</span>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Dynamic Simulation Outcome Box */}
+                  <div className="bmcc-sim-results-box">
+                    <div className="bmcc-sim-results-top">
+                      <div className="bmcc-sim-stat">
+                        <span className="bmcc-sim-stat-label">Estimated Pre-Qualified</span>
+                        <strong className="bmcc-sim-stat-val">{currentTier.cardsCount}</strong>
+                      </div>
+                      <div className="bmcc-sim-stat bmcc-stat-right">
+                        <span className="bmcc-sim-stat-label">Approval Likelihood</span>
+                        <strong className="bmcc-sim-odds-badge">{currentTier.odds}</strong>
+                      </div>
+                    </div>
+
+                    {/* Likelihood Meter */}
+                    <div className="bmcc-sim-meter-track" aria-hidden="true">
+                      <div
+                        className="bmcc-sim-meter-bar"
+                        style={{ width: `${currentTier.oddsPercent}%` }}
+                      />
+                    </div>
+
+                    {/* Matching Cards Thumbnails Preview */}
+                    <div className="bmcc-sim-cards-preview">
+                      <span className="bmcc-sim-cards-title">
+                        Matching {currentTier.category} Picks:
+                      </span>
+                      <div className="bmcc-sim-cards-row">
+                        {currentTier.sampleCards.map(c => (
+                          <div key={c.id} className="bmcc-sim-card-chip">
+                            <img
+                              src={`/images/cards/${c.id}.webp`}
+                              alt={c.name}
+                              loading="lazy"
+                              draggable="false"
+                            />
+                            <div className="bmcc-sim-card-chip-info">
+                              <span className="bmcc-sim-card-name">{c.name}</span>
+                              <span className="bmcc-sim-card-badge">{c.badge}</span>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Simulator Footer */}
+                  <div className="bmcc-sim-footer">
+                    <div className="bmcc-sim-footer-note">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="12" y1="16" x2="12" y2="12" />
+                        <line x1="12" y1="8" x2="12.01" y2="8" />
+                      </svg>
+                      <span>Zero hard inquiry. Checking does not change your CIBIL score.</span>
+                    </div>
+                    <Link to="/credit-card-eligibility" className="bmcc-sim-cta-link">
+                      <span>Full Criteria Check</span>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                        <polyline points="12 5 19 12 12 19" />
+                      </svg>
+                    </Link>
+                  </div>
                 </div>
-                {item.to && (
-                  <Link to={item.to} className="bmcc-basics-link">
-                    {item.linkText}
-                  </Link>
-                )}
-              </div>
-            ))}
+              );
+            })()}
           </div>
         </div>
       </section>
@@ -698,22 +1259,28 @@ export default function Home() {
       {/* 11. EXPLORE BY BANK */}
       <section className="bmcc-banks-section" aria-labelledby="banks-heading" data-reveal>
         <div className="bmcc-container">
-          <div className="bmcc-section-head">
-            <span className="bmcc-section-label">ISSUER CATALOGUE</span>
-            <h2 id="banks-heading" className="bmcc-section-title">Explore Credit Cards by Bank</h2>
-            <p className="bmcc-section-sub">
-              Browse credit card offerings from 17 leading Indian banks and issuers.
-            </p>
-          </div>
-          <div className="bmcc-banks-grid">
-            {bankList.map(b => (
-              <Link key={b.id} to={`/explore?bank=${b.id}`} className="bmcc-bank-card" title={`View ${b.name} credit cards`}>
-                <div className="bmcc-bank-dot">
-                  {b.name.charAt(0)}
-                </div>
-                <span>{b.name}</span>
-              </Link>
-            ))}
+          <div className="bmcc-banks-wrapper">
+            <div className="bmcc-section-head center">
+              <span className="bmcc-section-label">TOP CARD ISSUERS</span>
+              <h2 id="banks-heading" className="bmcc-section-title">
+                Explore <span className="bmcc-title-highlight">Cards from Leading Issuers</span>
+              </h2>
+              <p className="bmcc-section-sub">
+                Browse verified credit card offerings from 17 leading Indian banks and issuers.
+              </p>
+            </div>
+            <div className="bmcc-banks-grid">
+              {bankList.map(b => (
+                <Link
+                  key={b.id}
+                  to={`/explore?bank=${b.id}`}
+                  className="bmcc-bank-card"
+                  title={`View ${b.name} credit cards`}
+                >
+                  <span className="bmcc-bank-name">{b.name}</span>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -721,45 +1288,58 @@ export default function Home() {
       {/* 12. FAQ */}
       <section className="bmcc-faq-section" aria-labelledby="faq-heading" data-reveal>
         <div className="bmcc-container">
-          <div className="bmcc-section-head center">
-            <span className="bmcc-section-label">ANSWERS &amp; CLARITY</span>
-            <h2 id="faq-heading" className="bmcc-section-title">Frequently Asked Questions</h2>
-            <p className="bmcc-section-sub">
-              Helpful answers to common questions about selecting, comparing, and managing credit cards in India.
-            </p>
-          </div>
+          <div className="bmcc-faq-container">
+            <div className="bmcc-section-head center">
+              <span className="bmcc-section-label">ANSWERS &amp; CLARITY</span>
+              <h2 id="faq-heading" className="bmcc-section-title">Frequently Asked Questions</h2>
+              <p className="bmcc-section-sub">
+                Clear, unbiased answers to help you navigate cards, credit limits, interest-free periods, and CIBIL factors.
+              </p>
+            </div>
 
-          <div className="bmcc-faq-list">
-            {FAQS.map((faq, index) => {
-              const isOpen = openFaq === index;
-              return (
-                <div key={index} className="bmcc-faq-item" data-open={isOpen}>
-                  <button
-                    type="button"
-                    className="bmcc-faq-summary"
-                    onClick={() => toggleFaq(index)}
-                    aria-expanded={isOpen}
-                    aria-controls={`faq-answer-${index}`}
-                    id={`faq-question-${index}`}
+            <div className="bmcc-faq-list">
+              {FAQS.map((faq, index) => {
+                const isOpen = openFaq === index;
+                return (
+                  <div
+                    key={faq.num}
+                    className={`bmcc-faq-item ${isOpen ? 'is-open' : ''}`}
+                    data-open={isOpen}
                   >
-                    <span>{faq.q}</span>
-                    <span className="bmcc-faq-toggle-icon" aria-hidden="true">
-                      {isOpen ? '✕' : '+'}
-                    </span>
-                  </button>
-                  {isOpen && (
-                    <div
-                      id={`faq-answer-${index}`}
-                      role="region"
-                      aria-labelledby={`faq-question-${index}`}
-                      className="bmcc-faq-answer"
+                    <button
+                      type="button"
+                      className="bmcc-faq-summary"
+                      onClick={() => toggleFaq(index)}
+                      aria-expanded={isOpen}
+                      aria-controls={`faq-answer-${faq.num}`}
+                      id={`faq-question-${faq.num}`}
                     >
-                      <p>{faq.a}</p>
-                    </div>
-                  )}
-                </div>
-              );
-            })}
+                      <div className="bmcc-faq-q-left">
+                        <span className="bmcc-faq-num">{faq.num}</span>
+                        <span className="bmcc-faq-question-text">{faq.q}</span>
+                      </div>
+                      <span className={`bmcc-faq-toggle-icon ${isOpen ? 'open' : ''}`} aria-hidden="true">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
+                          <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </span>
+                    </button>
+                    {isOpen && (
+                      <div
+                        id={`faq-answer-${faq.num}`}
+                        role="region"
+                        aria-labelledby={`faq-question-${faq.num}`}
+                        className="bmcc-faq-answer"
+                      >
+                        <div className="bmcc-faq-answer-inner">
+                          <p>{faq.a}</p>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
@@ -767,50 +1347,62 @@ export default function Home() {
       {/* IMPORTANT INFORMATION / REGULATORY DISCLOSURE */}
       <section className="bmcc-disclosure-section" aria-labelledby="disclosure-heading" data-reveal>
         <div className="bmcc-container">
-          <div className="bmcc-disclosure-card">
-            <div className="bmcc-disclosure-header">
-              <span className="bmcc-section-label">CONSUMER NOTICE &amp; DISCLOSURE</span>
+          <div className="bmcc-disclosure-inner">
+
+            {/* Left anchor column */}
+            <div className="bmcc-disclosure-left">
+              <span className="bmcc-section-label">CONSUMER NOTICE</span>
               <h2 id="disclosure-heading" className="bmcc-disclosure-title">Important Information</h2>
-            </div>
-            <div className="bmcc-disclosure-body">
-              <p>
-                BookMyCreditCard is an independent discovery and comparison platform designed to help consumers research and compare credit cards available in India. We are not a lender, bank, or credit card issuer.
-              </p>
-              <p>
-                All credit card products, credit limits, interest rates, rewards, and joining or annual renewal fees are issued and determined solely by the respective banks and card issuers at their discretion, subject to their internal underwriting policies. Approval decisions are made exclusively by the issuing institution.
-              </p>
-              <p>
-                Product information and fee schedules are compiled from publicly available disclosures and issuer schedules. Fees, rewards, eligibility, and terms may vary by issuer and card. Users should always review the issuing bank’s current Most Important Terms and Conditions (MITC) before submitting an application.
-              </p>
-              <div className="bmcc-disclosure-links">
-                <Link to="/disclaimer" className="bmcc-disclosure-link">
-                  Read Disclaimer <span aria-hidden="true">→</span>
-                </Link>
-                <Link to="/terms-of-use" className="bmcc-disclosure-link">
-                  Terms of Use <span aria-hidden="true">→</span>
-                </Link>
+              <div className="bmcc-disclosure-actions">
+                <Link to="/disclaimer" className="bmcc-disclosure-link">Read Disclaimer</Link>
+                <Link to="/terms-of-use" className="bmcc-disclosure-link">Terms of Use</Link>
               </div>
             </div>
+
+            {/* Right prose column */}
+            <div className="bmcc-disclosure-right">
+              <p>
+                BookMyCreditCard is an independent discovery and comparison platform. We are not a lender, bank, NBFC, or credit card issuer. Our role is to surface publicly available product information to help consumers make informed choices.
+              </p>
+              <p>
+                All credit card products, credit limits, interest rates, rewards, and joining or annual renewal fees are issued and determined solely by the respective banks and card issuers. Approval decisions are made exclusively by the issuing institution, subject to their internal underwriting policies.
+              </p>
+              <p>
+                Product information and fee schedules are compiled from publicly available issuer disclosures. Terms, fees, and eligibility may vary. Always review the issuing bank's current Most Important Terms and Conditions (MITC) before submitting an application.
+              </p>
+              <span className="bmcc-disclosure-note">Transparency First — RBI Regulatory Framework Compliant</span>
+            </div>
+
           </div>
         </div>
       </section>
 
       {/* 13. FINAL CTA */}
       <section className="bmcc-final-section" aria-labelledby="cta-heading" data-reveal>
-        <div className="bmcc-container">
-          <div className="bmcc-final-card">
-            <span className="bmcc-section-label">READY TO BEGIN?</span>
-            <h2 id="cta-heading" className="bmcc-final-title">Find a Credit Card That Fits Your Needs</h2>
+        <div className="bmcc-final-inner">
+          <div className="bmcc-final-content">
+            <span className="bmcc-final-kicker">Ready to Begin</span>
+            <h2 id="cta-heading" className="bmcc-final-title">Find a Credit Card<br/>That Fits Your Life</h2>
             <p className="bmcc-final-sub">
-              Compare cards, explore benefits and find options that match the way you spend.
+              Compare 200+ verified cards across 17 leading issuers. Explore transparent reward math, check basic eligibility in 60 seconds — completely free.
             </p>
             <div className="bmcc-final-actions">
-              <Link to="/explore" className="bmcc-btn-primary">
-                Explore Credit Cards <span aria-hidden="true">→</span>
+              <Link to="/explore" className="bmcc-final-btn-primary">
+                Explore All Cards
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
               </Link>
-              <Link to="/compare-credit-cards" className="bmcc-btn-secondary">
-                Compare Cards <span aria-hidden="true">→</span>
+              <Link to="/compare-credit-cards" className="bmcc-final-btn-secondary">
+                Compare Side by Side
               </Link>
+            </div>
+            <div className="bmcc-final-trust">
+              <span>Free service</span>
+              <span className="bmcc-final-trust-sep">·</span>
+              <span>Zero CIBIL impact</span>
+              <span className="bmcc-final-trust-sep">·</span>
+              <span>100% independent</span>
             </div>
           </div>
         </div>

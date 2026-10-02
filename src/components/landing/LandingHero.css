@@ -58,7 +58,7 @@
 .card-hero-footer a, .card-hero-footer button { color: #555d65; font: inherit; font-size: 11px; }
 .card-hero-footer button { padding: 8px; border: 0; background: transparent; cursor: pointer; }
 .card-hero-footer span { margin-left: 8px; }
-.card-hero a:focus-visible, .card-hero button:focus-visible { outline: 2px solid #0052cc; outline-offset: 5px; }
+.card-hero a:focus-visible, .card-hero button:focus-visible { outline: 2px solid #2447bb; outline-offset: 5px; }
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
   .card-hero-card:hover .card-hero-face { translate: 0 -18px; box-shadow: 0 4px 6px #10182622, 0 28px 30px -12px #14233f70; }
 }
