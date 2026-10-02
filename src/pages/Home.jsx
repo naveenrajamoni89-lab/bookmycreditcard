@@ -1,4 +1,4 @@
-﻿import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import LandingHero from '../components/landing/LandingHero';
 import CardFinder from '../components/landing/CardFinder';
@@ -20,14 +20,6 @@ const CATEGORIES = [
     count: '24+ Cards',
   },
   {
-    title: 'Travel Credit Cards',
-    slug: 'travel-credit-cards',
-    desc: 'Air miles, complimentary flights, hotel loyalty memberships, and worldwide travel perks.',
-    badge: 'Air Miles & Flights',
-    accent: 'sky',
-    count: '18+ Cards',
-  },
-  {
     title: 'Rewards Credit Cards',
     slug: 'rewards-credit-cards',
     desc: 'Accelerated reward points across retail and dining with flexible merchandise redemptions.',
@@ -36,12 +28,12 @@ const CATEGORIES = [
     count: '28+ Cards',
   },
   {
-    title: 'Lifetime Free Credit Cards',
-    slug: 'lifetime-free-credit-cards',
-    desc: 'Zero annual renewal fee and zero joining charges with no minimum spend conditions.',
-    badge: 'Zero Annual Fee',
-    accent: 'amber',
-    count: '16+ Cards',
+    title: 'Travel Credit Cards',
+    slug: 'travel-credit-cards',
+    desc: 'Air miles, complimentary flights, hotel loyalty memberships, and worldwide travel perks.',
+    badge: 'Air Miles & Flights',
+    accent: 'sky',
+    count: '18+ Cards',
   },
   {
     title: 'Fuel Credit Cards',
@@ -52,14 +44,6 @@ const CATEGORIES = [
     count: '12+ Cards',
   },
   {
-    title: 'Lounge Access Credit Cards',
-    slug: 'credit-cards-lounge-access',
-    desc: 'Complimentary domestic airport lounge visits and international Priority Pass access.',
-    badge: 'Domestic & Intl Lounges',
-    accent: 'indigo',
-    count: '22+ Cards',
-  },
-  {
     title: 'RuPay Credit Cards',
     slug: 'rupay-credit-cards',
     desc: 'Link directly to your preferred UPI apps for seamless QR scan-and-pay transactions.',
@@ -68,12 +52,36 @@ const CATEGORIES = [
     count: '14+ Cards',
   },
   {
-    title: 'International Credit Cards',
-    slug: 'international-credit-cards',
-    desc: 'Global merchant acceptance, 24/7 concierge assistance, and multi-currency protection.',
-    badge: 'Worldwide Acceptance',
-    accent: 'blue',
-    count: '15+ Cards',
+    title: 'Lounge Access Credit Cards',
+    slug: 'lounge-access-credit-cards',
+    desc: 'Complimentary domestic airport lounge visits and international Priority Pass access.',
+    badge: 'Domestic & Intl Lounges',
+    accent: 'indigo',
+    count: '22+ Cards',
+  },
+  {
+    title: 'Lifetime Free Credit Cards',
+    slug: 'lifetime-free-credit-cards',
+    desc: 'Zero annual renewal fee and zero joining charges with no minimum spend conditions.',
+    badge: 'Zero Annual Fee',
+    accent: 'amber',
+    count: '16+ Cards',
+  },
+  {
+    title: 'Shopping Credit Cards',
+    slug: 'shopping-credit-cards',
+    desc: 'Accelerated reward points, exclusive merchant vouchers, and instant sale discounts on top e-commerce sites.',
+    badge: 'Online & Store Perks',
+    accent: 'pink',
+    count: '20+ Cards',
+  },
+  {
+    title: 'Dining Credit Cards',
+    slug: 'dining-credit-cards',
+    desc: 'Up to 20% dining bill discounts, culinary memberships, and accelerated points on restaurant orders.',
+    badge: 'Culinary Privileges',
+    accent: 'coral',
+    count: '18+ Cards',
   },
   {
     title: 'Zero Forex Markup Credit Cards',
@@ -84,11 +92,27 @@ const CATEGORIES = [
     count: '8+ Cards',
   },
   {
+    title: 'International Credit Cards',
+    slug: 'international-credit-cards',
+    desc: 'Global merchant acceptance, 24/7 concierge assistance, and multi-currency protection.',
+    badge: 'Worldwide Acceptance',
+    accent: 'blue',
+    count: '15+ Cards',
+  },
+  {
     title: 'Secured Credit Cards',
     slug: 'secured-credit-cards',
-    desc: 'Fixed-deposit (FD) backed cards designed to establish or rebuild your credit score safely.',
-    badge: 'FD-Backed Approval',
+    desc: 'Fixed-deposit backed cards designed to establish or rebuild your credit score safely.',
+    badge: 'Guaranteed Approval',
     accent: 'teal',
+    count: '10+ Cards',
+  },
+  {
+    title: 'FD-Backed Credit Cards',
+    slug: 'fd-backed-credit-cards',
+    desc: 'Earn high deposit interest while building credit limits with no income proof required.',
+    badge: 'High Interest & Credit',
+    accent: 'slate',
     count: '10+ Cards',
   },
 ];

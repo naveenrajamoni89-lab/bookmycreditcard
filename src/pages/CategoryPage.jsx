@@ -1,4 +1,4 @@
-﻿import { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import CardListingSection from '../components/CardListingSection';
 import Loader from '../components/ui/Loader';
@@ -11,6 +11,7 @@ import { useData } from '../context/DataContext';
 import { getCardBySlugOrRoute } from '../data/cardDetails';
 import { categoryEditorialData } from '../data/categoryEditorial';
 import { bankEditorialData } from '../data/bankEditorial';
+import { categoryPages as fallbackCategoryPages } from '../data/content';
 import '../styles/home-editorial.css';
 import '../styles/category-hub-premium.css';
 
@@ -36,7 +37,12 @@ export default function CategoryPage() {
   // 2. Check if this slug is a Category or Bank page
   let page = categoryPages.find(p => p.slug === slug);
 
-  // Fallback: if slug exists in bankEditorialData but not in categoryPages
+  // Fallback 1: check fallbackCategoryPages from local content.js
+  if (!page) {
+    page = fallbackCategoryPages.find(p => p.slug === slug);
+  }
+
+  // Fallback 2: if slug exists in bankEditorialData but not in categoryPages
   // (e.g. Supabase table is missing the bank row), synthesize a page object.
   if (!page && bankEditorialData[slug]) {
     const bd = bankEditorialData[slug];
@@ -46,6 +52,17 @@ export default function CategoryPage() {
       bankId: bd.bankId || null,
       isBank: true,
       description: bd.heroDesc || '',
+    };
+  }
+
+  // Fallback 3: if slug exists in categoryEditorialData
+  if (!page && categoryEditorialData[slug]) {
+    const ed = categoryEditorialData[slug];
+    page = {
+      slug,
+      title: ed.title || slug,
+      categoryId: slug.replace('-credit-cards', ''),
+      description: ed.subtitle || ed.heroDesc || '',
     };
   }
 
@@ -102,7 +119,7 @@ export default function CategoryPage() {
 
               {/* Eyebrow Badge */}
               <div className="bmcc-hub-hero-eyebrow">
-                <span style="color:#2563eb;font-size:12px">&#9733;</span> {badge}
+                <span style={{ color: '#2563eb', fontSize: '12px' }}>★</span> {badge}
               </div>
 
               {/* Title & Tagline */}
@@ -116,7 +133,7 @@ export default function CategoryPage() {
               {/* Actions & Proof */}
               <div className="bmcc-hub-hero-actions">
                 <a href="#card-catalog" className="bmcc-hub-cta-btn">
-                  Explore {filteredCards.length > 0 ? `${filteredCards.length}+` : 'All'} Cards â†“
+                  Explore {filteredCards.length > 0 ? `${filteredCards.length}+` : 'All'} Cards ↓
                 </a>
                 <Link to="/compare-credit-cards" className="bmcc-hub-secondary-btn">
                   Compare Cards
@@ -256,7 +273,7 @@ export default function CategoryPage() {
             <div className="bmcc-hub-highlights-grid">
               {highlights.map((h, idx) => (
                 <div key={idx} className="bmcc-hub-highlight-card">
-                  <div className="bmcc-hub-highlight-num">0{idx + 1} â€¢ BENEFIT</div>
+                  <div className="bmcc-hub-highlight-num">0{idx + 1} • BENEFIT</div>
                   <h3 className="bmcc-hub-highlight-title">{h.title}</h3>
                   <p className="bmcc-hub-highlight-desc">{h.desc}</p>
                 </div>
@@ -380,7 +397,7 @@ export default function CategoryPage() {
               <span className="bmcc-hub-step-num">Step 04</span>
               <h3 className="bmcc-hub-step-title">Card Activation</h3>
               <p className="bmcc-hub-step-desc">
-                Receive virtual card details instantly for online shopping; physical metal/plastic card delivers in 3â€“5 days.
+                Receive virtual card details instantly for online shopping; physical metal/plastic card delivers in 3-5 days.
               </p>
             </div>
           </div>
