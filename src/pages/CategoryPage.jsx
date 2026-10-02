@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+﻿import { useState, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import CardListingSection from '../components/CardListingSection';
 import Loader from '../components/ui/Loader';
@@ -34,7 +34,21 @@ export default function CategoryPage() {
   }
 
   // 2. Check if this slug is a Category or Bank page
-  const page = categoryPages.find(p => p.slug === slug);
+  let page = categoryPages.find(p => p.slug === slug);
+
+  // Fallback: if slug exists in bankEditorialData but not in categoryPages
+  // (e.g. Supabase table is missing the bank row), synthesize a page object.
+  if (!page && bankEditorialData[slug]) {
+    const bd = bankEditorialData[slug];
+    page = {
+      slug,
+      title: bd.title || bd.bankName || slug,
+      bankId: bd.bankId || null,
+      isBank: true,
+      description: bd.heroDesc || '',
+    };
+  }
+
   if (!page) {
     return <LegalPage slug={slug} />;
   }
@@ -88,7 +102,7 @@ export default function CategoryPage() {
 
               {/* Eyebrow Badge */}
               <div className="bmcc-hub-hero-eyebrow">
-                <span>★</span> {badge}
+                <span>â˜…</span> {badge}
               </div>
 
               {/* Title & Tagline */}
@@ -102,7 +116,7 @@ export default function CategoryPage() {
               {/* Actions & Proof */}
               <div className="bmcc-hub-hero-actions">
                 <a href="#card-catalog" className="bmcc-hub-cta-btn">
-                  Explore {filteredCards.length > 0 ? `${filteredCards.length}+` : 'All'} Cards ↓
+                  Explore {filteredCards.length > 0 ? `${filteredCards.length}+` : 'All'} Cards â†“
                 </a>
                 <Link to="/compare-credit-cards" className="bmcc-hub-secondary-btn">
                   Compare Cards
@@ -188,7 +202,7 @@ export default function CategoryPage() {
                         <td>
                           <span className="bmcc-hub-table-card-name">{c.name}</span>
                           <span className="bmcc-hub-table-bank-name">
-                            {c.bank || bankEditorial?.bankName || 'Verified Partner'} {c.rating ? `• ★ ${c.rating}` : ''}
+                            {c.bank || bankEditorial?.bankName || 'Verified Partner'} {c.rating ? `â€¢ â˜… ${c.rating}` : ''}
                           </span>
                         </td>
                         <td>
@@ -242,7 +256,7 @@ export default function CategoryPage() {
             <div className="bmcc-hub-highlights-grid">
               {highlights.map((h, idx) => (
                 <div key={idx} className="bmcc-hub-highlight-card">
-                  <div className="bmcc-hub-highlight-num">0{idx + 1} • BENEFIT</div>
+                  <div className="bmcc-hub-highlight-num">0{idx + 1} â€¢ BENEFIT</div>
                   <h3 className="bmcc-hub-highlight-title">{h.title}</h3>
                   <p className="bmcc-hub-highlight-desc">{h.desc}</p>
                 </div>
@@ -271,7 +285,7 @@ export default function CategoryPage() {
               {bankEditorial?.feesSchedule && (
                 <div className="bmcc-hub-meta-box">
                   <h3 className="bmcc-hub-meta-title">
-                    <span>💳</span> Standard Fees & Charges (MITC)
+                    <span>ðŸ’³</span> Standard Fees & Charges (MITC)
                   </h3>
                   <div>
                     {bankEditorial.feesSchedule.map((fee, idx) => (
@@ -288,7 +302,7 @@ export default function CategoryPage() {
               {bankEditorial?.eligibility && (
                 <div className="bmcc-hub-meta-box">
                   <h3 className="bmcc-hub-meta-title">
-                    <span>📋</span> Eligibility & Document Checklist
+                    <span>ðŸ“‹</span> Eligibility & Document Checklist
                   </h3>
                   <div>
                     <div className="bmcc-hub-fee-row">
@@ -366,7 +380,7 @@ export default function CategoryPage() {
               <span className="bmcc-hub-step-num">Step 04</span>
               <h3 className="bmcc-hub-step-title">Card Activation</h3>
               <p className="bmcc-hub-step-desc">
-                Receive virtual card details instantly for online shopping; physical metal/plastic card delivers in 3–5 days.
+                Receive virtual card details instantly for online shopping; physical metal/plastic card delivers in 3â€“5 days.
               </p>
             </div>
           </div>

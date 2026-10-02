@@ -102,7 +102,7 @@ export async function fetchCategoryPages() {
     async () => {
       const { data, error } = await supabase
         .from('category_pages')
-        .select('slug, title, category_id, description')
+        .select('slug, title, category_id, description, is_bank, bank_id')
         .order('slug');
       return {
         data,
@@ -112,6 +112,8 @@ export async function fetchCategoryPages() {
           title: p.title,
           categoryId: p.category_id,
           description: p.description,
+          isBank: p.is_bank || false,
+          bankId: p.bank_id || null,
         })),
       };
     },
