@@ -101,7 +101,7 @@ export default function BestCreditCards() {
     .filter(Boolean);
 
   return (
-    <div className="learn-page bmcc-best-cards-page">
+    <div className="learn-page bmcc-best-cards-page bmcc-explore">
       {/* Hero Header */}
       <section className="learn-hero">
         <div className="bmcc-container">
