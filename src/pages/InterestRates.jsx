@@ -64,7 +64,7 @@ export default function InterestRates() {
 
   return (
     <div className="learn-page bmcc-rates-page">
-      {/* Hero Header */}
+      {/* Hero Header - Clean & Left Aligned */}
       <section className="learn-hero">
         <div className="bmcc-container">
           <div className="learn-hero-inner">
@@ -76,17 +76,11 @@ export default function InterestRates() {
               <span className="learn-breadcrumb-current">Interest Rates</span>
             </div>
 
-            <span className="learn-badge badge-amber">SCHEDULE OF CHARGES</span>
+            <span className="learn-hero-kicker">Schedule of Charges</span>
             <h1 className="learn-title">Credit Card Interest Rates Across Major Banks</h1>
             <p className="learn-lead">
               Credit card finance charges in India typically range from 9% to 52.8% per annum (0.75% to 3.99% per month). Understand how banks calculate charges and how to use cards with 0% interest cost.
             </p>
-            <div className="learn-trust-strip">
-              <span className="learn-trust-pill pill-emerald">0% Cost When Paid in Full</span>
-              <span className="learn-trust-pill pill-blue">Updated October 2026</span>
-              <span className="learn-trust-pill pill-amber">Up to 50 Days Free Window</span>
-              <span className="learn-trust-pill pill-purple">RBI MITC Aligned</span>
-            </div>
           </div>
         </div>
       </section>
@@ -95,7 +89,7 @@ export default function InterestRates() {
       <section className="learn-section">
         <div className="bmcc-container">
           <div className="learn-section-head">
-            <span className="learn-section-kicker kicker-amber">FINANCE CHARGE SIMULATOR</span>
+            <span className="learn-section-kicker">FINANCE CHARGE SIMULATOR</span>
             <h2 className="learn-section-title">See How Revolving Credit Compounds</h2>
             <p className="learn-section-desc">
               Adjust the sliders below to calculate the real financial cost of carrying over an unpaid statement balance.
@@ -179,7 +173,7 @@ export default function InterestRates() {
       <section className="learn-section bg-subtle">
         <div className="bmcc-container">
           <div className="learn-section-head">
-            <span className="learn-section-kicker kicker-purple">ISSUER COMPARISON</span>
+            <span className="learn-section-kicker">ISSUER COMPARISON</span>
             <h2 className="learn-section-title">Credit Card Interest Rates of Top 16 Banks</h2>
             <p className="learn-section-desc">
               Indicative finance charges as published in issuer Most Important Terms and Conditions (MITC).
@@ -216,14 +210,14 @@ export default function InterestRates() {
                             {r.bank}
                           </td>
                           <td>
-                            <span style={{ background: '#eff6ff', color: '#1d4ed8', padding: '4px 10px', borderRadius: '6px', fontWeight: '700', fontSize: '13px' }}>
+                            <span style={{ background: '#f1f5f9', color: '#1e293b', padding: '4px 10px', borderRadius: '6px', fontWeight: '700', fontSize: '13px' }}>
                               {r.monthly}
                             </span>
                           </td>
                           <td>
                             <strong style={{ color: '#0f172a', fontSize: '14px' }}>{r.annual}</strong>
                           </td>
-                          <td style={{ color: '#059669', fontWeight: '600' }}>
+                          <td style={{ color: '#0f172a', fontWeight: '600' }}>
                             Up to 50 Days Free
                           </td>
                           <td style={{ textAlign: 'right' }}>
@@ -249,7 +243,7 @@ export default function InterestRates() {
       <section className="learn-section">
         <div className="bmcc-container">
           <div className="learn-section-head">
-            <span className="learn-section-kicker kicker-emerald">PRUDENT CARD USAGE</span>
+            <span className="learn-section-kicker">PRUDENT CARD USAGE</span>
             <h2 className="learn-section-title">5 Rules to Never Pay a Single Rupee in Interest</h2>
             <p className="learn-section-desc">
               Adopt these proven strategies to get full reward benefits while maintaining a 100% zero-interest cost profile.
@@ -259,7 +253,7 @@ export default function InterestRates() {
           <div className="learn-card-grid">
             {TIPS.map((tip, idx) => (
               <div key={idx} className="learn-clean-card">
-                <span className={`learn-card-pill-tag ${tip.tagClass}`}>Principle 0{idx + 1}</span>
+                <span className="learn-card-label">Principle 0{idx + 1}</span>
                 <h3 className="learn-clean-card-title">{tip.title}</h3>
                 <p className="learn-clean-card-body">{tip.desc}</p>
               </div>

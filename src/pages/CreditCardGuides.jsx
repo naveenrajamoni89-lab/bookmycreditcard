@@ -11,7 +11,7 @@ export default function CreditCardGuides() {
 
   return (
     <div className="learn-page bmcc-guides-page">
-      {/* Hero Header */}
+      {/* Hero Header - Clean & Left Aligned */}
       <section className="learn-hero">
         <div className="bmcc-container">
           <div className="learn-hero-inner">
@@ -23,17 +23,11 @@ export default function CreditCardGuides() {
               <span className="learn-breadcrumb-current">Credit Card Guides</span>
             </div>
 
-            <span className="learn-badge badge-cyan">PRACTICAL PLAYBOOKS</span>
+            <span className="learn-hero-kicker">Practical Playbooks</span>
             <h1 className="learn-title">Actionable Credit Card Guides & How-Tos</h1>
             <p className="learn-lead">
               Clear, step-by-step procedures to help you navigate limit increases, dispute fraudulent charges, maximize reward redemptions, and protect your credit score.
             </p>
-            <div className="learn-trust-strip">
-              <span className="learn-trust-pill pill-blue">Step-by-Step Checklists</span>
-              <span className="learn-trust-pill pill-purple">Under 5 Min Reads</span>
-              <span className="learn-trust-pill pill-emerald">RBI Banking Ombudsman Aligned</span>
-              <span className="learn-trust-pill pill-amber">Zero Fluff Guidance</span>
-            </div>
           </div>
         </div>
       </section>
@@ -44,16 +38,16 @@ export default function CreditCardGuides() {
           <div className="learn-reader-layout">
             {/* Guide Navigation Sidebar */}
             <aside className="learn-reader-nav">
-              <div style={{ padding: '8px 12px 10px', borderBottom: '1px solid #f1f5f9', marginBottom: '6px' }}>
-                <span style={{ fontSize: '11px', fontWeight: '800', letterSpacing: '0.08em', color: '#2447bb', textTransform: 'uppercase', display: 'block', marginBottom: '2px' }}>
+              <div className="learn-reader-nav-header">
+                <span className="learn-reader-nav-title">
                   PLAYBOOK DIRECTORY
                 </span>
-                <span style={{ fontSize: '12px', color: '#64748b' }}>
+                <span className="learn-reader-nav-count">
                   {guidesHubContent.guides.length} Actionable Walkthroughs
                 </span>
               </div>
 
-              <nav style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+              <nav className="learn-reader-list">
                 {guidesHubContent.guides.map((guide, idx) => {
                   const isActive = guide.id === activeGuide;
                   return (
@@ -78,7 +72,7 @@ export default function CreditCardGuides() {
             {/* Active Guide Article */}
             <article className="learn-reader-content">
               <div className="learn-reader-header">
-                <span className="learn-card-pill-tag tag-blue" style={{ marginBottom: '10px' }}>
+                <span className="learn-card-label" style={{ marginBottom: '10px' }}>
                   {current.category} · {current.time}
                 </span>
                 <h2 className="learn-reader-title">{current.title}</h2>
@@ -98,8 +92,8 @@ export default function CreditCardGuides() {
                 ))}
               </div>
 
-              <div className="learn-pro-tip-box" style={{ background: '#f8faff', borderLeft: '4px solid #2447bb' }}>
-                <strong style={{ color: '#2447bb' }}>Editorial Pro-Tip:</strong> Always request and record a service request or complaint reference number when dealing with bank customer support for audit compliance.
+              <div className="learn-pro-tip-box" style={{ background: '#f8fafc', borderLeft: '4px solid #0f172a' }}>
+                <strong style={{ color: '#0f172a' }}>Editorial Pro-Tip:</strong> Always request and record a service request or complaint reference number when dealing with bank customer support for audit compliance.
               </div>
 
               <div style={{ marginTop: '28px', paddingTop: '20px', borderTop: '1px solid #f1f5f9', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '14px' }}>

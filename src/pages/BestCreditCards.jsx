@@ -102,7 +102,7 @@ export default function BestCreditCards() {
 
   return (
     <div className="learn-page bmcc-best-cards-page bmcc-explore">
-      {/* Hero Header */}
+      {/* Hero Header - Clean & Left Aligned */}
       <section className="learn-hero">
         <div className="bmcc-container">
           <div className="learn-hero-inner">
@@ -114,17 +114,11 @@ export default function BestCreditCards() {
               <span className="learn-breadcrumb-current">Best Credit Cards</span>
             </div>
 
-            <span className="learn-badge badge-purple">ANNUAL EDITORIAL RANKINGS</span>
+            <span className="learn-hero-kicker">Annual Editorial Rankings</span>
             <h1 className="learn-title">25 Best Credit Cards in India for 2026</h1>
             <p className="learn-lead">
               Our research team evaluated over 90 credit cards across 16 major banks in India. Compare category champions across flat cashback, luxury travel, zero forex, and everyday utility savings.
             </p>
-            <div className="learn-trust-strip">
-              <span className="learn-trust-pill pill-purple">90+ Cards Screened</span>
-              <span className="learn-trust-pill pill-blue">Updated October 2026</span>
-              <span className="learn-trust-pill pill-emerald">100% Unbiased Evaluation</span>
-              <span className="learn-trust-pill pill-amber">Real Net Return Calibrated</span>
-            </div>
           </div>
         </div>
       </section>
@@ -133,7 +127,7 @@ export default function BestCreditCards() {
       <section className="learn-section">
         <div className="bmcc-container">
           <div className="learn-section-head">
-            <span className="learn-section-kicker kicker-purple">EDITORIAL CURATION</span>
+            <span className="learn-section-kicker">EDITORIAL CURATION</span>
             <h2 className="learn-section-title">Category Champions at a Glance</h2>
             <p className="learn-section-desc">
               If you have a specific spending goal, here are India’s undisputed top performers.
@@ -144,7 +138,7 @@ export default function BestCreditCards() {
             {CATEGORY_CHAMPIONS.map((champ, idx) => (
               <div key={idx} className="learn-champion-card">
                 <div className="learn-champion-top">
-                  <span className={`learn-card-pill-tag ${champ.badgeClass}`} style={{ marginBottom: 0 }}>
+                  <span className="learn-champion-cat">
                     {champ.category}
                   </span>
                   <span className="learn-champion-rating" style={{ color: '#2447bb' }}>
@@ -158,7 +152,7 @@ export default function BestCreditCards() {
                 </h3>
                 <p className="learn-champion-perk">{champ.perk}</p>
                 <div className="learn-champion-footer">
-                  <span style={{ fontSize: '12px', fontWeight: '700', color: '#059669' }}>Verified Top Pick</span>
+                  <span style={{ fontSize: '12px', fontWeight: '700', color: '#0f172a' }}>Verified Top Pick</span>
                   <Link to={champ.link} className="learn-champion-link">
                     View Card Details →
                   </Link>
@@ -173,7 +167,7 @@ export default function BestCreditCards() {
       <section className="learn-section bg-subtle">
         <div className="bmcc-container">
           <div className="learn-section-head">
-            <span className="learn-section-kicker kicker-emerald">TOP PICKS DIRECTORY</span>
+            <span className="learn-section-kicker">TOP PICKS DIRECTORY</span>
             <h2 className="learn-section-title">In-Depth Card Comparison</h2>
             <p className="learn-section-desc">
               Review full fees, key perks, and welcome benefits of each top-rated card.
@@ -224,7 +218,7 @@ export default function BestCreditCards() {
       <section className="learn-section">
         <div className="bmcc-container">
           <div className="learn-section-head">
-            <span className="learn-section-kicker kicker-amber">SCORING METHODOLOGY</span>
+            <span className="learn-section-kicker">SCORING METHODOLOGY</span>
             <h2 className="learn-section-title">How We Score & Rank Every Card</h2>
             <p className="learn-section-desc">
               Our 4-pillar algorithmic evaluation model prioritizes actual cardholder savings over marketing claims.
@@ -234,11 +228,11 @@ export default function BestCreditCards() {
           <div className="learn-card-grid">
             {METHODOLOGY.map((m, idx) => (
               <div key={idx} className="learn-clean-card">
-                <span className={`learn-card-pill-tag ${m.tagClass}`}>Pillar 0{idx + 1}</span>
+                <span className="learn-card-label">Pillar 0{idx + 1}</span>
                 <h3 className="learn-clean-card-title">{m.title}</h3>
                 <p className="learn-clean-card-body">{m.desc}</p>
                 <div className="learn-clean-card-footer">
-                  <span style={{ color: '#059669', fontWeight: '700' }}>25% Evaluation Weight</span>
+                  <span style={{ color: '#10110f', fontWeight: '700' }}>25% Evaluation Weight</span>
                 </div>
               </div>
             ))}
