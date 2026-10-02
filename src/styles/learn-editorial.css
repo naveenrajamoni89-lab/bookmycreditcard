@@ -1,10 +1,9 @@
 /* ==========================================================================
-   Learn Hub & Financial Literacy Design System
-   Clean, Editorial, High-Trust Financial Interface
-   Zero gradients, zero colored icon squares, brand-consistent palette
+   Learn Hub & Financial Literacy Design System - Colorful & Vibrant Edition
+   High-Trust, Engaging Financial Interface with Jewel-Tone Accents
    ========================================================================== */
 
-/* 1. PAGE & LAYOUT FOUNDATIONS */
+/* 1. PAGE & HERO ARCHITECTURE */
 .learn-page {
   background: #ffffff;
   color: #10110f;
@@ -15,15 +14,16 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+/* Subtle, refreshing ambient hero */
 .learn-hero {
   position: relative;
-  background: #ffffff;
-  border-bottom: 1px solid #e8eae6;
-  padding: clamp(48px, 6vw, 72px) 0 clamp(36px, 5vw, 56px);
+  background: linear-gradient(180deg, #f0f4ff 0%, #f8fafc 60%, #ffffff 100%);
+  border-bottom: 1px solid #e2e8f0;
+  padding: clamp(52px, 6vw, 76px) 0 clamp(40px, 5vw, 60px);
 }
 
 .learn-hero-inner {
-  max-width: 860px;
+  max-width: 880px;
   margin: 0 auto;
   text-align: center;
 }
@@ -34,12 +34,12 @@
   justify-content: center;
   gap: 8px;
   font-size: 13px;
-  color: #656a5e;
+  color: #64748b;
   margin-bottom: 20px;
 }
 
 .learn-breadcrumb a {
-  color: #656a5e;
+  color: #64748b;
   text-decoration: none;
   transition: color 0.15s ease;
 }
@@ -49,50 +49,62 @@
 }
 
 .learn-breadcrumb-sep {
-  color: #c7cbc3;
+  color: #cbd5e1;
   font-size: 11px;
 }
 
 .learn-breadcrumb-current {
-  color: #10110f;
+  color: #0f172a;
   font-weight: 600;
 }
 
+/* Colorful Hero Pill */
 .learn-badge {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  font-weight: 800;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #2447bb;
-  margin-bottom: 12px;
+  background: #eef2ff;
+  border: 1px solid #c7d2fe;
+  padding: 4px 14px;
+  border-radius: 999px;
+  margin-bottom: 16px;
 }
 
+.learn-badge.badge-emerald { color: #047857; background: #ecfdf5; border-color: #a7f3d0; }
+.learn-badge.badge-purple { color: #6d28d9; background: #f5f3ff; border-color: #ddd6fe; }
+.learn-badge.badge-amber { color: #b45309; background: #fffbeb; border-color: #fde68a; }
+.learn-badge.badge-cyan { color: #0e7490; background: #ecfeff; border-color: #a5f3fc; }
+
 .learn-title {
-  font-size: clamp(32px, 4.2vw, 52px);
-  font-weight: 600;
+  font-size: clamp(34px, 4.4vw, 54px);
+  font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1.12;
-  color: #10110f;
+  color: #0f172a;
   margin: 0 0 16px;
   text-wrap: balance;
 }
 
 .learn-lead {
-  font-size: clamp(15px, 1.2vw, 17px);
-  line-height: 1.65;
-  color: #53584f;
+  font-size: clamp(15px, 1.25vw, 17.5px);
+  line-height: 1.68;
+  color: #475569;
   max-width: 68ch;
   margin: 0 auto 28px;
 }
 
-/* Clean Trust Strip */
+/* Trust Strip with Colorful Accents */
 .learn-trust-strip {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 10px 14px;
+  gap: 10px 12px;
 }
 
 .learn-trust-pill {
@@ -100,23 +112,37 @@
   align-items: center;
   gap: 6px;
   padding: 6px 14px;
-  background: #f8fafc;
+  background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 999px;
-  font-size: 12px;
-  font-weight: 500;
+  font-size: 12.5px;
+  font-weight: 600;
   color: #334155;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
 }
 
-/* 2. SECTION STRUCTURE */
+.learn-trust-pill.pill-blue { border-color: #bfdbfe; color: #1d4ed8; background: #f0f7ff; }
+.learn-trust-pill.pill-emerald { border-color: #a7f3d0; color: #047857; background: #f0fdf4; }
+.learn-trust-pill.pill-purple { border-color: #ddd6fe; color: #6d28d9; background: #faf5ff; }
+.learn-trust-pill.pill-amber { border-color: #fde68a; color: #b45309; background: #fffdf0; }
+
+/* 2. SECTION ARCHITECTURE */
 .learn-section {
   padding: clamp(56px, 6vw, 88px) 0;
-  border-bottom: 1px solid #e8eae6;
+  border-bottom: 1px solid #f1f5f9;
   background: #ffffff;
 }
 
 .learn-section.bg-subtle {
-  background: #fafaf9;
+  background: #f8fafc;
+}
+
+.learn-section.bg-tint-blue {
+  background: #f8faff;
+}
+
+.learn-section.bg-tint-emerald {
+  background: #f7fdf9;
 }
 
 .learn-section-head {
@@ -125,27 +151,26 @@
   text-align: center;
 }
 
-.learn-section-head.text-left {
-  text-align: left;
-  margin: 0 0 36px;
-  max-width: 820px;
-}
-
 .learn-section-kicker {
-  display: block;
+  display: inline-block;
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #2447bb;
   margin-bottom: 8px;
 }
 
+.learn-section-kicker.kicker-emerald { color: #059669; }
+.learn-section-kicker.kicker-purple { color: #7c3aed; }
+.learn-section-kicker.kicker-amber { color: #d97706; }
+.learn-section-kicker.kicker-rose { color: #e11d48; }
+
 .learn-section-title {
   font-size: clamp(26px, 3.2vw, 38px);
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: -0.035em;
-  color: #10110f;
+  color: #0f172a;
   margin: 0 0 12px;
   line-height: 1.2;
 }
@@ -153,20 +178,84 @@
 .learn-section-desc {
   font-size: 15px;
   line-height: 1.6;
-  color: #53584f;
+  color: #64748b;
   margin: 0;
 }
 
-/* 3. CLEAN CARD & BENTO ARCHITECTURE (NO ICONS / NO SQUARES) */
+/* 3. COLORFUL PROCESS STEPS (LIFECYCLE FLOW) */
+.learn-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.learn-step-item {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+}
+
+.learn-step-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+}
+
+.learn-step-item.step-blue { border-top: 4px solid #2447bb; }
+.learn-step-item.step-purple { border-top: 4px solid #7c3aed; }
+.learn-step-item.step-emerald { border-top: 4px solid #059669; }
+.learn-step-item.step-amber { border-top: 4px solid #ea580c; }
+
+.learn-step-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  padding: 3px 8px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  width: fit-content;
+}
+
+.learn-step-tag.tag-blue { background: #eff6ff; color: #1d4ed8; }
+.learn-step-tag.tag-purple { background: #f5f3ff; color: #6d28d9; }
+.learn-step-tag.tag-emerald { background: #ecfdf5; color: #047857; }
+.learn-step-tag.tag-amber { background: #fff7ed; color: #c2410c; }
+
+.learn-step-header {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 8px;
+  letter-spacing: -0.015em;
+}
+
+.learn-step-text {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #475569;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.learn-step-meta {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid #f1f5f9;
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+/* 4. COLORFUL CARDS & BENTO GRIDS */
 .learn-card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 20px;
-}
-
-.learn-card-grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
@@ -174,37 +263,49 @@
   position: relative;
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 8px;
+  border-radius: 12px;
   padding: 24px;
   display: flex;
   flex-direction: column;
-  transition: border-color 0.15s ease;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .learn-clean-card:hover {
-  border-color: #94a3b8;
+  transform: translateY(-2px);
+  border-color: #cbd5e1;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
 }
 
-.learn-card-tag {
+.learn-card-pill-tag {
   display: inline-block;
-  font-size: 11.5px;
-  font-weight: 600;
-  color: #2447bb;
-  margin-bottom: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+  width: fit-content;
 }
+
+.learn-card-pill-tag.tag-blue { background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; }
+.learn-card-pill-tag.tag-green { background: #ecfdf5; color: #047857; border: 1px solid #a7f3d0; }
+.learn-card-pill-tag.tag-purple { background: #f5f3ff; color: #6d28d9; border: 1px solid #ddd6fe; }
+.learn-card-pill-tag.tag-amber { background: #fffbeb; color: #b45309; border: 1px solid #fde68a; }
+.learn-card-pill-tag.tag-rose { background: #fff1f2; color: #be123c; border: 1px solid #fecdd3; }
+.learn-card-pill-tag.tag-cyan { background: #ecfeff; color: #0e7490; border: 1px solid #a5f3fc; }
 
 .learn-clean-card-title {
-  font-size: 17px;
-  font-weight: 600;
+  font-size: 17.5px;
+  font-weight: 700;
   letter-spacing: -0.02em;
-  color: #10110f;
+  color: #0f172a;
   margin: 0 0 8px;
 }
 
 .learn-clean-card-body {
   font-size: 14px;
   line-height: 1.6;
-  color: #53584f;
+  color: #475569;
   margin: 0;
   flex-grow: 1;
 }
@@ -213,68 +314,21 @@
   margin-top: 18px;
   padding-top: 14px;
   border-top: 1px solid #f1f5f9;
-  font-size: 13px;
+  font-size: 12.5px;
+  font-weight: 600;
   color: #64748b;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* 4. PROCESS STEP ROWS (CLEAN EDITORIAL TIMELINE) */
-.learn-steps-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-}
-
-.learn-step-item {
-  position: relative;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  padding: 24px 20px;
-  display: flex;
-  flex-direction: column;
-}
-
-.learn-step-num {
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  color: #2447bb;
-  margin-bottom: 12px;
-}
-
-.learn-step-header {
-  font-size: 16px;
-  font-weight: 600;
-  color: #10110f;
-  margin: 0 0 8px;
-  letter-spacing: -0.015em;
-}
-
-.learn-step-text {
-  font-size: 13.5px;
-  line-height: 1.55;
-  color: #53584f;
-  margin: 0;
-}
-
-.learn-step-meta {
-  margin-top: 14px;
-  padding-top: 12px;
-  border-top: 1px solid #f1f5f9;
-  font-size: 12px;
-  color: #64748b;
-  font-weight: 500;
-}
-
-/* 5. INTEREST-FREE WINDOW VISUALIZER (CLEAN FLAT BARS) */
+/* 5. DYNAMIC 50-DAY TIMELINE VISUALIZER */
 .learn-timeline-card {
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 8px;
+  border-radius: 14px;
   padding: clamp(24px, 3.5vw, 40px);
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
 }
 
 .learn-timeline-track {
@@ -283,11 +337,12 @@
 }
 
 .learn-timeline-bar {
-  height: 8px;
+  height: 12px;
   background: #f1f5f9;
-  border-radius: 4px;
+  border-radius: 999px;
   display: flex;
   overflow: hidden;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.06);
 }
 
 .learn-bar-segment-active {
@@ -296,7 +351,7 @@
 }
 
 .learn-bar-segment-grace {
-  background: #0f172a;
+  background: #10b981;
   height: 100%;
 }
 
@@ -305,7 +360,7 @@
   justify-content: space-between;
   margin-top: 14px;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 600;
   color: #334155;
 }
 
@@ -317,106 +372,66 @@
   padding-top: 18px;
   border-top: 1px solid #f1f5f9;
   font-size: 13px;
-  color: #53584f;
+  color: #475569;
 }
 
 .learn-legend-item {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  font-weight: 500;
 }
 
 .learn-legend-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
 }
 
 .learn-legend-dot.dot-primary { background: #2447bb; }
-.learn-legend-dot.dot-grace { background: #0f172a; }
+.learn-legend-dot.dot-grace { background: #10b981; }
 
-/* 6. COMPARISON TABLES (FINANCIAL SCHEDULE) */
-.learn-table-card {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.learn-table-wrap {
-  width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-.learn-table {
-  width: 100%;
-  border-collapse: collapse;
-  text-align: left;
-  font-size: 14px;
-}
-
-.learn-table th {
-  background: #fafaf9;
-  padding: 14px 18px;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: #53584f;
-  border-bottom: 1px solid #e2e8f0;
-  white-space: nowrap;
-}
-
-.learn-table td {
-  padding: 14px 18px;
-  color: #10110f;
-  border-bottom: 1px solid #f1f5f9;
-  vertical-align: middle;
-}
-
-.learn-table tr:last-child td {
-  border-bottom: none;
-}
-
-.learn-table tr:hover td {
-  background: #f8fafc;
-}
-
-.learn-table a {
-  color: #2447bb;
-  font-weight: 500;
-  text-decoration: none;
-}
-
-.learn-table a:hover {
-  text-decoration: underline;
-}
-
-.learn-rate-value {
-  font-weight: 600;
-  color: #10110f;
-}
-
-/* 7. CIBIL SCORE METRICS & PROGRESS BARS */
+/* 6. CIBIL SPECTRUM CARDS (RICH COLOR CODING) */
 .learn-score-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  gap: 18px;
 }
 
 .learn-score-card {
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  padding: 20px;
-  border-top: 3px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 22px;
+  border-top: 4px solid #cbd5e1;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.learn-score-card.tier-excellent { border-top-color: #059669; }
-.learn-score-card.tier-good { border-top-color: #2447bb; }
-.learn-score-card.tier-fair { border-top-color: #d97706; }
-.learn-score-card.tier-repair { border-top-color: #dc2626; }
+.learn-score-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+
+.learn-score-card.tier-excellent {
+  border-top-color: #059669;
+  background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 40%);
+}
+
+.learn-score-card.tier-good {
+  border-top-color: #2447bb;
+  background: linear-gradient(180deg, #eff6ff 0%, #ffffff 40%);
+}
+
+.learn-score-card.tier-fair {
+  border-top-color: #d97706;
+  background: linear-gradient(180deg, #fffbeb 0%, #ffffff 40%);
+}
+
+.learn-score-card.tier-repair {
+  border-top-color: #dc2626;
+  background: linear-gradient(180deg, #fef2f2 0%, #ffffff 40%);
+}
 
 .learn-score-header {
   display: flex;
@@ -426,33 +441,43 @@
 }
 
 .learn-score-range {
-  font-size: 20px;
-  font-weight: 700;
-  color: #10110f;
+  font-size: 22px;
+  font-weight: 800;
+  color: #0f172a;
   letter-spacing: -0.02em;
 }
 
-.learn-score-label {
-  font-size: 12px;
-  font-weight: 600;
-  color: #53584f;
+.learn-score-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 999px;
 }
 
+.tier-excellent .learn-score-badge { background: #dcfce7; color: #15803d; }
+.tier-good .learn-score-badge { background: #dbeafe; color: #1e40af; }
+.tier-fair .learn-score-badge { background: #fef3c7; color: #92400e; }
+.tier-repair .learn-score-badge { background: #fee2e2; color: #991b1b; }
+
 .learn-score-status {
-  font-size: 13px;
-  font-weight: 500;
-  color: #2447bb;
+  font-size: 14px;
+  font-weight: 700;
   margin: 0 0 8px;
 }
 
+.tier-excellent .learn-score-status { color: #047857; }
+.tier-good .learn-score-status { color: #1d4ed8; }
+.tier-fair .learn-score-status { color: #b45309; }
+.tier-repair .learn-score-status { color: #b91c1c; }
+
 .learn-score-desc {
-  font-size: 13px;
+  font-size: 13.5px;
   line-height: 1.55;
-  color: #53584f;
+  color: #475569;
   margin: 0;
 }
 
-/* Factors Weight List */
+/* 7. FACTOR WEIGHTS PROGRESS BARS */
 .learn-factor-list {
   display: flex;
   flex-direction: column;
@@ -462,12 +487,13 @@
 .learn-factor-row {
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 8px;
+  border-radius: 12px;
   padding: 18px 22px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 24px;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.02);
 }
 
 .learn-factor-info {
@@ -475,21 +501,21 @@
 }
 
 .learn-factor-title {
-  font-size: 15px;
-  font-weight: 600;
-  color: #10110f;
+  font-size: 15.5px;
+  font-weight: 700;
+  color: #0f172a;
   margin: 0 0 4px;
 }
 
 .learn-factor-desc {
   font-size: 13.5px;
-  color: #53584f;
+  color: #475569;
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 .learn-factor-bar-wrap {
-  width: 140px;
+  width: 150px;
   flex-shrink: 0;
 }
 
@@ -497,30 +523,91 @@
   display: flex;
   justify-content: space-between;
   font-size: 12px;
-  font-weight: 600;
-  color: #10110f;
+  font-weight: 700;
+  color: #0f172a;
   margin-bottom: 6px;
 }
 
 .learn-factor-bar-track {
-  height: 6px;
-  background: #e2e8f0;
-  border-radius: 3px;
+  height: 8px;
+  background: #f1f5f9;
+  border-radius: 999px;
   overflow: hidden;
 }
 
 .learn-factor-bar-fill {
   height: 100%;
-  background: #2447bb;
-  border-radius: 3px;
+  border-radius: 999px;
 }
 
-/* 8. CLEAN SIMULATOR (SOLID CONTAINER, NO GRADIENTS) */
+.fill-blue { background: #2447bb; }
+.fill-emerald { background: #059669; }
+.fill-purple { background: #7c3aed; }
+.fill-amber { background: #d97706; }
+.fill-rose { background: #e11d48; }
+
+/* 8. HIGH-CONVERTING ELIGIBILITY CALLOUT (RICH COLOR BANNER) */
+.learn-eligibility-banner {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #172554 100%);
+  border-radius: 16px;
+  padding: clamp(36px, 5vw, 56px);
+  color: #ffffff;
+  text-align: center;
+  max-width: 920px;
+  margin: 0 auto;
+  box-shadow: 0 16px 36px -8px rgba(15, 23, 42, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.learn-eligibility-banner .learn-badge {
+  background: rgba(56, 189, 248, 0.15);
+  border-color: rgba(56, 189, 248, 0.35);
+  color: #38bdf8;
+}
+
+.learn-eligibility-banner h2 {
+  font-size: clamp(26px, 3.2vw, 36px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  margin: 0 0 12px;
+}
+
+.learn-eligibility-banner p {
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: #cbd5e1;
+  max-width: 60ch;
+  margin: 0 auto 28px;
+}
+
+.learn-eligibility-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  color: #0f172a;
+  padding: 14px 32px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 14.5px;
+  text-decoration: none;
+  transition: all 0.18s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.learn-eligibility-btn:hover {
+  background: #f1f5f9;
+  transform: translateY(-1px);
+}
+
+/* 9. FINANCE CHARGE CALCULATOR (RICH COLOR ACCENTS) */
 .learn-sim-card {
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  padding: clamp(24px, 3.5vw, 36px);
+  border-radius: 16px;
+  padding: clamp(24px, 3.5vw, 40px);
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
 }
 
 .learn-sim-grid {
@@ -542,14 +629,14 @@
 }
 
 .learn-slider-label {
-  font-size: 13.5px;
+  font-size: 14px;
   font-weight: 600;
-  color: #10110f;
+  color: #0f172a;
 }
 
 .learn-slider-val {
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 800;
   color: #2447bb;
 }
 
@@ -564,10 +651,12 @@
 }
 
 .learn-sim-result-box {
-  background: #10110f;
-  border-radius: 8px;
-  padding: 24px;
+  background: #0b1329;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  padding: 26px;
   color: #ffffff;
+  box-shadow: 0 10px 25px -5px rgba(11, 19, 41, 0.4);
 }
 
 .learn-result-stat {
@@ -580,7 +669,7 @@
 
 .learn-result-label {
   font-size: 11.5px;
-  font-weight: 600;
+  font-weight: 700;
   color: #94a3b8;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -589,153 +678,20 @@
 
 .learn-result-num {
   font-size: 26px;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: -0.02em;
   color: #ffffff;
 }
 
-.learn-result-num.highlight {
-  color: #60a5fa;
+.learn-result-num.danger {
+  color: #f87171;
 }
 
-/* 9. PLAYBOOK READER (GUIDES 2-COLUMN STRUCTURE) */
-.learn-reader-layout {
-  display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 28px;
-  align-items: start;
+.learn-result-num.success {
+  color: #4ade80;
 }
 
-.learn-reader-nav {
-  position: sticky;
-  top: 90px;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  padding: 8px;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.learn-reader-link {
-  display: flex;
-  flex-direction: column;
-  padding: 10px 14px;
-  border-radius: 6px;
-  background: transparent;
-  border: none;
-  text-align: left;
-  cursor: pointer;
-  transition: all 0.15s ease;
-  width: 100%;
-}
-
-.learn-reader-link:hover {
-  background: #f8fafc;
-}
-
-.learn-reader-link.active {
-  background: #f1f5f9;
-  border-left: 3px solid #2447bb;
-  border-radius: 0 6px 6px 0;
-}
-
-.learn-reader-link-title {
-  font-size: 13.5px;
-  font-weight: 600;
-  color: #10110f;
-  margin-bottom: 2px;
-}
-
-.learn-reader-link.active .learn-reader-link-title {
-  color: #2447bb;
-}
-
-.learn-reader-link-time {
-  font-size: 11.5px;
-  color: #64748b;
-}
-
-.learn-reader-content {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  padding: clamp(24px, 3.5vw, 36px);
-}
-
-.learn-reader-header {
-  margin-bottom: 24px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #e8eae6;
-}
-
-.learn-reader-kicker {
-  font-size: 12px;
-  font-weight: 700;
-  color: #2447bb;
-  margin-bottom: 6px;
-}
-
-.learn-reader-title {
-  font-size: clamp(24px, 2.5vw, 32px);
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  color: #10110f;
-  margin: 0 0 10px;
-}
-
-.learn-reader-desc {
-  font-size: 15px;
-  line-height: 1.6;
-  color: #53584f;
-  margin: 0;
-}
-
-.learn-reader-steps {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin: 24px 0;
-}
-
-.learn-reader-step-row {
-  display: flex;
-  gap: 16px;
-  align-items: flex-start;
-}
-
-.learn-step-index {
-  font-size: 13px;
-  font-weight: 700;
-  color: #2447bb;
-  padding-top: 2px;
-  min-width: 24px;
-}
-
-.learn-step-detail {
-  font-size: 14.5px;
-  line-height: 1.6;
-  color: #334155;
-  margin: 0;
-}
-
-.learn-pro-tip-box {
-  margin-top: 28px;
-  padding: 16px 20px;
-  background: #f8fafc;
-  border-left: 3px solid #2447bb;
-  border-radius: 0 6px 6px 0;
-  font-size: 13.5px;
-  line-height: 1.6;
-  color: #334155;
-}
-
-.learn-pro-tip-box strong {
-  color: #10110f;
-}
-
-/* 10. CATEGORY CHAMPIONS GRID (BEST CREDIT CARDS) */
+/* 10. CATEGORY CHAMPIONS GRID (VIBRANT REWARDS) */
 .learn-champions-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -745,38 +701,52 @@
 .learn-champion-card {
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 8px;
+  border-radius: 12px;
   padding: 24px;
   display: flex;
   flex-direction: column;
-  transition: border-color 0.15s ease;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .learn-champion-card:hover {
-  border-color: #94a3b8;
+  transform: translateY(-2px);
+  border-color: #cbd5e1;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
 }
 
-.learn-champion-category {
-  font-size: 12px;
+.learn-champion-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.learn-champion-badge {
+  font-size: 11px;
   font-weight: 700;
-  color: #2447bb;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 6px;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.learn-champion-rating {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #0f172a;
 }
 
 .learn-champion-name {
   font-size: 18px;
-  font-weight: 600;
-  color: #10110f;
+  font-weight: 700;
+  color: #0f172a;
   margin: 0 0 10px;
   letter-spacing: -0.02em;
 }
 
 .learn-champion-perk {
   font-size: 14px;
-  line-height: 1.55;
-  color: #53584f;
+  line-height: 1.6;
+  color: #475569;
   margin: 0 0 18px;
   flex-grow: 1;
 }
@@ -789,15 +759,9 @@
   border-top: 1px solid #f1f5f9;
 }
 
-.learn-champion-rating {
-  font-size: 13px;
-  font-weight: 600;
-  color: #10110f;
-}
-
 .learn-champion-link {
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
   color: #2447bb;
   text-decoration: none;
 }
@@ -806,61 +770,324 @@
   text-decoration: underline;
 }
 
-/* 11. RESPONSIVE BREAKPOINTS */
+/* 11. CREDIT CARD LIST SECTION (EXACT MATCH FOR REFERENCE IMAGE 4) */
+.learn-page .pb-card-list {
+  display: flex;
+  flex-direction: column;
+  max-width: 1060px;
+  margin: 0 auto;
+}
+
+.learn-page .pb-card-item {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr);
+  min-width: 0;
+  margin: 0;
+  padding: 28px 0;
+  border: 0;
+  border-top: 1px solid #dfe5ee;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+
+.learn-page .pb-card-item:hover {
+  box-shadow: none;
+}
+
+.learn-page .pb-card-left {
+  width: auto;
+  min-width: 0;
+  padding: 0 20px 0 0;
+  border: 0;
+  background: none;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.learn-page .pb-card-img-wrap {
+  display: flex;
+  width: 170px;
+  height: 110px;
+  margin: 0;
+}
+
+.learn-page .pb-card-img {
+  width: 170px;
+  height: 110px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1));
+}
+
+.learn-page .pb-card-compare {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 5px;
+  cursor: pointer;
+}
+
+.learn-page .pb-card-compare span {
+  font-size: 12px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.learn-page .pb-card-right {
+  min-width: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.learn-page .pb-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: 0 0 10px;
+  gap: 12px;
+}
+
+.learn-page .pb-card-bank {
+  margin: 0 0 4px;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.learn-page .pb-card-name-link {
+  font-size: clamp(17px, 1.5vw, 19px);
+  line-height: 1.3;
+  font-weight: 800;
+  color: #0f172a;
+  text-decoration: none;
+}
+
+.learn-page .pb-card-name-link:hover {
+  color: #2447bb;
+}
+
+.learn-page .pb-card-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.learn-page .pb-card-tag {
+  border: 0;
+  background: #eef2fb;
+  color: #2447a0;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.learn-page .pb-card-benefits {
+  display: grid;
+  gap: 4px;
+  margin: 0 0 16px;
+}
+
+.learn-page .pb-card-benefit {
+  position: relative;
+  padding-left: 14px;
+  color: #334155;
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.learn-page .pb-card-benefit::before {
+  content: '•';
+  position: absolute;
+  left: 2px;
+  top: 0;
+  color: #2447bb;
+  font-size: 16px;
+}
+
+.learn-page .pb-card-bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: auto;
+  flex-wrap: wrap;
+}
+
+.learn-page .pb-card-fees {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 26px;
+  margin: 0;
+}
+
+.learn-page .pb-card-fees dt {
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 600;
+  margin: 0 0 2px;
+}
+
+.learn-page .pb-card-fees dd {
+  margin: 0;
+  color: #0f172a;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.learn-page .pb-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0;
+}
+
+.learn-page .pb-read-more {
+  border: 0;
+  color: #2447bb;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.learn-page .pb-read-more:hover {
+  text-decoration: underline;
+}
+
+/* Image 4 Buttons: Pill Style */
+.learn-page .pb-check-eligibility {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 20px;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #10110f;
+  border: 1.5px solid #10110f;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.learn-page .pb-check-eligibility:hover {
+  background: #f1f5f9;
+}
+
+.learn-page .pb-apply-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 22px;
+  border-radius: 999px;
+  background: #10110f;
+  color: #ffffff;
+  border: 1.5px solid #10110f;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+  box-shadow: 0 2px 6px rgba(16, 17, 15, 0.15);
+}
+
+.learn-page .pb-apply-btn:hover {
+  background: #27272a;
+  border-color: #27272a;
+}
+
+/* 12. FAQ ACCORDION (FIX COLLAPSED CHEVRON) */
+.learn-faq-list {
+  max-width: 820px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.learn-faq-item {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.learn-faq-item[data-open="true"] {
+  border-color: #93c5fd;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.05);
+}
+
+.learn-faq-btn {
+  width: 100%;
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 15.5px;
+  font-weight: 700;
+  color: #0f172a;
+  cursor: pointer;
+}
+
+.learn-faq-btn:hover {
+  color: #2447bb;
+}
+
+/* Fixed Chevron Sizing to NEVER Collapse */
+.learn-faq-chevron {
+  width: 18px !important;
+  height: 18px !important;
+  min-width: 18px !important;
+  max-width: 18px !important;
+  min-height: 18px !important;
+  max-height: 18px !important;
+  flex-shrink: 0 !important;
+  transition: transform 0.2s ease;
+  color: #64748b;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.learn-faq-item[data-open="true"] .learn-faq-chevron {
+  transform: rotate(180deg);
+  color: #2447bb;
+}
+
+.learn-faq-body {
+  padding: 0 22px 20px;
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: #475569;
+}
+
+/* 13. RESPONSIVE BREAKPOINTS */
 @media (max-width: 1024px) {
-  .learn-steps-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .learn-score-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .learn-card-grid-3 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .learn-reader-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .learn-reader-nav {
-    position: static;
-  }
+  .learn-steps-grid { grid-template-columns: repeat(2, 1fr); }
+  .learn-score-grid { grid-template-columns: repeat(2, 1fr); }
+  .learn-page .pb-card-item { grid-template-columns: 160px minmax(0, 1fr); }
 }
 
 @media (max-width: 768px) {
-  .learn-sim-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .learn-steps-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .learn-score-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .learn-card-grid-3 {
-    grid-template-columns: 1fr;
-  }
-
-  .learn-card-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .learn-factor-row {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .learn-factor-bar-wrap {
-    width: 100%;
-  }
-
-  .learn-timeline-labels {
-    font-size: 11px;
-  }
+  .learn-sim-grid { grid-template-columns: 1fr; gap: 24px; }
+  .learn-steps-grid { grid-template-columns: 1fr; }
+  .learn-score-grid { grid-template-columns: 1fr; }
+  .learn-card-grid { grid-template-columns: 1fr; }
+  .learn-factor-row { flex-direction: column; align-items: flex-start; }
+  .learn-factor-bar-wrap { width: 100%; }
+  .learn-page .pb-card-item { display: flex; flex-direction: column; gap: 16px; }
+  .learn-page .pb-card-bottom { flex-direction: column; align-items: flex-start; gap: 14px; }
 }

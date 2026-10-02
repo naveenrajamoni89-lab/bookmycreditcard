@@ -29,22 +29,27 @@ const BANK_SLUGS = {
 const TIPS = [
   {
     title: 'Pay the Total Amount Due, Never Just Minimum Due',
+    tagClass: 'tag-rose',
     desc: 'Paying only 5% Minimum Due keeps your account current but triggers interest on the remaining 95% from the date of each purchase.',
   },
   {
     title: 'Leverage the 20 to 50-Day Interest-Free Window',
+    tagClass: 'tag-blue',
     desc: 'Time high-value purchases directly following your statement generation date to enjoy the maximum possible zero-interest credit period.',
   },
   {
     title: 'Never Withdraw Cash from an ATM Using a Credit Card',
+    tagClass: 'tag-amber',
     desc: 'Cash advances carry zero interest-free period. Interest accrues immediately from minute one, along with an upfront 2.5% to 3% transaction fee.',
   },
   {
     title: 'Opt for Low-Interest Balance EMI Conversion',
+    tagClass: 'tag-purple',
     desc: 'If an unexpected expense arises, convert the balance into a 6–12 month merchant EMI (12% to 16% APR) rather than revolving at 42% APR.',
   },
   {
     title: 'Activate Auto-Debit for 100% Total Due',
+    tagClass: 'tag-green',
     desc: 'Link your primary savings account to auto-pay the full statement balance 3 days before the due date so you never miss a payment.',
   },
 ];
@@ -71,16 +76,16 @@ export default function InterestRates() {
               <span className="learn-breadcrumb-current">Interest Rates</span>
             </div>
 
-            <span className="learn-badge">SCHEDULE OF CHARGES</span>
+            <span className="learn-badge badge-amber">SCHEDULE OF CHARGES</span>
             <h1 className="learn-title">Credit Card Interest Rates Across Major Banks</h1>
             <p className="learn-lead">
               Credit card finance charges in India typically range from 9% to 52.8% per annum (0.75% to 3.99% per month). Understand how banks calculate charges and how to use cards with 0% interest cost.
             </p>
             <div className="learn-trust-strip">
-              <span className="learn-trust-pill">0% Cost When Paid in Full</span>
-              <span className="learn-trust-pill">Updated October 2026 Schedule</span>
-              <span className="learn-trust-pill">Up to 50 Days Free Window</span>
-              <span className="learn-trust-pill">RBI Most Important Terms Aligned</span>
+              <span className="learn-trust-pill pill-emerald">0% Cost When Paid in Full</span>
+              <span className="learn-trust-pill pill-blue">Updated October 2026</span>
+              <span className="learn-trust-pill pill-amber">Up to 50 Days Free Window</span>
+              <span className="learn-trust-pill pill-purple">RBI MITC Aligned</span>
             </div>
           </div>
         </div>
@@ -90,7 +95,7 @@ export default function InterestRates() {
       <section className="learn-section">
         <div className="bmcc-container">
           <div className="learn-section-head">
-            <span className="learn-section-kicker">FINANCE CHARGE SIMULATOR</span>
+            <span className="learn-section-kicker kicker-amber">FINANCE CHARGE SIMULATOR</span>
             <h2 className="learn-section-title">See How Revolving Credit Compounds</h2>
             <p className="learn-section-desc">
               Adjust the sliders below to calculate the real financial cost of carrying over an unpaid statement balance.
@@ -115,7 +120,7 @@ export default function InterestRates() {
                     className="learn-range-input"
                     aria-label="Outstanding Balance"
                   />
-                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: '#656a5e', marginTop: '6px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: '#64748b', marginTop: '6px' }}>
                     <span>₹5,000</span>
                     <span>₹1,00,000</span>
                     <span>₹2,00,000</span>
@@ -125,7 +130,9 @@ export default function InterestRates() {
                 <div className="learn-slider-group" style={{ marginBottom: 0 }}>
                   <div className="learn-slider-header">
                     <span className="learn-slider-label">Monthly Bank Interest Rate:</span>
-                    <span className="learn-slider-val">{rate}% / mo ({(rate * 12).toFixed(1)}% APR)</span>
+                    <span className="learn-slider-val" style={{ color: '#d97706' }}>
+                      {rate}% / mo ({(rate * 12).toFixed(1)}% APR)
+                    </span>
                   </div>
                   <input
                     type="range"
@@ -136,8 +143,9 @@ export default function InterestRates() {
                     onChange={(e) => setRate(Number(e.target.value))}
                     className="learn-range-input"
                     aria-label="Monthly Interest Rate"
+                    style={{ accentColor: '#d97706' }}
                   />
-                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: '#656a5e', marginTop: '6px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: '#64748b', marginTop: '6px' }}>
                     <span>1.0% (Low APR Tier)</span>
                     <span>3.5% (Market Standard)</span>
                     <span>4.0% (Premium APR)</span>
@@ -148,15 +156,15 @@ export default function InterestRates() {
               <div className="learn-sim-result-box">
                 <div className="learn-result-stat">
                   <div className="learn-result-label">Daily Accruing Finance Charge</div>
-                  <div className="learn-result-num">≈ ₹{dailyInterest.toLocaleString('en-IN')} / day</div>
+                  <div className="learn-result-num danger">≈ ₹{dailyInterest.toLocaleString('en-IN')} / day</div>
                 </div>
                 <div className="learn-result-stat">
                   <div className="learn-result-label">30-Day Monthly Finance Charge</div>
-                  <div className="learn-result-num highlight">₹{monthlyInterest.toLocaleString('en-IN')} / mo</div>
+                  <div className="learn-result-num" style={{ color: '#f59e0b' }}>₹{monthlyInterest.toLocaleString('en-IN')} / mo</div>
                 </div>
                 <div className="learn-result-stat">
                   <div className="learn-result-label">Cost If Paid in Full on Due Date</div>
-                  <div className="learn-result-num" style={{ color: '#4ade80' }}>₹0 (Zero Charges)</div>
+                  <div className="learn-result-num success">₹0 (Zero Cost)</div>
                 </div>
                 <div style={{ marginTop: '16px', paddingTop: '14px', borderTop: '1px solid rgba(255,255,255,0.1)', fontSize: '12px', color: '#94a3b8', lineHeight: '1.5' }}>
                   *Excludes 18% GST applicable on credit card finance charges.
@@ -171,7 +179,7 @@ export default function InterestRates() {
       <section className="learn-section bg-subtle">
         <div className="bmcc-container">
           <div className="learn-section-head">
-            <span className="learn-section-kicker">ISSUER COMPARISON</span>
+            <span className="learn-section-kicker kicker-purple">ISSUER COMPARISON</span>
             <h2 className="learn-section-title">Credit Card Interest Rates of Top 16 Banks</h2>
             <p className="learn-section-desc">
               Indicative finance charges as published in issuer Most Important Terms and Conditions (MITC).
@@ -204,20 +212,22 @@ export default function InterestRates() {
                       const bankSlug = BANK_SLUGS[r.bank] || '/explore';
                       return (
                         <tr key={i}>
-                          <td style={{ fontWeight: '600', color: '#10110f' }}>
+                          <td style={{ fontWeight: '700', color: '#0f172a' }}>
                             {r.bank}
                           </td>
                           <td>
-                            <span className="learn-rate-value">{r.monthly}</span>
+                            <span style={{ background: '#eff6ff', color: '#1d4ed8', padding: '4px 10px', borderRadius: '6px', fontWeight: '700', fontSize: '13px' }}>
+                              {r.monthly}
+                            </span>
                           </td>
                           <td>
-                            <span className="learn-rate-value">{r.annual}</span>
+                            <strong style={{ color: '#0f172a', fontSize: '14px' }}>{r.annual}</strong>
                           </td>
-                          <td style={{ color: '#53584f' }}>
-                            Up to 50 Days
+                          <td style={{ color: '#059669', fontWeight: '600' }}>
+                            Up to 50 Days Free
                           </td>
                           <td style={{ textAlign: 'right' }}>
-                            <Link to={bankSlug} className="learn-table a">
+                            <Link to={bankSlug} style={{ color: '#2447bb', fontWeight: '700', textDecoration: 'none', fontSize: '13px' }}>
                               View Cards →
                             </Link>
                           </td>
@@ -229,7 +239,7 @@ export default function InterestRates() {
               </div>
             )}
           </div>
-          <p style={{ fontSize: '12px', color: '#656a5e', marginTop: '14px', textAlign: 'center' }}>
+          <p style={{ fontSize: '12px', color: '#64748b', marginTop: '14px', textAlign: 'center' }}>
             *Rates are indicative, vary based on card variant and individual credit profile, and are subject to periodic issuer revisions.
           </p>
         </div>
@@ -239,7 +249,7 @@ export default function InterestRates() {
       <section className="learn-section">
         <div className="bmcc-container">
           <div className="learn-section-head">
-            <span className="learn-section-kicker">PRUDENT CARD USAGE</span>
+            <span className="learn-section-kicker kicker-emerald">PRUDENT CARD USAGE</span>
             <h2 className="learn-section-title">5 Rules to Never Pay a Single Rupee in Interest</h2>
             <p className="learn-section-desc">
               Adopt these proven strategies to get full reward benefits while maintaining a 100% zero-interest cost profile.
@@ -249,7 +259,7 @@ export default function InterestRates() {
           <div className="learn-card-grid">
             {TIPS.map((tip, idx) => (
               <div key={idx} className="learn-clean-card">
-                <span className="learn-card-tag">Principle 0{idx + 1}</span>
+                <span className={`learn-card-pill-tag ${tip.tagClass}`}>Principle 0{idx + 1}</span>
                 <h3 className="learn-clean-card-title">{tip.title}</h3>
                 <p className="learn-clean-card-body">{tip.desc}</p>
               </div>
