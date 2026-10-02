@@ -302,7 +302,8 @@ export default function CategoryPage() {
               {bankEditorial?.feesSchedule && (
                 <div className="bmcc-hub-meta-box">
                   <h3 className="bmcc-hub-meta-title">
-                    <span>ðŸ’³</span> Standard Fees & Charges (MITC)
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'inline-block', verticalAlign: 'text-bottom', marginRight: '6px' }}><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+                    Standard Fees & Charges (MITC)
                   </h3>
                   <div>
                     {bankEditorial.feesSchedule.map((fee, idx) => (
@@ -319,7 +320,8 @@ export default function CategoryPage() {
               {bankEditorial?.eligibility && (
                 <div className="bmcc-hub-meta-box">
                   <h3 className="bmcc-hub-meta-title">
-                    <span>ðŸ“‹</span> Eligibility & Document Checklist
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'inline-block', verticalAlign: 'text-bottom', marginRight: '6px' }}><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect width="8" height="4" x="8" y="2" rx="1"/><path d="m9 14 2 2 4-4"/></svg>
+                    Eligibility & Document Checklist
                   </h3>
                   <div>
                     <div className="bmcc-hub-fee-row">
