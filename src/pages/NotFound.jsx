@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+﻿import { Link } from 'react-router-dom';
 import { SITE_NAME } from '../data/branding';
 
 const digits = [
@@ -37,7 +37,7 @@ export default function NotFound() {
 
       <div className="card-not-found-actions">
         <Link to="/explore" className="card-not-found-explore">Explore credit cards <span aria-hidden="true">↗</span></Link>
-        <Link to="/" className="card-not-found-home"><span aria-hidden="true">←</span> Back to home</Link>
+        <Link to="/" className="card-not-found-home">Back to home</Link>
       </div>
       <p className="card-not-found-note">A little lost. Still full of possibilities.</p>
     </section>

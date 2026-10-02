@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+﻿import { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { SITE_NAME, LOGO_URL } from '../data/branding';
@@ -170,7 +170,7 @@ export default function SignIn() {
                 setPassword('Password123!');
               }}
             >
-              👤 Member Demo
+              Member Demo
             </button>
             <button
               type="button"
@@ -181,7 +181,7 @@ export default function SignIn() {
                 setPassword('Password123!');
               }}
             >
-              🛡️ Admin Demo
+              Admin Demo
             </button>
           </div>
         </div>

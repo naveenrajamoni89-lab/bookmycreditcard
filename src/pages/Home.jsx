@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+﻿import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import LandingHero from '../components/landing/LandingHero';
 import CardFinder from '../components/landing/CardFinder';
@@ -314,7 +314,7 @@ const COMPARE_MATCHUPS = [
   {
     id: 'luxury-travel',
     tag: 'Luxury & Travel',
-    icon: '✈️',
+    icon: '',
     card1: {
       id: 1,
       name: 'HDFC Infinia Metal',
@@ -362,7 +362,7 @@ const COMPARE_MATCHUPS = [
   {
     id: 'cashback-lifestyle',
     tag: 'Cashback & Shopping',
-    icon: '🛍️',
+    icon: '',
     card1: {
       id: 5,
       name: 'Cashback SBI Card',
@@ -410,7 +410,7 @@ const COMPARE_MATCHUPS = [
   {
     id: 'zero-fee-value',
     tag: 'Zero Fee vs Low Forex',
-    icon: '💎',
+    icon: '',
     card1: {
       id: 4,
       name: 'YES PaisaSave',
@@ -751,7 +751,7 @@ export default function Home() {
                     <span className="bmcc-how-step-tag">
                       {item.tag}
                     </span>
-                    <span className="bmcc-how-step-connector" aria-hidden="true">{idx < 3 ? "→" : "✓"}</span>
+                    <span className="bmcc-how-step-connector" aria-hidden="true">{idx < 3 ? ">" : "v"}</span>
                   </div>
                   <div className="bmcc-how-visual">
                     <HowIllustration step={item.step} className="bmcc-how-graphic" />
@@ -794,7 +794,6 @@ export default function Home() {
                   className={`bmcc-cmp-tab ${compareIndex === idx ? 'is-active' : ''}`}
                   onClick={() => setCompareIndex(idx)}
                 >
-                  <span className="bmcc-cmp-tab-icon" aria-hidden="true">{match.icon}</span>
                   <span className="bmcc-cmp-tab-label">{match.tag}</span>
                 </button>
               ))}
@@ -802,9 +801,9 @@ export default function Home() {
 
             {/* Sub-Header Audit Indicators */}
             <div className="bmcc-cmp-audit-strip" aria-label="Comparison trust highlights">
-              <span className="bmcc-cmp-audit-item">✓ 100% Impartial Fee Audit</span>
-              <span className="bmcc-cmp-audit-item">✓ Verified 2026 Reward Math</span>
-              <span className="bmcc-cmp-audit-item">✓ Real Lounge Quotas</span>
+              <span className="bmcc-cmp-audit-item">100% Impartial Fee Audit</span>
+              <span className="bmcc-cmp-audit-item">Verified 2026 Reward Math</span>
+              <span className="bmcc-cmp-audit-item">Real Lounge Quotas</span>
             </div>
           </div>
 
@@ -1029,7 +1028,7 @@ export default function Home() {
                 {/* Compact Bottom Bar (Verdict + CTA) */}
                 <div className="bmcc-cmp-compact-foot">
                   <div className="bmcc-compact-verdict">
-                    <span className="bmcc-verdict-icon" aria-hidden="true">💡</span>
+                    
                     <p><strong>Verdict:</strong> {activeMatchup.verdict}</p>
                   </div>
                   <Link
@@ -1116,9 +1115,9 @@ export default function Home() {
                 </Link>
 
                 <div className="bmcc-elig-trust-strip">
-                  <span className="bmcc-trust-pill">🛡️ No Credit Impact</span>
-                  <span className="bmcc-trust-pill">⚡ 60-Sec Calculator</span>
-                  <span className="bmcc-trust-pill">🔒 100% Free &amp; Secure</span>
+                  <span className="bmcc-trust-pill">No Credit Impact</span>
+                  <span className="bmcc-trust-pill">60-Sec Calculator</span>
+                  <span className="bmcc-trust-pill">100% Free &amp; Secure</span>
                 </div>
               </div>
             </div>
@@ -1151,7 +1150,7 @@ export default function Home() {
                           setEligEmp('salaried');
                         }}
                       >
-                        <span aria-hidden="true">💼</span> Salaried Professional
+                        Salaried Professional
                       </button>
                       <button
                         type="button"
@@ -1162,7 +1161,7 @@ export default function Home() {
                           setEligEmp('self-employed');
                         }}
                       >
-                        <span aria-hidden="true">🏢</span> Self-Employed / Business
+                        Self-Employed / Business
                       </button>
                     </div>
                   </div>

@@ -102,7 +102,7 @@ export default function CategoryPage() {
 
               {/* Eyebrow Badge */}
               <div className="bmcc-hub-hero-eyebrow">
-                <span>â˜…</span> {badge}
+                <span style="color:#2563eb;font-size:12px">&#9733;</span> {badge}
               </div>
 
               {/* Title & Tagline */}
@@ -202,7 +202,7 @@ export default function CategoryPage() {
                         <td>
                           <span className="bmcc-hub-table-card-name">{c.name}</span>
                           <span className="bmcc-hub-table-bank-name">
-                            {c.bank || bankEditorial?.bankName || 'Verified Partner'} {c.rating ? `â€¢ â˜… ${c.rating}` : ''}
+                            {c.bank || bankEditorial?.bankName || 'Verified Partner'} {c.rating ? `• ${c.rating}` : ''}
                           </span>
                         </td>
                         <td>

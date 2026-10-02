@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo, useCallback } from 'react';
+﻿import { useEffect, useState, useMemo, useCallback } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { fetchMyActivities, describeActivity } from '../services/activityService';
@@ -23,19 +23,19 @@ function timeAgo(iso) {
 }
 
 const ACTIVITY_ICONS = {
-  signed_up: '🎉',
-  signed_in: '🔐',
-  page_visited: '📄',
-  card_viewed: '💳',
-  card_detail_view: '💳',
-  apply_now_click: '🚀',
-  eligibility_click: '✅',
-  eligibility_checked: '📋',
-  compare_added: '⚖️',
-  compare_removed: '🔄',
-  cards_compared: '🔍',
-  lead_submitted: '📞',
-  calculator_used: '🧮',
+  signed_up: 'join',
+  signed_in: 'check',
+  page_visited: 'view',
+  card_viewed: 'card',
+  card_detail_view: 'info',
+  apply_now_click: 'apply',
+  eligibility_click: 'check',
+  eligibility_checked: 'done',
+  compare_added: 'add',
+  compare_removed: 'remove',
+  cards_compared: 'compare',
+  lead_submitted: 'submit',
+  calculator_used: 'calc',
 };
 
 const FILTER_CATEGORIES = [

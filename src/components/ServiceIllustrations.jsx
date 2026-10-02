@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 
 /**
  * 3D Isometric Illustrative Service Graphics for:
@@ -92,11 +92,11 @@ export function WhyIllustration({ type = 'compare', className = '' }) {
           {/* Lifestyle Preference Badges Floating */}
           <g filter="url(#wi-needs-sh)">
             <rect x="52" y="24" width="16" height="12" rx="4" fill="#0284C7" />
-            <text x="60" y="33" textAnchor="middle" fontSize="7" fontWeight="900" fill="#FFFFFF" fontFamily="sans-serif">✈</text>
+            <text x="60" y="33" textAnchor="middle" fontSize="7" fontWeight="900" fill="#FFFFFF" fontFamily="sans-serif">[Air]</text>
           </g>
           <g filter="url(#wi-needs-sh)">
             <rect x="14" y="32" width="16" height="12" rx="4" fill="#D97706" />
-            <text x="22" y="41" textAnchor="middle" fontSize="8" fontWeight="900" fill="#FFFFFF" fontFamily="sans-serif">₹</text>
+            <text x="22" y="41" textAnchor="middle" fontSize="8" fontWeight="900" fill="#FFFFFF" fontFamily="sans-serif">[Air]</text>
           </g>
         </svg>
       );
@@ -146,7 +146,7 @@ export function WhyIllustration({ type = 'compare', className = '' }) {
             {/* Lens Specular Reflection */}
             <path d="M40 33 C42 29 48 28 53 30" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round" />
             {/* Lens Zero-Fee Stamp */}
-            <text x="48" y="42" textAnchor="middle" fontSize="11" fontWeight="900" fill="#FFFFFF" fontFamily="sans-serif">₹0</text>
+            <text x="48" y="42" textAnchor="middle" fontSize="11" fontWeight="900" fill="#FFFFFF" fontFamily="sans-serif">[Air]</text>
             {/* Handle */}
             <line x1="57" y1="47" x2="68" y2="60" stroke="#1E293B" strokeWidth="4.5" strokeLinecap="round" />
             <line x1="57" y1="47" x2="68" y2="60" stroke="#94A3B8" strokeWidth="2" strokeLinecap="round" />
@@ -200,7 +200,7 @@ export function WhyIllustration({ type = 'compare', className = '' }) {
             <circle cx="54" cy="46" r="2" fill="#10110F" />
             {/* 60s pill badge */}
             <rect x="47" y="58" width="14" height="7" rx="3.5" fill="#10110F" />
-            <text x="54" y="63.5" textAnchor="middle" fontSize="5.5" fontWeight="900" fill="#4ADE80" fontFamily="sans-serif">60s</text>
+            <text x="54" y="63.5" textAnchor="middle" fontSize="5.5" fontWeight="900" fill="#4ADE80" fontFamily="sans-serif">[Air]</text>
           </g>
         </svg>
       );
@@ -247,7 +247,7 @@ export function WhyIllustration({ type = 'compare', className = '' }) {
           <g filter="url(#wi-banks-sh)">
             <rect x="46" y="38" width="22" height="14" rx="7" fill="#10110F" />
             <circle cx="52" cy="45" r="2.5" fill="#FDE047" />
-            <text x="60" y="48" textAnchor="middle" fontSize="7" fontWeight="900" fill="#FFFFFF" fontFamily="sans-serif">17+</text>
+            <text x="60" y="48" textAnchor="middle" fontSize="7" fontWeight="900" fill="#FFFFFF" fontFamily="sans-serif">[Air]</text>
           </g>
         </svg>
       );
@@ -351,7 +351,7 @@ export function HowIllustration({ step = '01', className = '' }) {
             
             {/* Comparison 'VS' Badge in center */}
             <rect x="34" y="46" width="16" height="12" rx="6" fill="#10110F" />
-            <text x="42" y="55" textAnchor="middle" fontSize="7" fontWeight="900" fill="#4ADE80" fontFamily="sans-serif">VS</text>
+            <text x="42" y="55" textAnchor="middle" fontSize="7" fontWeight="900" fill="#4ADE80" fontFamily="sans-serif">[Air]</text>
           </g>
 
           {/* Delta Arrows */}

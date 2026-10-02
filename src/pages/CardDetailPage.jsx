@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+﻿import { useState, useEffect, useMemo } from 'react';
 import { useParams, Link, useLocation } from 'react-router-dom';
 import { getCardBySlugOrRoute, allCardDetails } from '../data/cardDetails';
 import { useCompare } from '../context/CompareContext';
