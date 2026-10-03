@@ -1,4 +1,4 @@
-﻿import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useData } from '../context/DataContext';
 import FilterSidebar from './FilterSidebar';
@@ -79,7 +79,7 @@ export default function CardListingSection({ cards: cardsProp, headingId, title 
             ) : (
               <>
                 <div className="pb-card-list">{displayedCards.map(card => <CreditCardItem key={card.id} card={card} />)}</div>
-                {visibleCount < filtered.length && <button type="button" className="pb-show-more" onClick={() => setVisibleCount(count => Math.min(count + 15, filtered.length))}>Show more cards <span aria-hidden="true">↓</span></button>}
+                {visibleCount < filtered.length && <button type="button" className="pb-show-more" onClick={() => setVisibleCount(count => Math.min(count + 15, filtered.length))}>Show more cards</button>}
               </>
             )}
           </div>

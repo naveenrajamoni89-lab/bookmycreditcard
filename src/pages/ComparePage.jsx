@@ -277,7 +277,7 @@ export default function ComparePage() {
                 <div className="compare-start">
                   <div><h2>{selectedCards.length ? 'One more, and it’s a match-up.' : 'Your next card deserves a little competition.'}</h2>
                     <p>{selectedCards.length ? 'Choose a second card to reveal fees, benefits and fit, side by side.' : 'Bring your favourites to the table. We’ll line up the fees, benefits and details so you can make the call.'}</p>
-                    <Link to="/explore">Explore the card catalogue <span aria-hidden="true">↗</span></Link>
+                    <Link to="/explore">Explore the card catalogue</Link>
                   </div>
                   <div className="compare-preview" aria-hidden="true"><span>The details that matter</span><div>Joining & annual fees <i /><i /></div><div>Rewards & benefits <i /><i /></div><div>What suits you <i /><i /></div></div>
                 </div>

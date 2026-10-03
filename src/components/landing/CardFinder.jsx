@@ -27,7 +27,7 @@ export default function CardFinder() {
 
   return (
     <details className="landing-finder" id="card-finder">
-      <summary><span><strong>Not sure where to start?</strong> Choose a benefit and fee range to see matching cards.</span><span className="landing-finder-open"><span className="finder-closed">Find a fit ↗</span><span className="finder-expanded">Hide matches ↑</span></span></summary>
+      <summary><span><strong>Not sure where to start?</strong> Choose a benefit and fee range to see matching cards.</span><span className="landing-finder-open"><span className="finder-closed">Find a fit</span><span className="finder-expanded">Hide matches</span></span></summary>
       <div className="landing-finder-body">
         <div className="landing-finder-fields">
           <label>What matters most?
@@ -57,7 +57,6 @@ export default function CardFinder() {
             <Link key={card.id} to={card.detailRoute || card.route} className="landing-finder-match">
               <CardArtwork card={card} className="finder-card-art" width="92" height="60" />
               <span><strong>{card.name}</strong><small>{card.bankName} · {card.annualFee === 0 ? 'No annual fee' : `₹${Number(card.annualFee).toLocaleString('en-IN')} annual fee`}</small></span>
-              <span aria-hidden="true">↗</span>
             </Link>
           )) : <p>No cards match those filters. Try a higher fee range or another benefit.</p>}
         </div>

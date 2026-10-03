@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { LOGO_URL, SITE_NAME } from '../data/branding';
 import { useAuth } from '../context/AuthContext';
@@ -43,11 +43,11 @@ const OTHER_BANKS = [
 ];
 
 const LEARN_MENU = [
-  { label: 'Credit Card Basics', to: '/credit-card-basics', tag: 'Beginner' },
-  { label: 'CIBIL Score', to: '/cibil-score-for-credit-card', tag: 'Credit Health' },
-  { label: 'Credit Card Interest Rates', to: '/credit-card-interest-rates', tag: 'Rates' },
-  { label: 'Best Credit Cards', to: '/best-credit-cards', tag: 'Rankings' },
-  { label: 'Credit Card Guides', to: '/credit-card-guides', tag: 'How-Tos' },
+  { label: 'Credit Card Basics', to: '/credit-card-basics', badge: 'Beginner' },
+  { label: 'CIBIL Score', to: '/cibil-score-for-credit-card', badge: 'Credit Health' },
+  { label: 'Credit Card Interest Rates', to: '/credit-card-interest-rates', badge: 'Rates' },
+  { label: 'Best Credit Cards', to: '/best-credit-cards', badge: 'Rankings' },
+  { label: 'Credit Card Guides', to: '/credit-card-guides', badge: 'How-Tos' },
 ];
 
 export default function Header() {
@@ -84,6 +84,37 @@ export default function Header() {
   const location = useLocation();
   const navigate = useNavigate();
   const { user, signOut } = useAuth();
+
+  useLayoutEffect(() => {
+    const fitMenus = () => {
+      for (const root of [exploreRef.current, learnRef.current]) {
+        const panels = [...(root?.querySelectorAll('[role="menu"]') || [])];
+        for (const panel of panels) {
+          panel.style.left = '';
+          panel.style.top = '';
+        }
+        if (window.innerWidth <= 1024 || !panels.length) continue;
+        const viewportWidth = window.innerWidth;
+        // Reserve the full bank menu chain so opening a submenu never moves its trigger.
+        const rightEdge = root === exploreRef.current
+          ? panels[0].getBoundingClientRect().left + 830
+          : panels[0].getBoundingClientRect().right;
+        if (rightEdge > viewportWidth - 8) {
+          panels[0].style.left = -(rightEdge - viewportWidth + 8) + 'px';
+        }
+        for (const panel of panels) {
+          const parent = panel.offsetParent.getBoundingClientRect();
+          const rect = panel.getBoundingClientRect();
+          if (rect.bottom > window.innerHeight - 8) {
+            panel.style.top = Math.max(8 - parent.top, rect.top - parent.top - (rect.bottom - window.innerHeight + 8)) + 'px';
+          }
+        }
+      }
+    };
+    fitMenus();
+    window.addEventListener('resize', fitMenus);
+    return () => window.removeEventListener('resize', fitMenus);
+  }, [exploreOpen, categorySubmenuOpen, bankSubmenuOpen, otherBanksOpen, learnOpen]);
 
   // Close menus upon route change
   useEffect(() => {
@@ -326,20 +357,12 @@ export default function Header() {
 
             {learnOpen && (
               <div className="pb-dropdown-menu pb-learn-dropdown" role="menu">
-                <div className="pb-learn-items">
-                  {LEARN_MENU.map(item => (
-                    <Link
-                      key={item.to}
-                      to={item.to}
-                      className="pb-learn-menu-row"
-                      role="menuitem"
-                      onClick={() => setLearnOpen(false)}
-                    >
-                      <span className="pb-learn-row-label">{item.label}</span>
-                      <span className="pb-learn-row-tag">{item.tag}</span>
-                    </Link>
-                  ))}
-                </div>
+                {LEARN_MENU.map(item => (
+                  <Link key={item.to} to={item.to} className="pb-dropdown-link" role="menuitem">
+                    <span>{item.label}</span>
+                    <span className="pb-dropdown-link-badge">{item.badge}</span>
+                  </Link>
+                ))}
               </div>
             )}
           </div>

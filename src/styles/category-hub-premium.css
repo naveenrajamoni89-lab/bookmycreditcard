@@ -1,598 +1,162 @@
-/* ==========================================================================
-   Premium Category & Bank Hub Styling for BookMyCreditCard
-   Harmonized with Home Page Visual Language, Brand Colors & 3D Illustrations
-   ========================================================================== */
-
+/* Bank and category research pages. Scoped to avoid changing other routes. */
 .bmcc-hub-page {
-  --hub-ink: #0f172a;
-  --hub-sub: #475569;
-  --hub-border: #e2e8f0;
-  --hub-surface: #ffffff;
+  --hub-ink: #17243a;
+  --hub-sub: #536174;
+  --hub-border: #e1e6ed;
   --hub-brand: #2447bb;
-  --hub-brand-light: #eff4ff;
-  color: var(--hub-ink);
-  background: #ffffff;
-  font-family: inherit;
-}
-
-/* ==========================================================================
-   1. HERO BANNER
-   ========================================================================== */
-.bmcc-hub-hero {
-  position: relative;
-  overflow: hidden;
-  padding: 56px 0 48px;
-  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
-  border-bottom: 1px solid var(--hub-border);
-}
-
-.bmcc-hub-hero-wash {
-  position: absolute;
-  top: -20%;
-  right: -10%;
-  width: 60%;
-  height: 140%;
-  pointer-events: none;
-  opacity: 0.6;
-  filter: blur(50px);
-  z-index: 1;
-}
-
-/* Accent Themes for Hero Wash */
-.bmcc-hub-theme-emerald .bmcc-hub-hero-wash {
-  background: radial-gradient(circle, #a7f3d0 0%, #d1fae5 40%, transparent 70%);
-}
-.bmcc-hub-theme-sky .bmcc-hub-hero-wash {
-  background: radial-gradient(circle, #bae6fd 0%, #e0f2fe 40%, transparent 70%);
-}
-.bmcc-hub-theme-purple .bmcc-hub-hero-wash {
-  background: radial-gradient(circle, #e9d5ff 0%, #f3e8ff 40%, transparent 70%);
-}
-.bmcc-hub-theme-amber .bmcc-hub-hero-wash {
-  background: radial-gradient(circle, #fde68a 0%, #fef3c7 40%, transparent 70%);
-}
-.bmcc-hub-theme-orange .bmcc-hub-hero-wash {
-  background: radial-gradient(circle, #fed7aa 0%, #ffedd5 40%, transparent 70%);
-}
-.bmcc-hub-theme-indigo .bmcc-hub-hero-wash {
-  background: radial-gradient(circle, #c7d2fe 0%, #e0e7ff 40%, transparent 70%);
-}
-.bmcc-hub-theme-cyan .bmcc-hub-hero-wash {
-  background: radial-gradient(circle, #a5f3fc 0%, #cffafe 40%, transparent 70%);
-}
-.bmcc-hub-theme-rose .bmcc-hub-hero-wash {
-  background: radial-gradient(circle, #fecdd3 0%, #ffe4e6 40%, transparent 70%);
-}
-.bmcc-hub-theme-blue .bmcc-hub-hero-wash {
-  background: radial-gradient(circle, #bfdbfe 0%, #dbeafe 40%, transparent 70%);
-}
-
-.bmcc-hub-hero-inner {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  grid-template-columns: 1fr 340px;
-  align-items: center;
-  gap: 40px;
-}
-
-@media (max-width: 900px) {
-  .bmcc-hub-hero-inner {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-}
-
-.bmcc-hub-breadcrumbs {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 13px;
-  font-weight: 500;
-  color: #64748b;
-  margin-bottom: 16px;
-  flex-wrap: wrap;
-}
-
-.bmcc-hub-breadcrumbs a {
-  color: #64748b;
-  text-decoration: none;
-  transition: color 0.15s ease;
-}
-
-.bmcc-hub-breadcrumbs a:hover {
-  color: var(--hub-brand);
-}
-
-.bmcc-hub-breadcrumbs-sep {
-  color: #cbd5e1;
-}
-
-.bmcc-hub-hero-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 12px;
-  border-radius: 999px;
-  font-size: 11px;
-  font-weight: 750;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  background: #ffffff;
-  border: 1px solid var(--hub-border);
-  color: var(--hub-brand);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-  margin-bottom: 16px;
-}
-
-.bmcc-hub-hero-title {
-  margin: 0 0 14px;
-  font-size: clamp(32px, 3.8vw, 50px);
-  line-height: 1.15;
-  letter-spacing: -0.04em;
-  font-weight: 800;
+  --hub-tint: #f6f8fb;
+  background: #fff;
   color: var(--hub-ink);
 }
-
-.bmcc-hub-hero-desc {
-  font-size: clamp(15px, 1.15vw, 17px);
-  line-height: 1.65;
-  color: var(--hub-sub);
-  margin: 0 0 24px;
-  max-width: 680px;
+.bmcc-hub-page *, .bmcc-hub-page *::before, .bmcc-hub-page *::after { box-sizing: border-box; }
+.bmcc-hub-page :is(h1,h2,h3,p,dl,ol,ul) { margin: 0; }
+.bmcc-hub-page h2 { font-size: clamp(25px, 2.4vw, 34px); line-height: 1.25; letter-spacing: -.025em; font-weight: 700; }
+.bmcc-hub-page h3 { font-size: 17px; line-height: 1.4; font-weight: 700; }
+.bmcc-hub-page p { color: var(--hub-sub); font-size: 14px; line-height: 1.75; }
+.bmcc-hub-page a { text-underline-offset: 4px; }
+.bmcc-hub-page :is(a,button,summary,input,select,[tabindex]):focus-visible { outline: 2px solid var(--hub-brand); outline-offset: 4px; }
+.bmcc-hub-page ::selection { background: #dce5ff; color: var(--hub-ink); }
+.bmcc-hub-page input { caret-color: var(--hub-brand); }
+.bmcc-hub-page :is(.hub-table-scroll,.hub-section-nav) { scrollbar-color: #a6b1c3 var(--hub-tint); scrollbar-width: thin; }
+.hub-container { width: min(1240px, 100% - 64px); margin-inline: auto; }
+.hub-hero { padding: 28px 0 48px; border-bottom: 1px solid var(--hub-border); }
+.hub-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; font-size: 12px; color: var(--hub-sub); margin-bottom: 36px; }
+.hub-breadcrumbs a { text-decoration: none; color: var(--hub-sub); }
+.hub-breadcrumbs a:hover { color: var(--hub-brand); }
+.hub-hero-layout { display: grid; grid-template-columns: 1.1fr 1fr; gap: 72px; align-items: center; }
+.hub-hero-copy { min-width: 0; }
+.hub-issuer { display: flex; gap: 12px; align-items: center; font-size: 14px; font-weight: 600; margin-bottom: 16px; }
+.hub-hero-copy h1 { max-width: 580px; font-size: clamp(34px, 3.7vw, 50px); font-weight: 750; line-height: 1.1; letter-spacing: -.035em; text-wrap: balance; }
+.hub-hero-copy > p { font-size: 16px; line-height: 1.7; max-width: 510px; margin-top: 20px; }
+.hub-actions { display: flex; flex-wrap: wrap; gap: 24px; align-items: center; margin-top: 28px; }
+.hub-button { display: inline-flex; align-items: center; justify-content: center; gap: 24px; min-height: 46px; padding: 12px 20px; background: var(--hub-brand); color: #fff; border: 1px solid var(--hub-brand); border-radius: 6px; text-decoration: none; font-size: 13px; font-weight: 700; transition: background .15s; }
+.hub-button:hover { background: #19368f; color: #fff; }
+.hub-button:active { transform: translateY(1px); }
+.hub-text-link { display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 700; color: var(--hub-brand); text-decoration: none; }
+.hub-text-link:hover { text-decoration: underline; }
+.hub-catalogue-note { font-size: 12px; line-height: 1.8; color: var(--hub-sub); margin-top: 22px; }
+.hub-product-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 24px; padding: 28px; background: var(--hub-tint); min-width: 0; }
+.hub-product { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; color: var(--hub-ink); text-decoration: none; min-width: 0; }
+.hub-product img { width: 100%; height: 92px; object-fit: contain; transition: transform .2s; }
+.hub-product span { max-width: 240px; text-align: center; font-size: 11px; line-height: 1.5; font-weight: 600; }
+.hub-product-0 { grid-column: 1 / -1; padding-bottom: 22px; border-bottom: 1px solid var(--hub-border); }
+.hub-product-0 img { height: 150px; }
+.hub-product:hover img { transform: translateY(-3px); }
+.hub-product:hover span { color: var(--hub-brand); }
+.hub-section-nav { background: #fff; border-bottom: 1px solid var(--hub-border); overflow-x: auto; }
+.hub-section-nav .hub-container { display: flex; gap: 34px; align-items: center; }
+.hub-section-nav a { flex-shrink: 0; padding: 18px 0; color: var(--hub-sub); font-size: 12px; font-weight: 650; text-decoration: none; }
+.hub-section-nav a:hover { color: var(--hub-brand); }
+.bmcc-hub-page :is(section[id]) { scroll-margin-top: 90px; }
+.hub-catalogue { padding: 40px 0 16px; }
+.bmcc-hub-page .pb-listing { padding: 0; background: #fff; }
+.bmcc-hub-page .pb-listing-inner { max-width: 1304px; padding-inline: 32px; }
+.bmcc-hub-page .pb-listing-head { margin-bottom: 28px; }
+.bmcc-hub-page .pb-listing-heading { font-size: 28px; }
+.bmcc-hub-page .pb-listing-head p { margin-top: 8px; font-size: 13px; }
+.bmcc-hub-page .pb-listing-count { font-size: 12px; color: var(--hub-sub); background: none; border: 0; padding: 0; }
+.bmcc-hub-page .pb-listing-layout { grid-template-columns: 210px minmax(0, 1fr); gap: 38px; }
+.bmcc-hub-page .pb-card-item { padding: 28px 0; border-top: 1px solid var(--hub-border); }
+.bmcc-hub-page .pb-card-item:first-child { border-top: 1px solid var(--hub-border); }
+.bmcc-hub-page .pb-card-bank { font-size: 11px; color: var(--hub-sub); }
+.bmcc-hub-page .pb-card-name-link { font-size: 18px; letter-spacing: -.015em; line-height: 1.35; }
+.bmcc-hub-page .pb-card-tag { border-radius: 4px; font-size: 10px; background: var(--hub-tint); color: var(--hub-sub); border: 0; }
+.bmcc-hub-page .pb-card-benefit { font-size: 12px; line-height: 1.65; }
+.bmcc-hub-page .pb-card-bottom { gap: 16px; }
+.bmcc-hub-page .pb-card-actions { flex-wrap: wrap; gap: 12px; }
+.bmcc-hub-page .pb-read-more { font-size: 12px; }
+.bmcc-hub-page .pb-card-img { padding: 0; object-fit: contain; }
+.hub-section { padding: 64px 0; border-top: 1px solid var(--hub-border); }
+.hub-section-tint { background: var(--hub-tint); }
+.hub-section-heading { margin-bottom: 30px; }
+.hub-section-heading p { margin-top: 12px; }
+.hub-table-scroll { overflow-x: auto; }
+.hub-table { width: 100%; min-width: 860px; border-collapse: collapse; font-size: 13px; line-height: 1.7; text-align: left; }
+.hub-table thead { background: var(--hub-tint); color: var(--hub-sub); font-size: 11px; }
+.hub-table :is(th,td) { padding: 18px 20px; border-bottom: 1px solid var(--hub-border); vertical-align: top; }
+.hub-table thead th { font-weight: 600; }
+.hub-table tbody th { width: 24%; font-weight: 700; }
+.hub-table tbody td { color: var(--hub-sub); }
+.hub-table tbody td:nth-child(2) { white-space: nowrap; width: 12%; color: var(--hub-ink); font-weight: 600; font-variant-numeric: tabular-nums; }
+.hub-table tbody td:nth-child(3) { width: 39%; }
+.hub-table small { display: block; margin-top: 5px; color: var(--hub-sub); font-weight: 400; }
+.bmcc-hub-page .hub-footnote { font-size: 11px; margin-top: 18px; line-height: 1.75; max-width: 900px; }
+.hub-reading-layout { display: grid; grid-template-columns: .95fr 1fr; gap: 84px; }
+.hub-about-copy { margin-top: 22px !important; max-width: 65ch; }
+.hub-reference-facts { margin-top: 28px !important; }
+.hub-reference-facts > div { padding: 12px 0; border-top: 1px solid var(--hub-border); display: flex; justify-content: space-between; gap: 24px; font-size: 12px; line-height: 1.65; }
+.hub-reference-facts dt { color: var(--hub-sub); }
+.hub-reference-facts dd { margin: 0; font-weight: 600; text-align: right; }
+.hub-benefit-list > article { padding: 22px 0; border-top: 1px solid var(--hub-border); }
+.hub-benefit-list > article:first-child { padding-top: 0; border-top: 0; }
+.hub-benefit-list p { margin-top: 8px; font-size: 13px; }
+.hub-choosing { padding-top: 28px; border-top: 1px solid var(--hub-border); }
+.hub-choosing ul { padding-left: 18px; margin-top: 16px !important; }
+.hub-choosing li { color: var(--hub-sub); font-size: 13px; line-height: 1.75; padding: 6px 0; }
+.hub-requirements { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
+.hub-requirements h3 { margin-bottom: 20px; }
+.hub-terms > div { display: grid; grid-template-columns: 130px 1fr; gap: 20px; border-top: 1px solid var(--hub-border); padding: 14px 0; font-size: 12px; line-height: 1.75; }
+.hub-terms dt { color: var(--hub-sub); }
+.hub-terms dd { margin: 0; font-weight: 600; }
+.hub-requirements .hub-text-link { margin-top: 20px; }
+.hub-application { display: grid; grid-template-columns: .8fr 1.2fr; gap: 100px; }
+.hub-application > div p { margin-top: 18px; max-width: 34ch; }
+.hub-application .hub-text-link { margin-top: 22px; }
+.hub-application ol { padding-left: 28px; }
+.hub-application li { padding: 0 0 22px 14px; }
+.hub-application li::marker { color: var(--hub-brand); font-size: 15px; font-weight: 700; }
+.hub-application li p { margin-top: 8px; font-size: 13px; }
+.hub-faq-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 100px; }
+.hub-faq-layout > div > p { margin-top: 18px; max-width: 32ch; }
+.hub-faq { border-top: 1px solid var(--hub-border); }
+.hub-faq:last-child { border-bottom: 1px solid var(--hub-border); }
+.hub-faq summary { cursor: pointer; padding: 20px 24px 20px 0; font-size: 14px; font-weight: 650; line-height: 1.65; }
+.hub-faq summary::marker { color: var(--hub-brand); }
+.hub-faq p { padding: 0 0 22px 17px; font-size: 13px; }
+.hub-bottom-action { background: var(--hub-tint); border-top: 1px solid var(--hub-border); padding: 38px 0; }
+.hub-bottom-action .hub-container { display: flex; justify-content: space-between; gap: 28px; align-items: center; }
+.hub-bottom-action h2 { font-size: 26px; }
+.hub-bottom-action p { margin-top: 8px; }
+@media (max-width: 1100px) {
+  .hub-hero-layout { gap: 40px; }
+  .hub-reading-layout, .hub-requirements { gap: 40px; }
+  .hub-application, .hub-faq-layout { gap: 48px; }
+  .bmcc-hub-page .pb-listing-layout { gap: 24px; grid-template-columns: 180px minmax(0, 1fr); }
+  .bmcc-hub-page .pb-card-item { grid-template-columns: 150px minmax(0, 1fr); }
+  .bmcc-hub-page .pb-card-bottom { align-items: flex-start; flex-direction: column; }
 }
-
-.bmcc-hub-hero-actions {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  flex-wrap: wrap;
+@media (max-width: 800px) {
+  .hub-container { width: calc(100% - 40px); }
+  .hub-hero { padding: 24px 0 32px; }
+  .hub-breadcrumbs { margin-bottom: 26px; font-size: 11px; }
+  .hub-hero-layout { gap: 28px; grid-template-columns: 1fr; }
+  .hub-product-gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); padding: 20px 14px; gap: 12px; }
+  .hub-product-0 { grid-column: auto; padding: 0; border: 0; }
+  .hub-product img, .hub-product-0 img { height: 90px; }
+  .hub-product span { font-size: 10px; }
+  .hub-section-nav .hub-container { width: max-content; min-width: calc(100% - 40px); gap: 24px; margin-left: 20px; padding-right: 20px; }
+  .hub-catalogue { padding-top: 28px; }
+  .bmcc-hub-page .pb-listing-inner { padding-inline: 20px; }
+  .bmcc-hub-page .pb-listing-layout { display: block; }
+  .hub-section { padding: 40px 0; }
+  .hub-reading-layout, .hub-requirements, .hub-application, .hub-faq-layout { grid-template-columns: 1fr; gap: 30px; }
+  .hub-application > div p, .hub-faq-layout > div > p { max-width: 65ch; }
+  .hub-terms > div { grid-template-columns: 110px 1fr; }
 }
-
-.bmcc-hub-cta-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 24px;
-  border-radius: 999px;
-  background: var(--hub-brand);
-  color: #ffffff;
-  font-size: 14px;
-  font-weight: 700;
-  text-decoration: none;
-  border: 1px solid var(--hub-brand);
-  box-shadow: 0 4px 14px rgba(36, 71, 187, 0.25);
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+@media (max-width: 500px) {
+  .hub-hero-copy h1 { font-size: 34px; }
+  .hub-hero-copy > p { font-size: 14px; }
+  .hub-product img, .hub-product-0 img { height: 64px; }
+  .hub-actions { gap: 18px; }
+  .bmcc-hub-page .pb-listing-head { align-items: flex-start; flex-direction: column; gap: 12px; }
+  .bmcc-hub-page .pb-listing-heading { font-size: 24px; }
+  .bmcc-hub-page .pb-card-item { grid-template-columns: 105px minmax(0, 1fr); gap: 14px; padding: 24px 0; }
+  .bmcc-hub-page .pb-card-name-link { font-size: 16px; }
+  .bmcc-hub-page .pb-card-header { flex-direction: column; gap: 10px; }
+  .bmcc-hub-page .pb-card-actions { gap: 10px; align-items: flex-start; }
+  .bmcc-hub-page .pb-card-fees { gap: 20px; }
+  .hub-bottom-action .hub-container { align-items: flex-start; flex-direction: column; }
 }
-
-.bmcc-hub-cta-btn:hover {
-  background: #1b3899;
-  border-color: #1b3899;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(36, 71, 187, 0.35);
-}
-
-.bmcc-hub-secondary-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 12px 20px;
-  border-radius: 999px;
-  background: #ffffff;
-  color: var(--hub-ink);
-  font-size: 14px;
-  font-weight: 600;
-  text-decoration: none;
-  border: 1px solid var(--hub-border);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
-  transition: all 0.15s ease;
-}
-
-.bmcc-hub-secondary-btn:hover {
-  background: #f8fafc;
-  border-color: #cbd5e1;
-}
-
-/* Hero Right Visual Canvas */
-.bmcc-hub-hero-visual {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.bmcc-hub-visual-stage {
-  position: relative;
-  width: 220px;
-  height: 220px;
-  border-radius: 36px;
-  background: #ffffff;
-  border: 1px solid rgba(226, 232, 240, 0.8);
-  box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(15, 23, 42, 0.04);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-}
-
-.bmcc-hub-3d-graphic {
-  width: 130px;
-  height: 130px;
-  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.12));
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.bmcc-hub-visual-stage:hover .bmcc-hub-3d-graphic {
-  transform: scale(1.08) translateY(-4px);
-}
-
-.bmcc-hub-visual-badge {
-  position: absolute;
-  bottom: -12px;
-  padding: 6px 14px;
-  background: #0f172a;
-  color: #ffffff;
-  font-size: 11px;
-  font-weight: 750;
-  letter-spacing: 0.04em;
-  border-radius: 999px;
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
-  white-space: nowrap;
-}
-
-/* ==========================================================================
-   2. KEY METRICS STATS BAR
-   ========================================================================== */
-.bmcc-hub-stats-section {
-  background: #f8fafc;
-  padding: 24px 0;
-  border-bottom: 1px solid var(--hub-border);
-}
-
-.bmcc-hub-stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
-}
-
-.bmcc-hub-stat-card {
-  background: #ffffff;
-  border: 1px solid var(--hub-border);
-  border-radius: 14px;
-  padding: 16px 20px;
-  text-align: center;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.bmcc-hub-stat-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px -2px rgba(15, 23, 42, 0.06);
-  border-color: #cbd5e1;
-}
-
-.bmcc-hub-stat-label {
-  font-size: 12px;
-  font-weight: 600;
-  color: #64748b;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  display: block;
-  margin-bottom: 4px;
-}
-
-.bmcc-hub-stat-value {
-  font-size: 20px;
-  font-weight: 800;
-  color: var(--hub-ink);
-  letter-spacing: -0.02em;
-}
-
-/* ==========================================================================
-   3. CURATED SHOWCASE / TOP CARDS TABLE
-   ========================================================================== */
-.bmcc-hub-section {
-  padding: 56px 0;
-  border-bottom: 1px solid var(--hub-border);
-}
-
-.bmcc-hub-section-head {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 36px;
-}
-
-.bmcc-hub-section-head .bmcc-section-label {
-  display: inline-block;
-  margin-bottom: 8px;
-}
-
-.bmcc-hub-table-wrapper {
-  background: #ffffff;
-  border: 1px solid var(--hub-border);
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
-}
-
-.bmcc-hub-table {
-  width: 100%;
-  border-collapse: collapse;
-  text-align: left;
-  font-size: 13.5px;
-}
-
-.bmcc-hub-table th {
-  background: #0f172a;
-  color: #ffffff;
-  padding: 14px 18px;
-  font-weight: 700;
-  font-size: 12.5px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.bmcc-hub-table td {
-  padding: 16px 18px;
-  border-bottom: 1px solid #f1f5f9;
-  vertical-align: middle;
-  color: #334155;
-}
-
-.bmcc-hub-table tr:last-child td {
-  border-bottom: none;
-}
-
-.bmcc-hub-table tr:hover td {
-  background-color: #f8fafc;
-}
-
-.bmcc-hub-table-card-name {
-  font-size: 14px;
-  font-weight: 750;
-  color: #0f172a;
-  display: block;
-}
-
-.bmcc-hub-table-bank-name {
-  font-size: 12px;
-  color: #64748b;
-  margin-top: 2px;
-}
-
-.bmcc-hub-table-perk {
-  font-size: 13px;
-  font-weight: 600;
-  color: #059669;
-  line-height: 1.4;
-}
-
-.bmcc-hub-table-waiver {
-  font-size: 12px;
-  color: #64748b;
-  margin-top: 3px;
-}
-
-.bmcc-hub-badge-fee {
-  display: inline-block;
-  padding: 3px 8px;
-  border-radius: 6px;
-  font-size: 12px;
-  font-weight: 700;
-  background: #f1f5f9;
-  color: #1e293b;
-}
-
-/* ==========================================================================
-   4. EDITORIAL HIGHLIGHTS / 4 PILLARS
-   ========================================================================== */
-.bmcc-hub-highlights-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-}
-
-.bmcc-hub-highlight-card {
-  background: #ffffff;
-  border: 1px solid var(--hub-border);
-  border-radius: 16px;
-  padding: 24px;
-  box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.04);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.bmcc-hub-highlight-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--hub-brand);
-  box-shadow: 0 12px 28px -6px rgba(36, 71, 187, 0.12);
-}
-
-.bmcc-hub-highlight-num {
-  font-size: 12px;
-  font-weight: 800;
-  color: var(--hub-brand);
-  margin-bottom: 8px;
-  letter-spacing: 0.04em;
-}
-
-.bmcc-hub-highlight-title {
-  font-size: 17px;
-  font-weight: 750;
-  color: var(--hub-ink);
-  margin: 0 0 8px;
-  letter-spacing: -0.01em;
-}
-
-.bmcc-hub-highlight-desc {
-  font-size: 13.5px;
-  line-height: 1.6;
-  color: var(--hub-sub);
-  margin: 0;
-}
-
-/* ==========================================================================
-   5. HOW TO APPLY / STEPPED PROCESS (WITH 3D SERVICE ILLUSTRATIONS)
-   ========================================================================== */
-.bmcc-hub-steps-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 20px;
-}
-
-.bmcc-hub-step-card {
-  background: #ffffff;
-  border: 1px solid var(--hub-border);
-  border-radius: 18px;
-  padding: 24px 20px;
-  text-align: center;
-  box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.04);
-}
-
-.bmcc-hub-step-visual {
-  width: 72px;
-  height: 72px;
-  margin: 0 auto 16px;
-  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.08));
-}
-
-.bmcc-hub-step-num {
-  display: inline-block;
-  padding: 2px 10px;
-  border-radius: 999px;
-  font-size: 11px;
-  font-weight: 800;
-  background: #e0e7ff;
-  color: #2447bb;
-  margin-bottom: 8px;
-}
-
-.bmcc-hub-step-title {
-  font-size: 15.5px;
-  font-weight: 750;
-  color: var(--hub-ink);
-  margin: 0 0 6px;
-}
-
-.bmcc-hub-step-desc {
-  font-size: 13px;
-  line-height: 1.55;
-  color: var(--hub-sub);
-  margin: 0;
-}
-
-/* ==========================================================================
-   6. BANK FEES & CHARGES / ELIGIBILITY SCHEDULE
-   ========================================================================== */
-.bmcc-hub-bank-meta-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 24px;
-}
-
-.bmcc-hub-meta-box {
-  background: #ffffff;
-  border: 1px solid var(--hub-border);
-  border-radius: 16px;
-  padding: 24px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-}
-
-.bmcc-hub-meta-title {
-  font-size: 17px;
-  font-weight: 750;
-  color: #0f172a;
-  margin: 0 0 16px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.bmcc-hub-fee-row {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 0;
-  border-bottom: 1px solid #f1f5f9;
-  font-size: 13px;
-}
-
-.bmcc-hub-fee-row:last-child {
-  border-bottom: none;
-}
-
-.bmcc-hub-fee-name {
-  color: #64748b;
-  font-weight: 500;
-}
-
-.bmcc-hub-fee-val {
-  color: #0f172a;
-  font-weight: 600;
-  text-align: right;
-  max-width: 60%;
-}
-
-/* ==========================================================================
-   7. INTERACTIVE FAQ ACCORDION
-   ========================================================================== */
-.bmcc-hub-faq-list {
-  max-width: 860px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.bmcc-hub-faq-item {
-  background: #ffffff;
-  border: 1px solid var(--hub-border);
-  border-radius: 12px;
-  overflow: hidden;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.bmcc-hub-faq-item.is-open {
-  border-color: #2447bb;
-  box-shadow: 0 4px 14px rgba(36, 71, 187, 0.08);
-}
-
-.bmcc-hub-faq-question {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 18px 22px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  text-align: left;
-  font-size: 15px;
-  font-weight: 700;
-  color: #0f172a;
-  transition: color 0.15s ease;
-}
-
-.bmcc-hub-faq-item.is-open .bmcc-hub-faq-question {
-  color: #2447bb;
-}
-
-.bmcc-hub-faq-chevron {
-  width: 18px;
-  height: 18px;
-  color: #94a3b8;
-  transition: transform 0.2s ease;
-  flex-shrink: 0;
-}
-
-.bmcc-hub-faq-item.is-open .bmcc-hub-faq-chevron {
-  transform: rotate(180deg);
-  color: #2447bb;
-}
-
-.bmcc-hub-faq-answer {
-  padding: 0 22px 20px;
-  font-size: 14px;
-  line-height: 1.65;
-  color: #475569;
+@media (prefers-reduced-motion: reduce) {
+  .hub-product img, .hub-button { transition: none; transform: none; }
 }

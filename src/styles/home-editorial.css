@@ -76,11 +76,6 @@
 .bmcc-explore .pb-listing { background: var(--paper); padding-top: 32px; }
 .bmcc-explore .pb-listing-heading { color: var(--ink); font-size: clamp(34px, 4vw, 57px); font-weight: 500; letter-spacing: -.055em; }
 .bmcc-explore .pb-card-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-.bmcc-explore .pb-check-eligibility { border-radius: 30px; background: #ffffff; color: #10110f; border: 1.5px solid #10110f; transition: all 0.15s ease; }
-.bmcc-explore .pb-check-eligibility:hover { background: #f0f2eb; color: #10110f; }
-.bmcc-explore .pb-apply-btn, .cdp-page .pb-apply-btn { display: inline-flex; align-items: center; justify-content: center; gap: 5px; min-height: 40px; padding: 0 18px; border-radius: 30px; background: #10110f; color: #ffffff; border: 1.5px solid #10110f; font-size: 11.5px; font-weight: 700; text-decoration: none; white-space: nowrap; transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 2px 6px rgba(16, 17, 15, 0.16); }
-.bmcc-explore .pb-apply-btn:hover, .cdp-page .pb-apply-btn:hover { background: #2c3029; border-color: #2c3029; color: #ffffff; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(16, 17, 15, 0.25); }
-.bmcc-explore .pb-apply-btn:active, .cdp-page .pb-apply-btn:active { transform: translateY(0); }
 .bmcc-explore .pb-show-more { border-radius: 30px; color: #10110f; border-color: #10110f; }
 /* Upright, evenly spaced cards glide across a black product stage. */
 .bmcc-final-call { --carousel-travel: max(100cqw + 600px, 1400px); position: relative; isolation: isolate; container-type: inline-size; height: calc(100svh - 100px); scroll-margin-top: 80px; margin: 12px; border-radius: 32px; padding: min(7svh, 64px) 5.5%; overflow: hidden; background: #000; color: #fff; }

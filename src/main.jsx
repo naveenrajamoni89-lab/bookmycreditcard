@@ -6,6 +6,7 @@ import './styles/redesign.css'
 import './styles/decision.css'
 import './pages/ComparePage.css'
 import './pages/NotFound.css'
+import './styles/action-palette.css'
 import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(

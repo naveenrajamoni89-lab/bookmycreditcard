@@ -1,24 +1,20 @@
-import { useState, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import CardListingSection from '../components/CardListingSection';
 import Loader from '../components/ui/Loader';
 import LegalPage from './LegalPage';
 import CardDetailPage from './CardDetailPage';
-import CategoryIllustration from '../components/CategoryIllustration';
-import { WhyIllustration, HowIllustration } from '../components/ServiceIllustrations';
+import CardArtwork from '../components/CardArtwork';
 import BankLogo from '../components/BankLogo';
 import { useData } from '../context/DataContext';
 import { getCardBySlugOrRoute } from '../data/cardDetails';
 import { categoryEditorialData } from '../data/categoryEditorial';
 import { bankEditorialData } from '../data/bankEditorial';
 import { categoryPages as fallbackCategoryPages } from '../data/content';
-import '../styles/home-editorial.css';
 import '../styles/category-hub-premium.css';
 
 export default function CategoryPage() {
   const { slug } = useParams();
   const { categoryPages, getCardsByCategory, cards: allCards, loading } = useData();
-  const [openFaq, setOpenFaq] = useState(null);
 
   if (loading) {
     return (
@@ -61,7 +57,7 @@ export default function CategoryPage() {
     page = {
       slug,
       title: ed.title || slug,
-      categoryId: slug.replace('-credit-cards', ''),
+      categoryId: ed.categoryId || slug.replace('-credit-cards', ''),
       description: ed.subtitle || ed.heroDesc || '',
     };
   }
@@ -70,17 +66,16 @@ export default function CategoryPage() {
     return <LegalPage slug={slug} />;
   }
 
-  const isBank = Boolean(page.isBank || bankEditorialData[slug]);
-  const catEditorial = categoryEditorialData[slug] || categoryEditorialData['cashback-credit-cards'];
-  const bankEditorial = bankEditorialData[slug];
+  const isBank = Boolean(page.isBank || page.bankId || bankEditorialData[slug]);
+  const catEditorial = categoryEditorialData[slug] || Object.values(categoryEditorialData).find(entry => entry.categoryId === page.categoryId);
+  const bankEditorial = bankEditorialData[slug] || Object.values(bankEditorialData).find(entry => entry.bankId === page.bankId);
 
   // Retrieve matching cards
   let filteredCards = [];
   if (isBank) {
     const bankId = page.bankId || bankEditorial?.bankId;
     filteredCards = allCards.filter(c =>
-      (bankId && c.bank === bankId) ||
-      (c.bankName && page.title && c.bankName.toLowerCase().includes(page.title.toLowerCase().split(' ')[0]))
+      bankId ? c.bank === bankId : c.bankName?.toLowerCase() === bankEditorial?.bankName?.toLowerCase()
     );
   } else {
     filteredCards = getCardsByCategory(page.categoryId);
@@ -91,384 +86,123 @@ export default function CategoryPage() {
     }
   }
 
-  const title = bankEditorial?.title || catEditorial?.title || page.title;
-  const description = bankEditorial?.heroDesc || catEditorial?.heroDesc || page.description;
-  const badge = bankEditorial?.badge || catEditorial?.badge || (isBank ? 'Verified Bank Hub' : 'Curated Category');
-  const stats = bankEditorial?.stats || catEditorial?.stats || [];
-  const highlights = bankEditorial?.highlights || catEditorial?.highlights || [];
-  const topCardsTable = bankEditorial?.topCards || catEditorial?.topCards || [];
-  const faqs = bankEditorial?.faqs || catEditorial?.faqs || [];
-  const accentTheme = bankEditorial?.accent || catEditorial?.accent || 'blue';
+  const editorial = (isBank ? bankEditorial : catEditorial) || {};
+  const title = editorial.title || page.title;
+  const description = editorial.heroDesc || page.description;
+  const featured = filteredCards.slice(0, 3);
+  const freeCards = filteredCards.filter(card => Number(card.annualFee) === 0).length;
+  const issuerName = bankEditorial?.bankName || featured[0]?.bankName || page.title;
+  const topCards = editorial.topCards || [];
+  const highlights = editorial.highlights || [];
+  const faqs = editorial.faqs || [];
 
   return (
-    <div className={`bmcc-hub-page bmcc-hub-theme-${accentTheme}`}>
-      {/* 1. HERO SECTION WITH 3D SERVICE ILLUSTRATION / EMBOSSED CREST */}
-      <section className="bmcc-hub-hero">
-        <div className="bmcc-hub-hero-wash" />
-        <div className="bmcc-container">
-          <div className="bmcc-hub-hero-inner">
-            <div>
-              {/* Breadcrumbs */}
-              <nav className="bmcc-hub-breadcrumbs" aria-label="Breadcrumb">
-                <Link to="/">Home</Link>
-                <span className="bmcc-hub-breadcrumbs-sep">/</span>
-                <Link to="/explore">Explore</Link>
-                <span className="bmcc-hub-breadcrumbs-sep">/</span>
-                <span style={{ color: '#0f172a', fontWeight: 600 }}>{title}</span>
-              </nav>
-
-              {/* Eyebrow Badge */}
-              <div className="bmcc-hub-hero-eyebrow">
-                <span style={{ color: '#2563eb', fontSize: '12px' }}>★</span> {badge}
+    <div className="bmcc-hub-page">
+      <header className="hub-hero">
+        <div className="hub-container">
+          <nav className="hub-breadcrumbs" aria-label="Breadcrumb">
+            <Link to="/">Home</Link><span aria-hidden="true">/</span>
+            <Link to="/explore">Credit cards</Link><span aria-hidden="true">/</span>
+            <span aria-current="page">{title}</span>
+          </nav>
+          <div className="hub-hero-layout">
+            <div className="hub-hero-copy">
+              {isBank && <div className="hub-issuer"><BankLogo id={page.bankId || bankEditorial?.bankId} name={issuerName} size={40} /><span>{issuerName}</span></div>}
+              <h1>{title}</h1>
+              <p>{editorial.tagline || page.description || 'Explore fees, benefits and eligibility requirements to find a card that fits your spending.'}</p>
+              <div className="hub-actions">
+                <a className="hub-button" href="#card-catalog">Browse {filteredCards.length} cards</a>
+                <Link className="hub-text-link" to="/compare-credit-cards">Compare cards</Link>
               </div>
-
-              {/* Title & Tagline */}
-              <h1 className="bmcc-hub-hero-title">
-                {title}
-              </h1>
-              <p className="bmcc-hub-hero-desc">
-                {description}
-              </p>
-
-              {/* Actions & Proof */}
-              <div className="bmcc-hub-hero-actions">
-                <a href="#card-catalog" className="bmcc-hub-cta-btn">
-                  Explore {filteredCards.length > 0 ? `${filteredCards.length}+` : 'All'} Cards ↓
-                </a>
-                <Link to="/compare-credit-cards" className="bmcc-hub-secondary-btn">
-                  Compare Cards
-                </Link>
-                <Link to="/credit-card-eligibility" className="bmcc-hub-secondary-btn" style={{ background: '#f8fafc' }}>
-                  Check Eligibility (0% CIBIL Impact)
-                </Link>
-              </div>
+              <div className="hub-catalogue-note">{filteredCards.length} cards to explore{freeCards > 0 ? ' / ' + freeCards + ' with no annual fee' : ''}<br />Compare fees and benefits before you apply.</div>
             </div>
+            {featured.length > 0 && <div className="hub-product-gallery" aria-label="Cards in this collection">
+              {featured.map((card, index) => <Link key={card.id} to={card.detailRoute || card.route || '/credit-card/' + card.id} className={'hub-product hub-product-' + index}>
+                <CardArtwork card={card} loading="eager" />
+                <span>{card.name}</span>
+              </Link>)}
+            </div>}
+          </div>
+        </div>
+      </header>
 
-            {/* 3D Visual Stage */}
-            <div className="bmcc-hub-hero-visual">
-              <div className="bmcc-hub-visual-stage">
-                {isBank ? (
-                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
-                    <div style={{ width: '90px', height: '90px', display: 'grid', placeItems: 'center' }}>
-                      <BankLogo bank={bankEditorial?.bankId || page.bankId} size={72} />
-                    </div>
-                    <span style={{ fontSize: '13px', fontWeight: '750', color: '#0f172a' }}>
-                      {bankEditorial?.bankName || page.title.split(' ')[0]}
-                    </span>
-                  </div>
-                ) : (
-                  <CategoryIllustration
-                    categoryKey={page.slug || 'cashback-credit-cards'}
-                    className="bmcc-hub-3d-graphic"
-                  />
-                )}
-                <div className="bmcc-hub-visual-badge">
-                  {isBank ? 'OFFICIAL ISSUER' : 'VERIFIED 2026'}
-                </div>
-              </div>
-            </div>
+      <nav className="hub-section-nav" aria-label="On this page">
+        <div className="hub-container">
+          <a href="#card-catalog">Browse cards</a>
+          {topCards.length > 0 && <a href="#compare-options">Compare options</a>}
+          <a href="#about-cards">Benefits &amp; details</a>
+          {isBank && bankEditorial?.eligibility && <a href="#fees-eligibility">Fees &amp; eligibility</a>}
+          <a href="#how-to-apply">How to apply</a>
+          {faqs.length > 0 && <a href="#hub-faq">FAQs</a>}
+        </div>
+      </nav>
+
+      <section id="card-catalog" className="hub-catalogue">
+        <CardListingSection key={slug} cards={filteredCards} title={isBank ? 'Cards from ' + issuerName : 'Explore ' + title.toLowerCase()} />
+      </section>
+
+      {topCards.length > 0 && <section id="compare-options" className="hub-section">
+        <div className="hub-container">
+          <div className="hub-section-heading"><h2>Compare your options</h2><p>Fees, key benefits and spend thresholds, side by side.</p></div>
+          <div className="hub-table-scroll" role="region" aria-label="Card comparison" tabIndex={0}>
+            <table className="hub-table">
+              <thead><tr><th scope="col">Credit card</th><th scope="col">Annual fee</th><th scope="col">Key benefits</th><th scope="col">Fee waiver</th></tr></thead>
+              <tbody>{topCards.map(card => <tr key={card.name}>
+                <th scope="row"><span>{card.name}</span>{card.bank && <small>{card.bank}</small>}</th>
+                <td>{card.annualFee}</td><td>{card.perk}</td><td>{card.waiver || 'Check issuer terms'}</td>
+              </tr>)}</tbody>
+            </table>
+          </div>
+          <p className="hub-footnote">Fees may attract applicable taxes. Benefits, exclusions and waiver terms vary by card; confirm the latest terms with the issuer.</p>
+        </div>
+      </section>}
+
+      <section id="about-cards" className="hub-section hub-section-tint">
+        <div className="hub-container hub-reading-layout">
+          <div><h2>What to know about {title.toLowerCase()}</h2><p className="hub-about-copy">{description}</p>
+            {editorial.stats?.length > 0 && <dl className="hub-reference-facts">{editorial.stats.map(stat => <div key={stat.label}><dt>{stat.label}</dt><dd>{stat.value}</dd></div>)}</dl>}
+          </div>
+          <div className="hub-benefit-list">{highlights.map(item => <article key={item.title}><h3>{item.title}</h3><p>{item.desc}</p></article>)}
+            {editorial.howToChoose?.length > 0 && <div className="hub-choosing"><h3>How to choose</h3><ul>{editorial.howToChoose.map(item => <li key={item}>{item}</li>)}</ul></div>}
           </div>
         </div>
       </section>
 
-      {/* 2. KEY METRICS STATS BAR */}
-      {stats.length > 0 && (
-        <section className="bmcc-hub-stats-section">
-          <div className="bmcc-container">
-            <div className="bmcc-hub-stats-grid">
-              {stats.map((stat, idx) => (
-                <div key={idx} className="bmcc-hub-stat-card">
-                  <span className="bmcc-hub-stat-label">{stat.label}</span>
-                  <div className="bmcc-hub-stat-value">{stat.value}</div>
-                </div>
-              ))}
-            </div>
+      {isBank && (bankEditorial?.feesSchedule || bankEditorial?.eligibility) && <section id="fees-eligibility" className="hub-section">
+        <div className="hub-container">
+          <div className="hub-section-heading"><h2>Fees &amp; eligibility</h2><p>Review the requirements before you take the next step.</p></div>
+          <div className="hub-requirements">
+            {bankEditorial.feesSchedule && <div><h3>Standard charges</h3><dl className="hub-terms">{bankEditorial.feesSchedule.map(fee => <div key={fee.feeType}><dt>{fee.feeType}</dt><dd>{fee.details}</dd></div>)}</dl></div>}
+            {bankEditorial.eligibility && <div><h3>Basic requirements</h3><dl className="hub-terms">
+              <div><dt>Age</dt><dd>{bankEditorial.eligibility.age}</dd></div>
+              <div><dt>Salaried income</dt><dd>{bankEditorial.eligibility.salariedIncome}</dd></div>
+              <div><dt>Self-employed income</dt><dd>{bankEditorial.eligibility.selfEmployedIncome}</dd></div>
+              <div><dt>Credit score</dt><dd>{bankEditorial.eligibility.creditScore}</dd></div>
+            </dl><p className="hub-footnote">Typical documents include PAN, identity and address proof, income documents and bank statements. Exact requirements depend on the issuer.</p>
+              <Link to="/credit-card-eligibility" className="hub-text-link">Check basic eligibility</Link>
+            </div>}
           </div>
-        </section>
-      )}
+        </div>
+      </section>}
 
-      {/* 3. CURATED TOP CARDS COMPARISON MATRIX (EDITOR'S PICKS) */}
-      {topCardsTable.length > 0 && (
-        <section className="bmcc-hub-section" style={{ background: '#ffffff' }}>
-          <div className="bmcc-container">
-            <div className="bmcc-hub-section-head">
-              <span className="bmcc-section-label">CURATED BENCHMARK</span>
-              <h2 className="bmcc-section-title" style={{ fontSize: 'clamp(26px, 2.5vw, 36px)', marginBottom: '8px' }}>
-                Top {title} in India (September 2026)
-              </h2>
-              <p className="bmcc-section-sub">
-                Handpicked top performers ranked by reward value-back, joining benefits, and annual fee waiver spends.
-              </p>
-            </div>
-
-            <div className="bmcc-hub-table-wrapper">
-              <div style={{ overflowX: 'auto' }}>
-                <table className="bmcc-hub-table">
-                  <thead>
-                    <tr>
-                      <th style={{ minWidth: '220px' }}>Credit Card</th>
-                      <th style={{ minWidth: '130px' }}>Joining / Annual Fee</th>
-                      <th style={{ minWidth: '260px' }}>Key Highlights & Valueback</th>
-                      <th style={{ minWidth: '160px' }}>Spend Waiver</th>
-                      <th style={{ minWidth: '150px', textAlign: 'center' }}>Action</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {topCardsTable.map((c, idx) => (
-                      <tr key={idx}>
-                        <td>
-                          <span className="bmcc-hub-table-card-name">{c.name}</span>
-                          <span className="bmcc-hub-table-bank-name">
-                            {c.bank || bankEditorial?.bankName || 'Verified Partner'} {c.rating ? `• ${c.rating}` : ''}
-                          </span>
-                        </td>
-                        <td>
-                          <span className="bmcc-hub-badge-fee">{c.annualFee}</span>
-                        </td>
-                        <td>
-                          <div className="bmcc-hub-table-perk">{c.perk}</div>
-                        </td>
-                        <td>
-                          <span className="bmcc-hub-table-waiver">{c.waiver || 'Standard Milestone'}</span>
-                        </td>
-                        <td style={{ textAlign: 'center' }}>
-                          <Link
-                            to="/compare-credit-cards"
-                            className="pb-check-eligibility"
-                            style={{
-                              fontSize: '11.5px',
-                              padding: '6px 14px',
-                              textDecoration: 'none',
-                              display: 'inline-block',
-                              whiteSpace: 'nowrap',
-                            }}
-                          >
-                            Compare Card
-                          </Link>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* 4. EDITORIAL HIGHLIGHTS / 4 FEATURE PILLARS */}
-      {highlights.length > 0 && (
-        <section className="bmcc-hub-section" style={{ background: '#f8fafc' }}>
-          <div className="bmcc-container">
-            <div className="bmcc-hub-section-head">
-              <span className="bmcc-section-label">KEY ADVANTAGES</span>
-              <h2 className="bmcc-section-title" style={{ fontSize: 'clamp(26px, 2.5vw, 36px)', marginBottom: '8px' }}>
-                Why Choose {title}?
-              </h2>
-              <p className="bmcc-section-sub">
-                Core financial benefits, reward multiplier rules, and fee savings unpacked by our editorial team.
-              </p>
-            </div>
-
-            <div className="bmcc-hub-highlights-grid">
-              {highlights.map((h, idx) => (
-                <div key={idx} className="bmcc-hub-highlight-card">
-                  <div className="bmcc-hub-highlight-num">0{idx + 1} • BENEFIT</div>
-                  <h3 className="bmcc-hub-highlight-title">{h.title}</h3>
-                  <p className="bmcc-hub-highlight-desc">{h.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* 5. BANK FEES & ELIGIBILITY SCHEDULE (FOR BANK HUBS) */}
-      {isBank && (bankEditorial?.feesSchedule || bankEditorial?.eligibility) && (
-        <section className="bmcc-hub-section" style={{ background: '#ffffff' }}>
-          <div className="bmcc-container">
-            <div className="bmcc-hub-section-head">
-              <span className="bmcc-section-label">SCHEDULE OF CHARGES & ELIGIBILITY</span>
-              <h2 className="bmcc-section-title" style={{ fontSize: 'clamp(26px, 2.5vw, 36px)', marginBottom: '8px' }}>
-                {title} Fees & Minimum Requirements
-              </h2>
-              <p className="bmcc-section-sub">
-                Clear, transparent terms and conditions for informed borrowing.
-              </p>
-            </div>
-
-            <div className="bmcc-hub-bank-meta-grid">
-              {/* Standard Fees */}
-              {bankEditorial?.feesSchedule && (
-                <div className="bmcc-hub-meta-box">
-                  <h3 className="bmcc-hub-meta-title">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'inline-block', verticalAlign: 'text-bottom', marginRight: '6px' }}><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
-                    Standard Fees & Charges (MITC)
-                  </h3>
-                  <div>
-                    {bankEditorial.feesSchedule.map((fee, idx) => (
-                      <div key={idx} className="bmcc-hub-fee-row">
-                        <span className="bmcc-hub-fee-name">{fee.feeType}</span>
-                        <span className="bmcc-hub-fee-val">{fee.details}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* Eligibility Criteria */}
-              {bankEditorial?.eligibility && (
-                <div className="bmcc-hub-meta-box">
-                  <h3 className="bmcc-hub-meta-title">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'inline-block', verticalAlign: 'text-bottom', marginRight: '6px' }}><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect width="8" height="4" x="8" y="2" rx="1"/><path d="m9 14 2 2 4-4"/></svg>
-                    Eligibility & Document Checklist
-                  </h3>
-                  <div>
-                    <div className="bmcc-hub-fee-row">
-                      <span className="bmcc-hub-fee-name">Eligible Age</span>
-                      <span className="bmcc-hub-fee-val">{bankEditorial.eligibility.age}</span>
-                    </div>
-                    <div className="bmcc-hub-fee-row">
-                      <span className="bmcc-hub-fee-name">Salaried Income</span>
-                      <span className="bmcc-hub-fee-val">{bankEditorial.eligibility.salariedIncome}</span>
-                    </div>
-                    <div className="bmcc-hub-fee-row">
-                      <span className="bmcc-hub-fee-name">Self-Employed ITR</span>
-                      <span className="bmcc-hub-fee-val">{bankEditorial.eligibility.selfEmployedIncome}</span>
-                    </div>
-                    <div className="bmcc-hub-fee-row">
-                      <span className="bmcc-hub-fee-name">Recommended CIBIL</span>
-                      <span className="bmcc-hub-fee-val" style={{ color: '#059669', fontWeight: 750 }}>
-                        {bankEditorial.eligibility.creditScore}
-                      </span>
-                    </div>
-                  </div>
-                  <div style={{ marginTop: '16px', padding: '12px', background: '#f8fafc', borderRadius: '10px', fontSize: '12px', color: '#64748b' }}>
-                    <strong>Required KYC:</strong> PAN Card, Aadhaar Card, Recent Salary Slips (or Form 16 / ITR), and 3-month Bank Statement.
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* 6. HOW TO APPLY ONLINE (4-STEPPED WORKFLOW WITH 3D SERVICE ILLUSTRATIONS) */}
-      <section className="bmcc-hub-section" style={{ background: '#f8fafc' }}>
-        <div className="bmcc-container">
-          <div className="bmcc-hub-section-head">
-            <span className="bmcc-section-label">APPLICATION WORKFLOW</span>
-            <h2 className="bmcc-section-title" style={{ fontSize: 'clamp(26px, 2.5vw, 36px)', marginBottom: '8px' }}>
-              How to Apply for {title} Online
-            </h2>
-            <p className="bmcc-section-sub">
-              100% digital onboarding with instant pre-approval and doorstep or virtual video KYC.
-            </p>
-          </div>
-
-          <div className="bmcc-hub-steps-grid">
-            <div className="bmcc-hub-step-card">
-              <HowIllustration step="1" className="bmcc-hub-step-visual" />
-              <span className="bmcc-hub-step-num">Step 01</span>
-              <h3 className="bmcc-hub-step-title">Check Eligibility</h3>
-              <p className="bmcc-hub-step-desc">
-                Fill in basic employment and contact details in under 60 seconds. Enjoy zero impact on your CIBIL score.
-              </p>
-            </div>
-
-            <div className="bmcc-hub-step-card">
-              <HowIllustration step="2" className="bmcc-hub-step-visual" />
-              <span className="bmcc-hub-step-num">Step 02</span>
-              <h3 className="bmcc-hub-step-title">Compare & Pick</h3>
-              <p className="bmcc-hub-step-desc">
-                Review pre-qualified credit cards side by side with annual fee waivers and customized reward multipliers.
-              </p>
-            </div>
-
-            <div className="bmcc-hub-step-card">
-              <HowIllustration step="3" className="bmcc-hub-step-visual" />
-              <span className="bmcc-hub-step-num">Step 03</span>
-              <h3 className="bmcc-hub-step-title">Instant Digital KYC</h3>
-              <p className="bmcc-hub-step-desc">
-                Complete Aadhaar OTP verification and a 2-minute video KYC session directly with the partner bank.
-              </p>
-            </div>
-
-            <div className="bmcc-hub-step-card">
-              <HowIllustration step="4" className="bmcc-hub-step-visual" />
-              <span className="bmcc-hub-step-num">Step 04</span>
-              <h3 className="bmcc-hub-step-title">Card Activation</h3>
-              <p className="bmcc-hub-step-desc">
-                Receive virtual card details instantly for online shopping; physical metal/plastic card delivers in 3-5 days.
-              </p>
-            </div>
-          </div>
+      <section id="how-to-apply" className="hub-section hub-section-tint">
+        <div className="hub-container hub-application">
+          <div><h2>From shortlist<br />to application</h2><p>Choose a card after reviewing the details that matter to you.</p><Link className="hub-text-link" to="/credit-card-eligibility">Check eligibility</Link></div>
+          <ol>
+            <li><h3>Compare the cards</h3><p>Review fees, rewards, exclusions and annual fee waiver requirements.</p></li>
+            <li><h3>Check the requirements</h3><p>Look at the issuer&#39;s age, income and credit history criteria.</p></li>
+            <li><h3>Apply with the issuer</h3><p>Complete the application and identity verification. Approval and delivery timelines depend on the bank.</p></li>
+          </ol>
         </div>
       </section>
 
-      {/* 7. LIVE FILTERABLE CARDS SECTION */}
-      <section id="card-catalog" className="bmcc-hub-section" style={{ background: '#ffffff' }}>
-        <div className="bmcc-container">
-          <div className="bmcc-hub-section-head">
-            <span className="bmcc-section-label">LIVE CARDS CATALOGUE</span>
-            <h2 className="bmcc-section-title" style={{ fontSize: 'clamp(26px, 2.5vw, 36px)', marginBottom: '8px' }}>
-              Browse Available {title}
-            </h2>
-            <p className="bmcc-section-sub">
-              Filter and search through our verified database of card offerings with real-time fee and perk transparency.
-            </p>
-          </div>
-
-          <CardListingSection
-            initialCards={filteredCards}
-            categoryTitle={title}
-            categoryDesc={`Showing all active ${title.toLowerCase()} verified on BookMyCreditCard.`}
-          />
+      {faqs.length > 0 && <section id="hub-faq" className="hub-section">
+        <div className="hub-container hub-faq-layout">
+          <div><h2>Frequently asked<br />questions</h2><p>More detail on fees, rewards and how these cards work.</p></div>
+          <div>{faqs.map((faq, index) => <details key={slug + '-' + index} className="hub-faq"><summary>{faq.q}</summary><p>{faq.a}</p></details>)}</div>
         </div>
-      </section>
-
-      {/* 8. INTERACTIVE FAQ ACCORDION */}
-      {faqs.length > 0 && (
-        <section className="bmcc-hub-section" style={{ background: '#f8fafc' }}>
-          <div className="bmcc-container">
-            <div className="bmcc-hub-section-head">
-              <span className="bmcc-section-label">EXPERT ADVICE</span>
-              <h2 className="bmcc-section-title" style={{ fontSize: 'clamp(26px, 2.5vw, 36px)', marginBottom: '8px' }}>
-                Frequently Asked Questions
-              </h2>
-              <p className="bmcc-section-sub">
-                Answers to common queries regarding fees, reward redemptions, billing cycles, and eligibility.
-              </p>
-            </div>
-
-            <div className="bmcc-hub-faq-list">
-              {faqs.map((faq, idx) => {
-                const isOpen = openFaq === idx;
-                return (
-                  <div key={idx} className={`bmcc-hub-faq-item ${isOpen ? 'is-open' : ''}`}>
-                    <button
-                      type="button"
-                      className="bmcc-hub-faq-question"
-                      aria-expanded={isOpen}
-                      onClick={() => setOpenFaq(isOpen ? null : idx)}
-                    >
-                      <span>{faq.q}</span>
-                      <svg className="bmcc-hub-faq-chevron" viewBox="0 0 20 20" fill="currentColor">
-                        <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clipRule="evenodd" />
-                      </svg>
-                    </button>
-                    {isOpen && (
-                      <div className="bmcc-hub-faq-answer">
-                        {faq.a}
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-      )}
+      </section>}
+      <section className="hub-bottom-action"><div className="hub-container"><div><h2>Still comparing?</h2><p>Put your shortlisted cards side by side.</p></div><Link className="hub-button" to="/compare-credit-cards">Compare credit cards</Link></div></section>
     </div>
   );
 }

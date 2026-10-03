@@ -29,11 +29,11 @@ export default function LandingHero() {
         </div>
       </div>
       <div className="card-hero-actions">
-        <Link to="/compare-credit-cards" className="card-hero-primary">Compare cards <span aria-hidden="true">↗</span></Link>
-        <Link to="/credit-card-eligibility" className="card-hero-secondary">Check your eligibility <span aria-hidden="true">→</span></Link>
+        <Link to="/compare-credit-cards" className="card-hero-primary">Compare cards</Link>
+        <Link to="/credit-card-eligibility" className="card-hero-secondary">Check your eligibility</Link>
       </div>
       <div className="card-hero-footer">
-        <Link to="/explore">Explore all cards <span aria-hidden="true">↗</span></Link>
+        <Link to="/explore">Explore all cards</Link>
         <button type="button" onClick={() => setReplay(value => value + 1)}>Replay spread <span aria-hidden="true">↻</span></button>
       </div>
     </section>

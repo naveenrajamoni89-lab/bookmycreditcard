@@ -60,7 +60,7 @@ export default function CreditCardItem({ card }) {
             <div><dt>Annual fee</dt><dd>{formatFee(card.annualFee)}</dd></div>
           </dl>
           <div className="pb-card-actions">
-            <Link to={detailUrl} className="pb-read-more" onClick={viewCard}>View details <span aria-hidden="true">↗</span></Link>
+            <Link to={detailUrl} className="pb-read-more" onClick={viewCard}>View details</Link>
             <Link to="/credit-card-eligibility" className="pb-check-eligibility" onClick={() => logActivity(user, 'eligibility_click', { card: card.name, bank: card.bankName })}>Check eligibility</Link>
             <button
               type="button"

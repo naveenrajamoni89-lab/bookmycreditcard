@@ -116,7 +116,6 @@ export default function CardSearchDiscovery({
             <Link key={card.id} to={card.detailRoute || card.route} onClick={() => { setOpen(false); setMobileOpen(false); }} className="search-result-row">
               <CardArtwork card={card} className="search-card-art" width="62" height="40" />
               <span><strong>{card.name}</strong><small>{card.bankName}</small></span>
-              <span aria-hidden="true">↗</span>
             </Link>
           )) : <p className="search-no-results">No matching cards. Try another bank or benefit.</p>}
         </div>

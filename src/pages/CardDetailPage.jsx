@@ -215,7 +215,7 @@ export default function CardDetailPage() {
               </button>
               <Link
                 to="/credit-card-eligibility"
-                className="cdp-btn-secondary"
+                className="pb-check-eligibility"
                 onClick={() => logActivity(user, 'eligibility_click', { card: card.name, bank: card.bankName })}
               >
                 Check eligibility
@@ -408,7 +408,7 @@ export default function CardDetailPage() {
         <div className="cdp-msb-actions">
           <Link
             to="/credit-card-eligibility"
-            className="cdp-msb-eligibility"
+            className="pb-check-eligibility"
             onClick={() => logActivity(user, 'eligibility_click', { card: card.name, bank: card.bankName })}
           >
             Check eligibility

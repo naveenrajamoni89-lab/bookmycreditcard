@@ -1,0 +1,62 @@
+/* User-selected action palette. Color overrides also cover lazy-loaded page styles. */
+.app :is(.pb-apply-btn, .pb-form-submit, .pb-compare-now, .pb-compare-apply-btn,
+  .compare-slot-apply, .pb-calc-apply-btn, .bmcc-calc-apply-btn, .pb-account-btn-primary,
+  .fintech-btn-primary, .bmcc-btn-primary, .bmcc-pop-btn-primary, .bmcc-final-btn-primary,
+  .hub-button, .card-hero-primary, .card-not-found-explore, .cdp-btn-primary, .bmcc-pop-nav-btn.next) {
+  background: #10110f !important;
+  color: #fff !important;
+  border-color: #10110f !important;
+  box-shadow: none !important;
+}
+.app :is(.pb-apply-btn, .pb-form-submit, .pb-compare-now, .pb-compare-apply-btn,
+  .compare-slot-apply, .pb-calc-apply-btn, .bmcc-calc-apply-btn, .pb-account-btn-primary,
+  .fintech-btn-primary, .bmcc-btn-primary, .bmcc-pop-btn-primary, .bmcc-final-btn-primary,
+  .hub-button, .card-hero-primary, .card-not-found-explore, .cdp-btn-primary, .bmcc-pop-nav-btn.next):hover:not(:disabled) {
+  background: #30342d !important;
+  color: #fff !important;
+  border-color: #30342d !important;
+}
+.app :is(.pb-check-eligibility, .pb-show-more, .pb-show-all-btn, .pb-account-btn-secondary,
+  .fintech-btn-secondary, .bmcc-btn-secondary, .bmcc-pop-btn-secondary, .bmcc-final-btn-secondary,
+  .card-hero-secondary, .pb-reward-calc-btn, .cdp-btn-secondary) {
+  background: #fff !important;
+  color: #10110f !important;
+  border: 1px solid #10110f !important;
+  box-shadow: none !important;
+}
+.app :is(.pb-check-eligibility, .pb-show-more, .pb-show-all-btn, .pb-account-btn-secondary,
+  .fintech-btn-secondary, .bmcc-btn-secondary, .bmcc-pop-btn-secondary, .bmcc-final-btn-secondary,
+  .card-hero-secondary, .pb-reward-calc-btn, .cdp-btn-secondary):hover:not(:disabled) {
+  background: #f0f2ec !important;
+  color: #10110f !important;
+  border-color: #10110f !important;
+}
+.app :is(.pb-read-more, .pb-compare-eligibility, .pb-compare-cancel, .cdp-similar-btn,
+  .pb-calc-toggle-btn, .pb-legal-lang-btn, .pb-activity-filter-btn, .bmcc-sim-tier-btn,
+  .bmcc-sim-toggle-btn, .bmcc-spend-toggle-btn, .bmcc-calc-reset-btn, .pb-activity-refresh-btn) {
+  color: #10110f !important;
+  border-color: #d7ddd2;
+}
+.app :is(.pb-calc-toggle-btn.active, .pb-activity-filter-btn.active,
+  .bmcc-sim-toggle-btn.is-active, .bmcc-spend-toggle-btn.is-active) {
+  background: #10110f !important;
+  border-color: #10110f !important;
+  color: #fff !important;
+}
+.app :is(.pb-legal-lang-btn.active, .bmcc-sim-tier-btn.is-active) {
+  background: #f0f2ec !important;
+  border-color: #10110f !important;
+  color: #10110f !important;
+}
+.app :is(.cdp-tab-btn, .pb-auth-tab, .pb-nav-search-btn, .pb-listing-empty button) { color: #10110f !important; }
+.app :is(.cdp-tab-btn.active, .pb-auth-tab.active, .pb-listing-empty button) { border-color: #10110f !important; }
+.app .pb-listing-empty button { background: #fff !important; }
+.app .pb-listing-empty button:hover { background: #f0f2ec !important; }
+.app .cdp-similar-btn:hover { background: none !important; color: #10110f !important; }
+.app .decision-eligibility .pb-check-eligibility[type="submit"] { background: #10110f !important; color: #fff !important; }
+.app .decision-eligibility .pb-check-eligibility[type="submit"]:hover { background: #30342d !important; color: #fff !important; }
+.app :is(.pb-check-eligibility, .pb-apply-btn) { border-radius: 30px; }
+.app button { --pb-blue: #10110f; --pb-blue-hover: #30342d; --pb-blue-light: #f0f2ec; }
+.app :is(a, button):focus-visible { outline: 2px solid #10110f; outline-offset: 4px; }
+/* CTA ornament only; navigation chevrons, sorting and replay controls stay functional. */
+.app :is(.bmcc-btn-primary, .bmcc-final-btn-primary, .bmcc-final-btn-secondary) > svg { display: none; }

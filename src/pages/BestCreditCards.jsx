@@ -1,251 +1,27 @@
-import { Link } from 'react-router-dom';
+﻿import { Link } from 'react-router-dom';
+import LearnLayout from '../components/LearnLayout';
 import CreditCardItem from '../components/CreditCardItem';
+import CardArtwork from '../components/CardArtwork';
 import Loader from '../components/ui/Loader';
 import ErrorMessage from '../components/ui/ErrorMessage';
-import FAQSection from '../components/FAQSection';
 import { useData } from '../context/DataContext';
 import { useAsyncData } from '../hooks/useAsyncData';
 import { fetchBestCardPicks } from '../services/contentService';
-import '../styles/learn-editorial.css';
-
-const CATEGORY_CHAMPIONS = [
-  {
-    category: 'Flat Cashback',
-    card: 'Cashback SBI Card',
-    badgeClass: 'tag-green',
-    perk: '5% flat cashback on all online retail checkouts (Amazon, Flipkart, Myntra) up to ₹5,000/mo.',
-    link: '/sbi-bank/cashback-sbi-card',
-    rating: '9.8 / 10',
-  },
-  {
-    category: 'Luxury & Air Miles',
-    card: 'HDFC Infinia Metal Edition',
-    badgeClass: 'tag-purple',
-    perk: '3.33% to 33.3% return via SmartBuy; unlimited global airport lounge access with guest privileges.',
-    link: '/hdfc-bank/infinia-credit-card',
-    rating: '9.9 / 10',
-  },
-  {
-    category: 'Air Mile Transfers',
-    card: 'Axis Atlas Credit Card',
-    badgeClass: 'tag-blue',
-    perk: '1:2 transfer ratio across 18 airline and hotel loyalty partners; generous tiered milestone bonuses.',
-    link: '/axis-bank/atlas-credit-card',
-    rating: '9.6 / 10',
-  },
-  {
-    category: 'Merchant UPI Payments',
-    card: 'YES BANK BYOC (RuPay)',
-    badgeClass: 'tag-cyan',
-    perk: '1% unlimited cashback on merchant UPI QR transactions with zero extra surcharges.',
-    link: '/yes-bank/byoc-credit-card',
-    rating: '9.3 / 10',
-  },
-  {
-    category: 'Lifetime Free & Travel',
-    card: 'Federal Bank Scapia',
-    badgeClass: 'tag-amber',
-    perk: 'Zero forex markup on overseas spends; unlimited domestic airport lounges on ₹5,000 monthly spend.',
-    link: '/federal-bank/scapia-credit-card',
-    rating: '9.5 / 10',
-  },
-  {
-    category: 'Fuel Savings',
-    card: 'IndianOil RBL Bank XTRA',
-    badgeClass: 'tag-rose',
-    perk: 'Up to 8.5% valueback on fuel fill-ups across all IndianOil retail fuel pumps nationwide.',
-    link: '/rbl-bank/indianoil-rbl-xtra-credit-card',
-    rating: '9.2 / 10',
-  },
-  {
-    category: 'Utilities & Grocery',
-    card: 'Airtel Axis Bank Credit Card',
-    badgeClass: 'tag-blue',
-    perk: '25% cashback on Airtel bills, 10% on utility bill payments (electricity/gas/broadband), Swiggy & Zomato.',
-    link: '/axis-bank/airtel-axis-bank-credit-card',
-    rating: '9.4 / 10',
-  },
-];
-
-const METHODOLOGY = [
-  {
-    title: 'Net Reward Realization',
-    tagClass: 'tag-green',
-    desc: 'We calculate true reward value by factoring in redemption caps, reward point expiry dates, and catalog conversion charges.',
-  },
-  {
-    title: 'Airport Lounge Accessibility',
-    tagClass: 'tag-blue',
-    desc: 'We evaluate spending criteria needed for complimentary domestic & international lounge vouchers across DreamFolks and Priority Pass.',
-  },
-  {
-    title: 'Fee-Waiver Feasibility',
-    tagClass: 'tag-amber',
-    desc: 'We weigh whether annual spend thresholds required to waive renewal fees align with ordinary household spending patterns.',
-  },
-  {
-    title: 'Fine Print & MITC Clarity',
-    tagClass: 'tag-purple',
-    desc: 'We penalize cards with hidden forex markups, rent payment surcharges, or excessive reward redemption processing fees.',
-  },
-];
 
 export default function BestCreditCards() {
-  const { cards, loading: cardsLoading, error } = useData();
-  const { data: picks, loading: picksLoading } = useAsyncData(fetchBestCardPicks);
-
+  const { cards, categories, categoryPages, loading: cardsLoading, error } = useData();
+  const { data: picks, loading: picksLoading, error: picksError } = useAsyncData(fetchBestCardPicks);
+  const featuredCards = (picks || []).map(pick => cards.find(card => card.id === pick.cardId)).filter(Boolean);
   const loading = cardsLoading || picksLoading;
-
-  const featuredCards = (picks || [])
-    .map(pick => cards.find(c => c.id === pick.cardId))
-    .filter(Boolean);
-
   return (
-    <div className="learn-page bmcc-best-cards-page bmcc-explore">
-      {/* Hero Header - Clean & Left Aligned */}
-      <section className="learn-hero">
-        <div className="bmcc-container">
-          <div className="learn-hero-inner">
-            <div className="learn-breadcrumb">
-              <Link to="/">Home</Link>
-              <span className="learn-breadcrumb-sep">/</span>
-              <Link to="/explore">Learn</Link>
-              <span className="learn-breadcrumb-sep">/</span>
-              <span className="learn-breadcrumb-current">Best Credit Cards</span>
-            </div>
-
-            <span className="learn-hero-kicker">Annual Editorial Rankings</span>
-            <h1 className="learn-title">25 Best Credit Cards in India for 2026</h1>
-            <p className="learn-lead">
-              Our research team evaluated over 90 credit cards across 16 major banks in India. Compare category champions across flat cashback, luxury travel, zero forex, and everyday utility savings.
-            </p>
-          </div>
-        </div>
+    <LearnLayout title="Find your best credit card." description="A useful shortlist starts with how you spend. Look at the rewards, then check the fees and conditions." sections={[["shortlist", "The shortlist"], ["categories", "Browse by benefit"]]} wide>
+      <section id="shortlist" className="learn-section">
+        <h2>Cards worth a closer look</h2>
+        <p>Explore the featured selections below. Compare the benefits with your own spending before deciding.</p>
+        {!loading && !error && !picksError && featuredCards.length > 0 && <div className="learn-card-gallery">{featuredCards.slice(0, 3).map(card => <Link key={card.id} to={card.detailRoute || card.route || `/credit-card/${card.id}`}><CardArtwork card={card} width={200} height={126} /><span>{card.bankName}</span><strong>{card.name}</strong></Link>)}</div>}
+        {loading ? <Loader label="Loading credit cards..." /> : error || picksError ? <ErrorMessage message={error || picksError} /> : featuredCards.length === 0 ? <div className="learn-note"><p>No featured selections are available right now.</p><Link className="learn-button learn-button-outline" to="/explore">Browse all cards</Link></div> : <div className="pb-card-list">{featuredCards.map(card => <CreditCardItem key={card.id} card={card} />)}</div>}
       </section>
-
-      {/* Section 1: Category Champions Grid */}
-      <section className="learn-section">
-        <div className="bmcc-container">
-          <div className="learn-section-head">
-            <span className="learn-section-kicker">EDITORIAL CURATION</span>
-            <h2 className="learn-section-title">Category Champions at a Glance</h2>
-            <p className="learn-section-desc">
-              If you have a specific spending goal, here are India’s undisputed top performers.
-            </p>
-          </div>
-
-          <div className="learn-champions-grid">
-            {CATEGORY_CHAMPIONS.map((champ, idx) => (
-              <div key={idx} className="learn-champion-card">
-                <div className="learn-champion-top">
-                  <span className="learn-champion-cat">
-                    {champ.category}
-                  </span>
-                  <span className="learn-champion-rating" style={{ color: '#2447bb' }}>
-                    {champ.rating}
-                  </span>
-                </div>
-                <h3 className="learn-champion-name">
-                  <Link to={champ.link} style={{ color: '#0f172a', textDecoration: 'none' }}>
-                    {champ.card}
-                  </Link>
-                </h3>
-                <p className="learn-champion-perk">{champ.perk}</p>
-                <div className="learn-champion-footer">
-                  <span style={{ fontSize: '12px', fontWeight: '700', color: '#0f172a' }}>Verified Top Pick</span>
-                  <Link to={champ.link} className="learn-champion-link">
-                    View Card Details →
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Section 2: Detailed Featured Cards Breakdown - Formatted Exactly Like Image 4 */}
-      <section className="learn-section bg-subtle">
-        <div className="bmcc-container">
-          <div className="learn-section-head">
-            <span className="learn-section-kicker">TOP PICKS DIRECTORY</span>
-            <h2 className="learn-section-title">In-Depth Card Comparison</h2>
-            <p className="learn-section-desc">
-              Review full fees, key perks, and welcome benefits of each top-rated card.
-            </p>
-          </div>
-
-          {loading ? (
-            <div style={{ padding: '60px 20px', textAlign: 'center' }}>
-              <Loader label="Loading best credit cards..." />
-            </div>
-          ) : error ? (
-            <div style={{ padding: '40px 20px' }}>
-              <ErrorMessage message={error} />
-            </div>
-          ) : (
-            <div className="pb-card-list">
-              {featuredCards.map(card => (
-                <CreditCardItem key={card.id} card={card} />
-              ))}
-            </div>
-          )}
-
-          <div style={{ marginTop: '44px', textAlign: 'center' }}>
-            <Link
-              to="/compare-credit-cards"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                background: '#10110f',
-                color: '#ffffff',
-                padding: '13px 30px',
-                borderRadius: '999px',
-                fontWeight: '700',
-                fontSize: '14px',
-                textDecoration: 'none',
-                boxShadow: '0 4px 14px rgba(16, 17, 15, 0.2)',
-              }}
-            >
-              Compare Any 3 Cards Side by Side
-              <span aria-hidden="true">→</span>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 3: Ranking Methodology */}
-      <section className="learn-section">
-        <div className="bmcc-container">
-          <div className="learn-section-head">
-            <span className="learn-section-kicker">SCORING METHODOLOGY</span>
-            <h2 className="learn-section-title">How We Score & Rank Every Card</h2>
-            <p className="learn-section-desc">
-              Our 4-pillar algorithmic evaluation model prioritizes actual cardholder savings over marketing claims.
-            </p>
-          </div>
-
-          <div className="learn-card-grid">
-            {METHODOLOGY.map((m, idx) => (
-              <div key={idx} className="learn-clean-card">
-                <span className="learn-card-label">Pillar 0{idx + 1}</span>
-                <h3 className="learn-clean-card-title">{m.title}</h3>
-                <p className="learn-clean-card-body">{m.desc}</p>
-                <div className="learn-clean-card-footer">
-                  <span style={{ color: '#10110f', fontWeight: '700' }}>25% Evaluation Weight</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Section 4: FAQs */}
-      <section className="learn-section bg-subtle">
-        <div className="bmcc-container">
-          <FAQSection page="home" title="Best Credit Cards FAQs" />
-        </div>
-      </section>
-    </div>
+      <section id="categories" className="learn-section"><h2>Start with a benefit you value</h2><div className="learn-category-links">{categories.filter(category => categoryPages.some(page => page.categoryId === category.id)).map(category => <Link key={category.id} to={`/${categoryPages.find(page => page.categoryId === category.id).slug}`}>{category.name}</Link>)}</div></section>
+    </LearnLayout>
   );
 }

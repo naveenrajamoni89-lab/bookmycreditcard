@@ -1,188 +1,29 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import FAQSection from '../components/FAQSection';
+﻿import { Link, useSearchParams } from 'react-router-dom';
+import LearnLayout from '../components/LearnLayout';
 import { guidesHubContent } from '../data/learnContent';
-import '../styles/learn-editorial.css';
 
 export default function CreditCardGuides() {
-  const [activeGuide, setActiveGuide] = useState(guidesHubContent.guides[0].id);
-
-  const current = guidesHubContent.guides.find(g => g.id === activeGuide) || guidesHubContent.guides[0];
-
+  const [params] = useSearchParams();
+  const current = guidesHubContent.guides.find(guide => guide.id === params.get('guide')) || guidesHubContent.guides[0];
   return (
-    <div className="learn-page bmcc-guides-page">
-      {/* Hero Header - Clean & Left Aligned */}
-      <section className="learn-hero">
-        <div className="bmcc-container">
-          <div className="learn-hero-inner">
-            <div className="learn-breadcrumb">
-              <Link to="/">Home</Link>
-              <span className="learn-breadcrumb-sep">/</span>
-              <Link to="/explore">Learn</Link>
-              <span className="learn-breadcrumb-sep">/</span>
-              <span className="learn-breadcrumb-current">Credit Card Guides</span>
-            </div>
-
-            <span className="learn-hero-kicker">Practical Playbooks</span>
-            <h1 className="learn-title">Actionable Credit Card Guides & How-Tos</h1>
-            <p className="learn-lead">
-              Clear, step-by-step procedures to help you navigate limit increases, dispute fraudulent charges, maximize reward redemptions, and protect your credit score.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Main Interactive Playbook Reader */}
-      <section className="learn-section">
-        <div className="bmcc-container">
-          <div className="learn-reader-layout">
-            {/* Guide Navigation Sidebar */}
-            <aside className="learn-reader-nav">
-              <div className="learn-reader-nav-header">
-                <span className="learn-reader-nav-title">
-                  PLAYBOOK DIRECTORY
-                </span>
-                <span className="learn-reader-nav-count">
-                  {guidesHubContent.guides.length} Actionable Walkthroughs
-                </span>
-              </div>
-
-              <nav className="learn-reader-list">
-                {guidesHubContent.guides.map((guide, idx) => {
-                  const isActive = guide.id === activeGuide;
-                  return (
-                    <button
-                      key={guide.id}
-                      type="button"
-                      onClick={() => setActiveGuide(guide.id)}
-                      className={`learn-reader-link ${isActive ? 'active' : ''}`}
-                    >
-                      <span className="learn-reader-link-title">
-                        {idx + 1}. {guide.title}
-                      </span>
-                      <span className="learn-reader-link-time">
-                        {guide.category} · {guide.time}
-                      </span>
-                    </button>
-                  );
-                })}
-              </nav>
-            </aside>
-
-            {/* Active Guide Article */}
-            <article className="learn-reader-content">
-              <div className="learn-reader-header">
-                <span className="learn-card-label" style={{ marginBottom: '10px' }}>
-                  {current.category} · {current.time}
-                </span>
-                <h2 className="learn-reader-title">{current.title}</h2>
-                <p className="learn-reader-desc">{current.summary}</p>
-              </div>
-
-              <h3 style={{ fontSize: '17px', fontWeight: '700', color: '#0f172a', margin: '0 0 16px' }}>
-                Step-by-Step Procedure
-              </h3>
-
-              <div className="learn-reader-steps">
-                {current.steps.map((step, idx) => (
-                  <div key={idx} className="learn-reader-step-row">
-                    <span className="learn-step-index">0{idx + 1}.</span>
-                    <p className="learn-step-detail">{step}</p>
-                  </div>
-                ))}
-              </div>
-
-              <div className="learn-pro-tip-box" style={{ background: '#f8fafc', borderLeft: '4px solid #0f172a' }}>
-                <strong style={{ color: '#0f172a' }}>Editorial Pro-Tip:</strong> Always request and record a service request or complaint reference number when dealing with bank customer support for audit compliance.
-              </div>
-
-              <div style={{ marginTop: '28px', paddingTop: '20px', borderTop: '1px solid #f1f5f9', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '14px' }}>
-                <Link
-                  to="/credit-card-eligibility"
-                  style={{
-                    color: '#2447bb',
-                    fontWeight: '700',
-                    fontSize: '13.5px',
-                    textDecoration: 'none',
-                  }}
-                >
-                  Check Your Card Eligibility Free →
-                </Link>
-
-                <Link
-                  to="/explore"
-                  style={{
-                    background: '#10110f',
-                    color: '#ffffff',
-                    padding: '10px 22px',
-                    borderRadius: '999px',
-                    fontSize: '13px',
-                    fontWeight: '700',
-                    textDecoration: 'none',
-                  }}
-                >
-                  Explore All Credit Cards
-                </Link>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 2: Crisis Assistance / Emergency Playbooks */}
-      <section className="learn-section bg-subtle">
-        <div className="bmcc-container">
-          <div className="learn-section-head">
-            <span className="learn-section-kicker kicker-rose">CRISIS ASSISTANCE</span>
-            <h2 className="learn-section-title">Emergency Quick-Response Playbooks</h2>
-            <p className="learn-section-desc">
-              Immediate security and dispute measures when time is critical.
-            </p>
-          </div>
-
-          <div className="learn-card-grid">
-            <div className="learn-clean-card" style={{ borderTop: '4px solid #dc2626' }}>
-              <span className="learn-card-pill-tag tag-rose">Urgent Action</span>
-              <h3 className="learn-clean-card-title">Card Lost or Stolen?</h3>
-              <p className="learn-clean-card-body">
-                Immediately block the card via your bank mobile app in under 15 seconds. Then report to customer care and obtain a police complaint reference for zero liability protection.
-              </p>
-              <div className="learn-clean-card-footer">
-                <span style={{ color: '#dc2626', fontWeight: '700' }}>RBI 3-Day Zero Liability Window</span>
-              </div>
-            </div>
-
-            <div className="learn-clean-card" style={{ borderTop: '4px solid #d97706' }}>
-              <span className="learn-card-pill-tag tag-amber">Dispute Protocol</span>
-              <h3 className="learn-clean-card-title">Unauthorized Transaction Dispute</h3>
-              <p className="learn-clean-card-body">
-                Notify your bank within 72 hours of receiving the unauthorized SMS alert. Under RBI mandates, reporting within 3 business days grants you full zero-liability indemnity.
-              </p>
-              <div className="learn-clean-card-footer">
-                <span style={{ color: '#d97706', fontWeight: '700' }}>Immediate Chargeback Initiation</span>
-              </div>
-            </div>
-
-            <div className="learn-clean-card" style={{ borderTop: '4px solid #059669' }}>
-              <span className="learn-card-pill-tag tag-green">Account Closure</span>
-              <h3 className="learn-clean-card-title">Safe Card Cancellation</h3>
-              <p className="learn-clean-card-body">
-                Ensure zero outstanding balance, redeem all accumulated reward points first, and request an official No Objection Certificate (NOC) and account closure confirmation letter.
-              </p>
-              <div className="learn-clean-card-footer">
-                <span style={{ color: '#059669', fontWeight: '700' }}>Zero Score Impact Protocol</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 3: FAQs */}
-      <section className="learn-section">
-        <div className="bmcc-container">
-          <FAQSection page="home" title="Credit Card Guides & How-To FAQs" />
-        </div>
-      </section>
-    </div>
+    <LearnLayout title="Practical card guides." description="Straightforward instructions for the things you do with your card every day." sections={[]}>
+      <div className="learn-guide-browser">
+        <nav className="learn-guide-index" aria-label="Choose a practical guide">
+          {guidesHubContent.guides.map(guide => (
+            <Link key={guide.id} to={`?guide=${guide.id}`} preventScrollReset aria-current={guide.id === current.id ? 'page' : undefined}>
+              <strong>{guide.title}</strong><span>{guide.category} / {guide.time}</span>
+            </Link>
+          ))}
+        </nav>
+        <article className="learn-guide-article" aria-labelledby="guide-title" key={current.id}>
+          <h2 id="guide-title">{current.title}</h2>
+          <p className="learn-guide-meta">{current.category} / {current.time}</p>
+          <p className="learn-lead">{current.summary}</p>
+          <h3>What to do</h3>
+          <ol className="learn-instructions">{current.steps.map(step => <li key={step}>{step}</li>)}</ol>
+          <div className="learn-guide-actions"><Link className="learn-button learn-button-outline" to="/credit-card-eligibility">Check eligibility</Link></div>
+        </article>
+      </div>
+    </LearnLayout>
   );
 }
