@@ -52,7 +52,8 @@
 .card-hero-primary { display: inline-flex; align-items: center; justify-content: center; gap: 36px; padding: 15px 28px; border-radius: 99px; background: #10110f; color: #fff; font-size: 16px; font-weight: 600; transition: background .2s; }
 .card-hero-primary:hover { background: #303735; color: #fff; }
 .card-hero-primary span { font-size: 22px; line-height: 1; }
-.card-hero-secondary { color: #555d65; font-size: 12px; }
+.card-hero-secondary { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 11px 24px; border: 1px solid #10110f; border-radius: 99px; background: #fff; color: #10110f; font-size: 13px; font-weight: 600; line-height: 1.5; text-decoration: none; transition: background .2s; }
+.card-hero-secondary:hover { background: #f0f2ec; color: #10110f; }
 .card-hero-secondary span { margin-left: 9px; }
 .card-hero-footer { display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1260px; margin: 0 auto; border-top: 1px solid #dcdfe3; padding-top: 10px; }
 .card-hero-footer a, .card-hero-footer button { color: #555d65; font: inherit; font-size: 11px; }
